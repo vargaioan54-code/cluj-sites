@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Politica de cookie-uri — GS Quick Serv</title>
+<meta name="description" content="GS Quick Serv, Bd. 1 Decembrie 1918 nr. 106, Cluj-Napoca. Vulcanizare, servicii anvelope, încărcare AC auto cu freon, schimb de ulei. Tel. 0759 330 370.">
+
+
+<style>
+:root{--bg:#111214;--bg2:#17181b;--line:#2a2c31;--tx:#e9e7e2;--mu:#8e8f94;--ac:#ffc400;--ac2:#ff7a00;--cold:#7fd3ff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:Barlow,system-ui,sans-serif;overflow-x:hidden;line-height:1.5}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.11;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+h1,h2,h3,.cond{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:.9}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1200px,100% - 40px);margin:0 auto;position:relative;z-index:2}
+#prog{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--ac),var(--ac2));z-index:60}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;transition:background .3s}
+nav.s{background:rgba(17,18,20,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font-family:"Barlow Condensed";font-weight:900;font-size:24px;letter-spacing:.02em;display:flex;gap:8px;align-items:center}
+.logo b{background:var(--ac);color:#111;padding:0 7px;border-radius:3px}
+.navl{display:none;gap:26px;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+.navl a:hover{color:var(--ac)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ac);color:#111;font-family:"Barlow Condensed";font-weight:700;font-size:20px;text-transform:uppercase;padding:14px 26px;border-radius:999px;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s;will-change:transform}
+.btn:hover{box-shadow:0 0 40px rgba(255,196,0,.45)}
+.btn.gh{background:transparent;color:var(--tx);border:1.5px solid var(--line)}
+.btn.sm{font-size:16px;padding:9px 18px}
+/* hero */
+#hero{min-height:100svh;position:relative;overflow:hidden;display:flex;align-items:center;padding:100px 0 60px}
+.sweep{position:absolute;inset:-20%;background:conic-gradient(from 200deg at 0% 50%,transparent 0deg,rgba(255,230,150,.16) 14deg,transparent 30deg);animation:sw 7s ease-in-out infinite;pointer-events:none;z-index:1}
+.sweep.r{background:conic-gradient(from 20deg at 100% 55%,transparent 0deg,rgba(255,230,150,.12) 14deg,transparent 30deg);animation-delay:-3.5s}
+@keyframes sw{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+.tread{position:absolute;left:0;width:100%;height:120px;z-index:1;pointer-events:none;opacity:.5}
+.tread path{stroke:#2b2d32;stroke-width:20;fill:none;stroke-dasharray:14 10}
+.tread .m{stroke:#000;stroke-dasharray:none;stroke-width:46;opacity:.5}
+.herog{display:grid;gap:30px;align-items:center}.herog>*{min-width:0}
+.kick{color:var(--ac);font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:13px;margin-bottom:18px;display:flex;gap:10px;align-items:center}
+.kick:before{content:"";width:34px;height:2px;background:var(--ac)}
+h1{font-size:clamp(60px,14vw,150px);font-weight:900}
+h1 .ln{display:block;overflow:hidden}
+h1 .ln span{display:block;transform:translateY(105%);animation:up 1s cubic-bezier(.2,.8,.2,1) forwards}
+h1 .ln:nth-child(2) span{animation-delay:.15s;color:transparent;-webkit-text-stroke:2px var(--ac)}
+h1 .ln:nth-child(3) span{animation-delay:.3s}
+@keyframes up{to{transform:none}}
+.hsub{max-width:480px;color:#c5c4bf;font-size:18px;margin:24px 0 30px;opacity:0;animation:fi 1s .7s forwards}
+.hcta{display:flex;flex-wrap:wrap;gap:12px;opacity:0;animation:fi 1s .9s forwards}
+@keyframes fi{to{opacity:1}}
+.wheel{width:min(80vw,460px);aspect-ratio:1;justify-self:center;position:relative}
+.wheel svg{width:100%;height:100%;filter:drop-shadow(0 30px 60px #000)}
+#rim{transform-origin:260px 260px}
+.wheel .glow{position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle,rgba(255,196,0,.18),transparent 70%);filter:blur(20px)}
+.scrollh{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;color:var(--mu);z-index:3}
+/* marquee */
+.marq{border-block:1px solid var(--line);background:var(--ac);color:#111;overflow:hidden;position:relative;z-index:2}
+.marq div{display:flex;gap:40px;white-space:nowrap;padding:14px 0;font-family:"Barlow Condensed";font-weight:900;font-size:30px;text-transform:uppercase;animation:mq 22s linear infinite;width:max-content}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{position:relative;z-index:2}
+.sec{padding:110px 0}
+h2{font-size:clamp(46px,9vw,110px);font-weight:900;margin-bottom:20px}
+h2 em{font-style:normal;color:var(--ac)}
+.lead{color:#bdbcb7;max-width:560px;font-size:18px}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+/* cards */
+.cards{display:grid;gap:18px;margin-top:50px}
+.card{perspective:1200px;min-height:340px;cursor:pointer}
+.ci{position:relative;width:100%;height:100%;min-height:340px;transition:transform .8s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
+.card:hover .ci,.card.f .ci{transform:rotateY(180deg)}
+.fa{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid var(--line);border-radius:18px;padding:26px;background:linear-gradient(160deg,#1c1d21,#131416);display:flex;flex-direction:column;overflow:hidden}
+.fa.b{transform:rotateY(180deg);background:var(--ac);color:#111}
+.fa .n{font-family:"Barlow Condensed";font-weight:700;color:var(--mu);font-size:18px}
+.fa h3{font-size:42px;font-weight:900;margin-top:auto}
+.fa .ic{width:120px;height:120px;margin:10px 0}
+.fa.b h3{margin-top:0;margin-bottom:12px}
+.fa.b p{font-size:17px;font-weight:500}
+.fa.b .btn{background:#111;color:var(--ac);margin-top:auto;align-self:flex-start}
+.hint{font-size:12px;letter-spacing:.2em;color:var(--mu);text-transform:uppercase;margin-top:6px}
+/* icon anims */
+.spin{animation:rot 3s linear infinite;transform-origin:50% 50%;transform-box:fill-box}
+@keyframes rot{to{transform:rotate(360deg)}}
+.slide{animation:sl 3s ease-in-out infinite}
+@keyframes sl{0%,100%{transform:translateX(-14px)}50%{transform:translateX(14px)}}
+.needle{transform-origin:60px 70px;animation:nd 2.6s ease-in-out infinite}
+@keyframes nd{0%,100%{transform:rotate(-70deg)}60%{transform:rotate(40deg)}75%{transform:rotate(30deg)}}
+.flake{animation:rot 9s linear infinite;transform-origin:60px 60px}
+.puff{animation:pf 2.4s ease-out infinite;opacity:0}
+.puff:nth-of-type(2){animation-delay:.8s}.puff:nth-of-type(3){animation-delay:1.6s}
+@keyframes pf{0%{opacity:.8;transform:translate(0,0) scale(.5)}100%{opacity:0;transform:translate(0,-30px) scale(1.4)}}
+.fill{animation:fl 3s ease-in-out infinite;transform-origin:0 100px}
+@keyframes fl{0%{transform:scaleY(0)}70%,100%{transform:scaleY(1)}}
+.drip{animation:dr 1.5s ease-in infinite}
+@keyframes dr{0%{transform:translateY(-10px);opacity:0}30%{opacity:1}100%{transform:translateY(26px);opacity:0}}
+/* pinned chapters */
+#cap{height:400vh}
+.pin{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;align-items:center}
+.chap{position:absolute;inset:0;display:flex;align-items:center;opacity:0;transform:scale(1.06);transition:opacity .7s,transform .9s}
+.chap.on{opacity:1;transform:none}
+.chap .wrap{display:grid;gap:20px}
+.chap .big{font-family:"Barlow Condensed";font-weight:900;font-size:clamp(120px,30vw,380px);line-height:.8;color:transparent;-webkit-text-stroke:2px #2f3136;position:absolute;right:-2vw;bottom:-4vh;z-index:0}
+.chap h3{font-size:clamp(48px,10vw,120px);font-weight:900;position:relative;z-index:1}
+.chap h3 em{font-style:normal;color:var(--ac)}
+.chap p{max-width:520px;color:#c5c4bf;font-size:19px;position:relative;z-index:1}
+.dots{position:absolute;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;z-index:3}
+.dots i{width:8px;height:8px;border-radius:50%;background:#3a3c42;transition:.3s}
+.dots i.on{background:var(--ac);height:26px;border-radius:5px}
+.chline{position:absolute;bottom:0;left:0;height:4px;background:var(--ac);z-index:3}
+/* selector */
+#alege{background:var(--bg2);border-block:1px solid var(--line)}
+.sel{display:grid;gap:12px;margin-top:40px}
+.opt{display:flex;align-items:center;gap:16px;padding:20px 22px;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;background:#141518;transition:.3s;font-family:"Barlow Condensed";font-weight:700;font-size:28px;text-transform:uppercase;color:var(--tx);text-align:left;width:100%}
+.opt .k{width:26px;height:26px;border:2px solid #4a4c52;border-radius:50%;flex:none;position:relative;transition:.3s}
+.opt.on{border-color:var(--ac);background:#1f1b0d;transform:translateX(8px)}
+.opt.on .k{border-color:var(--ac)}.opt.on .k:after{content:"";position:absolute;inset:4px;background:var(--ac);border-radius:50%}
+.res{margin-top:24px;padding:28px;border-radius:18px;border:1px dashed #4a4c52;min-height:150px;transition:.4s}
+.res.on{border:1px solid var(--ac);background:linear-gradient(120deg,#231e0c,#141518)}
+.res h4{font-family:"Barlow Condensed";font-size:34px;text-transform:uppercase;margin-bottom:8px}
+.res p{color:#c5c4bf;margin-bottom:18px}
+/* contact */
+.cg{display:grid;gap:24px;margin-top:40px}
+.box{border:1px solid var(--line);border-radius:18px;padding:28px;background:#141518}
+.box .l{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mu);margin-bottom:6px}
+.box .v{font-family:"Barlow Condensed";font-weight:700;font-size:clamp(30px,6vw,48px);text-transform:uppercase;line-height:1}
+.box .v.ph{color:var(--ac)}
+table{width:100%;border-collapse:collapse;margin-top:8px}
+td{padding:7px 0;border-bottom:1px solid var(--line)}td+td{text-align:right;font-weight:600}
+tr.today td{color:var(--ac)}
+.map{border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:340px;background:#141518}.map iframe{filter:grayscale(1) invert(.92) contrast(.9)}.mph{padding:30px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;justify-content:center;min-height:340px;color:#c5c4bf}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+.note{font-size:13px;color:var(--mu);margin-top:10px}
+footer{padding:40px 0 110px;border-top:1px solid var(--line);color:var(--mu);font-size:14px;position:relative;z-index:2}
+.fbig{font-family:"Barlow Condensed";font-weight:900;font-size:clamp(60px,17vw,240px);line-height:.8;color:#1d1e22;text-transform:uppercase;margin-bottom:30px;white-space:nowrap;overflow:hidden}
+.mcall{position:fixed;left:16px;right:16px;bottom:16px;z-index:55;justify-content:center;box-shadow:0 10px 40px rgba(0,0,0,.6);transform:translateY(140%);transition:transform .4s}
+.mcall.on{transform:none}
+.pulse{width:10px;height:10px;border-radius:50%;background:#111;animation:pu 1.4s infinite}
+@keyframes pu{0%{box-shadow:0 0 0 0 rgba(17,17,17,.6)}100%{box-shadow:0 0 0 14px rgba(17,17,17,0)}}
+#cur,#cur2{display:none}
+@media (hover:hover) and (pointer:fine) and (min-width:900px){
+ body.cc,body.cc a,body.cc button,body.cc .card{cursor:none}
+ #cur,#cur2{display:block;position:fixed;top:0;left:0;pointer-events:none;z-index:100;border-radius:50%;mix-blend-mode:difference}
+ #cur{width:8px;height:8px;background:var(--ac);margin:-4px}
+ #cur2{width:42px;height:42px;border:1.5px solid var(--ac);margin:-21px;transition:width .25s,height .25s,margin .25s}
+ #cur2.big{width:80px;height:80px;margin:-40px;background:rgba(255,196,0,.15)}
+}
+@media(min-width:900px){
+ h1{font-size:min(6.6vw,112px)}.navl{display:flex}.herog{grid-template-columns:1.3fr .7fr}
+ .cards{grid-template-columns:repeat(4,1fr)}
+ .selg{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+ .cg{grid-template-columns:1fr 1fr}
+ .mcall{display:none}
+ footer{padding-bottom:40px}
+}
+@media(min-width:600px) and (max-width:899px){.cards{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation:none!important;transition:none!important}
+ h1 .ln span,.hsub,.hcta{transform:none;opacity:1}
+ .rv{opacity:1;transform:none}
+ #cap{height:auto}.pin{position:relative;height:auto;display:block;padding:60px 0}
+ .chap{position:relative;opacity:1;transform:none;padding:40px 0}.chap .big,.dots,.chline{display:none}
+}
+.fg{display:grid;gap:26px;font-size:14px;line-height:1.7}.fg b{color:var(--tx)}.fg a{text-decoration:underline}.fl{display:flex;flex-direction:column;gap:4px}.ph{background:#3a2f00;color:var(--ac);padding:0 5px;border-radius:3px}
+.anpc{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start}.pg{display:flex;flex-direction:column;justify-content:center;width:250px;max-width:100%;height:50px;padding:0 14px;border-radius:8px;background:#fff;text-decoration:none!important;border-left:8px solid #ffc400}.pg small{font-size:11px;line-height:1.2;color:#333}.pg b{color:#0b3a7a!important;font-size:16px;line-height:1.2}
+.upd{margin-top:26px;font-size:13px}@media(min-width:900px){.fg{grid-template-columns:1.3fr 1fr 1.2fr}}
+.legal{padding:130px 0 60px}.legal h1{font-size:clamp(44px,8vw,90px);margin-bottom:10px}.legal h2{font-size:clamp(28px,4vw,40px);margin:40px 0 12px}.legal p,.legal li{color:#cfcdc8;max-width:820px;margin-bottom:10px}.legal ul{padding-left:22px}.legal a{color:var(--ac);text-decoration:underline}
+.legal table{max-width:900px;font-size:14px}.legal th{text-align:left;padding:8px 6px;border-bottom:1px solid var(--ac);font-family:"Barlow Condensed","Arial Narrow";text-transform:uppercase}.legal td{padding:8px 6px;text-align:left!important;vertical-align:top;font-weight:400}.tw{overflow-x:auto}
+.warn{border:1px solid var(--ac);background:#231e0c;border-radius:12px;padding:14px 18px;max-width:820px;margin:18px 0}</style>
+</head><body><div id="prog"></div><nav id="nav" class="s"><a href="index.html" class="logo"><b>GS</b>QUICK SERV</a><a href="index.html" class="btn sm gh">← Înapoi la site</a></nav><main class="legal"><div class="wrap"><div class="kick">GS QUICK SERV SRL</div><h1>Politica de cookie-uri</h1><p class="warn">Notă: textul este întocmit pe baza datelor publice ale firmei. Câmpurile marcate <span class="ph">[între paranteze]</span> trebuie completate de GS QUICK SERV SRL înainte de publicare. Documentul nu înlocuiește consultanța juridică.</p><p><b>Ultima actualizare: 13.10.2026</b></p>
+<p>Această politică explică ce cookie-uri și tehnologii similare folosește site-ul GS Quick Serv, operat de GS QUICK SERV SRL, CUI 33764209, Nr. Reg. Com. J12/3169/2014, cu sediul social în Str. Ceahlău nr. 25, Cluj-Napoca, jud. Cluj, punct de lucru Bd. 1 Decembrie 1918 nr. 106, Cluj-Napoca, telefon <a href="tel:+40759330370">0759 330 370</a>, e-mail <span class="ph">[email de completat]</span>. Se aplică Legea nr. 506/2004 (art. 4 alin. (5)) și GDPR.</p>
+<h2>1. Pe scurt</h2><p>Nu setăm cookie-uri proprii. Nu folosim analitică, publicitate sau pixeli de urmărire. Serviciile Google (hartă și fonturi) se încarcă <b>doar după consimțământul tău</b>. Până atunci, site-ul folosește fonturile sistemului și afișează un buton „Încarcă harta”.</p>
+<h2>2. Ce stocăm</h2><div class="tw"><table><tr><th>Nume</th><th>Furnizor</th><th>Tip / scop</th><th>Durată</th><th>Categorie</th></tr>
+<tr><td>gs_consent_v1 (localStorage)</td><td>Site-ul nostru</td><td>Memorează alegerea ta privind cookie-urile</td><td>Până o ștergi din browser</td><td>Strict necesar</td></tr>
+<tr><td>Cookie-uri Google Maps (de ex. NID, AEC, SOCS, __Secure-ENID și altele)</td><td>Google Ireland Ltd (google.com)</td><td>Funcționarea hărții încorporate, preferințe, securitate. Google poate folosi datele conform politicii sale</td><td>Stabilită de Google, de obicei de la sesiune până la ~13 luni</td><td>Servicii externe (cu consimțământ)</td></tr>
+<tr><td>Google Fonts (fonts.googleapis.com, fonts.gstatic.com)</td><td>Google Ireland Ltd</td><td>Descărcarea fonturilor Barlow. Nu setează cookie-uri, dar Google primește adresa IP</td><td>—</td><td>Servicii externe (cu consimțământ)</td></tr></table></div>
+<p>Lista cookie-urilor Google poate varia, deoarece le controlează Google: <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener">policies.google.com/technologies/cookies</a>.</p>
+<h2>3. Cum îți gestionezi acordul</h2><p>La prima vizită alegi Accept, Refuz sau Setări. Îți poți schimba oricând alegerea din linkul <a href="#" data-ck>Setări cookie</a> din subsolul paginii. Poți șterge și datele din setările browserului.</p>
+<h2>4. Contact</h2><p>Întrebări: 0759 330 370 sau <span class="ph">[email de completat]</span>. Vezi și <a href="politica-confidentialitate.html">Politica de confidențialitate</a>.</p></div></main><footer><div class="wrap"><div class="fbig">GS Quick Serv</div>
+<div class="fg">
+ <div><b>GS QUICK SERV SRL</b><br>CUI 33764209 · Nr. Reg. Com. J12/3169/2014<br>Sediu social: Str. Ceahlău nr. 25, Cluj-Napoca, jud. Cluj<br>Punct de lucru: Bd. 1 Decembrie 1918 nr. 106, Cluj-Napoca<br>Tel.: <a href="tel:+40759330370">0759 330 370</a> · E-mail: <span class="ph">[email de completat]</span></div>
+ <div class="fl"><a href="politica-confidentialitate.html">Politica de confidențialitate</a><a href="politica-cookies.html">Politica de cookie-uri</a><a href="termeni-si-conditii.html">Termeni și condiții</a><a href="#" data-ck>Setări cookie</a><a href="https://anpc.ro" target="_blank" rel="noopener">ANPC – anpc.ro</a></div>
+ <div class="anpc"><a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener" class="pg"><small>Soluționarea alternativă a litigiilor</small><b>ANPC · SAL</b></a></div>
+</div>
+<p class="upd">Ultima actualizare: 13.10.2026 · © GS QUICK SERV SRL</p></div></footer>
+<script src="consent.js"></script></body></html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GS Quick Serv — Vulcanizare, AC auto & schimb ulei · Cluj-Napoca</title>
+<meta name="description" content="GS Quick Serv, Bd. 1 Decembrie 1918 nr. 106, Cluj-Napoca. Vulcanizare, servicii anvelope, încărcare AC auto cu freon, schimb de ulei. Tel. 0759 330 370.">
+
+
+<style>
+:root{--bg:#111214;--bg2:#17181b;--line:#2a2c31;--tx:#e9e7e2;--mu:#8e8f94;--ac:#ffc400;--ac2:#ff7a00;--cold:#7fd3ff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:Barlow,system-ui,sans-serif;overflow-x:hidden;line-height:1.5}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.11;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+h1,h2,h3,.cond{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:.9}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1200px,100% - 40px);margin:0 auto;position:relative;z-index:2}
+#prog{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--ac),var(--ac2));z-index:60}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;transition:background .3s}
+nav.s{background:rgba(17,18,20,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font-family:"Barlow Condensed";font-weight:900;font-size:24px;letter-spacing:.02em;display:flex;gap:8px;align-items:center}
+.logo b{background:var(--ac);color:#111;padding:0 7px;border-radius:3px}
+.navl{display:none;gap:26px;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+.navl a:hover{color:var(--ac)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ac);color:#111;font-family:"Barlow Condensed";font-weight:700;font-size:20px;text-transform:uppercase;padding:14px 26px;border-radius:999px;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s;will-change:transform}
+.btn:hover{box-shadow:0 0 40px rgba(255,196,0,.45)}
+.btn.gh{background:transparent;color:var(--tx);border:1.5px solid var(--line)}
+.btn.sm{font-size:16px;padding:9px 18px}
+/* hero */
+#hero{min-height:100svh;position:relative;overflow:hidden;display:flex;align-items:center;padding:100px 0 60px}
+.sweep{position:absolute;inset:-20%;background:conic-gradient(from 200deg at 0% 50%,transparent 0deg,rgba(255,230,150,.16) 14deg,transparent 30deg);animation:sw 7s ease-in-out infinite;pointer-events:none;z-index:1}
+.sweep.r{background:conic-gradient(from 20deg at 100% 55%,transparent 0deg,rgba(255,230,150,.12) 14deg,transparent 30deg);animation-delay:-3.5s}
+@keyframes sw{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+.tread{position:absolute;left:0;width:100%;height:120px;z-index:1;pointer-events:none;opacity:.5}
+.tread path{stroke:#2b2d32;stroke-width:20;fill:none;stroke-dasharray:14 10}
+.tread .m{stroke:#000;stroke-dasharray:none;stroke-width:46;opacity:.5}
+.herog{display:grid;gap:30px;align-items:center}.herog>*{min-width:0}
+.kick{color:var(--ac);font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:13px;margin-bottom:18px;display:flex;gap:10px;align-items:center}
+.kick:before{content:"";width:34px;height:2px;background:var(--ac)}
+h1{font-size:clamp(60px,14vw,150px);font-weight:900}
+h1 .ln{display:block;overflow:hidden}
+h1 .ln span{display:block;transform:translateY(105%);animation:up 1s cubic-bezier(.2,.8,.2,1) forwards}
+h1 .ln:nth-child(2) span{animation-delay:.15s;color:transparent;-webkit-text-stroke:2px var(--ac)}
+h1 .ln:nth-child(3) span{animation-delay:.3s}
+@keyframes up{to{transform:none}}
+.hsub{max-width:480px;color:#c5c4bf;font-size:18px;margin:24px 0 30px;opacity:0;animation:fi 1s .7s forwards}
+.hcta{display:flex;flex-wrap:wrap;gap:12px;opacity:0;animation:fi 1s .9s forwards}
+@keyframes fi{to{opacity:1}}
+.wheel{width:min(80vw,460px);aspect-ratio:1;justify-self:center;position:relative}
+.wheel svg{width:100%;height:100%;filter:drop-shadow(0 30px 60px #000)}
+#rim{transform-origin:260px 260px}
+.wheel .glow{position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle,rgba(255,196,0,.18),transparent 70%);filter:blur(20px)}
+.scrollh{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;color:var(--mu);z-index:3}
+/* marquee */
+.marq{border-block:1px solid var(--line);background:var(--ac);color:#111;overflow:hidden;position:relative;z-index:2}
+.marq div{display:flex;gap:40px;white-space:nowrap;padding:14px 0;font-family:"Barlow Condensed";font-weight:900;font-size:30px;text-transform:uppercase;animation:mq 22s linear infinite;width:max-content}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{position:relative;z-index:2}
+.sec{padding:110px 0}
+h2{font-size:clamp(46px,9vw,110px);font-weight:900;margin-bottom:20px}
+h2 em{font-style:normal;color:var(--ac)}
+.lead{color:#bdbcb7;max-width:560px;font-size:18px}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+/* cards */
+.cards{display:grid;gap:18px;margin-top:50px}
+.card{perspective:1200px;min-height:340px;cursor:pointer}
+.ci{position:relative;width:100%;height:100%;min-height:340px;transition:transform .8s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
+.card:hover .ci,.card.f .ci{transform:rotateY(180deg)}
+.fa{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid var(--line);border-radius:18px;padding:26px;background:linear-gradient(160deg,#1c1d21,#131416);display:flex;flex-direction:column;overflow:hidden}
+.fa.b{transform:rotateY(180deg);background:var(--ac);color:#111}
+.fa .n{font-family:"Barlow Condensed";font-weight:700;color:var(--mu);font-size:18px}
+.fa h3{font-size:42px;font-weight:900;margin-top:auto}
+.fa .ic{width:120px;height:120px;margin:10px 0}
+.fa.b h3{margin-top:0;margin-bottom:12px}
+.fa.b p{font-size:17px;font-weight:500}
+.fa.b .btn{background:#111;color:var(--ac);margin-top:auto;align-self:flex-start}
+.hint{font-size:12px;letter-spacing:.2em;color:var(--mu);text-transform:uppercase;margin-top:6px}
+/* icon anims */
+.spin{animation:rot 3s linear infinite;transform-origin:50% 50%;transform-box:fill-box}
+@keyframes rot{to{transform:rotate(360deg)}}
+.slide{animation:sl 3s ease-in-out infinite}
+@keyframes sl{0%,100%{transform:translateX(-14px)}50%{transform:translateX(14px)}}
+.needle{transform-origin:60px 70px;animation:nd 2.6s ease-in-out infinite}
+@keyframes nd{0%,100%{transform:rotate(-70deg)}60%{transform:rotate(40deg)}75%{transform:rotate(30deg)}}
+.flake{animation:rot 9s linear infinite;transform-origin:60px 60px}
+.puff{animation:pf 2.4s ease-out infinite;opacity:0}
+.puff:nth-of-type(2){animation-delay:.8s}.puff:nth-of-type(3){animation-delay:1.6s}
+@keyframes pf{0%{opacity:.8;transform:translate(0,0) scale(.5)}100%{opacity:0;transform:translate(0,-30px) scale(1.4)}}
+.fill{animation:fl 3s ease-in-out infinite;transform-origin:0 100px}
+@keyframes fl{0%{transform:scaleY(0)}70%,100%{transform:scaleY(1)}}
+.drip{animation:dr 1.5s ease-in infinite}
+@keyframes dr{0%{transform:translateY(-10px);opacity:0}30%{opacity:1}100%{transform:translateY(26px);opacity:0}}
+/* pinned chapters */
+#cap{height:400vh}
+.pin{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;align-items:center}
+.chap{position:absolute;inset:0;display:flex;align-items:center;opacity:0;transform:scale(1.06);transition:opacity .7s,transform .9s}
+.chap.on{opacity:1;transform:none}
+.chap .wrap{display:grid;gap:20px}
+.chap .big{font-family:"Barlow Condensed";font-weight:900;font-size:clamp(120px,30vw,380px);line-height:.8;color:transparent;-webkit-text-stroke:2px #2f3136;position:absolute;right:-2vw;bottom:-4vh;z-index:0}
+.chap h3{font-size:clamp(48px,10vw,120px);font-weight:900;position:relative;z-index:1}
+.chap h3 em{font-style:normal;color:var(--ac)}
+.chap p{max-width:520px;color:#c5c4bf;font-size:19px;position:relative;z-index:1}
+.dots{position:absolute;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;z-index:3}
+.dots i{width:8px;height:8px;border-radius:50%;background:#3a3c42;transition:.3s}
+.dots i.on{background:var(--ac);height:26px;border-radius:5px}
+.chline{position:absolute;bottom:0;left:0;height:4px;background:var(--ac);z-index:3}
+/* selector */
+#alege{background:var(--bg2);border-block:1px solid var(--line)}
+.sel{display:grid;gap:12px;margin-top:40px}
+.opt{display:flex;align-items:center;gap:16px;padding:20px 22px;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;background:#141518;transition:.3s;font-family:"Barlow Condensed";font-weight:700;font-size:28px;text-transform:uppercase;color:var(--tx);text-align:left;width:100%}
+.opt .k{width:26px;height:26px;border:2px solid #4a4c52;border-radius:50%;flex:none;position:relative;transition:.3s}
+.opt.on{border-color:var(--ac);background:#1f1b0d;transform:translateX(8px)}
+.opt.on .k{border-color:var(--ac)}.opt.on .k:after{content:"";position:absolute;inset:4px;background:var(--ac);border-radius:50%}
+.res{margin-top:24px;padding:28px;border-radius:18px;border:1px dashed #4a4c52;min-height:150px;transition:.4s}
+.res.on{border:1px solid var(--ac);background:linear-gradient(120deg,#231e0c,#141518)}
+.res h4{font-family:"Barlow Condensed";font-size:34px;text-transform:uppercase;margin-bottom:8px}
+.res p{color:#c5c4bf;margin-bottom:18px}
+/* contact */
+.cg{display:grid;gap:24px;margin-top:40px}
+.box{border:1px solid var(--line);border-radius:18px;padding:28px;background:#141518}
+.box .l{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mu);margin-bottom:6px}
+.box .v{font-family:"Barlow Condensed";font-weight:700;font-size:clamp(30px,6vw,48px);text-transform:uppercase;line-height:1}
+.box .v.ph{color:var(--ac)}
+table{width:100%;border-collapse:collapse;margin-top:8px}
+td{padding:7px 0;border-bottom:1px solid var(--line)}td+td{text-align:right;font-weight:600}
+tr.today td{color:var(--ac)}
+.map{border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:340px;background:#141518}.map iframe{filter:grayscale(1) invert(.92) contrast(.9)}.mph{padding:30px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;justify-content:center;min-height:340px;color:#c5c4bf}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+.note{font-size:13px;color:var(--mu);margin-top:10px}
+footer{padding:40px 0 110px;border-top:1px solid var(--line);color:var(--mu);font-size:14px;position:relative;z-index:2}
+.fbig{font-family:"Barlow Condensed";font-weight:900;font-size:clamp(60px,17vw,240px);line-height:.8;color:#1d1e22;text-transform:uppercase;margin-bottom:30px;white-space:nowrap;overflow:hidden}
+.mcall{position:fixed;left:16px;right:16px;bottom:16px;z-index:55;justify-content:center;box-shadow:0 10px 40px rgba(0,0,0,.6);transform:translateY(140%);transition:transform .4s}
+.mcall.on{transform:none}
+.pulse{width:10px;height:10px;border-radius:50%;background:#111;animation:pu 1.4s infinite}
+@keyframes pu{0%{box-shadow:0 0 0 0 rgba(17,17,17,.6)}100%{box-shadow:0 0 0 14px rgba(17,17,17,0)}}
+#cur,#cur2{display:none}
+@media (hover:hover) and (pointer:fine) and (min-width:900px){
+ body.cc,body.cc a,body.cc button,body.cc .card{cursor:none}
+ #cur,#cur2{display:block;position:fixed;top:0;left:0;pointer-events:none;z-index:100;border-radius:50%;mix-blend-mode:difference}
+ #cur{width:8px;height:8px;background:var(--ac);margin:-4px}
+ #cur2{width:42px;height:42px;border:1.5px solid var(--ac);margin:-21px;transition:width .25s,height .25s,margin .25s}
+ #cur2.big{width:80px;height:80px;margin:-40px;background:rgba(255,196,0,.15)}
+}
+@media(min-width:900px){
+ h1{font-size:min(6.6vw,112px)}.navl{display:flex}.herog{grid-template-columns:1.3fr .7fr}
+ .cards{grid-template-columns:repeat(4,1fr)}
+ .selg{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+ .cg{grid-template-columns:1fr 1fr}
+ .mcall{display:none}
+ footer{padding-bottom:40px}
+}
+@media(min-width:600px) and (max-width:899px){.cards{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation:none!important;transition:none!important}
+ h1 .ln span,.hsub,.hcta{transform:none;opacity:1}
+ .rv{opacity:1;transform:none}
+ #cap{height:auto}.pin{position:relative;height:auto;display:block;padding:60px 0}
+ .chap{position:relative;opacity:1;transform:none;padding:40px 0}.chap .big,.dots,.chline{display:none}
+}
+.fg{display:grid;gap:26px;font-size:14px;line-height:1.7}.fg b{color:var(--tx)}.fg a{text-decoration:underline}.fl{display:flex;flex-direction:column;gap:4px}.ph{background:#3a2f00;color:var(--ac);padding:0 5px;border-radius:3px}
+.anpc{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start}.pg{display:flex;flex-direction:column;justify-content:center;width:250px;max-width:100%;height:50px;padding:0 14px;border-radius:8px;background:#fff;text-decoration:none!important;border-left:8px solid #ffc400}.pg small{font-size:11px;line-height:1.2;color:#333}.pg b{color:#0b3a7a!important;font-size:16px;line-height:1.2}
+.upd{margin-top:26px;font-size:13px}@media(min-width:900px){.fg{grid-template-columns:1.3fr 1fr 1.2fr}}
+#recenzii{padding:100px 0 80px;overflow:hidden}.rhead{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;margin-top:10px}.rscore{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:900;font-size:56px;line-height:1;color:var(--ac)}.stars{color:var(--ac);letter-spacing:2px}.rsrc{color:var(--mu);font-size:13px}
+.rtrack{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:30px 20px 14px;scrollbar-width:none}.rtrack::-webkit-scrollbar{display:none}
+.rc{flex:none;width:min(84vw,380px);scroll-snap-align:center;background:#16171a;border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px}.rc q{font-size:17px;color:#e3e1dc;quotes:"„" "”"}.rc .m{margin-top:auto;font-size:13px;color:var(--mu);display:flex;justify-content:space-between;gap:8px}
+@media(min-width:900px){.rtrack{padding-left:calc((100vw - 1200px)/2);}}.rc{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}.rtrack.in .rc{opacity:1;transform:none}.rtrack.in .rc:nth-child(2){transition-delay:.1s}.rtrack.in .rc:nth-child(3){transition-delay:.2s}.rtrack.in .rc:nth-child(4){transition-delay:.3s}.rtrack.in .rc:nth-child(5){transition-delay:.4s}
+.stars span{display:inline-block;opacity:0;transform:scale(.3) rotate(-40deg)}.in .stars span,.rhead.in .stars span{animation:st .5s cubic-bezier(.3,1.6,.5,1) forwards}
+@keyframes st{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.rc{opacity:1;transform:none}.stars span{opacity:1;transform:none}}.ghint{color:var(--mu);font-size:13px;letter-spacing:.15em;text-transform:uppercase;margin-top:8px}#intro{position:fixed;inset:0;z-index:300;background:#0d0e10;display:flex;align-items:center;justify-content:center;flex-direction:column;overflow:hidden;transition:transform .9s cubic-bezier(.7,0,.2,1)}
+#intro.done{transform:translateY(-100%)}#intro svg{width:100%;height:46vh;max-height:340px;margin-bottom:-60px}
+#intro .itr{stroke:#2b2d32;stroke-width:22;fill:none;stroke-dasharray:16 10;stroke-dashoffset:0}#intro .itrm{stroke:#000;stroke-width:50;fill:none;opacity:.6;stroke-dasharray:1600;stroke-dashoffset:1600}
+#intro.play .itrm{animation:itr 1.2s .1s cubic-bezier(.4,0,.2,1) forwards}@keyframes itr{to{stroke-dashoffset:0}}
+#intro .iclip{clip-path:inset(0 100% 0 0)}#intro.play .iclip{animation:icl 1.2s .1s cubic-bezier(.4,0,.2,1) forwards}@keyframes icl{to{clip-path:inset(0 0 0 0)}}
+#intro .iw{transform:translateX(-260px) rotate(-400deg);transform-box:fill-box;transform-origin:center}#intro.play .iw{animation:iroll 1.3s cubic-bezier(.3,.7,.2,1) forwards}@keyframes iroll{to{transform:translateX(560px) rotate(0)}}
+#intro .it{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;font-weight:900;font-size:clamp(46px,13vw,130px);text-transform:uppercase;display:flex;gap:.02em;line-height:1}
+#intro .it span{display:inline-block;opacity:0;transform:translate(var(--x),var(--y)) rotate(var(--r)) scale(.4)}#intro.play .it span{animation:asm .8s cubic-bezier(.2,1.4,.4,1) forwards}
+#intro .it span.y{color:#ffc400}@keyframes asm{to{opacity:1;transform:none}}
+#intro .is{margin-top:12px;padding:0 20px;text-align:center;color:#8e8f94;font-size:12px;letter-spacing:.3em;text-transform:uppercase;opacity:0}#intro.play .is{animation:fi .6s 1.9s forwards}
+#intro .skip{position:absolute;bottom:22px;color:#55575d;font-size:11px;letter-spacing:.2em}
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.04em}.sw>span{display:inline-block;transform:translateY(105%) rotate(4deg);transition:transform .9s cubic-bezier(.2,.8,.2,1)}.sin .sw>span{transform:none}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.35);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}.btn,.opt,.rbtn{position:relative;overflow:hidden}@keyframes rip{to{transform:scale(1);opacity:0}}
+.hgl{position:absolute;inset:0;width:100%;height:100%;z-index:0}.hbg.gl picture{visibility:hidden}.hbg:after{z-index:1}
+#roata3d{height:420vh;position:relative;z-index:2;background:radial-gradient(ellipse at 50% 40%,#1d1e22,#111214 70%)}
+#roata3d .pin{position:sticky;top:0;height:100svh;overflow:hidden}
+#r3stage{position:absolute;inset:0}#r3stage canvas{display:block;width:100%!important;height:100%!important;cursor:grab}#r3stage canvas:active{cursor:grabbing}
+.r3ui{position:absolute;left:0;right:0;z-index:3;padding:0 20px;pointer-events:none}.r3ui *{pointer-events:auto}
+.r3top{top:78px}.r3bot{bottom:96px;display:flex;flex-direction:column;gap:10px;align-items:stretch}
+.r3ch{position:absolute;left:20px;right:20px;top:0;opacity:0;transform:translateY(16px);transition:.5s;pointer-events:none}.r3ch.on{opacity:1;transform:none}
+.r3ch h3{font-size:clamp(38px,9vw,84px);font-weight:900}.r3ch h3 em{font-style:normal;color:var(--ac)}.r3ch p{color:#c5c4bf;max-width:420px;font-size:15px;margin-top:6px}
+.r3row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.rbtn{font:700 15px "Barlow Condensed","Arial Narrow",sans-serif;text-transform:uppercase;padding:9px 14px;border-radius:999px;border:1.5px solid #3a3c42;background:rgba(17,18,20,.75);color:var(--tx);cursor:pointer;backdrop-filter:blur(6px)}.rbtn.on{border-color:var(--ac);color:#111;background:var(--ac)}
+.rbtn:hover{border-color:var(--ac)}
+.r3sl{display:flex;align-items:center;gap:10px;background:rgba(17,18,20,.75);border:1px solid var(--line);border-radius:14px;padding:8px 12px;font-size:13px;backdrop-filter:blur(6px)}.r3sl input{flex:1;accent-color:var(--ac);min-width:0}.r3sl b{min-width:62px;text-align:right;color:var(--ac)}
+#treadw{font-size:12px}#treadw.bad{color:#ff6b4a}#treadw.mid{color:#ffb020}#treadw.ok{color:#8bd47a}
+.r3hint{position:absolute;right:20px;top:50%;writing-mode:vertical-rl;font-size:11px;letter-spacing:.25em;color:var(--mu);z-index:3;pointer-events:none}
+#r3bar{position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--ac);transform-origin:0 50%;transform:scaleX(0);z-index:4}
+#roata3d .fb{display:none;position:absolute;inset:0;align-items:center;justify-content:center;color:var(--mu);padding:30px;text-align:center}#roata3d.fallback .fb{display:flex}
+.lay{position:absolute;pointer-events:none;z-index:1;will-change:transform}.lay.txt{font-family:"Barlow Condensed","Arial Narrow",Impact;font-weight:900;font-size:clamp(90px,26vw,320px);color:transparent;-webkit-text-stroke:1.5px rgba(255,196,0,.45);white-space:nowrap;left:-4vw;top:12%;line-height:1;text-transform:uppercase}
+.lay.trd{left:-10%;width:120%;bottom:18%;height:90px;opacity:.55}.lay.trd path{stroke:#000;stroke-width:26;fill:none;stroke-dasharray:14 9}
+.px .wrap{z-index:3}
+.copyb{display:inline-flex;gap:8px;align-items:center;margin-top:12px;font:600 13px Barlow,system-ui;letter-spacing:.08em;text-transform:uppercase;color:var(--tx);background:#1d1e22;border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;transition:.3s}.copyb.ok{background:#1f3a1a;border-color:#5fbf52;color:#bff0b6}
+#toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,30px);opacity:0;z-index:210;background:#e9e7e2;color:#111;padding:12px 18px;border-radius:12px;font-weight:600;transition:.35s;pointer-events:none;max-width:90vw;text-align:center}#toast.on{opacity:1;transform:translate(-50%,0)}
+.res.pop{animation:pop .45s cubic-bezier(.3,1.6,.5,1)}@keyframes pop{0%{transform:scale(.96)}100%{transform:none}}
+.card:active .ci{transform:scale(.97)}.opt:active{transform:scale(.98)}
+@media(min-width:900px){.r3top{top:110px;left:6vw;right:auto;width:44vw}.r3ch{left:0;right:0}.r3bot{left:auto;right:6vw;bottom:60px;width:min(420px,34vw)}#toast{bottom:40px}}
+@media (prefers-reduced-motion:reduce){#intro{display:none}.sw>span{transform:none!important}#roata3d{height:auto}#roata3d .pin{position:relative;height:100svh}.r3ch{position:relative;opacity:1;transform:none;margin-bottom:10px}.r3ch:not(:first-child){display:none}.lay{transform:none!important}}
+body:not(.ready) h1 .ln span,body:not(.ready) .hsub,body:not(.ready) .hcta{animation-play-state:paused}@media(max-width:899px){.px.wide .lay{display:none}}.marq{position:relative;z-index:5}</style>
+</head>
+<body>
+<div id="intro" aria-hidden="true"><svg viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet"><g class="iclip"><path class="itrm" d="M-20 250 C 300 230, 600 260, 1020 240"/></g><g class="iw"><circle cx="0" cy="190" r="70" fill="#1a1b1e" stroke="#000" stroke-width="10" stroke-dasharray="9 6"/><circle cx="0" cy="190" r="46" fill="#9a9ba0"/><circle cx="0" cy="190" r="38" fill="#1b1c20"/><g fill="#c2c3c7"><rect x="-5" y="152" width="10" height="34"/><rect x="-5" y="194" width="10" height="34"/><rect x="-38" y="185" width="34" height="10"/><rect x="4" y="185" width="34" height="10"/></g><circle cx="0" cy="190" r="9" fill="#ffc400"/></g></svg>
+<div class="it"><span class="y" style="--x:-120px;--y:-90px;--r:-60deg;animation-delay:1.00s">G</span><span class="y" style="--x:80px;--y:120px;--r:40deg;animation-delay:1.06s">S</span><span class="" style="--x:0px;--y:0px;--r:0deg;animation-delay:1.12s">&nbsp;</span><span class="" style="--x:-60px;--y:-140px;--r:90deg;animation-delay:1.18s">Q</span><span class="" style="--x:140px;--y:70px;--r:-30deg;animation-delay:1.24s">U</span><span class="" style="--x:-90px;--y:110px;--r:70deg;animation-delay:1.30s">I</span><span class="" style="--x:60px;--y:-120px;--r:-80deg;animation-delay:1.36s">C</span><span class="" style="--x:-150px;--y:60px;--r:30deg;animation-delay:1.42s">K</span><span class="" style="--x:0px;--y:0px;--r:0deg;animation-delay:1.48s">&nbsp;</span><span class="" style="--x:110px;--y:-80px;--r:-50deg;animation-delay:1.54s">S</span><span class="" style="--x:-70px;--y:140px;--r:60deg;animation-delay:1.60s">E</span><span class="" style="--x:90px;--y:-60px;--r:-90deg;animation-delay:1.66s">R</span><span class="" style="--x:-40px;--y:100px;--r:20deg;animation-delay:1.72s">V</span></div><div class="is">Vulcanizare · AC auto · Ulei · Cluj-Napoca</div><div class="skip">ATINGE PENTRU A SĂRI</div></div>
+<div id="prog"></div><div id="toast" role="status" aria-live="polite"></div><div id="cur"></div><div id="cur2"></div>
+<nav id="nav">
+ <a href="#hero" class="logo"><b>GS</b>QUICK SERV</a>
+ <div class="navl"><a href="#servicii">Servicii</a><a href="#roata3d">3D</a><a href="#cap">Cum lucrăm</a><a href="#alege">Alege</a><a href="#recenzii">Recenzii</a><a href="#contact">Contact</a></div>
+ <a href="tel:+40759330370" class="btn sm mag">Sună</a>
+</nav>
+
+<section id="hero">
+ <div class="sweep"></div><div class="sweep r"></div>
+ <svg class="tread" style="top:16%" viewBox="0 0 1440 120" preserveAspectRatio="none"><path class="m tr" d="M-20 80 C 400 20, 900 120, 1460 40"/><path class="tr" d="M-20 80 C 400 20, 900 120, 1460 40"/></svg>
+ <svg class="tread" style="bottom:8%" viewBox="0 0 1440 120" preserveAspectRatio="none"><path class="m tr" d="M-20 30 C 500 110, 1000 0, 1460 90"/><path class="tr" d="M-20 30 C 500 110, 1000 0, 1460 90"/></svg>
+ <div class="wrap herog">
+  <div>
+   <div class="kick">Cluj-Napoca · Bd. 1 Decembrie 1918 nr. 106</div>
+   <h1><span class="ln"><span>Vulcanizare</span></span><span class="ln"><span>AC auto</span></span><span class="ln"><span>Ulei.</span></span></h1>
+   <p class="hsub">Anvelope, încărcare freon la climatizare și schimb de ulei, într-un singur loc. Sună, programează-te și treci pe la noi.</p>
+   <div class="hcta"><a href="tel:+40759330370" class="btn mag">☎ 0759 330 370</a><a href="#servicii" class="btn gh mag">Vezi serviciile</a></div>
+  </div>
+  <div class="wheel"><div class="glow"></div>
+   <svg viewBox="0 0 520 520" aria-hidden="true">
+    <defs>
+     <radialGradient id="tg" cx="50%" cy="50%" r="50%"><stop offset="78%" stop-color="#1a1b1e"/><stop offset="100%" stop-color="#0a0a0b"/></radialGradient>
+     <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9d9dc"/><stop offset=".5" stop-color="#6c6e74"/><stop offset="1" stop-color="#c2c3c7"/></linearGradient>
+    </defs>
+    <g id="rim">
+     <circle cx="260" cy="260" r="250" fill="url(#tg)"/>
+     <g id="treadg" stroke="#000" stroke-width="10"></g>
+     <circle cx="260" cy="260" r="200" fill="#0d0d0f"/>
+     <text font-family="Barlow Condensed" font-weight="700" font-size="17" fill="#3d3f45" letter-spacing="6"><textPath href="#tp">GS QUICK SERV · VULCANIZARE · CLUJ-NAPOCA · GS QUICK SERV · VULCANIZARE ·</textPath></text>
+     <path id="tp" d="M260 40 a220 220 0 1 1 -0.1 0" fill="none"/>
+     <circle cx="260" cy="260" r="168" fill="url(#rg)"/>
+     <circle cx="260" cy="260" r="156" fill="#1b1c20"/>
+     <g id="spokes" fill="url(#rg)"></g>
+     <circle cx="260" cy="260" r="50" fill="url(#rg)"/>
+     <circle cx="260" cy="260" r="38" fill="#111"/>
+     <g id="nuts" fill="#9a9ba0"></g>
+     <circle cx="260" cy="260" r="14" fill="#ffc400"/>
+    </g>
+   </svg>
+  </div>
+ </div>
+ <div class="scrollh">SCROLL ↓</div>
+</section>
+
+<div class="marq" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="servicii" class="sec">
+ <div class="wrap">
+  <h2 class="rv">Ce <em>facem</em></h2>
+  <p class="lead rv">Patru servicii, făcute la obiect. Treci cu mouse-ul sau atinge un card.</p>
+  <div class="cards">
+   <div class="card rv" data-s="0"><div class="ci">
+    <div class="fa"><span class="n">01</span>
+     <svg class="ic" viewBox="0 0 120 120"><g class="slide"><g class="spin"><circle cx="60" cy="60" r="40" fill="none" stroke="#e9e7e2" stroke-width="12" stroke-dasharray="6 3"/><circle cx="60" cy="60" r="20" fill="none" stroke="#ffc400" stroke-width="5"/><path d="M60 40v40M40 60h40" stroke="#ffc400" stroke-width="4"/></g></g></svg>
+     <h3>Vulcanizare</h3><div class="hint">Întoarce ↻</div></div>
+    <div class="fa b"><h3>Vulcanizare</h3><p>Pana sau roata care pierde aer? Trece pe la noi și o rezolvăm.</p><a href="tel:+40759330370" class="btn sm">Sună acum</a></div>
+   </div></div>
+   <div class="card rv" data-s="1"><div class="ci">
+    <div class="fa"><span class="n">02</span>
+     <svg class="ic" viewBox="0 0 120 120"><path d="M15 75 A48 48 0 0 1 105 75" fill="none" stroke="#2f3136" stroke-width="10"/><path d="M15 75 A48 48 0 0 1 60 27" fill="none" stroke="#e9e7e2" stroke-width="10"/><path d="M60 27 A48 48 0 0 1 105 75" fill="none" stroke="#ffc400" stroke-width="10"/><g class="needle"><path d="M60 70 L60 32" stroke="#ff7a00" stroke-width="4" stroke-linecap="round"/></g><circle cx="60" cy="70" r="7" fill="#e9e7e2"/><text x="60" y="100" text-anchor="middle" fill="#8e8f94" font-family="Barlow Condensed" font-size="14" letter-spacing="2">BAR</text></svg>
+     <h3>Anvelope</h3><div class="hint">Întoarce ↻</div></div>
+    <div class="fa b"><h3>Servicii anvelope</h3><p>Tot ce ține de anvelope, la vulcanizare pe Bd. 1 Decembrie 1918.</p><a href="tel:+40759330370" class="btn sm">Sună acum</a></div>
+   </div></div>
+   <div class="card rv" data-s="2"><div class="ci">
+    <div class="fa"><span class="n">03</span>
+     <svg class="ic" viewBox="0 0 120 120"><g class="flake" stroke="#7fd3ff" stroke-width="5" stroke-linecap="round"><path d="M60 18v84M24 39l72 42M24 81l72-42"/><path d="M52 24l8 8 8-8M52 96l8-8 8 8M28 50l11-3-3-11M92 70l-11 3 3 11M28 70l11 3-3 11M92 50l-11-3 3-11"/></g><circle class="puff" cx="96" cy="30" r="6" fill="#7fd3ff"/><circle class="puff" cx="22" cy="34" r="5" fill="#7fd3ff"/><circle class="puff" cx="90" cy="96" r="5" fill="#7fd3ff"/></svg>
+     <h3>AC auto</h3><div class="hint">Întoarce ↻</div></div>
+    <div class="fa b"><h3>Încărcare AC</h3><p>Încărcarea instalației de aer condiționat auto cu agent frigorific (freon).</p><a href="tel:+40759330370" class="btn sm">Sună acum</a></div>
+   </div></div>
+   <div class="card rv" data-s="3"><div class="ci">
+    <div class="fa"><span class="n">04</span>
+     <svg class="ic" viewBox="0 0 120 120"><defs><clipPath id="dc"><path d="M60 10 C60 10 22 56 22 76 a38 38 0 0 0 76 0 C98 56 60 10 60 10Z"/></clipPath></defs><g clip-path="url(#dc)"><rect class="fill" x="0" y="0" width="120" height="120" fill="#ffc400" style="transform-origin:0 120px"/></g><path d="M60 10 C60 10 22 56 22 76 a38 38 0 0 0 76 0 C98 56 60 10 60 10Z" fill="none" stroke="#e9e7e2" stroke-width="5"/><circle class="drip" cx="60" cy="0" r="4" fill="#ffc400"/></svg>
+     <h3>Schimb ulei</h3><div class="hint">Întoarce ↻</div></div>
+    <div class="fa b"><h3>Schimb de ulei</h3><p>Schimbul de ulei se face pe loc, la același atelier.</p><a href="tel:+40759330370" class="btn sm">Sună acum</a></div>
+   </div></div>
+  </div>
+ </div>
+</section>
+
+<section id="roata3d" aria-label="Roată 3D interactivă"><div class="pin"><div id="r3stage"></div><div class="fb">Modelul 3D nu poate fi afișat pe acest dispozitiv (WebGL indisponibil).</div>
+<div class="r3ui r3top">
+ <div class="r3ch on"><div class="kick">Roata 3D · 01</div><h3>Trage. <em>Rotește.</em></h3><p>Model 3D al unei roți. Trage cu degetul sau mouse-ul ca s-o rotești, ciupește pentru zoom.</p></div>
+ <div class="r3ch"><div class="kick">Roata 3D · 02</div><h3>Janta <em>în detaliu</em></h3><p>Spițe, butuc și prezoane, din toate unghiurile.</p></div>
+ <div class="r3ch"><div class="kick">Roata 3D · 03</div><h3>Profilul <em>contează</em></h3><p>Adâncimea minimă legală a profilului este 1,6 mm.</p></div>
+ <div class="r3ch"><div class="kick">Roata 3D · 04</div><h3>Presiunea <em>corectă</em></h3><p>Valoarea recomandată e pe eticheta din portieră sau în cartea mașinii.</p></div>
+</div>
+<div class="r3hint">SCROLL ↓ · TRAGE ↔</div>
+<div id="r3bar"></div></div></section>
+<section id="cap">
+ <div class="pin">
+  <div class="chap on"><div class="wrap"><div class="kick">Pasul 1</div><h3>Suni.<br><em>Te programăm.</em></h3><p>Un telefon la 0759 330 370 și știi când să vii.</p></div><div class="big">01</div></div>
+  <div class="chap"><div class="wrap"><div class="kick">Pasul 2</div><h3>Vii pe<br><em>1 Decembrie.</em></h3><p>Bulevardul 1 Decembrie 1918 nr. 106, Cluj-Napoca. Intrarea e accesibilă și pentru scaun cu rotile.</p></div><div class="big">02</div></div>
+  <div class="chap"><div class="wrap"><div class="kick">Pasul 3</div><h3>Lucrăm<br><em>la obiect.</em></h3><p>Anvelope, freon pentru AC sau ulei, ce ai nevoie.</p></div><div class="big">03</div></div>
+  <div class="chap"><div class="wrap"><div class="kick">Pasul 4</div><h3>Pleci<br><em>la drum.</em></h3><p>Roți în regulă, aer rece în mașină, ulei proaspăt.</p></div><div class="big">04</div></div>
+  <div class="dots"><i class="on"></i><i></i><i></i><i></i></div><div class="chline" id="chline"></div>
+ </div>
+</section>
+
+<section id="alege" class="sec">
+ <div class="wrap selg">
+  <div><h2 class="rv">Alege<br><em>serviciul</em></h2><p class="lead rv">Spune-ne ce-ți trebuie și te ducem direct la telefon.</p>
+   <div class="res" id="res"><h4>Nimic ales încă</h4><p>Apasă pe unul dintre servicii.</p></div>
+  </div>
+  <div class="sel" id="sel">
+   <button class="opt" data-i="0"><span class="k"></span>Vulcanizare</button>
+   <button class="opt" data-i="1"><span class="k"></span>Servicii anvelope</button>
+   <button class="opt" data-i="2"><span class="k"></span>Încărcare AC (freon)</button>
+   <button class="opt" data-i="3"><span class="k"></span>Schimb de ulei</button>
+  </div>
+ </div>
+</section>
+
+<section id="recenzii"><div class="wrap"><h2 class="rv">Ce spun <em>clienții</em></h2><div class="rhead rv"><span class="rscore">5,0</span><div><div class="stars"><span style="animation-delay:0.00s">★</span><span style="animation-delay:0.09s">★</span><span style="animation-delay:0.18s">★</span><span style="animation-delay:0.27s">★</span><span style="animation-delay:0.36s">★</span></div></div></div></div><div class="rtrack rv2"><article class="rc"><div class="stars" aria-label="5 din 5 stele"><span style="animation-delay:0.00s">★</span><span style="animation-delay:0.09s">★</span><span style="animation-delay:0.18s">★</span><span style="animation-delay:0.27s">★</span><span style="animation-delay:0.36s">★</span></div><q>De fiecare data cand am nevoie de service de vulcanizare, aici ma duc. M-am chinuit cu tot felul de service-uri ce nu stiu sa se organizeze si lucreaza prost, aici vin de 4 ani si nu am avut niciodata vreo problema. Sun, ma programeaza, imi rezolva la ora stabilita si gata… se rezolva rapid, la obiect si intr-un mod profesional.</q><div class="m"><span>Recenzie Google</span><span>27.11.2025</span></div></article><article class="rc"><div class="stars" aria-label="5 din 5 stele"><span style="animation-delay:0.00s">★</span><span style="animation-delay:0.09s">★</span><span style="animation-delay:0.18s">★</span><span style="animation-delay:0.27s">★</span><span style="animation-delay:0.36s">★</span></div><q>Am apelat la acest service auto pentru vulcanizare și încărcare freon, iar experiența a fost una foarte bună! 🚗❄️ … Profesionalism: Folosește echipamente bune și respectă standardele industriei. Rapiditate: Servicii eficiente, fără întârzieri. Prețuri corecte: Tarife transparente și accesibile. Comunicare excelentă: Te ține la curent pe tot parcursul procesului.</q><div class="m"><span>Recenzie Google</span><span>07.10.2025</span></div></article><article class="rc"><div class="stars" aria-label="5 din 5 stele"><span style="animation-delay:0.00s">★</span><span style="animation-delay:0.09s">★</span><span style="animation-delay:0.18s">★</span><span style="animation-delay:0.27s">★</span><span style="animation-delay:0.36s">★</span></div><q>Servicii de calitate și profesionalism!!</q><div class="m"><span>Recenzie Google</span><span>18.08.2025</span></div></article><article class="rc"><div class="stars" aria-label="5 din 5 stele"><span style="animation-delay:0.00s">★</span><span style="animation-delay:0.09s">★</span><span style="animation-delay:0.18s">★</span><span style="animation-delay:0.27s">★</span><span style="animation-delay:0.36s">★</span></div><q>Punctualitate rapiditate</q><div class="m"><span>Recenzie Google</span><span>17.08.2025</span></div></article><article class="rc"><div class="stars" aria-label="5 din 5 stele"><span style="animation-delay:0.00s">★</span><span style="animation-delay:0.09s">★</span><span style="animation-delay:0.18s">★</span><span style="animation-delay:0.27s">★</span><span style="animation-delay:0.36s">★</span></div><q>Recomand .</q><div class="m"><span>Recenzie Google</span><span>18.08.2025</span></div></article></div></section>
+<section id="contact" class="sec">
+ <div class="wrap">
+  <h2 class="rv">Hai <em>pe la noi</em></h2>
+  <div class="cg">
+   <div style="display:grid;gap:18px">
+    <a class="box mag2" href="tel:+40759330370"><div class="l">Telefon · apasă să suni</div><div class="v ph">0759 330 370</div></a>
+    <a class="box" href="https://maps.google.com/?q=GS+Quick+Serv,+Bulevardul+1+Decembrie+1918+106,+Cluj-Napoca" target="_blank" rel="noopener"><div class="l">Adresă · deschide în Maps ↗</div><div class="v">Bd. 1 Decembrie 1918 nr. 106</div><div style="color:var(--mu);margin-top:6px">Cluj-Napoca</div></a>
+    <div class="box"><div class="l">Program</div>
+     <table id="prg"><tr data-d="1"><td>Luni – Vineri</td><td>09:00 – 18:00</td></tr><tr data-d="6"><td>Sâmbătă</td><td>09:00 – 13:30</td></tr><tr data-d="0"><td>Duminică</td><td>Închis</td></tr></table>
+     <p class="note">Programul poate varia. Sună înainte să vii.</p></div>
+   </div>
+   <div class="map" id="map"><div class="mph"><div class="cond" style="font-size:34px">Harta Google</div><p>Harta este furnizată de Google și setează cookie-uri. O încărcăm doar cu acordul tău.</p><button class="btn sm" id="loadmap">Încarcă harta</button><a class="btn sm gh" href="https://maps.google.com/?q=GS+Quick+Serv,+Bulevardul+1+Decembrie+1918+106,+Cluj-Napoca" target="_blank" rel="noopener">Deschide în Google Maps ↗</a></div></div>
+  </div>
+ </div>
+</section>
+
+<footer><div class="wrap"><div class="fbig">GS Quick Serv</div>
+<div class="fg">
+ <div><b>GS QUICK SERV SRL</b><br>CUI 33764209 · Nr. Reg. Com. J12/3169/2014<br>Sediu social: Str. Ceahlău nr. 25, Cluj-Napoca, jud. Cluj<br>Punct de lucru: Bd. 1 Decembrie 1918 nr. 106, Cluj-Napoca<br>Tel.: <a href="tel:+40759330370">0759 330 370</a> · E-mail: <span class="ph">[email de completat]</span></div>
+ <div class="fl"><a href="politica-confidentialitate.html">Politica de confidențialitate</a><a href="politica-cookies.html">Politica de cookie-uri</a><a href="termeni-si-conditii.html">Termeni și condiții</a><a href="#" data-ck>Setări cookie</a><a href="https://anpc.ro" target="_blank" rel="noopener">ANPC – anpc.ro</a></div>
+ <div class="anpc"><a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener" class="pg"><small>Soluționarea alternativă a litigiilor</small><b>ANPC · SAL</b></a></div>
+</div>
+<p class="upd">Ultima actualizare: 13.10.2026 · © GS QUICK SERV SRL</p></div></footer>
+
+<a href="tel:+40759330370" class="btn mcall" id="mcall"><span class="pulse"></span>Sună: 0759 330 370</a>
+
+<script>
+(()=>{
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const ns='http://www.w3.org/2000/svg',$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+// build wheel
+const tg=$('#treadg'),sp=$('#spokes'),nu=$('#nuts');
+for(let i=0;i<48;i++){const a=i*7.5*Math.PI/180,l=document.createElementNS(ns,'line');l.setAttribute('x1',260+232*Math.cos(a));l.setAttribute('y1',260+232*Math.sin(a));l.setAttribute('x2',260+250*Math.cos(a+.05));l.setAttribute('y2',260+250*Math.sin(a+.05));tg.appendChild(l)}
+for(let i=0;i<5;i++){const p=document.createElementNS(ns,'path');p.setAttribute('d','M248 214 L238 112 Q260 100 282 112 L272 214 Z');p.setAttribute('transform',`rotate(${i*72} 260 260)`);sp.appendChild(p);
+ const c=document.createElementNS(ns,'circle'),a=(i*72-90)*Math.PI/180;c.setAttribute('cx',260+26*Math.cos(a));c.setAttribute('cy',260+26*Math.sin(a));c.setAttribute('r',5);nu.appendChild(c)}
+$('#mq').innerHTML=Array(2).fill('<span>Vulcanizare</span><span>✦</span><span>Anvelope</span><span>✦</span><span>Încărcare AC freon</span><span>✦</span><span>Schimb ulei</span><span>✦</span><span>Cluj-Napoca</span><span>✦</span>').join('');
+// tread draw
+$$('.tr').forEach(p=>{const L=p.getTotalLength();p.style.strokeDashoffset=RM?0:L;p.dataset.l=L});
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+$$('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*.08+'s';io.observe(el)});
+// scroll
+const rim=$('#rim'),prog=$('#prog'),nav=$('#nav'),cap=$('#cap'),ch=$$('.chap'),dots=$$('.dots i'),chl=$('#chline'),mc=$('#mcall');
+let lastC=-1;
+function onS(){const y=scrollY,H=document.documentElement.scrollHeight-innerHeight;
+ prog.style.transform=`scaleX(${H>0?y/H:0})`;nav.classList.toggle('s',y>40);mc.classList.toggle('on',y>innerHeight*.6);
+ if(!RM){rim.style.transform=`rotate(${y*.35}deg)`;
+  const t=Math.min(1,y/(innerHeight*.8));$$('.tr').forEach(p=>p.style.strokeDashoffset=p.dataset.l*(1-Math.max(t,.0001)));
+  const r=cap.getBoundingClientRect(),pp=Math.min(.999,Math.max(0,-r.top/(r.height-innerHeight))),idx=Math.floor(pp*4);
+  chl.style.width=pp*100+'%';if(idx!==lastC){lastC=idx;ch.forEach((c,i)=>c.classList.toggle('on',i===idx));dots.forEach((d,i)=>d.classList.toggle('on',i===idx))}}
+}
+addEventListener('scroll',()=>requestAnimationFrame(onS),{passive:true});onS();
+// intro: tread draw on load a bit
+if(!RM){let s=0;const st=performance.now();(function a(n){const k=Math.min(1,(n-st)/1600);if(scrollY<5)$$('.tr').forEach(p=>p.style.strokeDashoffset=p.dataset.l*(1-k*.6));if(k<1)requestAnimationFrame(a)})(st)}
+// cards tap
+$$('.card').forEach(c=>c.addEventListener('click',e=>{if(e.target.closest('a'))return;if(matchMedia('(hover:none)').matches)c.classList.toggle('f')}));
+// selector
+const D=[['Vulcanizare','Pana, roată care pierde aer? Sună și spune-ne ce s-a întâmplat.'],['Servicii anvelope','Sună și te programăm pentru anvelope.'],['Încărcare AC (freon)','Nu mai răcește aerul condiționat? Sună pentru încărcarea instalației cu agent frigorific.'],['Schimb de ulei','Sună și stabilim când treci pentru schimbul de ulei.']];
+const res=$('#res');
+$$('.opt').forEach(o=>o.addEventListener('click',()=>{$$('.opt').forEach(x=>x.classList.toggle('on',x===o));const d=D[o.dataset.i];
+ res.classList.add('on');res.innerHTML=`<h4>${d[0]}</h4><p>${d[1]}</p><a href="tel:+40759330370" class="btn mag">☎ Sună acum: 0759 330 370</a>`;
+ $$('.card').forEach(c=>{c.style.outline=c.dataset.s===o.dataset.i?'2px solid #ffc400':'';c.style.borderRadius='18px'});bindMag()}));
+// today
+const dw=new Date().getDay(),k=dw===0?'0':dw===6?'6':'1';const tr=$(`#prg tr[data-d="${k}"]`);tr&&tr.classList.add('today');
+// magnetic
+function bindMag(){if(RM||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;$$('.mag').forEach(b=>{if(b._m)return;b._m=1;
+ b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.3}px,${(e.clientY-r.top-r.height/2)*.4}px)`});
+ b.addEventListener('mouseleave',()=>b.style.transform='')})}
+bindMag();
+// cursor
+if(!RM&&matchMedia('(hover:hover) and (pointer:fine) and (min-width:900px)').matches){document.body.classList.add('cc');const c1=$('#cur'),c2=$('#cur2');let x=-99,y=-99,x2=-99,y2=-99;
+ addEventListener('mousemove',e=>{x=e.clientX;y=e.clientY;c1.style.transform=`translate(${x}px,${y}px)`;c2.classList.toggle('big',!!e.target.closest('a,button,.card'))});
+ (function l(){x2+=(x-x2)*.18;y2+=(y-y2)*.18;c2.style.transform=`translate(${x2}px,${y2}px)`;requestAnimationFrame(l)})()}
+})();
+</script>
+<script>(()=>{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});document.querySelectorAll('.rv2').forEach(el=>io.observe(el))})();</script>
+<script src="assets/three.min.js"></script><script src="assets/app20.js"></script>
+<script>(function(){function show(){document.querySelectorAll('.rv,.rv2').forEach(function(e){var r=e.getBoundingClientRect();if(r.top<innerHeight*1.1&&r.bottom>0)e.classList.add('in')})}
+if(!('IntersectionObserver' in window)){document.querySelectorAll('.rv,.rv2,.splt').forEach(function(e){e.classList.add('in','sin')})}
+addEventListener('scroll',show,{passive:true});addEventListener('load',show);setTimeout(show,1500);
+setTimeout(function(){document.querySelectorAll('#recenzii .rv,#recenzii .rv2').forEach(function(e){if(e.getBoundingClientRect().top<innerHeight)e.classList.add('in')})},3000)})();</script>
+<script src="consent.js"></script>
+</body>
+</html>

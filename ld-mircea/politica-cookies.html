@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Politica de cookie-uri — LD Mircea</title><style>
+:root{--bg:#050d1c;--bg2:#081429;--pan:#0b1a33;--line:#16304f;--tx:#e8f3ff;--mu:#7f97b5;--ac:#22e3ff;--ac2:#3d7bff;--ok:#3dffa8}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden;line-height:1.55}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(34,227,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(34,227,255,.05) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 80%)}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,100% - 40px);margin:0 auto;position:relative;z-index:2}
+h1,h2,h3{font-weight:700;letter-spacing:-.03em;line-height:.95}
+h2{font-size:clamp(40px,8.5vw,96px);margin-bottom:18px}h2 em,h1 em{font-style:normal;color:var(--ac)}
+.tag{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ac);display:inline-flex;gap:10px;align-items:center;margin-bottom:16px}.tag:before{content:"";width:8px;height:8px;background:var(--ac);box-shadow:0 0 12px var(--ac)}
+.lead{color:#b7c8dd;max-width:560px;font-size:18px}
+#prog{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--ac2),var(--ac));z-index:60;box-shadow:0 0 10px var(--ac)}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px 20px;transition:.3s}
+nav.s{background:rgba(5,13,28,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:-.02em}
+.logo i{width:30px;height:30px;border:2px solid var(--ac);border-radius:8px;display:grid;place-items:center;font-style:normal;font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ac);box-shadow:inset 0 0 10px rgba(34,227,255,.3)}
+.logo small{display:block;font-size:10px;color:var(--mu);font-family:"JetBrains Mono",monospace;letter-spacing:.15em;font-weight:500}
+.navl{display:none;gap:24px;font-size:14px;color:#b7c8dd}.navl a:hover{color:var(--ac)}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:10px;background:var(--ac);color:#03101f;font-weight:700;font-size:17px;padding:14px 24px;border-radius:12px;border:0;cursor:pointer;transition:box-shadow .3s,transform .2s;will-change:transform}
+.btn:hover{box-shadow:0 0 0 1px var(--ac),0 0 36px rgba(34,227,255,.5)}
+.btn.gh{background:transparent;color:var(--tx);border:1px solid var(--line)}.btn.gh:hover{border-color:var(--ac)}
+.btn.sm{font-size:14px;padding:9px 16px;border-radius:10px}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.4);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}@keyframes rip{to{transform:scale(1);opacity:0}}
+/* intro */
+#intro{position:fixed;inset:0;z-index:300;background:#030914;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:clip-path .9s cubic-bezier(.7,0,.2,1);clip-path:inset(0 0 0 0)}
+#intro.done{clip-path:inset(0 0 100% 0)}
+#intro svg{width:min(88vw,620px);height:auto;overflow:visible}
+#intro .car{fill:none;stroke:#1d3a60;stroke-width:2.2}
+#intro .car2{fill:none;stroke:var(--ac);stroke-width:2.2;filter:drop-shadow(0 0 6px var(--ac))}
+#intro .scan{clip-path:inset(0 100% 0 0)}#intro.play .scan{animation:scn 1.6s .2s cubic-bezier(.5,0,.3,1) forwards}@keyframes scn{to{clip-path:inset(0 0 0 0)}}
+#intro .laser{position:absolute;top:0;bottom:0;width:2px;left:0;background:var(--ac);box-shadow:0 0 18px 4px var(--ac);opacity:0}
+#intro.play .laser{animation:las 1.6s .2s cubic-bezier(.5,0,.3,1) forwards}@keyframes las{0%{left:0;opacity:1}95%{opacity:1}100%{left:100%;opacity:0}}
+#intro .sv{position:relative}
+#intro .hud{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--mu);letter-spacing:.2em;margin-top:16px;display:flex;gap:18px}
+#intro .hud b{color:var(--ac)}
+#intro .tt{font-size:clamp(34px,10vw,84px);font-weight:700;letter-spacing:-.03em;margin-top:10px;display:flex}
+#intro .tt span{display:inline-block;opacity:0;filter:blur(8px);transform:translateY(20px)}#intro.play .tt span{animation:tin .5s forwards}
+@keyframes tin{60%{opacity:1;filter:blur(0);transform:none;color:var(--ac)}100%{opacity:1;filter:none;transform:none}}
+#intro .skip{position:absolute;bottom:22px;font-family:"JetBrains Mono",monospace;color:#3f5878;font-size:11px;letter-spacing:.2em}
+/* hero */
+#hero{min-height:100svh;position:relative;overflow:hidden;display:flex;align-items:center;padding:110px 0 70px}
+.lay{position:absolute;pointer-events:none;will-change:transform}
+.ring{border:1px solid rgba(34,227,255,.18);border-radius:50%}
+.ring.r1{width:120vmax;height:120vmax;left:50%;top:50%;margin:-60vmax}.ring.r2{width:80vmax;height:80vmax;left:50%;top:50%;margin:-40vmax;border-style:dashed}.ring.r3{width:44vmax;height:44vmax;left:62%;top:52%;margin:-22vmax;border-color:rgba(61,123,255,.35)}
+.bigt{font-weight:700;font-size:clamp(110px,30vw,380px);color:transparent;-webkit-text-stroke:1px rgba(34,227,255,.16);letter-spacing:-.05em;white-space:nowrap;line-height:1}
+.hg{display:grid;gap:34px;align-items:center}.hg>*{min-width:0}
+h1{font-size:clamp(46px,12vw,118px)}
+h1 .ln{display:block;overflow:hidden}h1 .ln>span{display:block;transform:translateY(110%)}
+body.ready h1 .ln>span{animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}body.ready h1 .ln:nth-child(2)>span{animation-delay:.12s}body.ready h1 .ln:nth-child(3)>span{animation-delay:.24s}@keyframes up{to{transform:none}}
+.hsub{color:#b7c8dd;font-size:18px;max-width:500px;margin:22px 0 28px;opacity:0}body.ready .hsub,body.ready .hcta,body.ready .hud2{animation:fi .8s .5s forwards}@keyframes fi{to{opacity:1}}
+.hcta{display:flex;flex-wrap:wrap;gap:12px;opacity:0}
+.hud2{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px;opacity:0;max-width:520px}
+.hud2 div{border:1px solid var(--line);border-radius:12px;padding:12px;background:rgba(11,26,51,.6)}.hud2 b{display:block;font-size:22px;color:var(--ac)}.hud2 span{font-size:11px;color:var(--mu);font-family:"JetBrains Mono",monospace;letter-spacing:.06em}
+.gauge{width:min(82vw,460px);justify-self:center;position:relative}
+.gauge svg{width:100%;height:auto;display:block}
+.gneedle{transform-origin:200px 200px;transition:transform .15s}
+.gscan{transform-origin:200px 200px;animation:spin 6s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+/* marquee */
+.marq{position:relative;z-index:5;background:var(--ac);color:#03101f;overflow:hidden;border-block:1px solid #7ff0ff;box-shadow:0 0 40px rgba(34,227,255,.35)}
+.marq div{display:flex;gap:34px;white-space:nowrap;padding:13px 0;font-weight:700;font-size:24px;letter-spacing:-.01em;width:max-content;animation:mq 26s linear infinite}
+.marq span.d{font-family:"JetBrains Mono",monospace;opacity:.6}@keyframes mq{to{transform:translateX(-50%)}}
+section{position:relative;z-index:2}.sec{padding:110px 0}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+/* services */
+.svc{display:grid;gap:14px;margin-top:44px}
+.sv{position:relative;border:1px solid var(--line);border-radius:16px;padding:22px;background:linear-gradient(160deg,#0c1d3a,#071328);overflow:hidden;cursor:pointer;transition:border-color .3s,transform .3s;display:flex;gap:16px;align-items:flex-start}
+.sv:before{content:"";position:absolute;inset:0;background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),rgba(34,227,255,.16),transparent 60%);opacity:0;transition:.3s}
+.sv:hover:before,.sv.act:before{opacity:1}.sv:hover,.sv.act{border-color:var(--ac)}
+.sv .ico{width:52px;height:52px;flex:none}.sv h3{font-size:22px;letter-spacing:-.02em}.sv p{color:#9fb3cc;font-size:15px;margin-top:4px}
+.sv .k{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--mu);position:absolute;right:16px;top:14px}
+.ico .p{stroke:var(--ac);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.sv:hover .ico .an,.sv.act .ico .an{animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{50%{opacity:.25}}
+.blink{animation:bl 1.4s steps(2) infinite}@keyframes bl{50%{opacity:.2}}
+.rot{transform-origin:26px 26px;animation:spin 4s linear infinite}
+/* 3D pinned */
+#scan3d{height:440vh;background:radial-gradient(ellipse at 50% 45%,#0b1f40,#050d1c 70%)}
+#scan3d .pin{position:sticky;top:0;height:100svh;overflow:hidden}
+#stage{position:absolute;inset:0}#stage canvas{display:block;width:100%!important;height:100%!important;cursor:grab;touch-action:pan-y}
+.chs{position:absolute;left:20px;right:20px;top:84px;z-index:3;pointer-events:none}
+.ch{position:absolute;inset:0 0 auto 0;opacity:0;transform:translateY(14px);transition:.5s}.ch.on{opacity:1;transform:none}
+.ch h3{font-size:clamp(34px,8vw,76px)}.ch h3 em{font-style:normal;color:var(--ac)}.ch p{color:#b7c8dd;max-width:440px;margin-top:8px;font-size:16px}
+.ch ul{list-style:none;margin-top:10px;display:grid;gap:6px;font-size:15px;color:#cfe0f3}.ch li:before{content:"▸ ";color:var(--ac)}
+.hudbox{position:absolute;right:20px;bottom:96px;z-index:3;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--mu);letter-spacing:.12em;text-align:right;pointer-events:none}
+.hudbox b{color:var(--ac);font-size:22px;display:block;letter-spacing:0}
+.steps{position:absolute;left:20px;bottom:100px;z-index:3;display:flex;gap:6px}.steps i{width:28px;height:4px;border-radius:2px;background:var(--line);transition:.3s}.steps i.on{background:var(--ac);box-shadow:0 0 8px var(--ac)}
+#bar3{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--ac);transform-origin:0 50%;transform:scaleX(0);z-index:4}
+#scan3d .fb{display:none;position:absolute;inset:0;align-items:center;justify-content:center;color:var(--mu);text-align:center;padding:30px}#scan3d.fallback .fb{display:flex}
+.drg{position:absolute;left:50%;bottom:150px;transform:translateX(-50%);z-index:3;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;color:var(--mu);pointer-events:none;transition:opacity .5s}#scan3d.touched .drg{opacity:0}
+/* parallax band */
+.pband{position:relative;height:70vh;min-height:420px;overflow:hidden;display:flex;align-items:center;border-block:1px solid var(--line);background:linear-gradient(180deg,#050d1c,#071a36 50%,#050d1c)}
+.pband .bigt{left:-5vw;top:8%}.pband .bigt.b2{left:auto;right:-10vw;top:auto;bottom:4%;-webkit-text-stroke-color:rgba(61,123,255,.25)}
+.pband .grid3{position:absolute;inset:-20% -10%;background-image:linear-gradient(rgba(34,227,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(34,227,255,.12) 1px,transparent 1px);background-size:60px 60px;transform:perspective(500px) rotateX(60deg) translateY(30%);transform-origin:50% 100%;opacity:.6}
+.pband .wrap{text-align:center}.pband h2{font-size:clamp(34px,7vw,80px)}
+/* checklist */
+.chk{display:grid;gap:10px;margin-top:30px;max-width:640px}
+.ci{display:flex;gap:14px;align-items:center;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--pan);cursor:pointer;transition:.25s;user-select:none;font-size:17px;text-align:left;color:var(--tx);width:100%;font-family:inherit;position:relative;overflow:hidden}
+.ci .bx{width:26px;height:26px;border:2px solid #2d4f7a;border-radius:7px;flex:none;display:grid;place-items:center;transition:.25s}
+.ci .bx svg{width:16px;height:16px;stroke:#03101f;stroke-width:3;fill:none;stroke-dasharray:24;stroke-dashoffset:24;transition:.35s}
+.ci.on{border-color:var(--ok);background:#082a2a}.ci.on .bx{background:var(--ok);border-color:var(--ok)}.ci.on .bx svg{stroke-dashoffset:0}
+.chkbar{margin-top:16px;max-width:640px;height:8px;border-radius:4px;background:var(--line);overflow:hidden}.chkbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ac2),var(--ok));transition:width .4s}
+.chkmsg{margin-top:10px;font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--mu);min-height:20px}.chkmsg.ok{color:var(--ok)}
+/* limits */
+.lim{display:grid;gap:14px;margin-top:36px}.lim .bx2{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--pan)}.lim h3{font-size:20px;margin-bottom:8px;color:var(--ac)}.lim li{color:#b7c8dd;margin-left:18px;margin-bottom:4px}
+/* reviews */
+#recenzii{padding:100px 0 80px;overflow:hidden}
+.score{display:flex;align-items:center;gap:18px;margin-top:6px}.score b{font-size:64px;line-height:1;color:var(--ac);letter-spacing:-.04em}
+.stars{color:var(--ac);letter-spacing:3px;font-size:18px}.stars span{display:inline-block;opacity:0;transform:scale(.2)}.in .stars span,.stars.in span{animation:st .45s cubic-bezier(.3,1.7,.5,1) forwards}@keyframes st{to{opacity:1;transform:none}}
+.rtr{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:28px 20px 12px;scrollbar-width:none}.rtr::-webkit-scrollbar{display:none}
+.rc{flex:none;width:min(82vw,360px);scroll-snap-align:center;border:1px solid var(--line);border-radius:16px;padding:22px;background:linear-gradient(160deg,#0c1d3a,#071328);display:flex;flex-direction:column;gap:12px;opacity:0;transform:translateY(24px);transition:.7s cubic-bezier(.2,.8,.2,1)}
+.rtr.in .rc{opacity:1;transform:none}.rc q{font-size:17px;quotes:"“" "”"}.rc .dt{margin-top:auto;font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--mu)}
+@media(min-width:900px){.rtr{padding-left:max(20px,calc((100vw - 1180px)/2))}}
+/* contact */
+.cg{display:grid;gap:18px;margin-top:36px}
+.box{border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--pan);display:block}
+.box .l{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;color:var(--mu);text-transform:uppercase;margin-bottom:6px}.box .v{font-size:clamp(26px,6vw,40px);font-weight:700;letter-spacing:-.02em;line-height:1.05}.box .v.ph{color:var(--ac)}
+table{width:100%;border-collapse:collapse;margin-top:6px}td{padding:7px 0;border-bottom:1px solid var(--line)}td+td{text-align:right;font-family:"JetBrains Mono",monospace}tr.today td{color:var(--ac)}
+.note{font-size:13px;color:var(--mu);margin-top:8px}
+.copyb{margin-top:12px;display:inline-flex;gap:8px;align-items:center;font:500 13px "JetBrains Mono",monospace;color:var(--tx);background:#0e2244;border:1px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;transition:.3s;position:relative;overflow:hidden}.copyb.ok{border-color:var(--ok);color:var(--ok)}
+.map{border:1px solid var(--line);border-radius:16px;overflow:hidden;min-height:340px;background:var(--pan)}.map iframe{filter:invert(.9) hue-rotate(180deg) saturate(.7)}
+.mph{padding:28px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;justify-content:center;min-height:340px;color:#b7c8dd}
+#toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,30px);opacity:0;z-index:210;background:var(--tx);color:#03101f;padding:12px 18px;border-radius:12px;font-weight:600;transition:.35s;pointer-events:none;max-width:90vw;text-align:center}#toast.on{opacity:1;transform:translate(-50%,0)}
+/* footer */
+footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px 0 120px;color:var(--mu);font-size:14px}
+.fg{display:grid;gap:24px;line-height:1.7}.fg b{color:var(--tx)}.fg a{text-decoration:underline}.fl{display:flex;flex-direction:column;gap:4px}
+.ph2{background:#0e2a4a;color:var(--ac);padding:0 5px;border-radius:3px}
+.pg{display:flex;flex-direction:column;justify-content:center;width:250px;max-width:100%;height:50px;padding:0 14px;border-radius:8px;background:#fff;text-decoration:none!important;border-left:8px solid var(--ac2)}.pg small{font-size:11px;line-height:1.2;color:#333}.pg b{color:#0b3a7a!important;font-size:16px;line-height:1.2}
+.upd{margin-top:24px;font-size:13px}
+.mcall{position:fixed;left:16px;right:16px;bottom:16px;z-index:55;justify-content:center;box-shadow:0 10px 40px rgba(0,0,0,.6),0 0 30px rgba(34,227,255,.35);transform:translateY(150%);transition:transform .4s}.mcall.on{transform:none}
+.dot{width:9px;height:9px;border-radius:50%;background:#03101f;animation:pu 1.4s infinite}@keyframes pu{0%{box-shadow:0 0 0 0 rgba(3,16,31,.6)}100%{box-shadow:0 0 0 12px rgba(3,16,31,0)}}
+#cur{display:none}
+@media (hover:hover) and (pointer:fine) and (min-width:900px){#cur{display:block;position:fixed;top:0;left:0;width:34px;height:34px;margin:-17px;border:1px solid var(--ac);z-index:100;pointer-events:none;transition:width .2s,height .2s,margin .2s}#cur:before,#cur:after{content:"";position:absolute;background:var(--ac)}#cur:before{left:50%;top:-6px;bottom:-6px;width:1px}#cur:after{top:50%;left:-6px;right:-6px;height:1px}#cur.big{width:60px;height:60px;margin:-30px;border-color:var(--ok)}}
+@media(min-width:900px){.navl{display:flex}.hg{grid-template-columns:1.15fr .85fr}.svc{grid-template-columns:repeat(2,1fr)}.cg{grid-template-columns:1fr 1fr}.fg{grid-template-columns:1.3fr 1fr 1fr}.mcall{display:none}footer{padding-bottom:50px}.lim{grid-template-columns:1fr 1fr}
+.chs{left:6vw;right:auto;width:42vw;top:120px}.hudbox{right:6vw;bottom:60px}.steps{left:6vw;bottom:60px}.drg{bottom:60px}#toast{bottom:40px}}
+@media(min-width:1100px){.svc{grid-template-columns:repeat(4,1fr)}.sv{flex-direction:column}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}#intro{display:none}h1 .ln>span,.hsub,.hcta,.hud2,.rv,.rc,.stars span{opacity:1!important;transform:none!important}#scan3d{height:auto}#scan3d .pin{position:relative}.ch{position:relative;opacity:1;transform:none}.ch:not(:first-child){display:none}.lay{transform:none!important}}
+.legal{padding:120px 0 60px}.legal h1{font-size:clamp(38px,8vw,80px);margin-bottom:14px}.legal h2{font-size:clamp(24px,4vw,34px);margin:36px 0 10px}.legal p,.legal li{color:#c3d3e6;max-width:820px;margin-bottom:10px}.legal ul{padding-left:22px}.legal a{color:var(--ac);text-decoration:underline}.legal table{max-width:900px;font-size:14px}.legal th{text-align:left;padding:8px 6px;border-bottom:1px solid var(--ac)}.legal td{padding:8px 6px;text-align:left!important;vertical-align:top;font-family:inherit}.tw{overflow-x:auto}.warn{border:1px solid var(--ac);background:#0a2240;border-radius:12px;padding:14px 18px;max-width:820px;margin:16px 0}</style></head><body>
+<nav class="s" id="nav"><a href="index.html" class="logo"><i>LD</i><span>LD Mircea<small>ITP · ATELIER AUTO</small></span></a><a href="index.html" class="btn sm gh">← Înapoi la site</a></nav>
+<main class="legal"><div class="wrap"><div class="tag">LD MIRCEA SRL</div><h1>Politica de cookie-uri</h1><p class="warn">Notă: textul este întocmit pe baza datelor publice ale firmei. Câmpurile marcate <span class="ph2">[între paranteze]</span> trebuie completate de LD MIRCEA SRL înainte de publicare. Documentul nu înlocuiește consultanța juridică.</p><p><b>Ultima actualizare: 13.10.2026</b></p>
+<p>Această politică explică ce cookie-uri și tehnologii similare folosește site-ul LD Mircea, operat de LD MIRCEA SRL, CUI 14723571, Nr. Reg. Com. J12/1228/2002, cu sediul social în B-dul Nicolae Titulescu nr. 32, ap. 65, Cluj-Napoca, jud. Cluj, stație ITP și atelier în Str. Oașului nr. 174, Cluj-Napoca, telefon <a href="tel:+40742151132">0742 151 132</a>, e-mail <span class="ph2">[email de completat]</span>. Se aplică Legea nr. 506/2004 (art. 4 alin. (5)) și GDPR.</p>
+<h2>1. Pe scurt</h2><p>Nu setăm cookie-uri proprii. Nu folosim analitică, publicitate sau pixeli de urmărire. Serviciile Google (hartă și fonturi) se încarcă <b>doar după consimțământul tău</b>. Până atunci, site-ul folosește fonturile sistemului și afișează un buton „Încarcă harta”.</p>
+<h2>2. Ce stocăm</h2><div class="tw"><table><tr><th>Nume</th><th>Furnizor</th><th>Tip / scop</th><th>Durată</th><th>Categorie</th></tr>
+<tr><td>ld_consent_v1 (localStorage)</td><td>Site-ul nostru</td><td>Memorează alegerea ta privind cookie-urile</td><td>Până o ștergi din browser</td><td>Strict necesar</td></tr>
+<tr><td>Cookie-uri Google Maps (de ex. NID, AEC, SOCS, __Secure-ENID și altele)</td><td>Google Ireland Ltd (google.com)</td><td>Funcționarea hărții încorporate, preferințe, securitate. Google poate folosi datele conform politicii sale</td><td>Stabilită de Google, de obicei de la sesiune până la ~13 luni</td><td>Servicii externe (cu consimțământ)</td></tr>
+<tr><td>Google Fonts (fonts.googleapis.com, fonts.gstatic.com)</td><td>Google Ireland Ltd</td><td>Descărcarea fonturilor Space Grotesk și JetBrains Mono. Nu setează cookie-uri, dar Google primește adresa IP</td><td>—</td><td>Servicii externe (cu consimțământ)</td></tr></table></div>
+<p>Lista cookie-urilor Google poate varia, deoarece le controlează Google: <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener">policies.google.com/technologies/cookies</a>.</p>
+<h2>3. Cum îți gestionezi acordul</h2><p>La prima vizită alegi Accept, Refuz sau Setări. Îți poți schimba oricând alegerea din linkul <a href="#" data-ck>Setări cookie</a> din subsolul paginii. Poți șterge și datele din setările browserului.</p>
+<h2>4. Contact</h2><p>Întrebări: 0742 151 132 sau <span class="ph2">[email de completat]</span>. Vezi și <a href="politica-confidentialitate.html">Politica de confidențialitate</a>.</p></div></main><footer><div class="wrap"><div class="fg">
+ <div><b>LD MIRCEA SRL</b><br>CUI 14723571 · Nr. Reg. Com. J12/1228/2002<br>Sediu social: B-dul Nicolae Titulescu nr. 32, ap. 65, Cluj-Napoca, jud. Cluj<br>Stație ITP / atelier: Str. Oașului nr. 174, Cluj-Napoca (RAR CJ120)<br>Tel.: <a href="tel:+40742151132">0742 151 132</a> · E-mail: <span class="ph2">[email de completat]</span></div>
+ <div class="fl"><a href="politica-confidentialitate.html">Politica de confidențialitate</a><a href="politica-cookies.html">Politica de cookie-uri</a><a href="termeni-si-conditii.html">Termeni și condiții</a><a href="#" data-ck>Setări cookie</a><a href="https://anpc.ro" target="_blank" rel="noopener">ANPC – anpc.ro</a></div>
+ <div><a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener" class="pg"><small>Soluționarea alternativă a litigiilor</small><b>ANPC · SAL</b></a></div>
+</div><p class="upd">Ultima actualizare: 13.10.2026 · © LD MIRCEA SRL</p></div></footer><script src="consent.js"></script></body></html>
