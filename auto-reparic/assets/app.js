@@ -35,9 +35,7 @@ const bolts=[];for(let i=0;i<7;i++){const b=new THREE.Mesh(new THREE.CylinderGeo
 const MOB=()=>innerWidth<900;
 function vo(){const w=box.clientWidth,h=box.clientHeight;if(!w||!h)return;ren.setSize(w,h,false);
 if(!MOB()){cam.aspect=w/h;cam.clearViewOffset();G.position.set(2.8,0,0);G.scale.setScalar(1);cam.updateProjectionMatrix();return}
-G.position.set(0,0,0);const tx=$('#htx'),ct=$('#hcta');const top=tx.querySelector('.hsub').getBoundingClientRect().bottom-box.getBoundingClientRect().top+16;
-const bot=ct.getBoundingClientRect().top-box.getBoundingClientRect().top-12;const rh=Math.max(120,bot-top);
-G.scale.setScalar(Math.min(1,rh/330));cam.aspect=w/rh;cam.setViewOffset(w,rh,0,-top,w,h);cam.updateProjectionMatrix()}
+G.position.set(0,0,0);G.scale.setScalar(.82);cam.aspect=w/h;cam.clearViewOffset();cam.updateProjectionMatrix()}
 // note: setViewOffset with fullHeight=rh keeps scene framed inside the free band [top,bot]
 function vo2(){vo()}
 vo2();addEventListener('resize',vo2);new ResizeObserver(vo2).observe(box);new ResizeObserver(vo2).observe($('#htx'));setTimeout(vo2,900);setTimeout(vo2,2000);

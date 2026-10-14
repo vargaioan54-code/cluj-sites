@@ -44,7 +44,7 @@ body.past .sticky{display:block}@media(min-width:900px){.sticky{display:none!imp
 </style>
 <style id="nosel">html,body,*{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}input,textarea{-webkit-user-select:text;user-select:text;-webkit-touch-callout:default}html{touch-action:pan-x pan-y}</style>
 <script>document.addEventListener("gesturestart",e=>e.preventDefault());document.addEventListener("dblclick",e=>e.preventDefault(),{passive:false});document.addEventListener("contextmenu",e=>{if(!e.target.closest("input,textarea"))e.preventDefault()});</script>
-</head><body>
+<style id="mobfix">@media(max-width:899px){#hero{height:auto;min-height:0;display:flex;flex-direction:column;padding:96px 0 24px}#htx{order:1;position:relative;z-index:2}#gl{order:2;position:relative;inset:auto;width:100%;height:min(46svh,340px);margin-top:12px}}</style></head><body>
 <nav><a href="#hero" class="logo">AUTO <b>REPARIC</b></a><a class="btn p sm" href="tel:+40761795037">Sună</a></nav>
 <header id="hero"><div id="gl"></div>
 <div class="wrap htx" id="htx"><div class="kick"><i></i>Service auto · Cluj-Napoca</div>
