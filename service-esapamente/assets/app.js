@@ -125,9 +125,11 @@ el.addEventListener('wheel',e=>{if(!e.ctrlKey)return;e.preventDefault();zoom=1,M
 const chs=$$('.ch'),st=$$('.steps i'),b3=$('#bar3'),pc=$('#pct3');
 function sp(){const r=sec.getBoundingClientRect();p=Math.min(1,Math.max(0,-r.top/(r.height-innerHeight)));const i=Math.min(3,Math.floor(p*4));chs.forEach((c,j)=>c.classList.toggle('on',j===i));st.forEach((c,j)=>c.classList.toggle('on',j<=i));b3.style.transform=`scaleX(${p})`;pc.textContent=Math.round(20+p*580)+'°'}
 addEventListener('scroll',sp,{passive:true});sp();
-addEventListener('resize',()=>{ren.setSize(W(),H());cam.aspect=W()/H();cam.updateProjectionMatrix()});
-if(MOB){const vo=()=>{cam.setViewOffset(W(),H(),0,-H()*0.14,W(),H())};vo();addEventListener('resize',vo)}
-new ResizeObserver(()=>{ren.setSize(W(),H());cam.aspect=W()/H();cam.updateProjectionMatrix();if(MOB)cam.setViewOffset(W(),H(),0,-H()*0.14,W(),H())}).observe(stage);
+
+function vo(){const w=W(),h=H();ren.setSize(w,h);if(!MOB){cam.aspect=w/h;cam.clearViewOffset();cam.updateProjectionMatrix();return}
+let tb=0;document.querySelectorAll('#toba .ch').forEach(c=>{tb=Math.max(tb,c.offsetHeight)});const top=84+tb+24,bot=h-200,rh=Math.max(160,bot-top);
+cam.aspect=w/rh;cam.setViewOffset(w,rh,0,-top,w,h);cam.updateProjectionMatrix()}
+vo();addEventListener('resize',vo);new ResizeObserver(vo).observe(stage);setTimeout(vo,1500);
 
 new IntersectionObserver(es=>{vis=es[0].isIntersecting;if(vis)tick()},{rootMargin:'80px'}).observe(sec);
 let yaw=.5,cy=0,exs=0;const hot=new TH.Color();function tick(){if(!vis)return;const t=performance.now()/1000;
