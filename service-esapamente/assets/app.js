@@ -119,9 +119,9 @@ const sm=new TH.PointsMaterial({color:0xb9bfd6,size:MOB?.35:.3,transparent:true,
 const grid=new TH.GridHelper(30,30,0x4b3fa0,0x1a1a28);grid.position.y=-1.8;grid.material.transparent=true;grid.material.opacity=.35;sc.add(grid);
 let uy=0,up=0,zoom=1,drag=null,pin=0,p=0,vis=false;const el=ren.domElement,ptr=new Map();
 el.addEventListener('pointerdown',e=>{ptr.set(e.pointerId,[e.clientX,e.clientY]);try{el.setPointerCapture(e.pointerId)}catch(_){}drag=[e.clientX,e.clientY];sec.classList.add('touched')});
-el.addEventListener('pointermove',e=>{if(!ptr.has(e.pointerId))return;ptr.set(e.pointerId,[e.clientX,e.clientY]);if(ptr.size===2){const [a,b]=[...ptr.values()];const dd=Math.hypot(a[0]-b[0],a[1]-b[1]);if(pin)zoom=Math.min(1.8,Math.max(.7,zoom*dd/pin));pin=dd;return}if(drag){uy+=(e.clientX-drag[0])*.01;up=Math.max(-.6,Math.min(.7,up+(e.clientY-drag[1])*.004));drag=[e.clientX,e.clientY]}});
+el.addEventListener('pointermove',e=>{if(!ptr.has(e.pointerId))return;ptr.set(e.pointerId,[e.clientX,e.clientY]);if(ptr.size===2){const [a,b]=[...ptr.values()];const dd=Math.hypot(a[0]-b[0],a[1]-b[1]);if(pin)zoom=1,Math.min(1.8,Math.max(.7,zoom*dd/pin));pin=dd;return}if(drag){uy+=(e.clientX-drag[0])*.01;up=Math.max(-.6,Math.min(.7,up+(e.clientY-drag[1])*.004));drag=[e.clientX,e.clientY]}});
 const pu=e=>{ptr.delete(e.pointerId);if(ptr.size<2)pin=0;if(!ptr.size)drag=null};el.addEventListener('pointerup',pu);el.addEventListener('pointercancel',pu);
-el.addEventListener('wheel',e=>{if(!e.ctrlKey)return;e.preventDefault();zoom=Math.min(1.8,Math.max(.7,zoom*(e.deltaY>0?.93:1.07)))},{passive:false});
+el.addEventListener('wheel',e=>{if(!e.ctrlKey)return;e.preventDefault();zoom=1,Math.min(1.8,Math.max(.7,zoom*(e.deltaY>0?.93:1.07)))},{passive:false});
 const chs=$$('.ch'),st=$$('.steps i'),b3=$('#bar3'),pc=$('#pct3');
 function sp(){const r=sec.getBoundingClientRect();p=Math.min(1,Math.max(0,-r.top/(r.height-innerHeight)));const i=Math.min(3,Math.floor(p*4));chs.forEach((c,j)=>c.classList.toggle('on',j===i));st.forEach((c,j)=>c.classList.toggle('on',j<=i));b3.style.transform=`scaleX(${p})`;pc.textContent=Math.round(20+p*580)+'°'}
 addEventListener('scroll',sp,{passive:true});sp();
