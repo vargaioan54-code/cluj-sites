@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Politica de cookie-uri — Service Eșapamente Cluj</title><style>
+:root{--bg:#07070a;--bg2:#0c0c12;--pan:#111119;--line:#24243a;--tx:#eceef4;--mu:#8b8ea6;--ac:#8f7dff;--ac2:#3fb2ff;--gold:#e2b86a;--mag:#d0569a;--chr:#cfd5df;--ok:#7ff0c4;
+--heat:linear-gradient(100deg,#e2b86a 0%,#d0569a 30%,#7b5cff 58%,#3fb2ff 85%,#cfd5df 100%)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:Manrope,"Helvetica Neue",Arial,system-ui,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,100% - 40px);margin:0 auto;position:relative;z-index:2}
+h1,h2,h3{font-family:Unbounded,"Arial Black",system-ui,sans-serif;font-weight:800;letter-spacing:-.03em;line-height:.95}
+h2{font-size:clamp(36px,8.4vw,96px);margin-bottom:18px}
+.ht,h2 em,h1 em,h3 em{font-style:normal;background:var(--heat);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:hs 6s ease-in-out infinite alternate}
+@keyframes hs{to{background-position:100% 0}}
+.tag{font:500 12px "DM Mono",ui-monospace,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--chr);display:inline-flex;gap:10px;align-items:center;margin-bottom:16px}.tag:before{content:"";width:22px;height:2px;background:var(--heat)}
+.lead{color:#b9bccd;max-width:560px;font-size:18px}
+#prog{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--heat);z-index:60}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px 20px;transition:.3s}
+nav.s{background:rgba(7,7,10,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:10px;font:800 14px Unbounded,system-ui,sans-serif;line-height:1.05;text-transform:uppercase}
+.logo i{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 50% 50%,#07070a 38%,transparent 40%),conic-gradient(#e2b86a,#d0569a,#7b5cff,#3fb2ff,#cfd5df,#e2b86a);display:block;animation:spin 8s linear infinite}
+.logo small{display:block;font:500 10px "DM Mono",monospace;color:var(--mu);letter-spacing:.12em;margin-top:3px}
+.navl{display:none;gap:24px;font-size:14px;font-weight:600;color:#b9bccd}.navl a:hover{color:var(--tx)}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:10px;background:var(--tx);color:#07070a;font:800 16px Manrope,system-ui,sans-serif;padding:15px 24px;border:0;border-radius:999px;cursor:pointer;transition:box-shadow .3s,transform .2s;will-change:transform;isolation:isolate}
+.btn:before{content:"";position:absolute;inset:0;background:var(--heat);opacity:0;transition:opacity .35s;z-index:-1}.btn:hover:before{opacity:1}
+.btn:hover{box-shadow:0 0 0 1px rgba(255,255,255,.2),0 10px 40px rgba(123,92,255,.45)}
+.btn.gh{background:rgba(255,255,255,.04);color:var(--tx);box-shadow:inset 0 0 0 1.5px var(--line)}.btn.gh:hover{color:#07070a}
+.btn.sm{font-size:13px;padding:10px 16px}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}@keyframes rip{to{transform:scale(1);opacity:0}}
+/* intro */
+#intro{position:fixed;inset:0;z-index:300;background:#050507;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;transition:opacity .9s,filter .9s}
+#intro.done{opacity:0;filter:blur(18px);pointer-events:none}
+#intro .smk{position:absolute;left:50%;bottom:-10vh;width:44vmax;height:44vmax;margin-left:-22vmax;border-radius:50%;background:radial-gradient(circle,rgba(180,185,210,.22),transparent 65%);filter:blur(30px);opacity:0}
+#intro.play .smk{animation:smk 2.8s cubic-bezier(.2,.6,.3,1) forwards}
+#intro .smk:nth-child(2){--sx:-30vw;animation-delay:.15s}#intro .smk:nth-child(3){--sx:28vw;animation-delay:.3s}#intro .smk:nth-child(4){--sx:-8vw;animation-delay:.45s}
+@keyframes smk{0%{opacity:0;transform:translate(0,0) scale(.3)}30%{opacity:1}100%{opacity:0;transform:translate(var(--sx,0),-90vh) scale(1.8)}}
+#intro .it{font:800 clamp(30px,10vw,110px) Unbounded,"Arial Black",sans-serif;letter-spacing:-.04em;text-transform:uppercase;filter:url(#hz);opacity:0;background:var(--heat);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;position:relative;z-index:2}
+#intro.play .it{animation:itn 1.6s .35s ease-out forwards,hs 2.5s ease-in-out infinite alternate}@keyframes itn{0%{opacity:0;letter-spacing:.3em}100%{opacity:1;letter-spacing:-.04em}}
+#intro .sub{font:500 12px "DM Mono",monospace;letter-spacing:.24em;color:var(--mu);margin-top:16px;opacity:0;text-transform:uppercase;text-align:center;padding:0 20px;z-index:2}#intro.play .sub{animation:fi .6s 1.6s forwards}
+#intro .tip{width:min(70vw,420px);height:16px;border-radius:999px;margin-top:26px;background:linear-gradient(90deg,#3a3a46,#cfd5df 20%,#e2b86a 45%,#d0569a 62%,#7b5cff 80%,#3fb2ff);transform:scaleX(0);transform-origin:0 50%;z-index:2;box-shadow:0 0 30px rgba(123,92,255,.5)}
+#intro.play .tip{animation:tp 1.4s .2s cubic-bezier(.6,0,.2,1) forwards}@keyframes tp{to{transform:none}}
+#intro .skip{position:absolute;bottom:22px;font:500 11px "DM Mono",monospace;color:#4a4c60;letter-spacing:.2em}
+/* hero */
+#hero{min-height:100svh;position:relative;overflow:hidden;display:flex;align-items:center;padding:110px 0 70px}
+#heat{position:absolute;inset:0;z-index:0}#heat canvas{width:100%!important;height:100%!important;display:block}
+#hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,10,.2),rgba(7,7,10,.15) 50%,#07070a);z-index:1;pointer-events:none}
+.lay{position:absolute;pointer-events:none;will-change:transform;z-index:1}
+.bigt{font:800 clamp(100px,28vw,380px) Unbounded,sans-serif;color:transparent;-webkit-text-stroke:1.2px rgba(207,213,223,.13);letter-spacing:-.05em;white-space:nowrap;line-height:.9;text-transform:uppercase}
+.ring{border-radius:50%;border:1.5px solid rgba(143,125,255,.22)}
+.hg{display:grid;gap:30px;align-items:center}.hg>*{min-width:0}
+h1{font-size:clamp(40px,11.5vw,118px);text-transform:uppercase}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}h1 .ln>span{display:block;transform:translateY(110%)}
+body.ready h1 .ln>span{animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}body.ready h1 .ln:nth-child(2)>span{animation-delay:.12s}body.ready h1 .ln:nth-child(3)>span{animation-delay:.24s}@keyframes up{to{transform:none}}
+.hsub{color:#c3c6d6;font-size:18px;max-width:520px;margin:22px 0 28px;opacity:0}body.ready .hsub,body.ready .hcta,body.ready .meta,body.ready .tipv{animation:fi .8s .5s forwards}@keyframes fi{to{opacity:1}}
+.hcta{display:flex;flex-wrap:wrap;gap:10px;opacity:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:24px;opacity:0;font:500 13px "DM Mono",monospace;color:var(--mu)}.meta b{color:var(--tx)}
+.tipv{opacity:0;justify-self:center;width:min(84vw,460px);aspect-ratio:1;position:relative;cursor:pointer}
+.tipv .o{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 200deg,#e2b86a,#d0569a,#7b5cff,#3fb2ff,#cfd5df,#8a8f9e,#e2b86a);animation:spin 14s linear infinite;box-shadow:0 0 80px rgba(123,92,255,.35)}
+.tipv .m{position:absolute;inset:7%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2b2b38,#0b0b10 60%);box-shadow:inset 0 0 40px #000}
+.tipv .h{position:absolute;inset:22%;border-radius:50%;background:radial-gradient(circle,#000 55%,#1b1b25 70%,#000);box-shadow:inset 0 0 30px #000,0 0 0 2px rgba(207,213,223,.25)}
+.tipv .g{position:absolute;inset:22%;border-radius:50%;background:radial-gradient(circle,rgba(226,184,106,.0) 30%,rgba(208,86,154,.0));transition:.6s}
+.tipv.hot .g{background:radial-gradient(circle,rgba(255,150,60,.55),rgba(208,86,154,.25) 50%,transparent 70%)}
+.tipv .lb{position:absolute;bottom:-28px;left:0;right:0;text-align:center;font:500 11px "DM Mono",monospace;letter-spacing:.18em;color:var(--mu)}
+/* marquee */
+.marq{position:relative;z-index:5;background:var(--heat);background-size:200% 100%;animation:hs 5s ease-in-out infinite alternate;color:#07070a;overflow:hidden;transform:rotate(-1.5deg);margin:10px -10px;box-shadow:0 10px 50px rgba(123,92,255,.35)}
+.marq div{display:flex;gap:28px;white-space:nowrap;padding:14px 0;font:800 24px Unbounded,sans-serif;text-transform:uppercase;width:max-content;animation:mq 26s linear infinite}
+.marq .d{opacity:.5}@keyframes mq{to{transform:translateX(-50%)}}
+section{position:relative;z-index:2}.sec{padding:110px 0}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+/* services */
+.of{display:grid;gap:14px;margin-top:40px}
+.oc{position:relative;padding:26px 22px;background:var(--pan);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:.4s;cursor:pointer}
+.oc:before{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:var(--heat);transform:scaleX(0);transform-origin:0 50%;transition:transform .6s}
+.oc:hover:before,.oc.act:before{transform:none}.oc:hover,.oc.act{transform:translateY(-4px);border-color:#3a3a58;background:#15151f}
+.oc .n{font:500 12px "DM Mono",monospace;color:var(--mu)}.oc h3{font-size:21px;margin:12px 0 8px;line-height:1.15}.oc p{color:#a9acbf;font-size:15px}
+.oc svg{width:54px;height:54px}.oc .s{stroke:url(#hg);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.spin{transform-origin:27px 27px;animation:spin 5s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.oc:hover .wob,.oc.act .wob{animation:wob .5s ease-in-out infinite alternate;transform-origin:27px 27px}@keyframes wob{to{transform:rotate(-12deg)}}
+/* 3D */
+#toba{height:440vh;background:radial-gradient(ellipse at 55% 50%,#161428,#07070a 70%)}
+#toba .pin{position:sticky;top:0;height:100svh;overflow:hidden}
+#stage{position:absolute;inset:0}#stage canvas{display:block;width:100%!important;height:100%!important;cursor:grab;touch-action:pan-y}
+.chs{position:absolute;left:20px;right:20px;top:84px;z-index:3;pointer-events:none}
+.ch{position:absolute;inset:0 0 auto 0;opacity:0;transform:translateY(14px);transition:.5s}.ch.on{opacity:1;transform:none}
+.ch h3{font-size:clamp(30px,8vw,72px);text-transform:uppercase}.ch p{color:#c3c6d6;max-width:440px;margin-top:10px;font-size:16px}
+.cnt{position:absolute;right:20px;bottom:100px;z-index:3;text-align:right;font:500 11px "DM Mono",monospace;color:var(--mu);letter-spacing:.12em;pointer-events:none}.cnt b{display:block;font:800 30px Unbounded,sans-serif;letter-spacing:0;background:var(--heat);-webkit-background-clip:text;background-clip:text;color:transparent}
+.steps{position:absolute;left:20px;bottom:104px;z-index:3;display:flex;gap:6px}.steps i{width:30px;height:5px;border-radius:9px;background:var(--line);transition:.3s}.steps i.on{background:var(--heat)}
+#bar3{position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--heat);transform-origin:0 50%;transform:scaleX(0);z-index:4}
+#toba .fb{display:none;position:absolute;inset:0;align-items:center;justify-content:center;color:var(--mu);text-align:center;padding:30px}#toba.fallback .fb{display:flex}
+.drg{position:absolute;left:50%;bottom:150px;transform:translateX(-50%);z-index:3;font:500 11px "DM Mono",monospace;letter-spacing:.2em;color:var(--mu);pointer-events:none;transition:opacity .5s;white-space:nowrap}#toba.touched .drg{opacity:0}
+/* parallax band */
+.pband{position:relative;height:72vh;min-height:440px;overflow:hidden;display:flex;align-items:center;border-block:1px solid var(--line);background:#09090e}
+.pband .wrap{text-align:center}.pband h2{font-size:clamp(32px,7.4vw,88px)}
+/* symptom */
+#simptom{background:var(--bg2);border-block:1px solid var(--line)}
+.fs{margin-top:28px;display:grid;gap:22px}
+.fl{font:500 12px "DM Mono",monospace;letter-spacing:.14em;color:var(--mu);text-transform:uppercase;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:700 15px Manrope,sans-serif;padding:11px 18px;background:var(--pan);color:var(--tx);border:1.5px solid var(--line);border-radius:999px;cursor:pointer;transition:.25s;position:relative;overflow:hidden}
+.chip:hover{border-color:var(--ac)}.chip.on{background:var(--tx);border-color:var(--tx);color:#07070a;transform:translateY(-2px);box-shadow:0 8px 24px rgba(123,92,255,.35)}
+.out{border:1.5px dashed #34344c;border-radius:22px;padding:22px;min-height:140px;transition:.4s;background:#0d0d14}
+.out.on{border-style:solid;border-color:#5b4fd0;background:linear-gradient(130deg,#1b1530,#0d0d14 60%)}
+.out .q{font:700 20px Manrope,sans-serif;margin-bottom:6px}.out .q em{font-style:normal;color:var(--gold)}.out p{color:#a9acbf;font-size:15px;margin-bottom:14px}
+.out .row{display:flex;flex-wrap:wrap;gap:8px}
+.out.pop{animation:pop .45s cubic-bezier(.3,1.6,.5,1)}@keyframes pop{0%{transform:scale(.97)}}
+/* reviews */
+#recenzii{padding:100px 0 80px;overflow:hidden}
+.score{display:flex;align-items:center;gap:16px}.score b{font:800 72px Unbounded,sans-serif;line-height:1;letter-spacing:-.04em;background:var(--heat);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stars{color:var(--gold);letter-spacing:3px;font-size:20px}.stars span{display:inline-block;opacity:0;transform:translateY(-14px) rotate(-30deg)}.stars.in span,.in .stars span{animation:st .45s cubic-bezier(.3,1.7,.5,1) forwards}@keyframes st{to{opacity:1;transform:none}}
+.stars span.p7{background:linear-gradient(90deg,var(--gold) 70%,#34344c 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rtr{display:flex;align-items:flex-start;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:28px 20px 12px;scrollbar-width:none;cursor:grab}.rtr::-webkit-scrollbar{display:none}
+.rc{flex:none;width:min(82vw,370px);scroll-snap-align:center;background:var(--pan);border:1px solid var(--line);border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:12px;opacity:0;transform:translateY(24px);transition:.7s cubic-bezier(.2,.8,.2,1)}
+.rtr.in .rc{opacity:1;transform:none}.rc q{font-size:17px;quotes:"„" "”"}
+@media(min-width:900px){.rtr{padding-left:max(20px,calc((100vw - 1180px)/2))}}
+/* contact */
+.cg{display:grid;gap:16px;margin-top:36px}
+.box{background:var(--pan);border:1px solid var(--line);border-radius:22px;padding:22px;display:block}
+.box .l{font:500 11px "DM Mono",monospace;letter-spacing:.16em;color:var(--mu);text-transform:uppercase;margin-bottom:6px}.box .v{font:800 clamp(22px,5.6vw,36px) Unbounded,sans-serif;line-height:1.1;letter-spacing:-.03em}
+table{width:100%;border-collapse:collapse;margin-top:6px}td{padding:7px 0;border-bottom:1px solid var(--line)}td+td{text-align:right;font-family:"DM Mono",monospace}tr.today td{color:var(--gold)}
+.note{font-size:13px;color:var(--mu);margin-top:8px}
+.copyb{display:inline-flex;gap:8px;align-items:center;font:500 12px "DM Mono",monospace;color:var(--tx);background:#191926;border:1px solid var(--line);border-radius:999px;padding:8px 13px;cursor:pointer;transition:.3s;position:relative;overflow:hidden;margin-top:10px}.copyb.ok{border-color:var(--ok);color:var(--ok)}
+.map{border:1px solid var(--line);border-radius:22px;min-height:340px;background:var(--pan);overflow:hidden}.map iframe{filter:grayscale(1) invert(.9) hue-rotate(200deg)}
+.mph{padding:28px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;justify-content:center;min-height:340px;color:#b9bccd}
+#toast{position:fixed;left:50%;bottom:150px;transform:translate(-50%,30px);opacity:0;z-index:210;background:var(--tx);color:#07070a;padding:12px 18px;border-radius:999px;font-weight:800;transition:.35s;pointer-events:none;max-width:90vw;text-align:center}#toast.on{opacity:1;transform:translate(-50%,0)}
+footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:50px 0 150px;color:var(--mu);font-size:14px}
+.fg{display:grid;gap:24px;line-height:1.7}.fg b{color:var(--tx)}.fg a{text-decoration:underline}.fl2{display:flex;flex-direction:column;gap:4px}
+.ph2{background:#221c3e;color:#b9adff;padding:0 5px;border-radius:4px}
+.pg{display:flex;flex-direction:column;justify-content:center;width:250px;max-width:100%;height:50px;padding:0 14px;border-radius:8px;background:#fff;text-decoration:none!important;border-left:8px solid #7b5cff}.pg small{font-size:11px;line-height:1.2;color:#333}.pg b{color:#0b3a7a!important;font-size:16px;line-height:1.2}
+.upd{margin-top:24px;font-size:13px}
+.mbar{position:fixed;left:10px;right:10px;bottom:10px;z-index:55;display:grid;grid-template-columns:1fr 1fr;gap:8px;transform:translateY(160%);transition:transform .4s}.mbar.on{transform:none}
+.mbar a{justify-content:center;font-size:15px;padding:12px 8px;box-shadow:0 10px 30px rgba(0,0,0,.6)}.mbar a small{display:block;font:500 10px "DM Mono",monospace;letter-spacing:.08em;opacity:.75}
+.mbar a.gh{background:#14141e}
+#cur{display:none}
+@media (hover:hover) and (pointer:fine) and (min-width:900px){#cur{display:block;position:fixed;top:0;left:0;width:28px;height:28px;margin:-14px;z-index:100;pointer-events:none;border-radius:50%;border:2px solid transparent;background:conic-gradient(#e2b86a,#d0569a,#7b5cff,#3fb2ff,#e2b86a) border-box;-webkit-mask:radial-gradient(circle,transparent 58%,#000 60%);mask:radial-gradient(circle,transparent 58%,#000 60%);transition:width .25s,height .25s,margin .25s}#cur.big{width:60px;height:60px;margin:-30px;animation:spin 2s linear infinite}}
+@media(min-width:900px){h1{font-size:min(6.6vw,104px)}.navl{display:flex}.hg{grid-template-columns:1.2fr .8fr}.of{grid-template-columns:repeat(3,1fr)}.cg{grid-template-columns:1fr 1fr}.fg{grid-template-columns:1.4fr 1fr 1fr}.mbar{display:none}footer{padding-bottom:50px}.fs{grid-template-columns:1fr}
+.chs{left:6vw;right:auto;width:42vw;top:120px}.cnt{right:6vw;bottom:60px}.steps{left:6vw;bottom:64px}.drg{bottom:62px}#toast{bottom:40px}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}#intro{display:none}h1 .ln>span,.hsub,.hcta,.meta,.tipv,.rv,.rc,.stars span{opacity:1!important;transform:none!important}#toba{height:auto}#toba .pin{position:relative}.ch{position:relative;opacity:1;transform:none}.ch:not(:first-child){display:none}.lay{transform:none!important}}
+html,body{overflow-x:hidden}@supports(overflow:clip){html,body{overflow-x:clip}}
+.legal{padding:120px 0 60px;overflow-wrap:anywhere}.legal h1{font-size:clamp(30px,7vw,72px);margin-bottom:14px}.legal h2{font-size:clamp(20px,3.6vw,30px);margin:36px 0 10px;line-height:1.15}.legal p,.legal li{color:#c9ccda;max-width:820px;margin-bottom:10px}.legal ul{padding-left:22px}.legal a{color:#b9adff;text-decoration:underline}.legal table{max-width:900px;font-size:14px;border-collapse:collapse}.legal th{text-align:left;padding:8px 6px;border-bottom:1px solid var(--ac)}.legal td{padding:8px 6px;text-align:left!important;vertical-align:top;font-family:inherit;border-bottom:1px solid var(--line)}.tw{overflow-x:auto;max-width:100%}.warn{border:1px solid var(--ac);background:#14122a;border-radius:16px;padding:14px 18px;max-width:820px;margin:16px 0}</style></head><body><div id="prog"></div><nav class="s" id="nav"><a href="index.html" class="logo"><i></i><span>Service<br>Eșapamente<small>CLUJ-NAPOCA</small></span></a><a href="index.html" class="btn sm gh">← Înapoi la site</a></nav><main class="legal"><div class="wrap"><div class="tag">Service Eșapamente Cluj</div><h1>Politica de cookie-uri</h1><p class="warn">Notă: textul este întocmit pe baza datelor publice ale firmei. Câmpurile marcate <span class="ph2">[între paranteze]</span> trebuie completate de operator înainte de publicare. Documentul nu înlocuiește consultanța juridică.</p><p><b>Ultima actualizare: 13.10.2026</b></p>
+<p>Această politică explică ce cookie-uri și tehnologii similare folosește site-ul Service Eșapamente Cluj, operat de <span class="ph2">[Denumire firmă SRL – de completat]</span>, CUI <span class="ph2">[de completat]</span>, Nr. Reg. Com. <span class="ph2">[de completat]</span>, cu sediul social în <span class="ph2">[de completat]</span>, service în Calea Baciului nr. 45, Cluj-Napoca, jud. Cluj, telefon <a href="tel:+40742183209">0742 183 209</a> / <a href="tel:+40740016307">0740 016 307</a>, e-mail <span class="ph2">[email de completat]</span>. Se aplică Legea nr. 506/2004 (art. 4 alin. (5)) și GDPR.</p>
+<h2>1. Pe scurt</h2><p>Nu setăm cookie-uri proprii. Nu folosim analitică, publicitate sau pixeli de urmărire. Serviciile Google (hartă și fonturi) se încarcă <b>doar după consimțământul tău</b>. Până atunci, site-ul folosește fonturile sistemului și afișează un buton „Încarcă harta”.</p>
+<h2>2. Ce stocăm</h2><div class="tw"><table><tr><th>Nume</th><th>Furnizor</th><th>Tip / scop</th><th>Durată</th><th>Categorie</th></tr>
+<tr><td>se_consent_v1 (localStorage)</td><td>Site-ul nostru</td><td>Memorează alegerea ta privind cookie-urile</td><td>Până o ștergi din browser</td><td>Strict necesar</td></tr>
+<tr><td>Cookie-uri Google Maps (de ex. NID, AEC, SOCS, __Secure-ENID și altele)</td><td>Google Ireland Ltd (google.com)</td><td>Funcționarea hărții încorporate, preferințe, securitate. Google poate folosi datele conform politicii sale</td><td>Stabilită de Google, de obicei de la sesiune până la ~13 luni</td><td>Servicii externe (cu consimțământ)</td></tr>
+<tr><td>Google Fonts (fonts.googleapis.com, fonts.gstatic.com)</td><td>Google Ireland Ltd</td><td>Descărcarea fonturilor Unbounded, Manrope și DM Mono. Nu setează cookie-uri, dar Google primește adresa IP</td><td>—</td><td>Servicii externe (cu consimțământ)</td></tr></table></div>
+<p>Lista cookie-urilor Google poate varia, deoarece le controlează Google: <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener">policies.google.com/technologies/cookies</a>.</p>
+<h2>3. Cum îți gestionezi acordul</h2><p>La prima vizită alegi Accept, Refuz sau Setări. Îți poți schimba oricând alegerea din linkul <a href="#" data-ck>Setări cookie</a> din subsolul paginii. Poți șterge și datele din setările browserului.</p>
+<h2>4. Contact</h2><p>Întrebări: 0742 183 209 / 0740 016 307 sau <span class="ph2">[email de completat]</span>. Vezi și <a href="politica-confidentialitate.html">Politica de confidențialitate</a>.</p></div></main><footer><div class="wrap"><div class="fg">
+ <div><b><span class="ph2">[Denumire firmă SRL – de completat]</span></b><br>CUI <span class="ph2">[de completat]</span> · Nr. Reg. Com. <span class="ph2">[de completat]</span><br>Sediu social: <span class="ph2">[de completat]</span><br>Service: Calea Baciului 45, Cluj-Napoca, jud. Cluj<br>Tel.: <a href="tel:+40742183209">0742 183 209</a> · <a href="tel:+40740016307">0740 016 307</a> · E-mail: <span class="ph2">[email de completat]</span></div>
+ <div class="fl2"><a href="politica-confidentialitate.html">Politica de confidențialitate</a><a href="politica-cookies.html">Politica de cookie-uri</a><a href="termeni-si-conditii.html">Termeni și condiții</a><a href="#" data-ck>Setări cookie</a><a href="https://anpc.ro" target="_blank" rel="noopener">ANPC – anpc.ro</a></div>
+ <div><a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener" class="pg"><small>Soluționarea alternativă a litigiilor</small><b>ANPC · SAL</b></a></div>
+</div><p class="upd">Ultima actualizare: 14.10.2026 · © Service Eșapamente Cluj</p></div></footer><div id="toast"></div><script src="consent.js"></script></body></html>
