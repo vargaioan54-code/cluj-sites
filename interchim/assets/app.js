@@ -76,6 +76,41 @@ function sliderTracks(h,s,l){if(sS)sS.style.setProperty('--sg',`linear-gradient(
 function onSlide(){const c=hsl2rgb(+sH.value,+sS.value,+sL.value);setColor(rgb2hex(c[0],c[1],c[2]),null,{src:'slider'})}
 [sH,sS,sL].forEach(x=>x&&x.addEventListener('input',onSlide));
 
+/* ---------- CUTII care se deschid + GĂLEȚI care se toarnă ---------- */
+const CANSVG='<svg viewBox="0 -4 136 134" aria-hidden="true"><ellipse cx="68" cy="121" rx="47" ry="7" fill="#000" opacity=".4"/>'+
+ '<path d="M24 40 V104 A44 12 0 0 0 112 104 V40 Z" fill="url(#tinG)"/>'+
+ '<path d="M24 56 A44 12 0 0 0 112 56 V92 A44 12 0 0 1 24 92 Z" style="fill:var(--c)"/><path d="M24 56 A44 12 0 0 0 112 56 V92 A44 12 0 0 1 24 92 Z" fill="url(#lblG)"/>'+
+ '<path d="M24 66 A44 12 0 0 0 112 66" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.6"/><path d="M24 82 A44 12 0 0 0 112 82" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.6"/>'+
+ '<ellipse cx="68" cy="40" rx="44" ry="12" fill="#c9cfdc" stroke="#7d8597" stroke-width="1.5"/><ellipse cx="68" cy="40.5" rx="40" ry="9.6" fill="#15131f"/>'+
+ '<g class="pnt"><ellipse class="pf" cx="68" cy="41.5" rx="38" ry="8.8"/><ellipse cx="68" cy="41.5" rx="38" ry="8.8" fill="url(#pntG)"/><ellipse class="hl" cx="52" cy="39" rx="12" ry="2.6"/><ellipse class="rp" cx="68" cy="41.5" rx="30" ry="6.4"/><ellipse class="rp rp2" cx="68" cy="41.5" rx="30" ry="6.4"/>'+
+ '<circle class="spl" cx="60" cy="38" r="3" style="--dx:-7px"/><circle class="spl" cx="76" cy="38" r="2.4" style="--dx:8px"/><circle class="spl" cx="68" cy="37" r="2" style="--dx:1px"/></g>'+
+ '<g class="lid"><ellipse cx="68" cy="39" rx="46" ry="13" fill="url(#lidG)" stroke="#6f778a" stroke-width="1.5"/><ellipse cx="68" cy="39" rx="36" ry="9.2" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.4"/><ellipse cx="68" cy="39" rx="26" ry="6.2" fill="none" stroke="#5e667a" stroke-opacity=".5" stroke-width="1"/><rect x="57" y="35.5" width="22" height="6.4" rx="3.2" style="fill:var(--c)" stroke="#5e667a" stroke-width="1"/></g></svg>';
+const BKSVG='<svg viewBox="0 0 100 112" aria-hidden="true"><ellipse cx="50" cy="106" rx="34" ry="5" fill="#000" opacity=".35"/><ellipse class="pud" cx="96" cy="105" rx="20" ry="4.5"/><path class="strm" d="M91 35 Q99 58 97 104"/>'+
+ '<g class="bkb"><path d="M12 36 Q50 -8 88 36" fill="none" stroke="#9aa2b4" stroke-width="2.8" stroke-linecap="round"/><path d="M10 32 L90 32 L80 100 A30 6 0 0 1 20 100 Z" fill="url(#tinG)"/>'+
+ '<path d="M13.5 58 Q50 66 86.5 58 L83.5 86 Q50 94 16.5 86 Z" style="fill:var(--c)"/><path d="M13.5 58 Q50 66 86.5 58 L83.5 86 Q50 94 16.5 86 Z" fill="url(#lblG)"/>'+
+ '<ellipse cx="50" cy="32" rx="40" ry="9" fill="#c9cfdc" stroke="#7d8597" stroke-width="1.2"/><ellipse cx="50" cy="33" rx="35.5" ry="7" style="fill:var(--c)"/><ellipse cx="50" cy="33" rx="35.5" ry="7" fill="url(#pntG)"/>'+
+ '<path d="M16 37 v11 a4 4 0 0 0 8 0 v-11z" style="fill:var(--c)"/><path d="M42 40 v6 a3 3 0 0 0 6 0 v-6z" style="fill:var(--c)"/><path d="M71 38 v14 a4 4 0 0 0 8 0 v-14z" style="fill:var(--c)"/></g>'+
+ '<circle class="sd" cx="96" cy="103" r="2.8" style="--dx:-15px;--dy:-24px"/><circle class="sd" cx="96" cy="103" r="2.2" style="--dx:-4px;--dy:-32px"/><circle class="sd" cx="96" cy="103" r="2.6" style="--dx:9px;--dy:-27px"/><circle class="sd" cx="96" cy="103" r="2" style="--dx:16px;--dy:-18px"/></svg>';
+const HERO_BK=[['Roșu','#c1121f'],['Portocaliu','#ef7413'],['Verde','#1f6b45'],['Albastru','#1e50b5'],['Violet','#6d3fc0']];
+const ROW_BK=[['Roșu','#c1121f'],['Portocaliu','#ef7413'],['Galben','#f3c40f'],['Verde','#1f6b45'],['Turcoaz','#14a3a8'],['Albastru','#1e50b5'],['Violet','#6d3fc0'],['Roz','#d6338f']];
+function mkBk(c,label){const b=document.createElement('button');b.type='button';b.className='bk';b.dataset.hex=c[1];b.dataset.name=c[0];b.style.setProperty('--c',c[1]);
+ b.setAttribute('aria-label','Găleată '+c[0]+': atinge ca s-o torni pe mașină');b.innerHTML=BKSVG+(label?'<span class="bl">'+c[0]+'</span>':'');return b}
+const heroBk=$('#heroBk'),rowBk=$('#bkrow'),cansEl=$('#cans');
+if(heroBk)HERO_BK.forEach(c=>heroBk.appendChild(mkBk(c,false)));
+if(rowBk)ROW_BK.forEach(c=>rowBk.appendChild(mkBk(c,true)));
+function pour(e){const b=e.target.closest('.bk');if(!b||b.classList.contains('pour'))return;const r=b.getBoundingClientRect();
+ b.classList.add('pour');const x=r.left+r.width*.82,y=r.top+r.height*.7;
+ setTimeout(()=>setColor(b.dataset.hex,b.dataset.name,{x:x,y:y}),RM?0:430);setTimeout(()=>b.classList.remove('pour'),RM?0:1750)}
+if(heroBk)heroBk.addEventListener('click',pour);if(rowBk)rowBk.addEventListener('click',pour);
+if(cansEl){CAR.forEach(c=>{const b=document.createElement('button');b.type='button';b.className='cn';b.dataset.hex=c[1];b.dataset.name=c[0];b.style.setProperty('--c',c[1]);b.setAttribute('aria-expanded','false');
+  b.setAttribute('aria-label','Cutie de vopsea '+c[0]+' '+c[1].toUpperCase()+': atinge ca să deschizi capacul');
+  b.innerHTML=CANSVG+'<span class="cl">'+c[0]+'</span><code class="ch">'+c[1].toUpperCase()+'</code><span class="tapi">atinge</span>';cansEl.appendChild(b)});
+ cansEl.addEventListener('click',e=>{const b=e.target.closest('.cn');if(!b)return;const was=b.classList.contains('open');
+  $$('.cn.open').forEach(x=>{x.classList.remove('open');x.setAttribute('aria-expanded','false');const t=x.querySelector('.tapi');if(t)t.textContent='atinge'});
+  if(!was){b.classList.add('open');b.setAttribute('aria-expanded','true');const t=b.querySelector('.tapi');if(t)t.textContent='deschisă';const r=b.getBoundingClientRect();
+   setColor(b.dataset.hex,b.dataset.name,{x:r.left+r.width/2,y:r.top+r.height*.38})}})}
+
+
 function ripple(x,y){if(RM||x===undefined)return;const r=document.createElement('i');r.className='pring';r.style.left=x+'px';r.style.top=y+'px';document.body.appendChild(r);setTimeout(()=>r.remove(),950);
  const pv=$('#pvbox');if(pv){const b=pv.getBoundingClientRect();if(b.bottom>0&&b.top<innerHeight){const f=document.createElement('i');f.className='pfill';f.style.left=b.width*.5+'px';f.style.top=b.height*.55+'px';pv.appendChild(f);setTimeout(()=>f.remove(),900)}}}
 function setColor(hex,name,o){o=o||{};hex=hex.toLowerCase();const[r,g,b]=hex2rgb(hex),hsl=rgb2hsl(r,g,b),prev=S.hex;S.hex=hex;S.name=name||nameFor(hsl[0],hsl[1],hsl[2]);
@@ -83,7 +118,7 @@ function setColor(hex,name,o){o=o||{};hex=hex.toLowerCase();const[r,g,b]=hex2rgb
  st.setProperty('--paintprev',prev);st.setProperty('--paint',hex);st.setProperty('--ac',u.hex);st.setProperty('--acr',u.rgb.join(','));st.setProperty('--acx',u.on);
  const a2=hsl2rgb(hsl[0]+38,80,64);st.setProperty('--ac2',rgb2hex(a2[0],a2[1],a2[2]));
  $$('.rd-name').forEach(x=>x.textContent=S.name);$$('.rd-hex').forEach(x=>x.textContent=hex.toUpperCase());
- $$('.hs,.ws').forEach(x=>x.classList.toggle('sel',x.dataset.hex===hex));
+ $$('.hs,.ws,.bk,.cn').forEach(x=>x.classList.toggle('sel',x.dataset.hex===hex));
  if(o.src!=='slider'&&sH){sH.value=Math.round(hsl[0])%360;sS.value=Math.round(hsl[1]);sL.value=Math.round(hsl[2])}
  sliderTracks(Math.round(hsl[0]),Math.round(hsl[1]),Math.round(hsl[2]));
  if(IM)IM.Paint.set(hex,u.hex);
@@ -102,26 +137,27 @@ if(!GL||!window.THREE||!window.IMBuild){const s=$('#model3d');if(s)s.classList.a
 const T=THREE,PI=Math.PI;IM=IMBuild(T);IM.Paint.set(S.hex,'#ff5a64');IM.Paint.setFinish(S.fin);IM.Paint.snap();
 {const u=getComputedStyle(document.documentElement).getPropertyValue('--ac').trim();if(u)IM.Paint.ui.set(u)}
 const sm=IM.sm;
-function makeEnv(ren){try{const pm=new T.PMREMGenerator(ren),s=new T.Scene(),R=40,g=new T.SphereGeometry(R,24,16),pos=g.attributes.position,col=new Float32Array(pos.count*3);
- for(let i=0;i<pos.count;i++){const t=(pos.getY(i)/R+1)/2;const top=[.62,.68,.85],hz=[.30,.30,.42],bt=[.05,.05,.08];const a=t>.5?top:bt,k=t>.5?(t-.5)*2:1-t*2,m=t>.5?hz:hz;
-  for(let c=0;c<3;c++)col[i*3+c]=m[c]+(a[c]-m[c])*Math.pow(k,1.2)}
+function makeEnv(ren){try{const pm=new T.PMREMGenerator(ren),s=new T.Scene(),R=40,g=new T.SphereGeometry(R,32,20),pos=g.attributes.position,col=new Float32Array(pos.count*3);
+ for(let i=0;i<pos.count;i++){const t=(pos.getY(i)/R+1)/2;const top=[.5,.57,.76],hz=[.30,.31,.40],bt=[.10,.10,.14];const a=t>.5?top:bt,k=t>.5?Math.pow((t-.5)*2,1.1):Math.pow(1-t*2,.8);
+  for(let c=0;c<3;c++)col[i*3+c]=hz[c]+(a[c]-hz[c])*k}
  g.setAttribute('color',new T.BufferAttribute(col,3));s.add(new T.Mesh(g,new T.MeshBasicMaterial({vertexColors:true,side:T.BackSide})));
- const sb=new T.MeshBasicMaterial({color:0xffffff,side:T.DoubleSide});
- [[0,12,-26,34,9],[-30,6,8,20,8],[30,5,10,20,8],[0,30,0,24,24]].forEach(p=>{const m=new T.Mesh(new T.PlaneGeometry(p[3],p[4]),sb);m.position.set(p[0],p[1],p[2]);m.lookAt(0,0,0);s.add(m)});
- const rt=pm.fromScene(s,.03);pm.dispose();return rt.texture}catch(e){return null}}
-function lights(sc,k){sc.add(new T.HemisphereLight(0xdfe6ff,0x140f2a,.5));const d=new T.DirectionalLight(0xffffff,.9);d.position.set(5,8,7);sc.add(d);
- const rim=new T.PointLight(0xffffff,1.0,60);rim.position.set(-8,4,-8);sc.add(rim);const a=new T.PointLight(0xff5a64,1.6*k,50);a.position.set(0,-1,9);sc.add(a);return a}
+ const box=(w,h,x,y,z,k)=>{const m=new T.Mesh(new T.PlaneGeometry(w,h),new T.MeshBasicMaterial({color:new T.Color().setRGB(k,k,k),side:T.DoubleSide}));m.position.set(x,y,z);m.lookAt(0,0,0);s.add(m)};
+ box(44,12,0,34,0,3.6);box(40,3,0,16,-30,4.2);box(40,3,0,13,30,3);box(14,22,-34,10,0,1.8);box(14,22,34,10,0,1.8);box(3,26,-32,12,12,2.6);box(3,26,32,12,-12,2.6);box(30,2.4,30,5,-6,1.8);box(30,2.4,-30,5,-6,1.8);
+ const rt=pm.fromScene(s,.02);pm.dispose();return rt.texture}catch(e){return null}}
+function lights(sc,k){sc.add(new T.HemisphereLight(0xdfe6ff,0x140f2a,.3));const d=new T.DirectionalLight(0xffffff,.6);d.position.set(5,8,7);sc.add(d);
+ const rim=new T.PointLight(0xffffff,.9,60);rim.position.set(-8,4,-8);sc.add(rim);const a=new T.PointLight(0xff5a64,1.2*k,50);a.position.set(0,-1,9);sc.add(a);return a}
+function mkRen(o){const r=new T.WebGLRenderer(o);try{r.outputEncoding=T.sRGBEncoding}catch(e){}return r}
 const TK=2*Math.tan(16*PI/180);
 const vis=(box,cb)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isIntersecting;cb(v)},{rootMargin:'120px'}).observe(box);return()=>v};
 
 /* ---------- HERO: mașina vopsită live ---------- */
 function hero(){
  const box=$('#gl');if(!box)return;
- let ren;try{ren=new T.WebGLRenderer({antialias:!isMob(),alpha:true})}catch(e){box.classList.add('nogl');return}
+ let ren;try{ren=mkRen({antialias:!isMob(),alpha:true})}catch(e){box.classList.add('nogl');return}
  ren.setPixelRatio(Math.min(devicePixelRatio,2));box.appendChild(ren.domElement);
  const sc=new T.Scene(),cam=new T.PerspectiveCamera(32,1,.1,200);const env=makeEnv(ren);if(env)sc.environment=env;
  const ac=lights(sc,1);
- const E=IM.car(isMob()?24:36),P=new T.Group(),G=new T.Group();sc.add(P);P.add(G);G.add(E.root);E.root.position.y=-1.55;G.rotation.x=.2;
+ const E=IM.car(isMob()?24:36),P=new T.Group(),G=new T.Group();sc.add(G);G.add(P);P.add(E.root);E.root.position.y=-.85;G.rotation.x=.2;
  const sp={t:1};addEventListener('paintchange',()=>{sp.t=0});
  let asp=1;function vo(){const w=box.clientWidth,h=box.clientHeight;if(!w||!h)return;ren.setSize(w,h,false);cam.aspect=w/h;asp=cam.aspect;cam.updateProjectionMatrix()}
  vo();addEventListener('resize',vo);new ResizeObserver(vo).observe(box);setTimeout(vo,600);setTimeout(vo,1800);
@@ -137,7 +173,7 @@ function hero(){
   mx+=(tx-mx)*.05;if(drag===null)uy*=.985;
   P.rotation.y=-.6+(RM?0:t*.22)+mx*.5+uy;
   E.update(t,RM?0:dt,{splash:sp});
-  const W=12.6,H=7.2,dz=Math.max(H/TK,W/(TK*asp))*1.04;cam.position.set(0,0,dz);cam.lookAt(0,0,0);
+  const W=11.1,H=7.0,dz=Math.max(H/TK,W/(TK*asp))*1.04;cam.position.set(0,0,dz);cam.lookAt(0,0,0);
   ren.render(sc,cam)}
 }
 try{hero()}catch(e){const g=$('#gl');if(g)g.classList.add('nogl')}
@@ -146,7 +182,7 @@ try{hero()}catch(e){const g=$('#gl');if(g)g.classList.add('nogl')}
 function model(){
  const sec=$('#model3d'),stage=$('#r3stage');if(!sec||!stage)return;
  const W=()=>stage.clientWidth,H=()=>stage.clientHeight;
- let ren;try{ren=new T.WebGLRenderer({antialias:!isMob(),alpha:true,powerPreference:'low-power'})}catch(e){sec.classList.add('fallback');return}
+ let ren;try{ren=mkRen({antialias:!isMob(),alpha:true,powerPreference:'low-power'})}catch(e){sec.classList.add('fallback');return}
  ren.setPixelRatio(Math.min(devicePixelRatio,isMob()?1.5:2));ren.setSize(W(),H());stage.appendChild(ren.domElement);
  const sc=new T.Scene(),cam=new T.PerspectiveCamera(32,W()/H(),.1,200);const env=makeEnv(ren);if(env)sc.environment=env;
  const ac=lights(sc,1.2);
@@ -154,21 +190,23 @@ function model(){
  objs.forEach(o=>{G.add(o.root);o.root.visible=false;o.e=0});G.rotation.y=-.45;
  let uy=0,up=0,drag=null,prog=0,aspEff=1,spin=0,last=performance.now(),fi=0;
  const el=ren.domElement;el.style.touchAction='pan-y';const ptrs=new Map();
- el.addEventListener('pointerdown',ev=>{ptrs.set(ev.pointerId,1);try{el.setPointerCapture(ev.pointerId)}catch(_){}drag=[ev.clientX,ev.clientY]});
- el.addEventListener('pointermove',ev=>{if(!drag||!ptrs.has(ev.pointerId))return;uy=clamp(uy+(ev.clientX-drag[0])*.01,-2.4,2.4);up=clamp(up+(ev.clientY-drag[1])*.005,-.5,.5);drag=[ev.clientX,ev.clientY]});
- const pu=ev=>{ptrs.delete(ev.pointerId);if(!ptrs.size)drag=null};el.addEventListener('pointerup',pu);el.addEventListener('pointercancel',pu);
- const chs=$$('#model3d .r3ch'),bar=$('#r3bar'),rd=$$('.r3dots i');
+ let tap=null;const ray=new T.Raycaster(),nd=new T.Vector2();
+ function doTap(ev){const o=objs[fi];if(!o||!o.toggle)return;const r=el.getBoundingClientRect();if(!r.width||!r.height)return;nd.set((ev.clientX-r.left)/r.width*2-1,-((ev.clientY-r.top)/r.height*2-1));o.root.updateMatrixWorld(true);cam.updateMatrixWorld(true);ray.setFromCamera(nd,cam);if(ray.intersectObject(o.root,true).length)o.toggle()}
+ el.addEventListener('pointerdown',ev=>{ptrs.set(ev.pointerId,1);try{el.setPointerCapture(ev.pointerId)}catch(_){}drag=[ev.clientX,ev.clientY];tap={x:ev.clientX,y:ev.clientY,t:performance.now()}});
+ el.addEventListener('pointermove',ev=>{if(tap&&Math.hypot(ev.clientX-tap.x,ev.clientY-tap.y)>9)tap=null;if(!drag||!ptrs.has(ev.pointerId))return;uy=clamp(uy+(ev.clientX-drag[0])*.01,-2.4,2.4);up=clamp(up+(ev.clientY-drag[1])*.005,-.5,.5);drag=[ev.clientX,ev.clientY]});
+ const pu=ev=>{ptrs.delete(ev.pointerId);if(!ptrs.size)drag=null;if(ev.type==='pointerup'&&tap&&performance.now()-tap.t<650)doTap(ev);tap=null};el.addEventListener('pointerup',pu);el.addEventListener('pointercancel',pu);
+ const chs=$$('#model3d .r3ch'),bar=$('#r3bar'),rd=$$('.r3dots i'),hint=$('#r3hint');let hintI=-1;const HT=['ATINGE CUTIA CA S-O DESCHIZI · TRAGE ↔','MODEL ILUSTRATIV · DERULEAZĂ ↓ · TRAGE ↔'];
  const explode=u=>u<.14?0:u<.42?sm((u-.14)/.28):u<.68?1:u<.9?1-sm((u-.68)/.22):0;
- function onScroll(){const r=sec.getBoundingClientRect(),den=r.height-innerHeight;prog=den>0?clamp(-r.top/den,0,1):0;const i=Math.min(chs.length-1,Math.floor(prog*chs.length));chs.forEach((c,j)=>c.classList.toggle('on',j===i));rd.forEach((c,j)=>c.classList.toggle('on',j===i));if(bar)bar.style.transform=`scaleX(${prog})`}
+ function onScroll(){const r=sec.getBoundingClientRect(),den=r.height-innerHeight;prog=den>0?clamp(-r.top/den,0,1):0;const i=Math.min(chs.length-1,Math.floor(prog*chs.length));chs.forEach((c,j)=>c.classList.toggle('on',j===i));rd.forEach((c,j)=>c.classList.toggle('on',j===i));if(hint&&hintI!==(i===0?0:1)){hintI=i===0?0:1;hint.textContent=HT[hintI]};if(bar)bar.style.transform=`scaleX(${prog})`}
  addEventListener('scroll',onScroll,{passive:true});onScroll();
  // telefon: 3D doar în banda liberă de sub cel mai înalt text și deasupra barei; desktop: jumătatea dreaptă
  function vo(){const w=W(),h=H();if(!w||!h)return;ren.setSize(w,h);
   if(innerWidth>=900){const fw=w*.5;cam.aspect=fw/h;cam.setViewOffset(fw,h,-(w-fw),0,w,h)}
-  else{let tb=0;chs.forEach(c=>{tb=Math.max(tb,c.offsetHeight)});const top=78+tb+14,bot=h-96,rh=Math.max(150,bot-top);cam.aspect=w/rh;cam.setViewOffset(w,rh,0,-top,w,h)}
+  else{let tb=0;chs.forEach(c=>{tb=Math.max(tb,c.offsetHeight)});const top=78+tb+14,bot=h-112,rh=Math.max(150,bot-top);cam.aspect=w/rh;cam.setViewOffset(w,rh,0,-top,w,h)}
   aspEff=cam.aspect;cam.updateProjectionMatrix()}
  vo();addEventListener('resize',vo);new ResizeObserver(vo).observe(stage);chs.forEach(c=>new ResizeObserver(vo).observe(c));setTimeout(vo,800);setTimeout(vo,2000);setTimeout(vo,3500);
- let on=false;vis(sec,v=>{on=v;if(v){last=performance.now();tick()}});
- const TILT=[.16,.16,.42,.22];
+ let on=false,firstFit=true;vis(sec,v=>{on=v;if(v){last=performance.now();tick()}});
+ const TILT=[.34,.16,.42,.22];
  function tick(){if(!on)return;requestAnimationFrame(tick);const now=performance.now(),dt=Math.min(.05,(now-last)/1000);last=now;spin+=RM?0:dt;
   IM.Paint.step(dt,now);ac.color.copy(IM.Paint.ui);
   const p4=prog*4;fi=Math.min(3,Math.floor(p4));let fe=0;
@@ -181,7 +219,7 @@ function model(){
   const yaw=uy+Math.sin(p4*1.3)*.35+(RM?0:Math.sin(spin*.4)*.1);
   P.rotation.y+=(yaw-P.rotation.y)*.12;P.rotation.x+=((TILT[fi]+up)-P.rotation.x)*.1;
   const sz=objs[fi].size,Hh=sz.h0+(sz.h1-sz.h0)*fe,Ww=sz.w0+(sz.w1-sz.w0)*fe,dz=Math.max(Hh/TK,Ww/(TK*aspEff))*1.1;
-  cam.position.z+=(dz-cam.position.z)*.1;cam.lookAt(0,0,0);
+  if(firstFit||RM){cam.position.z=dz;firstFit=false}else cam.position.z+=(dz-cam.position.z)*.1;cam.lookAt(0,0,0);
   ren.render(sc,cam)}
 }
 try{model()}catch(err){const s=$('#model3d');if(s)s.classList.add('fallback')}
