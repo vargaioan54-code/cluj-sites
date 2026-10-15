@@ -45,7 +45,7 @@ document.addEventListener('contextmenu',function(e){if(!e.target.closest('input,
 
 <nav class="top" aria-label="Principal">
  <a class="wm" href="#raft" aria-label="Interchim – început">INTERCHIM</a>
- <div class="lk"><a href="#raft">Raftul</a><a href="#produse">Produse</a><a href="#istoric">Despre</a><a href="#cum">Cum comanzi</a><a href="#contact">Contact</a></div>
+ <div class="lk"><a href="#raft">Raftul</a><a href="#previzualizare">Previzualizare</a><a href="#produse">Produse</a><a href="#istoric">Despre</a><a href="#cum">Cum comanzi</a><a href="#contact">Contact</a></div>
  <a class="btn sm" href="tel:+40744565418">Sună 0744 565 418</a>
 </nav>
 
@@ -66,6 +66,7 @@ document.addEventListener('contextmenu',function(e){if(!e.target.closest('input,
     <div class="nm" id="inm">—</div>
     <div class="hx" id="ihx">#------</div>
     <p><span class="dsk">Nuanță orientativă, așa cum o arată ecranul. Potrivirea exactă a culorii se face în magazin, cu sistemul de mixare.</span><span class="mob">Nuanță orientativă de pe ecran. Potrivirea exactă se face în magazin, cu sistemul de mixare.</span></p>
+    <a class="lnk" href="#previzualizare">Vezi culoarea pe mașină și pe perete ↓</a>
     <div class="btns"><button class="btn ghost" id="iclose" type="button">Închide ✕</button><a class="btn" href="tel:+40744565418"><span class="dsk">Sună pentru potrivire exactă</span><span class="mob">Sună: potrivire exactă</span></a></div>
    </div>
   </div>
@@ -89,20 +90,48 @@ document.addEventListener('contextmenu',function(e){if(!e.target.closest('input,
 
 <div class="drip" aria-hidden="true"></div>
 
-<section class="sec" id="produse">
+<section class="sec" id="previzualizare" data-pv-fin="gloss">
  <div class="wrap">
-  <div class="tag rv">Ce găsești</div>
-  <h2 class="t rv">Tot ce ai nevoie pentru vopsit.</h2>
-  <p class="sub rv">Lacuri și vopsele auto și de uz general, scule, consumabile, măști și echipamente de protecție. Detaliile le afli la magazin sau la telefon.</p>
-  <div class="cards">
-   <article class="card rv"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="st" d="M6 44V35l9-4 8-12h20l9 12 9 4v9z"/><path class="st" d="M26 22h12l6 9H20z"/><g class="a-shine"><path class="st" d="M24 25l6 0"/></g><circle class="fl" cx="19" cy="46" r="7"/><circle class="fl" cx="47" cy="46" r="7"/><circle cx="19" cy="46" r="2.4" fill="#0d0e11"/><circle cx="47" cy="46" r="2.4" fill="#0d0e11"/><g class="a-spin2"><path d="M19 40v12M13 46h12" stroke="#0d0e11" stroke-width="1.4" fill="none"/></g></svg><h3>Lacuri și vopsele auto</h3><p>Lacuri și vopsele pentru autovehicule și retuș auto.</p></article>
-   <article class="card rv d1"><svg viewBox="0 0 64 64" aria-hidden="true"><g class="a-slide"><rect class="st" x="8" y="10" width="40" height="14" rx="4"/><path class="st" d="M48 17h8v14H30v8"/></g><rect class="fl" x="26" y="40" width="8" height="16" rx="3"/></svg><h3>Vopsele de uz general</h3><p>Vopsele lavabile, vopsele pentru lemn sau metal.</p></article>
-   <article class="card rv d2"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="st" cx="32" cy="32" r="8"/><g class="a-spin"><circle cx="32" cy="10" r="6" fill="#e0314b"/><circle cx="51" cy="43" r="6" fill="#f7c600"/><circle cx="13" cy="43" r="6" fill="#2f7be0"/></g></svg><h3>Sistem de mixare</h3><p>Primul sistem de mixare al vopselelor pentru retuș auto adus în Cluj, în 1993.</p></article>
-   <article class="card rv d3"><svg viewBox="0 0 64 64" aria-hidden="true"><rect class="st" x="14" y="24" width="22" height="34" rx="5"/><rect class="st" x="18" y="12" width="14" height="12" rx="2"/><path class="st" d="M32 15h6"/><circle class="fl a-mist" cx="43" cy="14" r="2.2"/><circle class="fl a-mist" cx="47" cy="19" r="1.8"/><circle class="fl a-mist" cx="42" cy="21" r="1.6"/><path class="st" d="M14 40h22"/></svg><h3>Spray-uri</h3><p>Spray-uri auto sau vopsea preparată la codul dorit, îmbuteliată în spray.</p></article>
-   <article class="card rv"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="st bead a-bead" pathLength="44" d="M10 54H54"/><g class="a-tube"><g class="a-sq"><path class="st" d="M22 6h20v30H22z"/><path class="st" d="M25 10h14M25 14h14" opacity=".55"/></g><path class="st" d="M22 36h20l-7 8h-6z"/><path class="fl" d="M29.5 44h5v6h-5z"/></g></svg><h3>Chituri, adezivi, antifon</h3><p>Chituri, adezivi și antifon pentru reparații.</p></article>
-   <article class="card rv d1"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="st" d="M32 6l20 8v16c0 14-9 22-20 28C21 52 12 44 12 30V14z"/><path class="st a-dash" d="M22 32l7 7 13-14"/></svg><h3>Protecție anticorozivă</h3><p>Protecție anticorozivă și alte vopsele speciale.</p></article>
-   <article class="card rv d2"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="st" d="M12 30c0-10 8-14 20-14s20 4 20 14v5c0 11-9 19-20 19S12 46 12 35z"/><circle class="st a-pulse" cx="23" cy="40" r="6"/><circle class="st a-pulse" cx="41" cy="40" r="6"/><path class="st" d="M12 30H4M52 30h8"/></svg><h3>Scule și protecție</h3><p>Scule, consumabile, măști și echipamente de protecție pentru vopsitorii.</p></article>
-   <article class="card rv d3"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="st strip a-strip" pathLength="36" d="M22 51H58" style="stroke-width:5;opacity:.85"/><path class="st a-cut" d="M58 46l-3.5 5 3.5 5"/><g class="a-roll"><circle class="st" cx="22" cy="33" r="18"/><circle class="st" cx="22" cy="33" r="7"/><path class="st" d="M22 33V19" opacity=".6"/></g></svg><h3>Folii și benzi de mascare</h3><p>Folii și benzi de mascare, plus unelte pentru repararea și zugrăvirea locuinței.</p></article>
+  <div class="tag rv">Previzualizare</div>
+  <h2 class="t rv">Vezi culoarea pe mașină și pe perete.</h2>
+  <p class="sub rv">Culoarea cutiei alese pe raft apare aici. Poți alege și altă nuanță din listă. Ilustrații orientative: nuanța exactă se potrivește în magazin.</p>
+  <div class="pv">
+   <figure class="fig pvfig rv">
+    <div class="cvw pvstage" id="pvStage">
+     <div class="pvm on" id="pvCar" data-m="car">
+      <svg class="pvfb" viewBox="0 0 400 190" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Mașină vopsită în culoarea aleasă (ilustrație)"><defs><linearGradient id="pvg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".45" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient><linearGradient id="pvs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9db4d6"/><stop offset="1" stop-color="#1b2745"/></linearGradient></defs><ellipse cx="200" cy="168" rx="170" ry="10" fill="#000" opacity=".4"/><path class="pt" d="M26 128 Q26 108 52 102 L98 94 Q124 62 164 58 L238 58 Q274 60 298 94 L352 102 Q376 108 376 128 L376 146 L26 146 Z"/><path d="M26 128 Q26 108 52 102 L98 94 Q124 62 164 58 L238 58 Q274 60 298 94 L352 102 Q376 108 376 128 L376 146 L26 146 Z" fill="url(#pvg)" class="gl1"/><path d="M112 92 Q132 68 164 66 L198 66 L198 94 Z" fill="url(#pvs)"/><path d="M208 66 L238 66 Q262 68 282 94 L208 94 Z" fill="url(#pvs)"/><path d="M203 62 V146" stroke="#000" stroke-opacity=".35" stroke-width="2"/><rect x="364" y="112" width="12" height="9" rx="3" fill="#fff6c9"/><rect x="26" y="112" width="10" height="9" rx="3" fill="#e0243a"/><rect x="26" y="140" width="350" height="8" rx="4" fill="#0d0e11" opacity=".55"/><g><circle cx="94" cy="146" r="28" fill="#0c0c10"/><circle cx="94" cy="146" r="17" fill="#cfd3dc"/><circle cx="94" cy="146" r="6" fill="#6b7080"/></g><g><circle cx="312" cy="146" r="28" fill="#0c0c10"/><circle cx="312" cy="146" r="17" fill="#cfd3dc"/><circle cx="312" cy="146" r="6" fill="#6b7080"/></g></svg>
+     </div>
+     <div class="pvm" id="pvWall" data-m="wall">
+      <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Perete vopsit în culoarea aleasă, într-o cameră (ilustrație)"><defs><linearGradient id="pvw1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient><linearGradient id="pvw2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/></linearGradient><linearGradient id="pvsk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fb0d8"/><stop offset="1" stop-color="#2a3b5c"/></linearGradient><linearGradient id="pvedge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".28"/></linearGradient></defs>
+       <rect class="wold" width="400" height="168"/><rect class="wnew" width="400" height="168"/><rect width="400" height="168" fill="url(#pvw1)"/><rect class="wsheen" width="400" height="168" fill="url(#pvw2)"/><rect class="wedge" x="-14" width="14" height="168" fill="url(#pvedge)"/>
+       <rect y="160" width="400" height="10" fill="#e9e7e2"/><rect y="170" width="400" height="50" fill="#6d5037"/><path d="M0 186 H400 M0 202 H400 M60 170 V220 M170 170 V220 M280 170 V220 M110 186 V202" stroke="#000" stroke-opacity=".22"/>
+       <rect x="252" y="24" width="102" height="94" rx="4" fill="#f1f0ed"/><rect x="258" y="30" width="90" height="82" fill="url(#pvsk)"/><path d="M303 30 V112 M258 71 H348" stroke="#f1f0ed" stroke-width="4"/><polygon points="258,112 348,112 332,170 204,170" fill="#fff" opacity=".08"/>
+       <rect x="38" y="110" width="152" height="56" rx="12" fill="#3a3d46"/><rect x="46" y="92" width="136" height="34" rx="10" fill="#454955"/><rect x="38" y="102" width="18" height="64" rx="8" fill="#31343c"/><rect x="172" y="102" width="18" height="64" rx="8" fill="#31343c"/>
+       <rect x="66" y="34" width="60" height="44" rx="3" fill="#f1f0ed"/><rect x="71" y="39" width="50" height="34" fill="#2b2f36"/><circle cx="96" cy="56" r="9" class="pt" opacity=".9"/>
+       <rect x="364" y="122" width="5" height="46" fill="#222"/><ellipse cx="366" cy="118" rx="15" ry="10" fill="#f3e3b4"/></svg>
+     </div>
+     <div class="pvm" id="pvWm" data-m="wm">
+      <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Panou de lemn și panou de metal vopsite în culoarea aleasă (ilustrație)"><defs><linearGradient id="pvbr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient></defs>
+       <rect x="18" y="22" width="170" height="148" rx="8" fill="#b48658"/><rect x="18" y="22" width="170" height="148" rx="8" class="pt" opacity=".74"/><path d="M26 46 Q100 38 180 48 M26 72 Q90 82 180 70 M26 98 Q110 90 180 100 M26 124 Q80 132 180 122 M26 148 Q120 140 180 150" stroke="#2a1608" stroke-opacity=".35" stroke-width="2" fill="none"/>
+       <rect x="212" y="22" width="170" height="148" rx="8" class="pt"/><rect x="212" y="22" width="170" height="148" rx="8" fill="url(#pvbr)"/><rect x="212" y="22" width="170" height="148" rx="8" class="wsheen" fill="url(#pvw2)"/><path d="M216 44 H378 M216 66 H378 M216 88 H378 M216 110 H378 M216 132 H378 M216 154 H378" stroke="#fff" stroke-opacity=".1"/><circle cx="226" cy="36" r="4" fill="#0d0e11" opacity=".5"/><circle cx="368" cy="36" r="4" fill="#0d0e11" opacity=".5"/><circle cx="226" cy="156" r="4" fill="#0d0e11" opacity=".5"/><circle cx="368" cy="156" r="4" fill="#0d0e11" opacity=".5"/>
+       <text x="103" y="192" fill="#9aa1ab" font-size="12" text-anchor="middle" font-family="system-ui,sans-serif" letter-spacing="2">LEMN</text><text x="297" y="192" fill="#9aa1ab" font-size="12" text-anchor="middle" font-family="system-ui,sans-serif" letter-spacing="2">METAL</text></svg>
+     </div>
+    </div>
+    <figcaption>
+     <div class="cn"><i></i><span id="pvCn">Previzualizare</span></div>
+     <div class="tabs" role="group" aria-label="Alege suprafața"><button class="tab" type="button" data-m="car" aria-pressed="true">Pe mașină</button><button class="tab" type="button" data-m="wall" aria-pressed="false">Pe perete</button><button class="tab" type="button" data-m="wm" aria-pressed="false">Lemn și metal</button></div>
+    </figcaption>
+   </figure>
+   <aside class="box pvside rv d1" aria-label="Culoare și finisaj">
+    <h3>Culoarea aleasă</h3>
+    <div class="pvrd"><i class="pvsw" id="pvSw"></i><div><div class="pvnm" id="pvNm">—</div><div class="pvhx" id="pvHx">#------</div></div></div>
+    <p class="small" id="pvSrc">Din raft: atinge o cutie sus, sau alege din listă.</p>
+    <h3 id="pvFinH">Finisaj</h3>
+    <div class="fin" id="pvFin" role="group" aria-labelledby="pvFinH"><button type="button" class="tab" data-fin="gloss" aria-pressed="true">Lucios</button><button type="button" class="tab" data-fin="metal" aria-pressed="false">Metalizat</button><button type="button" class="tab" data-fin="pearl" aria-pressed="false">Perlat</button><button type="button" class="tab" data-fin="matte" aria-pressed="false">Mat</button></div>
+    <h3>Alege nuanța</h3>
+    <div class="pvsws" id="pvSws" role="group" aria-label="Culori"></div>
+    <p class="small pvnote">Nuanțele de pe ecran sunt orientative. Potrivirea exactă se face în magazin, cu sistemul de mixare.</p>
+   </aside>
   </div>
  </div>
 </section>
@@ -142,6 +171,26 @@ document.addEventListener('contextmenu',function(e){if(!e.target.closest('input,
     <div class="tabs" role="group" aria-label="Alege animația"><button class="tab" type="button" data-mode="auto" aria-pressed="true">Automat</button><button class="tab" type="button" data-mode="stripes" aria-pressed="false">Dungi cu rola</button><button class="tab" type="button" data-mode="tape" aria-pressed="false">Linie curată cu bandă</button></div>
    </figcaption>
   </figure>
+ </div>
+</section>
+
+<div class="drip" aria-hidden="true"></div>
+
+<section class="sec" id="produse">
+ <div class="wrap">
+  <div class="tag rv">Ce găsești</div>
+  <h2 class="t rv">Tot ce ai nevoie pentru vopsit.</h2>
+  <p class="sub rv">Lacuri și vopsele auto și de uz general, scule, consumabile, măști și echipamente de protecție. Detaliile le afli la magazin sau la telefon.</p>
+  <div class="cards">
+   <article class="card rv"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="st" d="M6 44V35l9-4 8-12h20l9 12 9 4v9z"/><path class="st" d="M26 22h12l6 9H20z"/><g class="a-shine"><path class="st" d="M24 25l6 0"/></g><circle class="fl" cx="19" cy="46" r="7"/><circle class="fl" cx="47" cy="46" r="7"/><circle cx="19" cy="46" r="2.4" fill="#0d0e11"/><circle cx="47" cy="46" r="2.4" fill="#0d0e11"/><g class="a-spin2"><path d="M19 40v12M13 46h12" stroke="#0d0e11" stroke-width="1.4" fill="none"/></g></svg><h3>Lacuri și vopsele auto</h3><p>Lacuri și vopsele pentru autovehicule și retuș auto.</p></article>
+   <article class="card rv d1"><svg viewBox="0 0 64 64" aria-hidden="true"><g class="a-slide"><rect class="st" x="8" y="10" width="40" height="14" rx="4"/><path class="st" d="M48 17h8v14H30v8"/></g><rect class="fl" x="26" y="40" width="8" height="16" rx="3"/></svg><h3>Vopsele de uz general</h3><p>Vopsele lavabile, vopsele pentru lemn sau metal.</p></article>
+   <article class="card rv d2"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="st" cx="32" cy="32" r="8"/><g class="a-spin"><circle cx="32" cy="10" r="6" fill="#e0314b"/><circle cx="51" cy="43" r="6" fill="#f7c600"/><circle cx="13" cy="43" r="6" fill="#2f7be0"/></g></svg><h3>Sistem de mixare</h3><p>Primul sistem de mixare al vopselelor pentru retuș auto adus în Cluj, în 1993.</p></article>
+   <article class="card rv d3"><svg viewBox="0 0 64 64" aria-hidden="true"><rect class="st" x="14" y="24" width="22" height="34" rx="5"/><rect class="st" x="18" y="12" width="14" height="12" rx="2"/><path class="st" d="M32 15h6"/><circle class="fl a-mist" cx="43" cy="14" r="2.2"/><circle class="fl a-mist" cx="47" cy="19" r="1.8"/><circle class="fl a-mist" cx="42" cy="21" r="1.6"/><path class="st" d="M14 40h22"/></svg><h3>Spray-uri</h3><p>Spray-uri auto sau vopsea preparată la codul dorit, îmbuteliată în spray.</p></article>
+   <article class="card rv"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="st bead a-bead" pathLength="44" d="M10 54H54"/><g class="a-tube"><g class="a-sq"><path class="st" d="M22 6h20v30H22z"/><path class="st" d="M25 10h14M25 14h14" opacity=".55"/></g><path class="st" d="M22 36h20l-7 8h-6z"/><path class="fl" d="M29.5 44h5v6h-5z"/></g></svg><h3>Chituri, adezivi, antifon</h3><p>Chituri, adezivi și antifon pentru reparații.</p></article>
+   <article class="card rv d1"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="st" d="M32 6l20 8v16c0 14-9 22-20 28C21 52 12 44 12 30V14z"/><path class="st a-dash" d="M22 32l7 7 13-14"/></svg><h3>Protecție anticorozivă</h3><p>Protecție anticorozivă și alte vopsele speciale.</p></article>
+   <article class="card rv d2"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="st" d="M12 30c0-10 8-14 20-14s20 4 20 14v5c0 11-9 19-20 19S12 46 12 35z"/><circle class="st a-pulse" cx="23" cy="40" r="6"/><circle class="st a-pulse" cx="41" cy="40" r="6"/><path class="st" d="M12 30H4M52 30h8"/></svg><h3>Scule și protecție</h3><p>Scule, consumabile, măști și echipamente de protecție pentru vopsitorii.</p></article>
+   <article class="card rv d3"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="st strip a-strip" pathLength="36" d="M22 51H58" style="stroke-width:5;opacity:.85"/><path class="st a-cut" d="M58 46l-3.5 5 3.5 5"/><g class="a-roll"><circle class="st" cx="22" cy="33" r="18"/><circle class="st" cx="22" cy="33" r="7"/><path class="st" d="M22 33V19" opacity=".6"/></g></svg><h3>Folii și benzi de mascare</h3><p>Folii și benzi de mascare, plus unelte pentru repararea și zugrăvirea locuinței.</p></article>
+  </div>
  </div>
 </section>
 
@@ -198,6 +247,7 @@ document.addEventListener('contextmenu',function(e){if(!e.target.closest('input,
   </div>
  </div>
 </section>
+
 </main>
 
 <footer>
@@ -217,7 +267,10 @@ document.addEventListener('contextmenu',function(e){if(!e.target.closest('input,
 <script src="assets/colors.js"></script>
 <script src="assets/raft.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/car.js"></script>
+<script src="assets/preview.js"></script>
 <script src="assets/fx.js"></script>
+<script src="assets/premium.js"></script>
 <script src="consent.js"></script>
 </body>
 </html>

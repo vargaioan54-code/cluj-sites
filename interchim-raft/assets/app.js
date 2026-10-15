@@ -48,6 +48,7 @@ function paintUI(i){
  body.style.setProperty('--c',c.h);
  var fb=$('.fbbig');if(fb)fb.style.setProperty('--c',c.h);var fn=$('#fbnm');if(fn)fn.textContent=c.n;
  chips.forEach(function(b,k){b.setAttribute('aria-pressed',k===i?'true':'false');});
+ try{window.dispatchEvent(new CustomEvent('raft:pick',{detail:{i:i,hex:c.h,name:c.n}}));}catch(e){}
  return bg;
 }
 function resetUI(){
