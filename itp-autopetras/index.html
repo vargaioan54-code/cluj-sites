@@ -1,0 +1,199 @@
+<!doctype html><html lang="ro"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>ITP Autopetras — Stație ITP Cluj-Napoca, Str. Călan 2</title>
+<meta name="description" content="ITP Autopetras, stație ITP autorizată RAR (CJ077) în Cluj-Napoca, Strada Călan nr. 2, 400620. Program luni–vineri 08:00–16:30. Telefon 0740 162 842.">
+<meta name="theme-color" content="#07161b">
+<style>
+:root{--bg:#07161b;--bg2:#0c2027;--pan:#112a33;--line:#1f3f4a;--tx:#eaf6f4;--mu:#86a7ae;--ac:#ffc400;--ac2:#ffe27a;--steel:#cfe3e6}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}body{background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+a{color:inherit}.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(13,12,18,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{text-decoration:none;font-weight:900;letter-spacing:.06em;font-size:18px}.logo b{color:var(--ac)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 20px;border-radius:12px;font-weight:800;text-decoration:none;border:2px solid var(--ac);transition:transform .2s,box-shadow .2s}
+.btn.p{background:var(--ac);color:#1a1400}.btn.p:hover{box-shadow:0 10px 30px rgba(255,196,0,.4);transform:translateY(-2px)}.btn.g{color:var(--tx);border-color:var(--line)}.btn.sm{padding:9px 14px;font-size:14px}
+/* hero */
+#hero{position:relative;height:100svh;min-height:600px;overflow:hidden;background:radial-gradient(ellipse at 70% 45%,#0f3340,#07161b 65%)}
+#hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;opacity:.35;mask-image:radial-gradient(ellipse at 60% 50%,#000,transparent 75%)}
+#gl{position:absolute;inset:0;z-index:1;touch-action:pan-y}#gl canvas{display:block;width:100%!important;height:100%!important}
+.htx{position:relative;z-index:2;padding-top:96px;pointer-events:none}.htx a{pointer-events:auto}
+.kick{font:700 12px ui-monospace,monospace;letter-spacing:.25em;color:var(--ac2);text-transform:uppercase;margin-bottom:12px;display:flex;gap:10px;align-items:center}.kick i{width:8px;height:8px;border-radius:50%;background:var(--ac2);box-shadow:0 0 12px var(--ac2);animation:bl 1.6s infinite}@keyframes bl{50%{opacity:.25}}
+h1{font-size:clamp(40px,11vw,64px);line-height:.95;font-weight:900;letter-spacing:-.02em;text-transform:uppercase}
+h1 span{display:block;opacity:0;transform:translateY(30px);animation:up .8s cubic-bezier(.2,.8,.2,1) forwards}h1 span:nth-child(2){animation-delay:.12s;color:var(--ac)}h1 span:nth-child(3){animation-delay:.24s;-webkit-text-stroke:1.5px var(--steel);color:transparent}
+@keyframes up{to{opacity:1;transform:none}}
+.hsub{color:var(--mu);margin-top:14px;max-width:440px;opacity:0;animation:up .8s .4s forwards}
+.hcta{position:absolute;left:0;right:0;bottom:24px;z-index:3;display:flex;gap:10px;flex-wrap:wrap;padding:0 20px}
+@media(min-width:900px){.htx{padding-top:0;height:100%;display:flex;flex-direction:column;justify-content:center;max-width:52%}h1{font-size:min(4.7vw,80px)}.hcta{position:static;padding:0;margin-top:28px;opacity:0;animation:up .8s .55s forwards}}
+/* tape */
+.tape{background:var(--ac);color:#1a1400;overflow:hidden;white-space:nowrap;font:900 15px system-ui;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;transform:rotate(-1.2deg);margin:-14px -10px 0;position:relative;z-index:5}
+.tape div{display:inline-block;animation:mq 22s linear infinite}@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:80px 0}h2{font-size:clamp(30px,7vw,54px);line-height:1;text-transform:uppercase;font-weight:900;margin-bottom:24px}h2 em{font-style:normal;color:var(--ac)}
+.tag{font:700 12px ui-monospace,monospace;letter-spacing:.22em;color:var(--ac2);text-transform:uppercase;margin-bottom:10px}
+.grid{display:grid;gap:14px;grid-template-columns:1fr}@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--pan);border:1px solid var(--line);border-radius:18px;padding:24px;position:relative;overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.card.on{opacity:1;transform:none}.card:after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--ac);transition:width 1s .2s}.card.on:after{width:100%}
+.card .k{font:700 12px ui-monospace,monospace;color:var(--mu);letter-spacing:.15em}.card .v{font-size:28px;font-weight:900;margin:6px 0}.card p{color:var(--mu)}
+.hours{display:grid;grid-template-columns:1fr auto;gap:0;max-width:520px;border-top:1px solid var(--line)}.hours div{padding:12px 0;border-bottom:1px solid var(--line)}.hours .c{color:var(--mu)}.hours .now{color:var(--ac2);font-weight:800}
+.two{display:grid;gap:30px}@media(min-width:900px){.two{grid-template-columns:1fr 1fr;align-items:start}}
+.map{aspect-ratio:4/3;border-radius:18px;border:1px solid var(--line);background:var(--pan);overflow:hidden}
+.stars{color:var(--ac);font-size:26px;letter-spacing:4px}
+footer{border-top:1px solid var(--line);padding:30px 0 100px;color:var(--mu);font-size:14px}footer a{color:var(--mu);margin-right:14px}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:none}.sticky .btn{width:100%;justify-content:center}
+body.past .sticky{display:block}@media(min-width:900px){.sticky{display:none!important}footer{padding-bottom:30px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}h1 span,.hsub,.hcta,.card{opacity:1;transform:none}}
+
+/* ===== upgrade: GS-style ===== */
+#prog{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--ac),var(--ac2));z-index:60}
+.navl{display:none;gap:24px;font:700 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em}.navl a{text-decoration:none}.navl a:hover{color:var(--ac)}
+@media(min-width:900px){.navl{display:flex}}
+.sweep{position:absolute;inset:-20%;z-index:1;pointer-events:none;background:conic-gradient(from 200deg at 0% 50%,transparent 0deg,rgba(255,196,0,.16) 14deg,transparent 30deg);animation:sw 7s ease-in-out infinite}
+.sweep.r{background:conic-gradient(from 20deg at 100% 55%,transparent 0deg,rgba(255,226,122,.12) 14deg,transparent 30deg);animation-delay:-3.5s}
+@keyframes sw{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+.tread{position:absolute;left:0;width:100%;height:120px;z-index:1;pointer-events:none;opacity:.5}
+.tread path{fill:none;vector-effect:non-scaling-stroke}.tread .c{stroke:var(--ac);stroke-width:3}.tread .g{stroke:var(--ac2);stroke-width:2;stroke-dasharray:6 10}
+.tape{transform:none;margin:0;font:900 26px/1 system-ui,sans-serif;letter-spacing:.06em;padding:15px 0;border-block:1px solid var(--line)}
+.tape.gd{background:var(--ac2)}.tape.gd div{animation-direction:reverse}
+#info,#ce,#rec,#contact{position:relative;z-index:2}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}.rv.on{opacity:1;transform:none}
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding:.14em 0 .08em;margin:-.14em 0 -.08em}.sw>span{display:inline-block;transform:translateY(105%) rotate(4deg);transition:transform .9s cubic-bezier(.2,.8,.2,1)}.sin .sw>span{transform:none}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.35);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}.btn{position:relative;overflow:hidden}@keyframes rip{to{transform:scale(1);opacity:0}}
+/* pinned 3D car model */
+#model3d{height:420vh;padding:0;position:relative;z-index:2;background:radial-gradient(ellipse at 60% 45%,#0f3340,#07161b 70%)}
+#model3d .pin,#cap .pin{position:sticky;top:0;height:100svh;overflow:hidden}
+#model3d .pin:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;opacity:.28;-webkit-mask-image:radial-gradient(ellipse at 60% 50%,#000,transparent 75%);mask-image:radial-gradient(ellipse at 60% 50%,#000,transparent 75%)}
+#r3stage{position:absolute;inset:0;touch-action:pan-y}#r3stage canvas{display:block;width:100%!important;height:100%!important;cursor:grab;touch-action:pan-y}#r3stage canvas:active{cursor:grabbing}
+.r3ui{position:absolute;left:0;right:0;z-index:3;pointer-events:none}
+.r3top{top:78px}
+.r3ch{position:absolute;left:20px;right:20px;top:0;opacity:0;transform:translateY(16px);transition:.5s}.r3ch.on{opacity:1;transform:none}
+.r3ch h3{font-size:clamp(30px,8vw,64px);line-height:.95;font-weight:900;text-transform:uppercase}.r3ch h3 em{font-style:normal;color:var(--ac)}.r3ch p{color:var(--mu);max-width:440px;font-size:15px;margin-top:8px}
+.r3hint{position:absolute;left:0;right:0;bottom:72px;text-align:center;font:700 11px ui-monospace,monospace;letter-spacing:.25em;color:var(--mu);z-index:3;pointer-events:none}
+#r3bar{position:absolute;left:0;bottom:0;height:4px;width:100%;background:linear-gradient(90deg,var(--ac),var(--ac2));transform-origin:0 50%;transform:scaleX(0);z-index:4}
+#model3d .fb{display:none;position:absolute;inset:0;align-items:center;justify-content:center;color:var(--mu);padding:30px;text-align:center}#model3d.fallback .fb{display:flex}
+@media(max-width:899px){.r3hint{letter-spacing:.1em;font-size:10.5px;padding:0 10px}}
+@media(min-width:900px){.r3top{top:0;bottom:0;left:6vw;right:auto;width:44vw;display:flex;align-items:center}.r3top .r3ch{left:0;right:0;top:50%;margin-top:-110px}.r3ch h3{font-size:min(4.4vw,72px)}.r3hint{left:6vw;right:auto;text-align:left;bottom:28px}}
+/* pinned chapters */
+#cap{height:400vh;padding:0;position:relative;z-index:2;background:var(--bg)}
+.chap{position:absolute;inset:0;display:flex;align-items:center;opacity:0;transform:scale(1.06);transition:opacity .7s,transform .9s;pointer-events:none}.chap.on{opacity:1;transform:none}
+.chap .wrap{display:grid;gap:14px;width:100%;position:relative}
+.chap .big{font:900 clamp(96px,24vw,300px)/.8 system-ui,sans-serif;color:transparent;-webkit-text-stroke:2px var(--line);order:-1}
+.chap h3{font-size:clamp(34px,9vw,96px);line-height:.95;font-weight:900;text-transform:uppercase}.chap h3 em{font-style:normal;color:var(--ac)}
+.chap p{max-width:520px;color:var(--mu);font-size:18px}
+.dots{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);display:flex;flex-direction:row;gap:12px;z-index:3}
+.dots i{width:8px;height:8px;border-radius:5px;background:#3a5a64;transition:.3s}.dots i.on{background:var(--ac);width:26px}
+.chline{position:absolute;bottom:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--ac),var(--ac2));z-index:3}
+@media(min-width:900px){.chap .wrap{display:block}.chap .big{position:absolute;right:48px;top:50%;transform:translateY(-50%);font-size:min(22vw,300px)}.chap h3{max-width:56%;font-size:min(6vw,88px);margin:6px 0 14px}.chap p{max-width:min(520px,48%)}
+ .dots{left:auto;right:20px;bottom:auto;top:50%;transform:translateY(-50%);flex-direction:column}.dots i.on{width:8px;height:26px}}
+.fbig{font:900 min(6.8vw,110px)/.9 system-ui,sans-serif;color:transparent;-webkit-text-stroke:1.5px #1f3f4a;text-transform:uppercase;margin-bottom:26px;white-space:nowrap;overflow:hidden}
+@media (prefers-reduced-motion:reduce){.sweep{animation:none}.rv{opacity:1;transform:none}.sw>span{transform:none!important}#cap{height:auto}#cap .pin{position:relative;height:auto;padding:60px 0}.chap{position:relative;inset:auto;opacity:1;transform:none;padding:30px 0}.chap .big{font-size:80px}.dots,.chline{display:none}#model3d{height:auto}#model3d .pin{position:relative;height:100svh}.r3ch{position:relative;opacity:1;transform:none}.r3ch:not(:first-child){display:none}}
+
+/* ===== itp additions ===== */
+.scan{position:absolute;left:0;right:0;height:2px;z-index:1;pointer-events:none;background:linear-gradient(90deg,transparent,var(--ac2),transparent);box-shadow:0 0 18px var(--ac2);opacity:.55;animation:scy 6s ease-in-out infinite}
+@keyframes scy{0%{top:8%}50%{top:92%}100%{top:8%}}
+h1 span:nth-child(3){font-size:.78em}
+.grid.g2{margin-top:14px}
+.badge{display:inline-block;margin-top:16px;padding:7px 12px;border:1px solid var(--ac2);border-radius:999px;font:700 11px ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--ac2);opacity:0;animation:up .8s .5s forwards}
+.rq{font-size:18px;line-height:1.45;color:var(--tx);margin:10px 0 14px}.rqm{font:700 11px ui-monospace,monospace;letter-spacing:.14em;color:var(--mu);text-transform:uppercase}
+.note{color:var(--mu);font-size:13px;margin-top:16px;max-width:620px}
+.mapbtn{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:300px;padding:20px;text-align:center;flex-direction:column;gap:14px;color:var(--mu)}
+@media (prefers-reduced-motion:reduce){.scan{display:none}.badge{opacity:1}}
+
+:root{--wm:#35e08a}
+#prog,#r3bar,.chline{background:linear-gradient(90deg,var(--ac),var(--wm))}
+.card:after{background:linear-gradient(90deg,var(--ac),var(--wm))}
+.kick i{background:var(--wm);box-shadow:0 0 12px var(--wm)}
+.logo{white-space:nowrap}
+@media(max-width:899px){h1{font-size:min(8.6vw,64px)}.logo{font-size:16px;letter-spacing:.03em}.fbig{font-size:6.4vw}}
+#model3d .pin:before,#hero:before{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px)}
+.qa .v{font-size:22px}
+</style><style id="nosel">html,body,*{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}input,textarea{-webkit-user-select:text;user-select:text;-webkit-touch-callout:default}html{touch-action:pan-x pan-y}</style>
+<script>document.addEventListener("gesturestart",e=>e.preventDefault());document.addEventListener("dblclick",e=>e.preventDefault(),{passive:false});document.addEventListener("contextmenu",e=>{if(!e.target.closest("input,textarea"))e.preventDefault()});</script>
+<style id="mobfix">@media(max-width:899px){#hero{height:auto;min-height:0;display:flex;flex-direction:column;padding:96px 0 24px}#htx{order:1;position:relative;z-index:2;padding-top:0}.hcta{position:static;padding:0;margin-top:22px}#gl{order:2;position:relative;inset:auto;width:100%;height:min(46svh,340px);margin-top:12px}}</style><style id="introcss">#intro{position:fixed;inset:0;z-index:500;background:#07161b;display:flex;align-items:center;justify-content:center;flex-direction:column;overflow:hidden;transition:transform .9s cubic-bezier(.7,0,.2,1)}
+#intro:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse at 50% 50%,#000,transparent 70%);mask-image:radial-gradient(ellipse at 50% 50%,#000,transparent 70%)}
+#intro.done{transform:translateY(-100%)}
+#intro .ig{position:relative;width:min(52vw,220px);height:min(52vw,220px)}
+#intro .ig svg{width:100%;height:100%;overflow:visible}
+#intro .rot{transform-box:fill-box;transform-origin:center;animation:irot 1.3s cubic-bezier(.3,.7,.2,1) forwards}
+@keyframes irot{from{transform:translateY(20px) scale(.84);opacity:.2}to{transform:none;opacity:1}}
+#intro .dr{fill:none;stroke:#ffe27a;stroke-width:5;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:idraw 1.1s cubic-bezier(.4,0,.2,1) forwards}
+#intro .d2{stroke:#ffc400;stroke-width:4;animation-delay:.7s}
+#intro .ln{fill:none;stroke:#ffc400;stroke-width:5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:idraw .5s forwards}
+#intro .pf{fill:#4d7580;transform-box:fill-box;transform-origin:center;opacity:0;animation:ipuff 1.7s ease-in-out forwards}
+@keyframes ipuff{0%{opacity:0;transform:translateY(10px) scale(.5)}28%{opacity:.95;transform:translateY(0) scale(1)}62%{opacity:.8}100%{opacity:0;transform:translateY(-26px) scale(1.7)}}
+#intro .stp{transform-box:fill-box;transform-origin:center;opacity:0;animation:istamp .5s 2s cubic-bezier(.2,1.6,.4,1) forwards}
+@keyframes istamp{0%{opacity:0;transform:scale(2.2) rotate(-20deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+#intro .sr2{fill:none;stroke:#ffc400;stroke-width:2.5;stroke-dasharray:3 7;transform-box:fill-box;transform-origin:center;opacity:0;animation:ispin 8s linear infinite,ifade .6s 1.9s forwards}
+@keyframes ispin{to{transform:rotate(360deg)}}
+#intro .chk{fill:none;stroke:#1a1400;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:idraw .5s 2.3s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes idraw{to{stroke-dashoffset:0}}
+#intro .it{margin-top:24px;font:800 clamp(26px,8.4vw,50px)/1.1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-transform:uppercase;color:#fff;letter-spacing:.02em;text-align:center;clip-path:inset(0 100% 0 0);animation:iclip 1s .9s cubic-bezier(.4,0,.2,1) forwards}
+#intro .it em{font-style:normal;color:#ffc400;display:block}
+#intro .is{margin-top:12px;font:500 12px ui-monospace,monospace;letter-spacing:.28em;color:#86a7ae;opacity:0;animation:ifade .6s 1.7s forwards;text-align:center;padding:0 16px}
+#intro .ib{position:absolute;left:0;bottom:0;height:4px;width:100%;background:linear-gradient(90deg,#ffc400,#35e08a);transform:scaleX(0);transform-origin:0 50%;animation:ibar 2.8s linear forwards}
+@keyframes iclip{to{clip-path:inset(0 0 0 0)}}@keyframes ifade{to{opacity:1}}@keyframes ibar{to{transform:scaleX(1)}}
+#intro .bm{fill:#ffc400;opacity:0;animation:ibm .9s 1.5s ease-out forwards}@keyframes ibm{0%{opacity:0}60%{opacity:.5}100%{opacity:.28}}
+#intro .scn{fill:#ffe27a;opacity:0;animation:iscn 1.5s .6s ease-in-out forwards}@keyframes iscn{0%{opacity:0;transform:translateX(0)}15%{opacity:.9}85%{opacity:.9}100%{opacity:0;transform:translateX(150px)}}
+#intro .whl{fill:#07161b;stroke:#ffe27a;stroke-width:5}
+body.introlock{overflow:hidden}</style></head><body><div id="intro" aria-hidden="true"><div class="ig"><svg viewBox="0 0 200 200"><g class="rot"><path class="dr" pathLength="1" d="M18 136 V118 Q18 108 30 106 L62 100 L84 72 Q88 68 94 68 H132 Q138 68 142 72 L160 100 L182 106 Q190 110 190 120 V136 Z"/><path class="ln" pathLength="1" style="animation-delay:.5s" d="M96 72 V100 H150"/><path class="ln" pathLength="1" style="animation-delay:.65s" d="M64 100 H150"/><circle class="dr d2 whl" pathLength="1" cx="54" cy="138" r="16"/><circle class="dr d2 whl" pathLength="1" cx="152" cy="138" r="16"/><path class="ln" pathLength="1" style="animation-delay:.8s" d="M8 160 H192"/><path class="ln" pathLength="1" style="animation-delay:.95s" d="M30 170 H60 M86 170 H116 M142 170 H172"/></g><rect class="scn" x="20" y="54" width="4" height="108" rx="2"/><path class="bm" d="M188 118 L200 100 V140 Z"/><circle class="sr2" cx="100" cy="112" r="92"/><g class="stp"><circle cx="150" cy="56" r="24" fill="#35e08a"/><path class="chk" pathLength="1" d="M138 56 L147 65 L164 46"/></g></svg></div><div class="it">ITP<em>Autopetras</em></div><div class="is">STAȚIE ITP · CLUJ-NAPOCA</div><div class="ib"></div></div><script>(function(){var i=document.getElementById("intro"),b=document.body;b.classList.add("introlock");function e(){if(i.classList.contains("done"))return;i.classList.add("done");b.classList.remove("introlock");setTimeout(function(){i.remove()},1000)}if(matchMedia("(prefers-reduced-motion:reduce)").matches){e()}else{setTimeout(e,3000);i.addEventListener("click",e)}})();</script>
+<div id="prog"></div><nav id="nav"><a href="#hero" class="logo">ITP <b>AUTOPETRAS</b></a><div class="navl"><a href="#info">Pe scurt</a><a href="#ce">Stația</a><a href="#model3d">Model 3D</a><a href="#cap">Cum decurge</a><a href="#intreb">Întrebări</a><a href="#contact">Contact</a></div><a class="btn p sm" href="tel:+40740162842">Sună</a></nav>
+<header id="hero"><div class="sweep"></div><div class="sweep r"></div><div class="scan"></div><svg class="tread" style="top:16%" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="g" d="M-20 90 C 400 30, 900 130, 1460 50"/><path class="c tr" d="M-20 80 C 400 20, 900 120, 1460 40"/></svg><svg class="tread" style="bottom:8%" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="g" d="M-20 40 C 500 120, 1000 10, 1460 100"/><path class="c tr" d="M-20 30 C 500 110, 1000 0, 1460 90"/></svg><div id="gl"></div>
+<div class="wrap htx" id="htx"><div class="kick"><i></i>Stație ITP · Cluj-Napoca</div>
+<h1><span>ITP</span><span>Autopetras</span><span>Inspecție tehnică</span></h1>
+<p class="hsub">Stație ITP autorizată RAR (cod CJ077) în Cluj-Napoca, Strada Călan nr. 2. Program luni–vineri, 08:00–16:30. Pentru programare, sună la 0740 162 842.</p>
+<div class="badge">Str. Călan 2 · 400620</div>
+<div class="hcta" id="hcta"><a class="btn p" href="tel:+40740162842">📞 0740 162 842</a><a class="btn g" href="#contact">Unde suntem</a></div></div>
+</header>
+<div class="tape" aria-hidden="true"><div>ITP Autopetras ✦ Stație ITP ✦ Cluj-Napoca ✦ Str. Călan 2 ✦ 0740 162 842 ✦ ITP Autopetras ✦ Stație ITP ✦ Cluj-Napoca ✦ Str. Călan 2 ✦ 0740 162 842 ✦ </div></div>
+<section id="info"><div class="wrap"><div class="tag rv">01 / Pe scurt</div><h2>Stație ITP, <em>luni–vineri</em></h2>
+<div class="grid">
+<div class="card"><div class="k">TELEFON</div><div class="v">0740 162 842</div><p>Sună pentru programare și ca să afli dacă mașina ta poate fi inspectată aici.</p><br><a class="btn p sm" href="tel:+40740162842">Sună acum</a></div>
+<div class="card"><div class="k">PROGRAM</div><div class="v">08:00 – 16:30</div><p>Luni–vineri. Sâmbătă și duminică: închis.</p></div>
+<div class="card"><div class="k">ADRESĂ</div><div class="v">Str. Călan 2</div><p>Cluj-Napoca, 400620 (atelier auto – C2).</p><br><a class="btn g sm" href="#contact">Vezi harta</a></div>
+</div>
+<p class="note">Programul este preluat din directoare publice de firme (actualizate în mai 2026). Confirmă-l la telefon înainte să vii.</p></div></section>
+<section id="ce" style="background:var(--bg2)"><div class="wrap"><div class="tag rv">02 / Stația</div><h2>Ce spune <em>lista RAR</em></h2>
+<div class="grid">
+<div class="card"><div class="k">STAȚIE ITP · CJ077</div><div class="v">Categoria II</div><p>Stația ITP AUTO PETRAS (CJ077) apare în lista Registrului Auto Român, cu categoria II: vehicule cu masa maximă autorizată de până la 3.500 kg.</p></div>
+<div class="card"><div class="k">LIMITARE</div><div class="v">Înălțime max. 2,5 m</div><p>Lista RAR indică o limită de înălțime de 2,5 m pentru autovehiculele inspectate la această stație.</p></div>
+<div class="card"><div class="k">EXCLUSE</div><div class="v">Tractoare, remorcate, GNC</div><p>Conform listei RAR, stația nu inspectează tractoare, vehicule tractate și autovehicule cu instalație GNC.</p></div>
+</div>
+<p class="note">Date din lista publică a stațiilor ITP autorizate RAR. Lista mai notează că stația nu verifică eficacitatea frânării prin probe funcționale în parcurs. Nu publicăm tarife, pentru că nu am găsit surse verificate. Le afli la telefon.</p></div></section>
+<section id="model3d" aria-label="Model 3D interactiv: autoturism pe o linie de inspecție, cu patru puncte de verificare (model ilustrativ)"><div class="pin"><div id="r3stage"></div><div class="fb">Modelul 3D nu poate fi afișat pe acest dispozitiv (WebGL indisponibil).</div>
+<div class="r3ui r3top">
+ <div class="r3ch on"><div class="kick"><i></i>Inspecția · 01</div><h3>Mașina <em>pe linie</em></h3><p>Un autoturism pe o linie de inspecție. Model 3D ilustrativ, nu reprezintă echipamentele stației. Trage ca să-l rotești.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Inspecția · 02</div><h3>Piesele <em>se despart</em></h3><p>Caroseria, roțile, farurile, eșapamentul și rolele se separă ca să vezi zonele de verificat.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Inspecția · 03</div><h3>Patru <em>puncte</em></h3><p>Frâne, lumini, direcție, emisii: punctele se aprind pe rând. În general, o ITP urmărește aceste zone.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Inspecția · 04</div><h3><em>Admis</em></h3><p>Ilustrare: rezultatul real îl stabilește inspecția. Pentru programare, sună la 0740 162 842.</p></div>
+</div>
+<div class="r3hint">MODEL ILUSTRATIV · DERULEAZĂ ↓ · TRAGE ↔</div>
+<div id="r3bar"></div></div></section>
+<section id="cap"><div class="pin">
+ <div class="chap on"><div class="wrap"><div class="big">01</div><div class="kick"><i></i>Pasul 1</div><h3>Suni <em>pentru programare</em></h3><p>Un telefon la 0740 162 842, de luni până vineri, între 08:00 și 16:30.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">02</div><div class="kick"><i></i>Pasul 2</div><h3>Verifici <em>mașina ta</em></h3><p>Vezi dacă se încadrează: până la 3.500 kg, înălțime de maximum 2,5 m, fără tractoare, vehicule tractate sau instalație GNC (lista RAR).</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">03</div><div class="kick"><i></i>Pasul 3</div><h3>Vii <em>la adresă</em></h3><p>Strada Călan nr. 2, Cluj-Napoca, 400620 (atelier auto – C2). Ia cu tine actele mașinii.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">04</div><div class="kick"><i></i>Pasul 4</div><h3>Afli <em>rezultatul</em></h3><p>Rezultatul inspecției îl stabilește stația. Site-ul nu are formulare și nu cere date.</p></div></div>
+ <div class="dots"><i class="on"></i><i></i><i></i><i></i></div><div class="chline" id="chline"></div>
+</div></section>
+<div class="tape gd" aria-hidden="true"><div>ITP Autopetras ✦ Sună 0740 162 842 ✦ Cluj-Napoca ✦ Stație ITP ✦ ITP Autopetras ✦ Sună 0740 162 842 ✦ Cluj-Napoca ✦ Stație ITP ✦ ITP Autopetras ✦ Sună 0740 162 842 ✦ Cluj-Napoca ✦ Stație ITP ✦ ITP Autopetras ✦ Sună 0740 162 842 ✦ Cluj-Napoca ✦ Stație ITP ✦ </div></div>
+<section id="intreb"><div class="wrap"><div class="tag rv">03 / Înainte să vii</div><h2>Ce poți <em>întreba</em></h2>
+<div class="grid qa">
+<div class="card"><div class="k">PROGRAMARE</div><div class="v">Trebuie programare?</div><p>Întreabă dacă poți veni direct sau ai nevoie de o programare.</p></div>
+<div class="card"><div class="k">TARIFUL</div><div class="v">Cât costă?</div><p>Tarifele nu sunt publicate într-o sursă verificată. Cere tariful la telefon.</p></div>
+<div class="card"><div class="k">ACTELE</div><div class="v">Ce iau cu mine?</div><p>Întreabă ce documente trebuie să aduci pentru mașina ta.</p></div>
+</div>
+<div class="grid g2 qa">
+<div class="card"><div class="k">VEHICULUL</div><div class="v">Mașina mea intră?</div><p>Spune greutatea, înălțimea și tipul instalației de alimentare (GNC nu se preia).</p></div>
+<div class="card"><div class="k">PROGRAMUL</div><div class="v">Când pot veni?</div><p>Luni–vineri, 08:00–16:30. Sâmbătă și duminică: închis.</p></div>
+<div class="card"><div class="k">ADRESA</div><div class="v">Unde este stația?</div><p>Str. Călan nr. 2, Cluj-Napoca, 400620.</p></div>
+</div>
+<p class="note">Nu afișăm o notă Google: sursele publice nu arată aceeași notă, așa că nu am pus nicio notă.</p></div></section>
+<section id="contact" style="background:var(--bg2)"><div class="wrap two">
+<div><div class="tag rv">04 / Contact</div><h2>Vino la <em>stație</em></h2>
+<p><b>Adresă:</b> Str. Călan nr. 2, Cluj-Napoca 400620</p><p><b>Telefon:</b> <a href="tel:+40740162842">0740 162 842</a></p><p><b>Program:</b> luni–vineri, 08:00–16:30; sâmbătă și duminică închis.</p><br>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn p" href="tel:+40740162842">Sună 0740 162 842</a><a class="btn g" href="https://www.google.com/maps/search/?api=1&amp;query=Strada+C%C4%83lan+2+Cluj-Napoca+400620" target="_blank" rel="noopener">Deschide în Maps</a></div></div>
+<div class="map" id="map"><div class="mapbtn"><span>Harta Google se încarcă doar după acordul tău pentru cookie-uri.</span><button class="btn g" id="loadmap" type="button">Încarcă harta</button></div></div>
+</div></section>
+<footer><div class="wrap"><div class="fbig">ITP Autopetras</div><p><b style="color:var(--tx)">ITP <span style="color:var(--ac)">AUTOPETRAS</span></b> · Stație ITP (RAR CJ077) · Str. Călan nr. 2, Cluj-Napoca</p><br>
+<a href="politica-confidentialitate.html">Confidențialitate</a><a href="politica-cookies.html">Cookie-uri</a><a href="termeni-si-conditii.html">Termeni</a><a href="#" data-ck>Setări cookie</a><a href="https://anpc.ro" target="_blank" rel="noopener">ANPC</a><a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">SOL</a></div></footer>
+<div class="sticky"><a class="btn p" href="tel:+40740162842">📞 Sună 0740 162 842</a></div>
+<script src="assets/three.min.js"></script><script src="assets/app.js"></script><script src="consent.js"></script>
+</body></html>
