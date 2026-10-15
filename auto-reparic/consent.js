@@ -9,7 +9,7 @@ const get=()=>{try{return JSON.parse(localStorage.getItem(K))}catch(e){return nu
 function apply(c){if(!c)return;
  if(c.ext&&!document.getElementById('gf')){const l=document.createElement('link');l.id='gf';l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;600;800&family=DM+Mono:wght@500&display=swap';document.head.appendChild(l)}
  if(c.ext)loadMap()}
-function loadMap(){const m=document.getElementById('map');if(m&&!m.querySelector('iframe'))m.innerHTML=`<iframe title="Hartă Dezmembrări Auto Renault" loading="lazy" src="${MAPQ}" style="width:100%;height:100%;min-height:340px;border:0;display:block"></iframe>`}
+function loadMap(){const m=document.getElementById('map');if(m&&!m.querySelector('iframe'))m.innerHTML=`<iframe title="Hartă Auto Reparic" loading="lazy" src="${MAPQ}" style="width:100%;height:100%;min-height:340px;border:0;display:block"></iframe>`}
 function save(ext){const c={ext:!!ext,ts:new Date().toISOString()};localStorage.setItem(K,JSON.stringify(c));close();apply(c);if(!ext&&document.getElementById('gf'))location.reload()}
 function close(){const b=document.getElementById('ck');b&&b.remove()}
 function open(set){close();const c=get()||{};const d=document.createElement('div');d.id='ck';d.setAttribute('role','dialog');d.setAttribute('aria-label','Consimțământ cookie');
