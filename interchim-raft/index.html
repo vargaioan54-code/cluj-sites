@@ -16,6 +16,7 @@ document.addEventListener('contextmenu',function(e){if(!e.target.closest('input,
 </script>
 </head>
 <body class="intro-on">
+<canvas id="bgfx" aria-hidden="true"></canvas>
 
 <div id="intro" aria-hidden="true">
  <div class="ig"></div>
@@ -86,6 +87,8 @@ document.addEventListener('contextmenu',function(e){if(!e.target.closest('input,
  </div>
 </section>
 
+<div class="drip" aria-hidden="true"></div>
+
 <section class="sec" id="produse">
  <div class="wrap">
   <div class="tag rv">Ce găsești</div>
@@ -96,13 +99,53 @@ document.addEventListener('contextmenu',function(e){if(!e.target.closest('input,
    <article class="card rv d1"><svg viewBox="0 0 64 64" aria-hidden="true"><g class="a-slide"><rect class="st" x="8" y="10" width="40" height="14" rx="4"/><path class="st" d="M48 17h8v14H30v8"/></g><rect class="fl" x="26" y="40" width="8" height="16" rx="3"/></svg><h3>Vopsele de uz general</h3><p>Vopsele lavabile, vopsele pentru lemn sau metal.</p></article>
    <article class="card rv d2"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="st" cx="32" cy="32" r="8"/><g class="a-spin"><circle cx="32" cy="10" r="6" fill="#e0314b"/><circle cx="51" cy="43" r="6" fill="#f7c600"/><circle cx="13" cy="43" r="6" fill="#2f7be0"/></g></svg><h3>Sistem de mixare</h3><p>Primul sistem de mixare al vopselelor pentru retuș auto adus în Cluj, în 1993.</p></article>
    <article class="card rv d3"><svg viewBox="0 0 64 64" aria-hidden="true"><rect class="st" x="14" y="24" width="22" height="34" rx="5"/><rect class="st" x="18" y="12" width="14" height="12" rx="2"/><path class="st" d="M32 15h6"/><circle class="fl a-mist" cx="43" cy="14" r="2.2"/><circle class="fl a-mist" cx="47" cy="19" r="1.8"/><circle class="fl a-mist" cx="42" cy="21" r="1.6"/><path class="st" d="M14 40h22"/></svg><h3>Spray-uri</h3><p>Spray-uri auto sau vopsea preparată la codul dorit, îmbuteliată în spray.</p></article>
-   <article class="card rv"><svg viewBox="0 0 64 64" aria-hidden="true"><g class="a-smear"><path class="st" d="M8 48L32 24l12 12-24 24z"/><path class="st" d="M44 36l10-10"/></g><path class="st" d="M10 58h16" opacity=".5"/></svg><h3>Chituri, adezivi, antifon</h3><p>Chituri, adezivi și antifon pentru reparații.</p></article>
+   <article class="card rv"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="st bead a-bead" pathLength="44" d="M10 54H54"/><g class="a-tube"><g class="a-sq"><path class="st" d="M22 6h20v30H22z"/><path class="st" d="M25 10h14M25 14h14" opacity=".55"/></g><path class="st" d="M22 36h20l-7 8h-6z"/><path class="fl" d="M29.5 44h5v6h-5z"/></g></svg><h3>Chituri, adezivi, antifon</h3><p>Chituri, adezivi și antifon pentru reparații.</p></article>
    <article class="card rv d1"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="st" d="M32 6l20 8v16c0 14-9 22-20 28C21 52 12 44 12 30V14z"/><path class="st a-dash" d="M22 32l7 7 13-14"/></svg><h3>Protecție anticorozivă</h3><p>Protecție anticorozivă și alte vopsele speciale.</p></article>
    <article class="card rv d2"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="st" d="M12 30c0-10 8-14 20-14s20 4 20 14v5c0 11-9 19-20 19S12 46 12 35z"/><circle class="st a-pulse" cx="23" cy="40" r="6"/><circle class="st a-pulse" cx="41" cy="40" r="6"/><path class="st" d="M12 30H4M52 30h8"/></svg><h3>Scule și protecție</h3><p>Scule, consumabile, măști și echipamente de protecție pentru vopsitorii.</p></article>
-   <article class="card rv d3"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="st" cx="30" cy="32" r="20"/><circle class="st a-spin" cx="30" cy="32" r="8" stroke-dasharray="5 4"/><path class="st" d="M50 32h8v12H40"/></svg><h3>Folii și benzi de mascare</h3><p>Folii și benzi de mascare, plus unelte pentru repararea și zugrăvirea locuinței.</p></article>
+   <article class="card rv d3"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="st strip a-strip" pathLength="36" d="M22 51H58" style="stroke-width:5;opacity:.85"/><path class="st a-cut" d="M58 46l-3.5 5 3.5 5"/><g class="a-roll"><circle class="st" cx="22" cy="33" r="18"/><circle class="st" cx="22" cy="33" r="7"/><path class="st" d="M22 33V19" opacity=".6"/></g></svg><h3>Folii și benzi de mascare</h3><p>Folii și benzi de mascare, plus unelte pentru repararea și zugrăvirea locuinței.</p></article>
   </div>
  </div>
 </section>
+
+<div class="drip" aria-hidden="true"></div>
+
+<section class="sec" id="atelier">
+ <div class="wrap">
+  <div class="tag rv">Mixare și spray</div>
+  <h2 class="t rv">Culoarea se pregătește la cod.</h2>
+  <p class="sub rv">Sistemul de mixare adus în Cluj în 1993 și vopseaua îmbuteliată în spray la codul dorit. Ilustrații orientative: nuanța exactă se potrivește în magazin.</p>
+  <div class="fx2">
+   <figure class="fig rv">
+    <div class="cvw"><canvas id="cvMix" role="img" aria-label="Animație: cutie de vopsea în care se dozează culori, apoi se agită până culoarea e uniformă."></canvas></div>
+    <figcaption><div class="cn"><i></i><span data-cn>Toate culorile</span></div><h3>Mixare la cod</h3><p>Se dozează în cutie, se agită, iar culoarea iese uniformă.</p></figcaption>
+   </figure>
+   <figure class="fig rv d1">
+    <div class="cvw"><canvas id="cvSpray" role="img" aria-label="Animație: un spray vopsește o ușă de mașină."></canvas></div>
+    <figcaption><div class="cn"><i></i><span data-cn>Toate culorile</span></div><h3>Spray la cod</h3><p>Vopsea preparată la codul dorit, îmbuteliată în spray.</p></figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<div class="drip" aria-hidden="true"></div>
+
+<section class="sec" id="casa">
+ <div class="wrap">
+  <div class="tag rv">Pentru casă</div>
+  <h2 class="t rv">Dungă după dungă, până se umple peretele.</h2>
+  <p class="sub rv">Vopsele lavabile, vopsele pentru lemn sau metal, folii și benzi de mascare și unelte pentru zugrăvit. Ilustrație orientativă: culorile se aleg din paleta magazinului.</p>
+  <figure class="fig wide rv">
+   <div class="cvw"><canvas id="cvWall" role="img" aria-label="Animație: o rolă vopsește un perete cu dungi în culori diferite; apoi o bandă de mascare se dezlipește și lasă o linie curată."></canvas></div>
+   <figcaption>
+    <div class="cn"><i></i><span data-cn>Culori din paletă</span></div>
+    <h3 data-wt>Rola: dungă după dungă</h3>
+    <div class="tabs" role="group" aria-label="Alege animația"><button class="tab" type="button" data-mode="auto" aria-pressed="true">Automat</button><button class="tab" type="button" data-mode="stripes" aria-pressed="false">Dungi cu rola</button><button class="tab" type="button" data-mode="tape" aria-pressed="false">Linie curată cu bandă</button></div>
+   </figcaption>
+  </figure>
+ </div>
+</section>
+
+<div class="drip" aria-hidden="true"></div>
 
 <section class="sec" id="istoric">
  <div class="wrap">
@@ -131,6 +174,8 @@ document.addEventListener('contextmenu',function(e){if(!e.target.closest('input,
   <p class="note rv">Hex-urile de pe site sunt valori de ecran, nu coduri de producător. Potrivirea exactă a culorii se face în magazin, cu sistemul de mixare.</p>
  </div>
 </section>
+
+<div class="drip" aria-hidden="true"></div>
 
 <section class="sec" id="contact">
  <div class="wrap">
@@ -172,6 +217,7 @@ document.addEventListener('contextmenu',function(e){if(!e.target.closest('input,
 <script src="assets/colors.js"></script>
 <script src="assets/raft.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/fx.js"></script>
 <script src="consent.js"></script>
 </body>
 </html>
