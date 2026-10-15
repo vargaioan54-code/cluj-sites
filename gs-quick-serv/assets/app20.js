@@ -103,12 +103,14 @@ const prs=$('#press');if(prs)prs.addEventListener('input',()=>{$('#pressv').text
 const chs=$$('#roata3d .r3ch'),bar=$('#r3bar');
 function onScroll(){const r=sec.getBoundingClientRect();prog=Math.min(1,Math.max(0,-r.top/(r.height-innerHeight)));const i=Math.min(chs.length-1,Math.floor(prog*chs.length));chs.forEach((c,j)=>c.classList.toggle('on',j===i));if(bar)bar.style.transform=`scaleX(${prog})`;needs=true}
 addEventListener('scroll',onScroll,{passive:true});onScroll();
-addEventListener('resize',()=>{ren.setSize(W(),H());cam.aspect=W()/H();cam.updateProjectionMatrix();needs=true});
+let fit=1;function vo(){const w=W(),h=H();ren.setSize(w,h);if(innerWidth>=900){cam.aspect=w/h;cam.clearViewOffset();fit=1;cam.updateProjectionMatrix();needs=true;return}
+let tb=0;$$('.r3ch').forEach(c=>{tb=Math.max(tb,c.offsetHeight)});const top=78+tb+16,bot=h-60,rh=Math.max(180,bot-top);fit=Math.max(1,500/rh);cam.aspect=w/rh;cam.setViewOffset(w,rh,0,-top,w,h);cam.updateProjectionMatrix();needs=true}
+vo();addEventListener('resize',vo);new ResizeObserver(vo).observe(stage);setTimeout(vo,800);setTimeout(vo,2000);
 let vis=false,spin=0;new IntersectionObserver(es=>{vis=es[0].isIntersecting;if(vis)tick()},{rootMargin:'100px'}).observe(sec);
 function tick(){if(!vis)return;spin+=RM?0:.004;
  const p=prog;const ty=uy+p*Math.PI*1.6+spin*(sec.classList.contains('touched')?0:1);yaw+=(ty-yaw)*.12;const tp=up+pitch+Math.sin(p*Math.PI)*.35;wheel.rotation.y=yaw;wheel.rotation.x+=(tp-wheel.rotation.x)*.12;
  const pc=Math.max(0,1-Math.abs(p-.875)*6);pr.material.opacity=pc*.9;pr.rotation.z+=.01;
- const base=(MOB?11.5:7.6)-Math.sin(p*Math.PI)*1.6;cam.position.z+=(base/zoom-cam.position.z)*.1;cam.position.x+=(((p>.25&&p<.5)?.6:0)-cam.position.x)*.05;cam.lookAt(0,0,0);
+ const base=(MOB?11.5:7.6)-Math.sin(p*Math.PI)*1.6;cam.position.z+=(base*fit/zoom-cam.position.z)*.1;cam.position.x+=(((p>.25&&p<.5)?.6:0)-cam.position.x)*.05;cam.lookAt(0,0,0);
  rim.intensity=1.2+Math.sin(performance.now()/600)*.3;ren.render(sc,cam);requestAnimationFrame(tick)}
 window.__gs3d=true;
 })();
