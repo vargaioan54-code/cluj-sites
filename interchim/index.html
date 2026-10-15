@@ -1,0 +1,294 @@
+<!doctype html><html lang="ro"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Interchim — Lacuri și vopsele în Cluj-Napoca | Mixare la cod, spray la cod</title>
+<meta name="description" content="Interchim, magazin de lacuri și vopsele din Cluj-Napoca, înființat în 1992. Vopsele auto și de uz general, sistem de mixare pentru retuș auto (din 1993), spray-uri la codul dorit. Str. Mioriței nr. 1. Tel. 0745 366 830.">
+<meta name="theme-color" content="#0a0914">
+<style>
+:root{--bg:#0a0914;--bg2:#100e1d;--pan:#16132a;--line:#2a2547;--tx:#f4f2ff;--mu:#9d98c4;--ac:#ff5a64;--ac2:#ffb347;--acr:255,90,100;--acx:#0a0914;--paint:#c1121f;--paintprev:#c1121f;
+--spec:linear-gradient(90deg,#ff3d71,#ff9f1c,#ffe14d,#2ee59d,#2dc4ff,#8b5cf6,#ff5ccf)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}body{background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+a{color:inherit}.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+main,header,section,footer,.tape{position:relative;z-index:2}
+#blobs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+#blobs i{position:absolute;border-radius:50%;width:60vmax;height:60vmax;opacity:.5;transition:background 1s;will-change:transform}
+#blobs i:nth-child(1){left:-18vmax;top:-14vmax;background:radial-gradient(circle,rgba(var(--acr),.34),transparent 62%);animation:bf1 19s ease-in-out infinite}
+#blobs i:nth-child(2){right:-22vmax;top:30vh;background:radial-gradient(circle,rgba(var(--acr),.22),transparent 62%);animation:bf2 23s ease-in-out infinite}
+#blobs i:nth-child(3){left:10vmax;bottom:-30vmax;background:radial-gradient(circle,rgba(255,179,71,.16),transparent 62%);animation:bf1 27s ease-in-out infinite reverse}
+@keyframes bf1{50%{transform:translate(8vmax,6vmax) scale(1.12)}}@keyframes bf2{50%{transform:translate(-8vmax,-5vmax) scale(.9)}}
+nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:10px 20px;background:rgba(10,9,20,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{text-decoration:none;font-weight:900;letter-spacing:.06em;font-size:18px;text-transform:uppercase;white-space:nowrap}.logo b{background:var(--spec);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:12px 20px;border-radius:12px;font-weight:800;text-decoration:none;border:2px solid var(--ac);transition:transform .2s,box-shadow .2s,background .4s,border-color .4s;font-family:inherit;font-size:16px;cursor:pointer;background:transparent;color:var(--tx)}
+.btn.p{background:var(--ac);color:var(--acx)}.btn.p:hover{box-shadow:0 10px 30px rgba(var(--acr),.45);transform:translateY(-2px)}.btn.g{color:var(--tx);border-color:var(--line)}.btn.sm{padding:9px 14px;font-size:14px;min-height:40px}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.35);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}@keyframes rip{to{transform:scale(1);opacity:0}}
+.navl{display:none;gap:22px;font:700 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em}.navl a{text-decoration:none}.navl a:hover{color:var(--ac)}@media(min-width:900px){.navl{display:flex}}
+#prog{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--spec);z-index:60}
+.kick{font:700 12px ui-monospace,monospace;letter-spacing:.25em;color:var(--ac);text-transform:uppercase;margin-bottom:12px;display:flex;gap:10px;align-items:center}.kick i{width:8px;height:8px;border-radius:50%;background:var(--ac);box-shadow:0 0 12px var(--ac);animation:bl 1.6s infinite}@keyframes bl{50%{opacity:.25}}
+.tag{font:700 12px ui-monospace,monospace;letter-spacing:.22em;color:var(--ac);text-transform:uppercase;margin-bottom:10px}
+section{padding:84px 0}h2{font-size:clamp(30px,7vw,54px);line-height:1;text-transform:uppercase;font-weight:900;margin-bottom:24px}h2 em{font-style:normal;color:var(--ac);transition:color .5s}
+.note{color:var(--mu);font-size:13px;margin-top:16px;max-width:640px}
+/* ===== HERO ===== */
+#hero{position:relative;overflow:hidden;padding:0}
+#hero:before{content:"";position:absolute;inset:0;z-index:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;opacity:.28;-webkit-mask-image:radial-gradient(ellipse at 70% 50%,#000,transparent 72%);mask-image:radial-gradient(ellipse at 70% 50%,#000,transparent 72%)}
+#htx,.pui,#gl{position:relative;z-index:2}#htx{margin:0;max-width:none;width:100%}
+#gl{touch-action:pan-y}#gl canvas{position:absolute;inset:0;display:block;width:100%!important;height:100%!important;cursor:grab;touch-action:pan-y}#gl canvas:active{cursor:grabbing}
+#gl .nogl{display:none}#gl.nogl:after{content:"Modelul 3D nu poate fi afișat pe acest dispozitiv.";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--mu);text-align:center;padding:20px}
+h1{font-size:clamp(38px,14vw,84px);line-height:.92;font-weight:900;letter-spacing:-.02em;text-transform:uppercase}
+h1 span{display:block;opacity:0;transform:translateY(30px);animation:up .8s cubic-bezier(.2,.8,.2,1) forwards}
+h1 span:nth-child(1){background:var(--spec);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:up .8s forwards,hue 8s linear infinite}
+h1 span:nth-child(2){animation-delay:.14s;font-size:.4em;letter-spacing:.02em;margin-top:.2em;line-height:1.05}h1 span:nth-child(2) em{font-style:normal;color:var(--ac);transition:color .5s}
+@keyframes up{to{opacity:1;transform:none}}@keyframes hue{to{background-position:-200% 0}}
+.hsub{color:var(--mu);margin-top:16px;max-width:470px;opacity:0;animation:up .8s .4s forwards}
+.badge{display:inline-block;margin-top:14px;padding:7px 12px;border:1px solid var(--ac);border-radius:999px;font:700 11px ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);opacity:0;animation:up .8s .5s forwards}
+.hcta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;opacity:0;animation:up .8s .6s forwards}
+#hero{display:flex;flex-direction:column;padding:96px 20px 28px}
+#htx{order:1;padding-top:0}#gl{order:2;width:100%;height:min(46svh,340px);margin-top:14px}.pui{order:3;margin-top:14px}
+@media(min-width:900px){
+ #hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);grid-template-areas:"tx gl" "pui gl";align-content:center;column-gap:28px;padding:92px max(20px,calc((100vw - 1180px)/2)) 36px;min-height:100svh}
+ #htx{grid-area:tx;align-self:end;padding-top:12px}.pui{grid-area:pui;align-self:start;margin-top:22px}#gl{grid-area:gl;height:auto;min-height:480px;margin:0}
+ h1{font-size:min(5.4vw,86px)}}
+/* panou vopsea */
+.pui{background:rgba(22,19,42,.78);border:1px solid var(--line);border-radius:20px;padding:16px;overflow:hidden;position:relative;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.puh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}.puh b{font:800 13px ui-monospace,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--ac)}
+.rd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px;color:var(--tx)}.rd code{font:700 13px ui-monospace,monospace;color:var(--mu)}
+.chip{width:22px;height:22px;border-radius:50%;background:var(--paint);border:2px solid rgba(255,255,255,.55);box-shadow:0 0 14px var(--paint);transition:background .5s,box-shadow .5s;flex:none}
+.sws{display:flex;flex-wrap:wrap;gap:8px}
+.hs{width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,.18);cursor:pointer;position:relative;transition:transform .25s cubic-bezier(.3,1.6,.5,1),border-color .25s,box-shadow .25s;padding:0;flex:none}
+.hs:hover{transform:scale(1.12)}.hs.sel{border-color:#fff;transform:scale(1.08);box-shadow:0 0 0 3px rgba(255,255,255,.2),0 0 18px var(--c)}
+.hs.sel:after{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px;border-radius:50%;background:var(--ck,#fff);box-shadow:0 0 0 2px rgba(0,0,0,.25)}
+.fin{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.fin button{min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--mu);font:700 13px system-ui,sans-serif;cursor:pointer;transition:.25s}
+.fin button.on{border-color:var(--ac);color:var(--acx);background:var(--ac)}
+.sl{display:grid;gap:0;margin-top:8px}.sl label{display:grid;grid-template-columns:112px 1fr;align-items:center;font:700 11px ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}
+@media(min-width:900px){.sl{grid-template-columns:repeat(3,1fr);column-gap:14px}.sl label{grid-template-columns:1fr;gap:0}}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;touch-action:pan-y;cursor:pointer;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:12px;border-radius:99px;background:var(--sg,var(--spec));border:1px solid rgba(255,255,255,.2)}
+input[type=range]::-moz-range-track{height:12px;border-radius:99px;background:var(--sg,var(--spec));border:1px solid rgba(255,255,255,.2)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;margin-top:-10px;border-radius:50%;background:var(--paint);border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.5)}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--paint);border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.5)}
+.pn{color:var(--mu);font-size:12.5px;margin-top:10px}
+.pring{position:fixed;z-index:70;width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:50%;border:3px solid var(--ac);pointer-events:none;animation:pring .9s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes pring{from{transform:scale(.3);opacity:.9}to{transform:scale(14);opacity:0;border-width:1px}}
+.pfill{position:absolute;border-radius:50%;pointer-events:none;background:var(--paint);width:40px;height:40px;margin:-20px 0 0 -20px;animation:pfill .8s cubic-bezier(.2,.7,.2,1) forwards;opacity:.55}
+@keyframes pfill{to{transform:scale(22);opacity:0}}
+/* tape */
+.tape{background:var(--spec);color:#120f22;overflow:hidden;white-space:nowrap;font:900 26px/1 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:15px 0;border-block:1px solid var(--line)}
+.tape div{display:inline-block;animation:mq 26s linear infinite}@keyframes mq{to{transform:translateX(-50%)}}.tape.rv2 div{animation-direction:reverse}
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}.rv.on{opacity:1;transform:none}
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding:.14em 0 .08em;margin:-.14em 0 -.08em}.sw>span{display:inline-block;transform:translateY(105%) rotate(4deg);transition:transform .9s cubic-bezier(.2,.8,.2,1)}.sin .sw>span{transform:none}
+/* ===== STUDIO ===== */
+#studio{background:linear-gradient(180deg,transparent,rgba(16,14,29,.65))}
+.stud{display:grid;gap:18px}
+.stpv{background:var(--pan);border:1px solid var(--line);border-radius:20px;padding:12px;z-index:6}
+@media(max-width:899px) and (min-height:640px){.stpv{position:sticky;top:64px}}
+.tabs{display:flex;gap:6px;margin-bottom:10px;overflow-x:auto}.tabs button{flex:1 0 auto;min-height:44px;padding:0 12px;border-radius:12px;border:1.5px solid var(--line);background:transparent;color:var(--mu);font:800 13px system-ui,sans-serif;cursor:pointer;transition:.25s;white-space:nowrap}
+.tabs button.on{background:var(--ac);color:var(--acx);border-color:var(--ac)}
+#pvbox{position:relative;border-radius:14px;overflow:hidden;background:#0d0b1c;height:clamp(120px,22svh,180px)}
+.scene{position:absolute;inset:0;display:none}.scene.on{display:block}.scene svg{width:100%;height:100%;display:block}
+.pvr{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px}
+.pvr .fin{margin:0}.pvr .fin button{min-height:44px}
+.pvn{color:var(--mu);font-size:12.5px;margin-top:8px}
+@media(min-width:900px){.stud{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);grid-template-areas:"wall pv";align-items:start}.stpv{grid-area:pv;position:sticky;top:84px;padding:16px}.wallcol{grid-area:wall}#pvbox{height:clamp(220px,34vh,330px)}}
+.wallcol .fin{margin:0 0 12px}.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(56px,1fr));gap:8px}
+.ws{aspect-ratio:1;min-height:48px;border-radius:14px;border:2px solid rgba(255,255,255,.12);cursor:pointer;position:relative;overflow:hidden;padding:0;transition:transform .3s cubic-bezier(.3,1.6,.5,1),box-shadow .3s,border-color .3s;--mx:50%;--my:50%}
+.ws:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx) var(--my),rgba(255,255,255,.6),transparent 58%);opacity:0;transition:opacity .3s}
+.ws:after{content:"";position:absolute;top:-30%;left:-60%;width:40%;height:160%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left .7s}
+@media(hover:hover){.ws:hover{transform:translateY(-5px) scale(1.08);box-shadow:0 12px 24px rgba(0,0,0,.45),0 0 22px var(--c);z-index:2}.ws:hover:before{opacity:1}.ws:hover:after{left:130%}}
+.ws:active{transform:scale(.94)}
+.ws.sel{border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.25),0 0 24px var(--c);transform:scale(1.06)}
+.ws.sel i{position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px;border-radius:50%;background:var(--ck,#fff);box-shadow:0 0 0 2px rgba(0,0,0,.25)}
+.ws.pop{animation:wpop .6s cubic-bezier(.2,1.6,.4,1)}@keyframes wpop{40%{transform:scale(1.22) rotate(4deg)}}
+/* scene svg */
+.scene .pt{fill:var(--paint);transition:fill .6s}
+.scene .gl1{opacity:.55}body[data-fin=matte] .scene .gl1{opacity:.08}body[data-fin=gloss] .scene .gl1{opacity:.7}
+.scene .fk{opacity:0;transition:opacity .5s}body[data-fin=metal] .scene .fk{opacity:.7}body[data-fin=pearl] .scene .fk{opacity:.45}
+.scene .pe{opacity:0;transition:opacity .5s;mix-blend-mode:screen;animation:pearl 6s linear infinite}body[data-fin=pearl] .scene .pe{opacity:.55}@keyframes pearl{to{filter:hue-rotate(360deg)}}
+.rolled{fill:var(--paint);transform-box:fill-box;transform-origin:0 50%}.rolling .rolled{animation:rolled .8s cubic-bezier(.3,.7,.2,1)}@keyframes rolled{from{transform:scaleX(0)}to{transform:none}}
+.wallold{fill:var(--paintprev)}
+.sparkl{animation:tw 2.4s ease-in-out infinite}@keyframes tw{50%{opacity:.2}}
+/* ===== PINNED 3D ===== */
+#model3d{height:420vh;padding:0;position:relative;z-index:2;background:linear-gradient(180deg,rgba(10,9,20,.2),rgba(10,9,20,.6))}
+#model3d .pin,#cap .pin{position:sticky;top:0;height:100svh;overflow:hidden}
+#model3d .pin:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 62% 50%,rgba(var(--acr),.22),transparent 62%);transition:background .6s}
+#r3stage{position:absolute;inset:0;touch-action:pan-y}#r3stage canvas{display:block;width:100%!important;height:100%!important;cursor:grab;touch-action:pan-y}#r3stage canvas:active{cursor:grabbing}
+.r3ui{position:absolute;left:0;right:0;z-index:3;pointer-events:none}.r3top{top:78px}
+.r3ch{position:absolute;left:20px;right:20px;top:0;opacity:0;transform:translateY(16px);transition:.5s}.r3ch.on{opacity:1;transform:none}
+.r3ch h3{font-size:clamp(30px,8vw,64px);line-height:.95;font-weight:900;text-transform:uppercase}.r3ch h3 em{font-style:normal;color:var(--ac);transition:color .5s}.r3ch p{color:var(--mu);max-width:440px;font-size:15px;margin-top:8px}
+.r3hint{position:absolute;left:0;right:0;bottom:72px;text-align:center;font:700 11px ui-monospace,monospace;letter-spacing:.25em;color:var(--mu);z-index:3;pointer-events:none}
+#r3bar{position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--spec);transform-origin:0 50%;transform:scaleX(0);z-index:4}
+.r3dots{position:absolute;left:0;right:0;bottom:48px;z-index:3;display:flex;justify-content:center;gap:10px;pointer-events:none}.r3dots i{width:8px;height:8px;border-radius:5px;background:#3b3566;transition:.3s}.r3dots i.on{background:var(--ac);width:26px}
+#model3d .fb{display:none;position:absolute;inset:0;align-items:center;justify-content:center;color:var(--mu);padding:30px;text-align:center}#model3d.fallback .fb{display:flex}
+@media(max-width:899px){.r3hint{letter-spacing:.1em;font-size:10.5px;padding:0 10px}}
+@media(min-width:900px){.r3top{top:0;bottom:0;left:6vw;right:auto;width:44vw;display:flex;align-items:center}.r3top .r3ch{left:0;right:0;top:50%;margin-top:-110px}.r3ch h3{font-size:min(4.4vw,72px)}.r3hint{left:6vw;right:auto;text-align:left;bottom:28px}.r3dots{left:6vw;right:auto;bottom:62px}}
+/* ===== PRODUSE ===== */
+.pgrid{display:grid;gap:14px;grid-template-columns:1fr}@media(min-width:600px){.pgrid{grid-template-columns:repeat(2,1fr)}}@media(min-width:960px){.pgrid{grid-template-columns:repeat(4,1fr)}}
+.pc{background:var(--pan);border:1px solid var(--line);border-radius:18px;padding:22px;position:relative;overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s,border-color .3s}
+.pc.on{opacity:1;transform:none}.pc:after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--spec);transition:width 1s .2s}.pc.on:after{width:100%}
+.pc:hover{border-color:var(--ac)}.pc .ic{width:68px;height:68px;color:var(--tx);margin-bottom:12px}.pc .ic svg{width:100%;height:100%;overflow:visible;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.pc .ic .a{stroke:var(--ac);transition:stroke .5s}.pc .ic .f{fill:var(--ac);stroke:none;transition:fill .5s}
+.pc h3{font-size:19px;line-height:1.15;margin-bottom:8px}.pc p{color:var(--mu);font-size:14.5px}.pc .yr2{display:inline-block;margin-top:10px;font:700 11px ui-monospace,monospace;letter-spacing:.14em;color:var(--ac);text-transform:uppercase}
+.ic svg *{transform-box:fill-box;transform-origin:center}
+.i-drop{animation:idrop 2.2s ease-in infinite}@keyframes idrop{0%{transform:translateY(-8px);opacity:0}25%{opacity:1}80%{transform:translateY(14px);opacity:1}100%{transform:translateY(16px);opacity:0}}
+.i-d2{animation-delay:.35s}.i-d3{animation-delay:.7s}
+.i-puff{animation:ipuff 1.6s ease-out infinite;opacity:0}.i-p2{animation-delay:.3s}.i-p3{animation-delay:.6s}@keyframes ipuff{0%{transform:translateX(6px) scale(.4);opacity:0}30%{opacity:1}100%{transform:translateX(-12px) scale(1.4);opacity:0}}
+.i-sway{animation:isway 3s ease-in-out infinite}@keyframes isway{50%{transform:rotate(-12deg)}}.i-sway2{animation:isway2 3s ease-in-out infinite}@keyframes isway2{50%{transform:rotate(12deg)}}
+.i-breath{animation:ibr 2.6s ease-in-out infinite}@keyframes ibr{50%{transform:scale(1.18)}}
+.i-bead{stroke-dasharray:30;stroke-dashoffset:30;animation:ibead 2.4s ease-in-out infinite}@keyframes ibead{50%{stroke-dashoffset:0}100%{stroke-dashoffset:-30}}
+.i-roll{animation:iroll 2.4s ease-in-out infinite}@keyframes iroll{50%{transform:translateY(-8px)}}
+.i-spin{animation:ispin 5s linear infinite}@keyframes ispin{to{transform:rotate(360deg)}}
+.i-car{animation:icar 2.4s ease-in-out infinite}@keyframes icar{50%{transform:translateY(-2px)}}
+/* ===== ISTORIC ===== */
+.tl{position:relative;display:grid;gap:30px;padding-left:34px}.tlline{position:absolute;left:10px;top:6px;bottom:6px;width:3px;background:var(--line);overflow:hidden;border-radius:3px}.tlline:after{content:"";position:absolute;inset:0;background:var(--spec);transform-origin:0 0;transform:scaleY(0);transition:transform 2s cubic-bezier(.3,.7,.2,1)}.tl.on .tlline:after{transform:none}
+.tln{position:relative}.tln:before{content:"";position:absolute;left:-33px;top:12px;width:17px;height:17px;border-radius:50%;background:var(--bg);border:3px solid var(--ac);transition:border-color .5s}
+.yr{font:900 clamp(56px,16vw,120px)/.9 system-ui,sans-serif;background:var(--spec);-webkit-background-clip:text;background-clip:text;color:transparent}.tln h3{font-size:22px;margin:10px 0 6px;text-transform:uppercase}.tln p{color:var(--mu);max-width:520px}
+@media(min-width:900px){.tl{grid-template-columns:repeat(3,1fr);padding:34px 0 0;gap:30px}.tlline{left:0;right:0;top:8px;bottom:auto;width:auto;height:3px}.tlline:after{transform-origin:0 0;transform:scaleX(0)}.tl.on .tlline:after{transform:none}.tln:before{left:0;top:-34px}.tln{padding-top:0}}
+/* ===== CUM COMANZI ===== */
+#cap{height:400vh;padding:0;position:relative;z-index:2;background:rgba(10,9,20,.55)}
+.chap{position:absolute;inset:0;display:flex;align-items:center;opacity:0;transform:scale(1.06);transition:opacity .7s,transform .9s;pointer-events:none}.chap.on{opacity:1;transform:none}
+.chap .wrap{display:grid;gap:14px;width:100%;position:relative}
+.chap .big{font:900 clamp(96px,24vw,300px)/.8 system-ui,sans-serif;color:transparent;-webkit-text-stroke:2px var(--ac);opacity:.55;order:-1;transition:-webkit-text-stroke-color .5s}
+.chap h3{font-size:clamp(34px,9vw,96px);line-height:.95;font-weight:900;text-transform:uppercase}.chap h3 em{font-style:normal;color:var(--ac);transition:color .5s}.chap p{max-width:520px;color:var(--mu);font-size:18px}
+.dots{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);display:flex;flex-direction:row;gap:12px;z-index:3}.dots i{width:8px;height:8px;border-radius:5px;background:#3b3566;transition:.3s}.dots i.on{background:var(--ac);width:26px}
+.chline{position:absolute;bottom:0;left:0;height:4px;width:0;background:var(--spec);z-index:3}
+@media(min-width:900px){.chap .wrap{display:block}.chap .big{position:absolute;right:48px;top:50%;transform:translateY(-50%);font-size:min(22vw,300px)}.chap h3{max-width:56%;font-size:min(6vw,88px);margin:6px 0 14px}.chap p{max-width:min(520px,48%)}
+ .dots{left:auto;right:20px;bottom:auto;top:50%;transform:translateY(-50%);flex-direction:column}.dots i.on{width:8px;height:26px}}
+/* ===== CONTACT ===== */
+.grid{display:grid;gap:14px;grid-template-columns:1fr}@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--pan);border:1px solid var(--line);border-radius:18px;padding:24px;position:relative;overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.card.on{opacity:1;transform:none}.card:after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--spec);transition:width 1s .2s}.card.on:after{width:100%}
+.card .k{font:700 12px ui-monospace,monospace;color:var(--mu);letter-spacing:.15em}.card .v{font-size:28px;font-weight:900;margin:6px 0}.card p{color:var(--mu)}
+.hours{display:grid;grid-template-columns:1fr auto;max-width:520px;border-top:1px solid var(--line);margin:14px 0}.hours div{padding:12px 0;border-bottom:1px solid var(--line)}.hours .c{color:var(--mu);text-align:right}.hours .now{color:var(--ac);font-weight:800}
+.two{display:grid;gap:30px}@media(min-width:900px){.two{grid-template-columns:1fr 1fr;align-items:start}}
+.map{aspect-ratio:4/3;border-radius:18px;border:1px solid var(--line);background:var(--pan);overflow:hidden}
+.mapbtn{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:300px;padding:20px;text-align:center;flex-direction:column;gap:14px;color:var(--mu)}
+.fbig{font:900 min(9vw,130px)/.9 system-ui,sans-serif;color:transparent;-webkit-text-stroke:1.5px var(--line);text-transform:uppercase;margin-bottom:26px;white-space:nowrap;overflow:hidden}
+footer{border-top:1px solid var(--line);padding:30px 0 100px;color:var(--mu);font-size:14px;background:rgba(10,9,20,.6)}footer a{color:var(--mu);margin-right:14px;display:inline-block;padding:6px 0}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:none}.sticky .btn{width:100%}
+body.past .sticky{display:block}@media(min-width:900px){.sticky{display:none!important}footer{padding-bottom:30px}}
+@media(max-width:899px){.logo{font-size:16px;letter-spacing:.03em}.fbig{font-size:11vw}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}h1 span,.hsub,.hcta,.badge,.card,.pc,.rv{opacity:1;transform:none}.sw>span{transform:none!important}#blobs i{animation:none}
+ #cap{height:auto}#cap .pin{position:relative;height:auto;padding:60px 0}.chap{position:relative;inset:auto;opacity:1;transform:none;padding:30px 0}.chap .big{font-size:80px}.dots,.chline{display:none}#model3d{height:auto}#model3d .pin{position:relative;height:100svh}.r3ch{position:relative;opacity:1;transform:none}.r3ch:not(:first-child){display:none}.tlline:after{transform:none}}
+</style><style id="nosel">html,body,*{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}input,textarea{-webkit-user-select:text;user-select:text;-webkit-touch-callout:default}html{touch-action:pan-x pan-y}</style>
+<script>document.addEventListener("gesturestart",e=>e.preventDefault());document.addEventListener("dblclick",e=>e.preventDefault(),{passive:false});document.addEventListener("contextmenu",e=>{if(!e.target.closest("input,textarea"))e.preventDefault()});</script>
+<style id="introcss">#intro{position:fixed;inset:0;z-index:500;background:#0a0914;display:flex;align-items:center;justify-content:center;flex-direction:column;overflow:hidden;transition:transform .9s cubic-bezier(.7,0,.2,1)}
+#intro.done{transform:translateY(-100%)}
+#intro .dp{position:absolute;left:var(--x);top:var(--y);width:0;height:0}
+#intro .dp:before{content:"";position:absolute;width:16px;height:22px;margin:-11px 0 0 -8px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:var(--c);opacity:0;transform:translateY(-110vh);animation:dfall .42s var(--d) cubic-bezier(.55,0,1,.65) forwards,dgone .01s calc(var(--d) + .42s) forwards}
+#intro .dp:after{content:"";position:absolute;width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:50%;background:var(--c);transform:scale(0);animation:drip 1s calc(var(--d) + .4s) cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes dfall{0%{opacity:1;transform:translateY(-110vh)}100%{opacity:1;transform:none}}@keyframes dgone{to{opacity:0}}@keyframes drip{to{transform:scale(var(--s,90))}}
+#intro .iw{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;padding:0 16px}
+#intro .it{background:rgba(10,9,20,.92);border-radius:22px;padding:.22em .5em .26em;font:900 clamp(40px,13vw,92px)/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-transform:uppercase;color:#fff;letter-spacing:.02em;clip-path:inset(0 100% 0 0);animation:iclip 1s 1.5s cubic-bezier(.4,0,.2,1) forwards;box-shadow:0 0 0 2px rgba(255,255,255,.12)}
+#intro .it b{background:var(--spec);-webkit-background-clip:text;background-clip:text;color:transparent}
+#intro .is{margin-top:14px;font:700 12px ui-monospace,monospace;letter-spacing:.28em;color:#fff;opacity:0;animation:ifade .6s 2.2s forwards;text-align:center;background:rgba(10,9,20,.85);padding:7px 12px;border-radius:999px}
+#intro .ib{position:absolute;left:0;bottom:0;height:5px;width:100%;background:var(--spec);transform:scaleX(0);transform-origin:0 50%;animation:ibar 2.9s linear forwards;z-index:4}
+@keyframes iclip{to{clip-path:inset(0 0 0 0)}}@keyframes ifade{to{opacity:1}}@keyframes ibar{to{transform:scaleX(1)}}
+body.introlock{overflow:hidden}</style></head><body>
+<div id="intro" aria-hidden="true">
+<i class="dp" style="--x:22%;--y:34%;--c:#ff3d71;--d:.05s"></i><i class="dp" style="--x:76%;--y:24%;--c:#ff9f1c;--d:.27s"></i><i class="dp" style="--x:48%;--y:68%;--c:#ffe14d;--d:.49s"></i><i class="dp" style="--x:14%;--y:76%;--c:#2ee59d;--d:.71s"></i><i class="dp" style="--x:84%;--y:70%;--c:#2dc4ff;--d:.93s"></i><i class="dp" style="--x:58%;--y:30%;--c:#8b5cf6;--d:1.15s"></i><i class="dp" style="--x:36%;--y:52%;--c:#ff5ccf;--d:1.37s"></i>
+<div class="iw"><div class="it">Inter<b>chim</b></div><div class="is">LACURI ȘI VOPSELE · CLUJ-NAPOCA</div></div><div class="ib"></div></div>
+<script>(function(){var i=document.getElementById("intro"),b=document.body;b.classList.add("introlock");function e(){if(i.classList.contains("done"))return;i.classList.add("done");b.classList.remove("introlock");setTimeout(function(){i.remove()},1000)}if(matchMedia("(prefers-reduced-motion:reduce)").matches){e()}else{setTimeout(e,3000);i.addEventListener("click",e)}})();</script>
+<div id="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+<div id="prog"></div><nav id="nav"><a href="#hero" class="logo">Inter<b>chim</b></a><div class="navl"><a href="#studio">Studio de culori</a><a href="#model3d">Mixare și spray</a><a href="#produse">Produse</a><a href="#istoric">Din 1992</a><a href="#cap">Cum comanzi</a><a href="#contact">Contact</a></div><a class="btn p sm" href="tel:+40745366830">Sună</a></nav>
+<header id="hero"><div id="gl"></div>
+<div class="wrap htx" id="htx" style="padding:0"><div class="kick"><i></i>Lacuri și vopsele · Cluj-Napoca</div>
+<h1><span>Interchim</span><span>Culoarea ta, <em>la cod</em></span></h1>
+<p class="hsub">Din 1992 în Cluj-Napoca: lacuri și vopsele auto și de uz general, sistem de mixare pentru retuș auto din 1993 și spray-uri cu vopsea preparată la codul dorit. Alege o culoare și vezi-o pe mașină.</p>
+<div class="badge">Str. Mioriței 1 · Cluj-Napoca</div>
+<div class="hcta" id="hcta"><a class="btn p" href="tel:+40745366830">📞 0745 366 830</a><a class="btn g" href="#studio">Studio de culori</a></div></div>
+<div class="pui" id="pui"><div class="puh"><b>Vopsește mașina</b><div class="rd"><i class="chip rd-chip"></i><span class="rd-name">Roșu</span><code class="rd-hex">#C1121F</code><span class="rd-fin">Metalizat</span></div></div>
+<div class="sws" id="heroSw" role="group" aria-label="Culori auto"></div>
+<div class="fin" role="group" aria-label="Finisaj"><button type="button" data-fin="gloss">Lucios</button><button type="button" data-fin="metal" class="on">Metalizat</button><button type="button" data-fin="pearl">Perlat</button><button type="button" data-fin="matte">Mat</button></div>
+<div class="sl"><label>Nuanță<input type="range" id="sH" min="0" max="359" value="355" aria-label="Nuanță"></label><label>Saturație<input type="range" id="sS" min="0" max="100" value="82" aria-label="Saturație"></label><label>Luminozitate<input type="range" id="sL" min="0" max="100" value="40" aria-label="Luminozitate"></label></div>
+<p class="pn">Nuanța de pe ecran este orientativă. Potrivirea exactă se face în magazin, cu sistemul de mixare, sau la spray-ul preparat la codul dorit. Nu afișăm coduri de producător.</p></div>
+</header>
+<div class="tape" aria-hidden="true"><div>Interchim ✦ Lacuri și vopsele ✦ Mixare la cod ✦ Spray la cod ✦ Cluj-Napoca ✦ 0745 366 830 ✦ Interchim ✦ Lacuri și vopsele ✦ Mixare la cod ✦ Spray la cod ✦ Cluj-Napoca ✦ 0745 366 830 ✦ </div></div>
+
+<section id="studio"><div class="wrap"><div class="tag rv">01 / Studio de culori</div><h2>Alege culoarea. <em>Vezi-o pe loc.</em></h2>
+<div class="stud">
+<div class="stpv" id="stpv"><div class="tabs" role="tablist"><button type="button" data-tab="car" class="on">Pentru mașină</button><button type="button" data-tab="home">Pentru casă</button><button type="button" data-tab="wm">Lemn și metal</button></div>
+<div id="pvbox" class="rolling">
+<div class="scene on" data-scene="car"><svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Mașină vopsită în culoarea aleasă (ilustrație)"><defs><linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset=".45" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient><linearGradient id="sky1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bcd6ff"/><stop offset="1" stop-color="#1b2745"/></linearGradient><pattern id="flk" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r="1.1" fill="#fff"/><circle cx="10" cy="9" r=".8" fill="#fff"/><circle cx="7" cy="13" r=".7" fill="#fff"/></pattern><linearGradient id="prl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7affd9"/><stop offset=".5" stop-color="#b58aff"/><stop offset="1" stop-color="#ff9ed2"/></linearGradient></defs>
+<ellipse cx="200" cy="168" rx="170" ry="10" fill="#000" opacity=".4"/>
+<path id="cbody" class="pt" d="M26 128 Q26 108 52 102 L98 94 Q124 62 164 58 L238 58 Q274 60 298 94 L352 102 Q376 108 376 128 L376 146 L26 146 Z"/>
+<path d="M26 128 Q26 108 52 102 L98 94 Q124 62 164 58 L238 58 Q274 60 298 94 L352 102 Q376 108 376 128 L376 146 L26 146 Z" fill="url(#gloss)" class="gl1"/>
+<path d="M26 128 Q26 108 52 102 L98 94 Q124 62 164 58 L238 58 Q274 60 298 94 L352 102 Q376 108 376 128 L376 146 L26 146 Z" fill="url(#flk)" class="fk"/>
+<path d="M26 128 Q26 108 52 102 L98 94 Q124 62 164 58 L238 58 Q274 60 298 94 L352 102 Q376 108 376 128 L376 146 L26 146 Z" fill="url(#prl)" class="pe"/>
+<path d="M112 92 Q132 68 164 66 L198 66 L198 94 Z" fill="url(#sky1)"/><path d="M208 66 L238 66 Q262 68 282 94 L208 94 Z" fill="url(#sky1)"/>
+<path d="M203 62 V146" stroke="#000" stroke-opacity=".35" stroke-width="2"/><rect x="214" y="104" width="22" height="5" rx="2.5" fill="#000" opacity=".4"/><rect x="170" y="104" width="22" height="5" rx="2.5" fill="#000" opacity=".4"/>
+<rect x="364" y="112" width="12" height="9" rx="3" fill="#fff6c9"/><rect x="26" y="112" width="10" height="9" rx="3" fill="#e0243a"/>
+<rect x="26" y="140" width="350" height="8" rx="4" fill="#0d0b1c" opacity=".55"/>
+<g><circle cx="94" cy="146" r="28" fill="#0c0c10"/><circle cx="94" cy="146" r="17" fill="#cfd3dc"/><circle cx="94" cy="146" r="6" fill="#6b7080"/></g><g><circle cx="312" cy="146" r="28" fill="#0c0c10"/><circle cx="312" cy="146" r="17" fill="#cfd3dc"/><circle cx="312" cy="146" r="6" fill="#6b7080"/></g>
+<circle class="sparkl" cx="150" cy="82" r="2" fill="#fff"/><circle class="sparkl" cx="260" cy="78" r="1.6" fill="#fff" style="animation-delay:.8s"/></svg></div>
+<div class="scene" data-scene="home"><svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Perete vopsit în culoarea aleasă, într-o cameră (ilustrație)"><defs><linearGradient id="wsh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient><linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fd0ff"/><stop offset="1" stop-color="#e8f4ff"/></linearGradient></defs>
+<rect width="400" height="168" class="wallold"/><rect width="400" height="168" class="rolled"/><rect width="400" height="168" fill="url(#wsh)"/>
+<rect y="160" width="400" height="12" fill="#f2f0ec"/><rect y="172" width="400" height="48" fill="#7a5a3e"/><path d="M0 186 H400 M0 200 H400 M60 172 V220 M170 172 V220 M280 172 V220 M110 186 V200" stroke="#000" stroke-opacity=".22"/>
+<rect x="250" y="26" width="104" height="94" rx="4" fill="#f4f4f4"/><rect x="256" y="32" width="92" height="82" fill="url(#sky2)"/><path d="M302 32 V114 M256 73 H348" stroke="#f4f4f4" stroke-width="4"/><polygon points="256,114 348,114 330,172 200,172" fill="#fff" opacity=".10"/>
+<rect x="40" y="108" width="150" height="56" rx="12" fill="#2a2d46"/><rect x="48" y="90" width="134" height="34" rx="10" fill="#34385a"/><rect x="40" y="100" width="18" height="64" rx="8" fill="#23263d"/><rect x="172" y="100" width="18" height="64" rx="8" fill="#23263d"/>
+<rect x="64" y="34" width="62" height="44" rx="3" fill="#f4f4f4"/><rect x="70" y="40" width="50" height="32" fill="#2b2f4d"/><circle cx="95" cy="56" r="9" fill="var(--paint)" opacity=".9"/>
+<rect x="364" y="120" width="5" height="46" fill="#222"/><ellipse cx="366" cy="116" rx="16" ry="10" fill="#ffe9a8"/></svg></div>
+<div class="scene" data-scene="wm"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Panou de lemn și panou de metal vopsite în culoarea aleasă (ilustrație)"><defs><linearGradient id="brush" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient></defs>
+<rect x="18" y="22" width="170" height="148" rx="8" fill="#b88a5a"/><rect x="18" y="22" width="170" height="148" rx="8" class="pt" opacity=".72"/><path d="M26 46 Q100 38 180 48 M26 72 Q90 82 180 70 M26 98 Q110 90 180 100 M26 124 Q80 132 180 122 M26 148 Q120 140 180 150" stroke="#2a1608" stroke-opacity=".35" stroke-width="2" fill="none"/>
+<rect x="212" y="22" width="170" height="148" rx="8" class="pt"/><rect x="212" y="22" width="170" height="148" rx="8" fill="url(#brush)"/><path d="M216 44 H378 M216 66 H378 M216 88 H378 M216 110 H378 M216 132 H378 M216 154 H378" stroke="#fff" stroke-opacity=".12"/><circle cx="226" cy="36" r="4" fill="#0d0b1c" opacity=".5"/><circle cx="368" cy="36" r="4" fill="#0d0b1c" opacity=".5"/><circle cx="226" cy="156" r="4" fill="#0d0b1c" opacity=".5"/><circle cx="368" cy="156" r="4" fill="#0d0b1c" opacity=".5"/>
+<text x="103" y="190" fill="#9d98c4" font-size="12" text-anchor="middle" font-family="system-ui,sans-serif">LEMN</text><text x="297" y="190" fill="#9d98c4" font-size="12" text-anchor="middle" font-family="system-ui,sans-serif">METAL</text></svg></div>
+</div>
+<div class="pvr"><div class="rd"><i class="chip rd-chip"></i><span class="rd-name">Roșu</span><code class="rd-hex">#C1121F</code><span class="rd-fin">Metalizat</span></div></div>
+</div>
+<div class="wallcol"><div class="fin" role="group" aria-label="Finisaj"><button type="button" data-fin="gloss">Lucios</button><button type="button" data-fin="metal" class="on">Metalizat</button><button type="button" data-fin="pearl">Perlat</button><button type="button" data-fin="matte">Mat</button></div>
+<div class="wall" id="wall" role="group" aria-label="Paletă de culori"></div>
+<p class="pvn">Previzualizare orientativă. Culoarea exactă o stabilim în magazin, la sistemul de mixare.</p></div>
+</div></div></section>
+
+<section id="model3d" aria-label="Model 3D interactiv: cutie de vopsea, spray, straturi de vopsea pe un panou de ușă și perete cu rolă (model ilustrativ)"><div class="pin"><div id="r3stage"></div><div class="fb">Modelul 3D nu poate fi afișat pe acest dispozitiv (WebGL indisponibil).</div>
+<div class="r3ui r3top">
+ <div class="r3ch on"><div class="kick"><i></i>Mixare la cod · 01</div><h3>Mixare <em>la cod</em></h3><p>Din 1993, Interchim a adus în Cluj un sistem de mixare a vopselelor pentru retuș auto. Trage ca să rotești modelul.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Spray la cod · 02</div><h3>Spray <em>la cod</em></h3><p>Comercializăm spray-uri auto sau îmbuteliem în spray vopsea preparată la codul dorit.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Vopsele auto · 03</div><h3>Vopsele <em>auto</em></h3><p>Lacuri și vopsele auto, chituri, antifon, protecție anticorozivă. Ilustrare: straturile unei vopsiri, de la metal la lac.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Pentru casă · 04</div><h3>Vopsele <em>pentru casă</em></h3><p>Vopsele lavabile, vopsele pentru lemn sau metal, folii și benzi de mascare, chituri și unelte pentru zugrăvit.</p></div>
+</div>
+<div class="r3hint">MODEL ILUSTRATIV · DERULEAZĂ ↓ · TRAGE ↔</div>
+<div class="r3dots"><i class="on"></i><i></i><i></i><i></i></div>
+<div id="r3bar"></div></div></section>
+
+<section id="produse"><div class="wrap"><div class="tag rv">02 / Ce găsești</div><h2>Tot ce ține de <em>culoare</em></h2>
+<div class="pgrid">
+<div class="pc"><div class="ic"><svg viewBox="0 0 64 64" aria-hidden="true"><g class="i-car"><path d="M6 44 V38 Q6 34 11 33 L18 31 L24 23 Q26 21 29 21 H40 Q43 21 45 23 L51 31 L56 33 Q58 35 58 38 V44 Z"/><circle cx="19" cy="45" r="5"/><circle cx="45" cy="45" r="5"/></g><path class="f i-drop" d="M32 4 Q36 10 36 13 A4 4 0 0 1 28 13 Q28 10 32 4Z"/></svg></div><h3>Vopsele și lacuri auto</h3><p>O gamă largă de lacuri și vopsele auto și de uz general.</p></div>
+<div class="pc"><div class="ic"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="12" y="28" width="40" height="30" rx="5"/><path d="M10 28 H54"/><path class="a" d="M24 22 H40"/><path class="f i-drop" d="M20 4 Q23 8 23 10 A3 3 0 0 1 17 10 Q17 8 20 4Z"/><path class="f i-drop i-d2" d="M32 2 Q35 6 35 8 A3 3 0 0 1 29 8 Q29 6 32 2Z"/><path class="f i-drop i-d3" d="M44 4 Q47 8 47 10 A3 3 0 0 1 41 10 Q41 8 44 4Z"/></svg></div><h3>Sistem de mixare pentru retuș auto</h3><p>Primul sistem de mixare a vopselelor pentru retuș auto adus în Cluj.</p><span class="yr2">din 1993</span></div>
+<div class="pc"><div class="ic"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="28" y="22" width="22" height="38" rx="7"/><rect x="32" y="8" width="14" height="14" rx="3"/><path class="a" d="M36 14 H42"/><circle class="f i-puff" cx="22" cy="14" r="3"/><circle class="f i-puff i-p2" cx="18" cy="22" r="2.6"/><circle class="f i-puff i-p3" cx="22" cy="30" r="2.2"/></svg></div><h3>Spray-uri auto și spray la cod</h3><p>Spray-uri auto sau vopsea preparată la codul dorit, îmbuteliată în spray.</p></div>
+<div class="pc"><div class="ic"><svg viewBox="0 0 64 64" aria-hidden="true"><g class="i-sway"><path d="M14 54 L34 28 L42 34 L22 58 Z"/><path class="a" d="M34 28 L40 14 L50 22 L42 34"/></g><g class="i-sway2"><rect x="40" y="38" width="8" height="20" rx="2"/><path d="M38 38 H50 V30 H38 Z"/><path class="a" d="M40 30 V22 M44 30 V20 M48 30 V22"/></g></svg></div><h3>Scule și consumabile</h3><p>Scule, consumabile și unelte pentru vopsitorii și pentru reparații.</p></div>
+<div class="pc"><div class="ic"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 26 Q8 20 32 20 Q56 20 56 26 V34 Q56 50 32 56 Q8 50 8 34 Z"/><g class="i-breath"><circle class="a" cx="21" cy="40" r="7"/><circle class="a" cx="43" cy="40" r="7"/></g><path d="M8 28 H2 M56 28 H62"/></svg></div><h3>Măști și echipamente de protecție</h3><p>Măști și echipamente de protecție pentru vopsitorii.</p></div>
+<div class="pc"><div class="ic"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 14 H34 L40 20 V30 L34 36 H10 Z"/><path d="M40 25 H50"/><path class="a i-bead" d="M50 25 Q56 25 56 32 Q56 44 44 48"/><path class="a" d="M16 20 H28"/></svg></div><h3>Chituri, adezivi, antifon</h3><p>Chituri, adezivi, antifon, protecție anticorozivă și alte vopsele speciale.</p></div>
+<div class="pc"><div class="ic"><svg viewBox="0 0 64 64" aria-hidden="true"><g class="i-roll"><rect x="8" y="10" width="40" height="14" rx="5"/><path class="a" d="M48 17 H56 V32 H34 V40"/><rect x="29" y="40" width="10" height="20" rx="3"/></g><path class="a" d="M10 56 H20" opacity=".6"/></svg></div><h3>Vopsele lavabile, lemn și metal</h3><p>Vopsele lavabile, vopsele pentru lemn sau metal, pentru locuință.</p></div>
+<div class="pc"><div class="ic"><svg viewBox="0 0 64 64" aria-hidden="true"><g class="i-spin"><circle cx="30" cy="30" r="20"/><circle class="a" cx="30" cy="30" r="9"/></g><path d="M44 46 H60 V56 H20 L44 46"/></svg></div><h3>Folii și benzi de mascare</h3><p>Folii și benzi de mascare, chituri și unelte pentru repararea și zugrăvirea locuinței.</p></div>
+</div></div></section>
+
+<section id="istoric" style="background:rgba(16,14,29,.55)"><div class="wrap"><div class="tag rv">03 / Istoric</div><h2>Din <em>1992</em>, în Cluj</h2>
+<div class="tl rv" id="tl"><div class="tlline"></div>
+<div class="tln"><div class="yr cnt" data-to="1992">1992</div><h3>Înființare</h3><p>Interchim este înființat ca magazin de articole chimice, lacuri și vopsele.</p></div>
+<div class="tln"><div class="yr cnt" data-to="1993">1993</div><h3>Primul sistem de mixare din Cluj</h3><p>Interchim este prima societate care aduce în Cluj un sistem de mixare a vopselelor pentru retuș auto.</p></div>
+<div class="tln"><div class="yr" style="font-size:clamp(40px,11vw,84px)">Astăzi</div><h3>Pentru mașină și pentru casă</h3><p>Lacuri și vopsele auto și de uz general, spray-uri la cod, scule, consumabile și echipamente de protecție.</p></div>
+</div></div></section>
+
+<section id="cap"><div class="pin">
+ <div class="chap on"><div class="wrap"><div class="big">01</div><div class="kick"><i></i>Pasul 1</div><h3>Spui <em>codul culorii</em></h3><p>Spune ce culoare vrei, la magazin sau la telefon: 0745 366 830.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">02</div><div class="kick"><i></i>Pasul 2</div><h3>Se <em>mixează</em></h3><p>Vopseaua se prepară la codul dorit, cu sistemul de mixare pentru retuș auto, adus în Cluj în 1993.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">03</div><div class="kick"><i></i>Pasul 3</div><h3>Cutie <em>sau spray</em></h3><p>Primești vopseaua pregătită, iar pentru retușuri mici o îmbuteliem în spray.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">04</div><div class="kick"><i></i>Pasul 4</div><h3>Treci <em>pe la noi</em></h3><p>Strada Mioriței nr. 1, Cluj-Napoca. Site-ul nu are comenzi online și nu cere date personale.</p></div></div>
+ <div class="dots"><i class="on"></i><i></i><i></i><i></i></div><div class="chline" id="chline"></div>
+</div></section>
+<div class="tape rv2" aria-hidden="true"><div>Interchim ✦ Sună 0745 366 830 ✦ Str. Mioriței 1 ✦ Cluj-Napoca ✦ Din 1992 ✦ Interchim ✦ Sună 0745 366 830 ✦ Str. Mioriței 1 ✦ Cluj-Napoca ✦ Din 1992 ✦ Interchim ✦ Sună 0745 366 830 ✦ Str. Mioriței 1 ✦ Cluj-Napoca ✦ Din 1992 ✦ </div></div>
+
+<section id="contact"><div class="wrap"><div class="tag rv">04 / Contact</div><h2>Vino la <em>magazin</em></h2>
+<div class="grid">
+<div class="card"><div class="k">TELEFON</div><div class="v">0745 366 830</div><p>Sună pentru culori, disponibilitate și program.</p><br><a class="btn p sm" href="tel:+40745366830">Sună acum</a></div>
+<div class="card"><div class="k">ADRESĂ</div><div class="v">Str. Mioriței 1</div><p>Cluj-Napoca, 400380.</p><br><a class="btn g sm" href="https://www.google.com/maps/search/?api=1&amp;query=Strada+Miorite%C8%9Bii+1+Cluj-Napoca+400380" target="_blank" rel="noopener">Deschide în Maps</a></div>
+<div class="card"><div class="k">PROGRAM</div><div class="v">L–V 08:00–16:00</div><p>Sâmbătă 09:00–13:00. Duminică: închis.</p></div>
+</div>
+<div class="two" style="margin-top:34px"><div><div class="hours" id="hours"><div data-d="1">Luni</div><div class="c" data-d="1">08:00 – 16:00</div><div data-d="2">Marți</div><div class="c" data-d="2">08:00 – 16:00</div><div data-d="3">Miercuri</div><div class="c" data-d="3">08:00 – 16:00</div><div data-d="4">Joi</div><div class="c" data-d="4">08:00 – 16:00</div><div data-d="5">Vineri</div><div class="c" data-d="5">08:00 – 16:00</div><div data-d="6">Sâmbătă</div><div class="c" data-d="6">09:00 – 13:00</div><div data-d="0">Duminică</div><div class="c" data-d="0">Închis</div></div>
+<p class="note">Programul este preluat din surse publice (Waze/Google) și poate diferi. Confirmă-l la telefon înainte să vii. Nu afișăm tarife, nota Google sau alte date pe care nu le-am putut verifica.</p></div>
+<div class="map" id="map"><div class="mapbtn"><span>Harta Google se încarcă doar după acordul tău pentru cookie-uri.</span><button class="btn g" id="loadmap" type="button">Încarcă harta</button></div></div></div>
+</div></section>
+<footer><div class="wrap"><div class="fbig">Interchim</div><p><b style="color:var(--tx)">INTERCHIM</b> · Lacuri și vopsele · Str. Mioriței nr. 1, Cluj-Napoca · Operator: INTERCHIM IMPEX S.R.L.</p><br>
+<a href="politica-confidentialitate.html">Confidențialitate</a><a href="politica-cookies.html">Cookie-uri</a><a href="termeni-si-conditii.html">Termeni</a><a href="#" data-ck>Setări cookie</a><a href="https://anpc.ro" target="_blank" rel="noopener">ANPC</a><a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">SOL</a></div></footer>
+<div class="sticky"><a class="btn p" href="tel:+40745366830">📞 Sună 0745 366 830</a></div>
+<script src="assets/three.min.js"></script><script src="assets/models.js"></script><script src="assets/app.js"></script><script src="consent.js"></script>
+</body></html>
