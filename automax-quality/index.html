@@ -41,10 +41,53 @@ footer{border-top:1px solid var(--line);padding:30px 0 100px;color:var(--mu);fon
 .sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:none}.sticky .btn{width:100%;justify-content:center}
 body.past .sticky{display:block}@media(min-width:900px){.sticky{display:none!important}footer{padding-bottom:30px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}h1 span,.hsub,.hcta,.card{opacity:1;transform:none}}
+
+/* ===== upgrade: GS-style ===== */
+#prog{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--ac),var(--ac2));z-index:60}
+.navl{display:none;gap:24px;font:700 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em}.navl a{text-decoration:none}.navl a:hover{color:var(--ac)}
+@media(min-width:900px){.navl{display:flex}}
+.sweep{position:absolute;inset:-20%;z-index:1;pointer-events:none;background:conic-gradient(from 200deg at 0% 50%,transparent 0deg,rgba(25,227,255,.16) 14deg,transparent 30deg);animation:sw 7s ease-in-out infinite}
+.sweep.r{background:conic-gradient(from 20deg at 100% 55%,transparent 0deg,rgba(255,200,61,.12) 14deg,transparent 30deg);animation-delay:-3.5s}
+@keyframes sw{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+.tread{position:absolute;left:0;width:100%;height:120px;z-index:1;pointer-events:none;opacity:.5}
+.tread path{fill:none;vector-effect:non-scaling-stroke}.tread .c{stroke:var(--ac);stroke-width:3}.tread .g{stroke:var(--ac2);stroke-width:2;stroke-dasharray:6 10}
+.tape{transform:none;margin:0;font:900 26px/1 system-ui,sans-serif;letter-spacing:.06em;padding:15px 0;border-block:1px solid var(--line)}
+.tape.gd{background:var(--ac2)}.tape.gd div{animation-direction:reverse}
+#info,#ce,#rec,#contact{position:relative;z-index:2}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}.rv.on{opacity:1;transform:none}
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding:.14em 0 .08em;margin:-.14em 0 -.08em}.sw>span{display:inline-block;transform:translateY(105%) rotate(4deg);transition:transform .9s cubic-bezier(.2,.8,.2,1)}.sin .sw>span{transform:none}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.35);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}.btn{position:relative;overflow:hidden}@keyframes rip{to{transform:scale(1);opacity:0}}
+/* pinned 3D gearbox */
+#roata3d{height:420vh;padding:0;position:relative;z-index:2;background:radial-gradient(ellipse at 60% 45%,#10224a,#070d1c 70%)}
+#roata3d .pin,#cap .pin{position:sticky;top:0;height:100svh;overflow:hidden}
+#roata3d .pin:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;opacity:.28;-webkit-mask-image:radial-gradient(ellipse at 60% 50%,#000,transparent 75%);mask-image:radial-gradient(ellipse at 60% 50%,#000,transparent 75%)}
+#r3stage{position:absolute;inset:0;touch-action:pan-y}#r3stage canvas{display:block;width:100%!important;height:100%!important;cursor:grab;touch-action:pan-y}#r3stage canvas:active{cursor:grabbing}
+.r3ui{position:absolute;left:0;right:0;z-index:3;pointer-events:none}
+.r3top{top:78px}
+.r3ch{position:absolute;left:20px;right:20px;top:0;opacity:0;transform:translateY(16px);transition:.5s}.r3ch.on{opacity:1;transform:none}
+.r3ch h3{font-size:clamp(30px,8vw,64px);line-height:.95;font-weight:900;text-transform:uppercase}.r3ch h3 em{font-style:normal;color:var(--ac)}.r3ch p{color:var(--mu);max-width:440px;font-size:15px;margin-top:8px}
+.r3hint{position:absolute;left:0;right:0;bottom:72px;text-align:center;font:700 11px ui-monospace,monospace;letter-spacing:.25em;color:var(--mu);z-index:3;pointer-events:none}
+#r3bar{position:absolute;left:0;bottom:0;height:4px;width:100%;background:linear-gradient(90deg,var(--ac),var(--ac2));transform-origin:0 50%;transform:scaleX(0);z-index:4}
+#roata3d .fb{display:none;position:absolute;inset:0;align-items:center;justify-content:center;color:var(--mu);padding:30px;text-align:center}#roata3d.fallback .fb{display:flex}
+@media(min-width:900px){.r3top{top:0;bottom:0;left:6vw;right:auto;width:44vw;display:flex;align-items:center}.r3top .r3ch{left:0;right:0;top:50%;margin-top:-110px}.r3ch h3{font-size:min(4.4vw,72px)}.r3hint{left:6vw;right:auto;text-align:left;bottom:28px}}
+/* pinned chapters */
+#cap{height:400vh;padding:0;position:relative;z-index:2;background:var(--bg)}
+.chap{position:absolute;inset:0;display:flex;align-items:center;opacity:0;transform:scale(1.06);transition:opacity .7s,transform .9s;pointer-events:none}.chap.on{opacity:1;transform:none}
+.chap .wrap{display:grid;gap:14px;width:100%;position:relative}
+.chap .big{font:900 clamp(96px,24vw,300px)/.8 system-ui,sans-serif;color:transparent;-webkit-text-stroke:2px var(--line);order:-1}
+.chap h3{font-size:clamp(34px,9vw,96px);line-height:.95;font-weight:900;text-transform:uppercase}.chap h3 em{font-style:normal;color:var(--ac)}
+.chap p{max-width:520px;color:var(--mu);font-size:18px}
+.dots{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);display:flex;flex-direction:row;gap:12px;z-index:3}
+.dots i{width:8px;height:8px;border-radius:5px;background:#2a3c66;transition:.3s}.dots i.on{background:var(--ac);width:26px}
+.chline{position:absolute;bottom:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--ac),var(--ac2));z-index:3}
+@media(min-width:900px){.chap .wrap{display:block}.chap .big{position:absolute;right:48px;top:50%;transform:translateY(-50%);font-size:min(22vw,300px)}.chap h3{max-width:56%;font-size:min(6vw,88px);margin:6px 0 14px}.chap p{max-width:min(520px,48%)}
+ .dots{left:auto;right:20px;bottom:auto;top:50%;transform:translateY(-50%);flex-direction:column}.dots i.on{width:8px;height:26px}}
+.fbig{font:900 min(6.8vw,110px)/.9 system-ui,sans-serif;color:transparent;-webkit-text-stroke:1.5px #1b2c52;text-transform:uppercase;margin-bottom:26px;white-space:nowrap;overflow:hidden}
+@media (prefers-reduced-motion:reduce){.sweep{animation:none}.rv{opacity:1;transform:none}.sw>span{transform:none!important}#cap{height:auto}#cap .pin{position:relative;height:auto;padding:60px 0}.chap{position:relative;inset:auto;opacity:1;transform:none;padding:30px 0}.chap .big{font-size:80px}.dots,.chline{display:none}#roata3d{height:auto}#roata3d .pin{position:relative;height:100svh}.r3ch{position:relative;opacity:1;transform:none}.r3ch:not(:first-child){display:none}}
 </style>
 <style id="nosel">html,body,*{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}input,textarea{-webkit-user-select:text;user-select:text;-webkit-touch-callout:default}html{touch-action:pan-x pan-y}</style>
 <script>document.addEventListener("gesturestart",e=>e.preventDefault());document.addEventListener("dblclick",e=>e.preventDefault(),{passive:false});document.addEventListener("contextmenu",e=>{if(!e.target.closest("input,textarea"))e.preventDefault()});</script>
-<style id="mobfix">@media(max-width:899px){#hero{height:auto;min-height:0;display:flex;flex-direction:column;padding:96px 0 24px}#htx{order:1;position:relative;z-index:2}#gl{order:2;position:relative;inset:auto;width:100%;height:min(46svh,340px);margin-top:12px}}</style><style id="introcss">#intro{position:fixed;inset:0;z-index:500;background:#070d1c;display:flex;align-items:center;justify-content:center;flex-direction:column;overflow:hidden;transition:transform .9s cubic-bezier(.7,0,.2,1)}
+<style id="mobfix">@media(max-width:899px){#hero{height:auto;min-height:0;display:flex;flex-direction:column;padding:96px 0 24px}#htx{order:1;position:relative;z-index:2;padding-top:0}.hcta{position:static;padding:0;margin-top:22px}#gl{order:2;position:relative;inset:auto;width:100%;height:min(46svh,340px);margin-top:12px}}</style><style id="introcss">#intro{position:fixed;inset:0;z-index:500;background:#070d1c;display:flex;align-items:center;justify-content:center;flex-direction:column;overflow:hidden;transition:transform .9s cubic-bezier(.7,0,.2,1)}
 #intro:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse at 50% 50%,#000,transparent 70%);mask-image:radial-gradient(ellipse at 50% 50%,#000,transparent 70%)}
 #intro.done{transform:translateY(-100%)}
 #intro .ig{position:relative;width:min(56vw,230px);height:min(56vw,230px)}
@@ -60,40 +103,57 @@ body.past .sticky{display:block}@media(min-width:900px){.sticky{display:none!imp
 #intro .ib{position:absolute;left:0;bottom:0;height:4px;width:100%;background:linear-gradient(90deg,#19e3ff,#ffc83d);transform:scaleX(0);transform-origin:0 50%;animation:ibar 2.8s linear forwards}
 @keyframes iclip{to{clip-path:inset(0 0 0 0)}}@keyframes ifade{to{opacity:1}}@keyframes ibar{to{transform:scaleX(1)}}
 body.introlock{overflow:hidden}</style></head><body><div id="intro" aria-hidden="true"><div class="ig"><svg viewBox="0 0 200 200"><g class="g2"><circle class="rr" cx="100" cy="100" r="90" pathLength="1" fill="none" stroke="#19e3ff" stroke-width="9" stroke-linecap="round"/><circle cx="100" cy="100" r="99" fill="none" stroke="#ffc83d" stroke-width="2" stroke-dasharray="3 9"/><circle cx="100" cy="100" r="74" fill="none" stroke="#1f3158" stroke-width="3"/></g><g class="g1"><rect x="94" y="36" width="12" height="52" rx="5" fill="#c7d3ea" transform="rotate(0 100 100)"/><rect x="94" y="36" width="12" height="52" rx="5" fill="#c7d3ea" transform="rotate(72 100 100)"/><rect x="94" y="36" width="12" height="52" rx="5" fill="#c7d3ea" transform="rotate(144 100 100)"/><rect x="94" y="36" width="12" height="52" rx="5" fill="#c7d3ea" transform="rotate(216 100 100)"/><rect x="94" y="36" width="12" height="52" rx="5" fill="#c7d3ea" transform="rotate(288 100 100)"/><circle cx="100" cy="100" r="22" fill="#ffc83d"/><circle cx="100" cy="89" r="3" fill="#070d1c" transform="rotate(0 100 100)"/><circle cx="100" cy="89" r="3" fill="#070d1c" transform="rotate(72 100 100)"/><circle cx="100" cy="89" r="3" fill="#070d1c" transform="rotate(144 100 100)"/><circle cx="100" cy="89" r="3" fill="#070d1c" transform="rotate(216 100 100)"/><circle cx="100" cy="89" r="3" fill="#070d1c" transform="rotate(288 100 100)"/></g></svg></div><div class="it">Automax <em>Quality</em></div><div class="is">SERVICE AUTO · CLUJ-NAPOCA</div><div class="ib"></div></div><script>(function(){var i=document.getElementById("intro"),b=document.body;b.classList.add("introlock");function e(){if(i.classList.contains("done"))return;i.classList.add("done");b.classList.remove("introlock");setTimeout(function(){i.remove()},1000)}if(matchMedia("(prefers-reduced-motion:reduce)").matches){e()}else{setTimeout(e,3000);i.addEventListener("click",e)}})();</script>
-<nav><a href="#hero" class="logo">AUTOMAX <b>QUALITY</b></a><a class="btn p sm" href="tel:+40748424424">Sună</a></nav>
-<header id="hero"><div id="gl"></div>
+<div id="prog"></div><nav id="nav"><a href="#hero" class="logo">AUTOMAX <b>QUALITY</b></a><div class="navl"><a href="#ce">Servicii</a><a href="#roata3d">Cutia 3D</a><a href="#cap">Cum lucrăm</a><a href="#rec">Recenzii</a><a href="#contact">Contact</a></div><a class="btn p sm" href="tel:+40748424424">Sună</a></nav>
+<header id="hero"><div class="sweep"></div><div class="sweep r"></div><svg class="tread" style="top:16%" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="g" d="M-20 90 C 400 30, 900 130, 1460 50"/><path class="c tr" d="M-20 80 C 400 20, 900 120, 1460 40"/></svg><svg class="tread" style="bottom:8%" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="g" d="M-20 40 C 500 120, 1000 10, 1460 100"/><path class="c tr" d="M-20 30 C 500 110, 1000 0, 1460 90"/></svg><div id="gl"></div>
 <div class="wrap htx" id="htx"><div class="kick"><i></i>Service auto · Cluj-Napoca</div>
 <h1><span>Automax</span><span>Quality</span><span>Cluj</span></h1>
 <p class="hsub">Service auto, Str. Clujului nr. 83, Cluj-Napoca. Reparații de cutii de viteze automate. Luni–Vineri, 09:00–17:00. Sună și programează-ți mașina.</p>
 <div class="hcta" id="hcta"><a class="btn p" href="tel:+40748424424">📞 0748 424 424</a><a class="btn g" href="#contact">Unde suntem</a></div></div>
 </header>
-<div class="tape"><div>Automax Quality Cluj ✦ Service auto ✦ Str. Clujului 83 ✦ Luni–Vineri 9–17 ✦ 0748 424 424 ✦ Automax Quality Cluj ✦ Service auto ✦ Str. Clujului 83 ✦ Luni–Vineri 9–17 ✦ 0748 424 424 ✦ </div></div>
-<section id="info"><div class="wrap"><div class="tag">01 / Pe scurt</div><h2>Calitate, <em>fără</em> compromis</h2>
+<div class="tape" aria-hidden="true"><div>Automax Quality Cluj ✦ Service auto ✦ Str. Clujului 83 ✦ Luni–Vineri 9–17 ✦ 0748 424 424 ✦ Automax Quality Cluj ✦ Service auto ✦ Str. Clujului 83 ✦ Luni–Vineri 9–17 ✦ 0748 424 424 ✦ </div></div>
+<section id="info"><div class="wrap"><div class="tag rv">01 / Pe scurt</div><h2>Calitate, <em>fără</em> compromis</h2>
 <div class="grid">
 <div class="card"><div class="k">TELEFON</div><div class="v">0748 424 424</div><p>Sună pentru programare sau o întrebare despre mașina ta.</p><br><a class="btn p sm" href="tel:+40748424424">Sună acum</a></div>
 <div class="card"><div class="k">PROGRAM</div><div class="v">09:00–17:00</div><p>Luni până vineri. Sâmbătă și duminică închis.</p></div>
 <div class="card"><div class="k">RECENZII GOOGLE</div><div class="v">5,0 <span class="stars">★★★★★</span></div><p>Din 10 recenzii pe Google.</p></div>
 </div></div></section>
-<section id="ce" style="background:var(--bg2)"><div class="wrap"><div class="tag">02 / Ce facem</div><h2>Service auto și <em>cutii automate</em></h2>
+<section id="ce" style="background:var(--bg2)"><div class="wrap"><div class="tag rv">02 / Ce facem</div><h2>Service auto și <em>cutii automate</em></h2>
 <div class="grid">
 <div class="card"><div class="k">SERVICE AUTO</div><div class="v">Reparații</div><p>Service auto în Cluj-Napoca, la Str. Clujului nr. 83.</p></div>
 <div class="card"><div class="k">CUTII AUTOMATE</div><div class="v">Cutii de viteze</div><p>Clienții îl recomandă pentru repararea cutiilor de viteze automate.</p></div>
 <div class="card"><div class="k">DIAGNOZĂ</div><div class="v">Ofertă clară</div><p>Diagnoză, ofertă de preț, apoi reparația, după cum spun clienții în recenzii.</p></div>
 </div></div></section>
-<section id="rec"><div class="wrap"><div class="tag">03 / Recenzii Google</div><h2>Ce spun <em>clienții</em></h2>
+<section id="roata3d" aria-label="Cutie automată 3D interactivă (model ilustrativ)"><div class="pin"><div id="r3stage"></div><div class="fb">Modelul 3D nu poate fi afișat pe acest dispozitiv (WebGL indisponibil).</div>
+<div class="r3ui r3top">
+ <div class="r3ch on"><div class="kick"><i></i>Cutia automată · 01</div><h3>Suni și <em>programezi</em></h3><p>Telefon 0748 424 424, luni–vineri, 09:00–17:00. Modelul 3D e ilustrativ: trage ca să-l rotești.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Cutia automată · 02</div><h3>Diagnoza <em>cutiei</em></h3><p>Din recenziile clienților: service-ul repară cutii de viteze automate, cu diagnoză și ofertă de preț.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Cutia automată · 03</div><h3>Demontăm și <em>verificăm</em></h3><p>Discurile de ambreiaj se despart pe ecran, ca să vezi componentele. Model ilustrativ, nu o cutie anume.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Cutia automată · 04</div><h3>Montăm și <em>testăm</em></h3><p>Piesele revin la loc în model. Pentru mașina ta, sună la 0748 424 424.</p></div>
+</div>
+<div class="r3hint">DERULEAZĂ ↓ · TRAGE ↔</div>
+<div id="r3bar"></div></div></section>
+<section id="cap"><div class="pin">
+ <div class="chap on"><div class="wrap"><div class="big">01</div><div class="kick"><i></i>Pasul 1</div><h3>Suni și <em>programezi</em></h3><p>Un telefon la 0748 424 424, pentru programare sau o întrebare despre mașina ta. Luni–vineri, 09:00–17:00.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">02</div><div class="kick"><i></i>Pasul 2</div><h3>Diagnoza <em>mai întâi</em></h3><p>Diagnoză, ofertă de preț, apoi reparația: așa descriu clienții în recenzii.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">03</div><div class="kick"><i></i>Pasul 3</div><h3>Ofertă <em>clară</em></h3><p>Clienții scriu în recenzii că primesc o ofertă de preț înainte de reparație.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">04</div><div class="kick"><i></i>Pasul 4</div><h3>Reparația, <em>la atelier</em></h3><p>Service auto și cutii de viteze automate, la Str. Clujului nr. 83, Cluj-Napoca.</p></div></div>
+ <div class="dots"><i class="on"></i><i></i><i></i><i></i></div><div class="chline" id="chline"></div>
+</div></section>
+<section id="rec"><div class="wrap"><div class="tag rv">03 / Recenzii Google</div><h2>Ce spun <em>clienții</em></h2>
 <div class="grid">
 <div class="card"><div class="stars">★★★★★</div><p>„Service foarte curat, totul în ordine, personal amabil și mecanic priceput. Recomand cu încredere!”</p><br><div class="k">RECENZIE GOOGLE · 5/5</div></div>
 <div class="card"><div class="stars">★★★★★</div><p>„Foarte mulțumit de experiență. Service curat, mecanici profesioniști și comunicare excelentă. Mașina merge perfect acum. Recomand!”</p><br><div class="k">RECENZIE GOOGLE · 5/5</div></div>
 <div class="card"><div class="stars">★★★★★</div><p>„Un service top. Foarte serioși, transparenți și calitate!”</p><br><div class="k">RECENZIE GOOGLE · 5/5</div></div>
 </div></div></section>
+<div class="tape gd" aria-hidden="true"><div>Cutii de viteze automate ✦ din recenziile clienților ✦ Sună 0748 424 424 ✦ Luni–Vineri 9–17 ✦ Cutii de viteze automate ✦ din recenziile clienților ✦ Sună 0748 424 424 ✦ Luni–Vineri 9–17 ✦ Cutii de viteze automate ✦ din recenziile clienților ✦ Sună 0748 424 424 ✦ Luni–Vineri 9–17 ✦ Cutii de viteze automate ✦ din recenziile clienților ✦ Sună 0748 424 424 ✦ Luni–Vineri 9–17 ✦ </div></div>
 <section id="contact" style="background:var(--bg)"><div class="wrap two">
-<div><div class="tag">04 / Program & contact</div><h2>Vino la <em>atelier</em></h2>
+<div><div class="tag rv">04 / Program &amp; contact</div><h2>Vino la <em>atelier</em></h2>
 <div class="hours" id="hours"></div><br>
 <p>Str. Clujului nr. 83, Sânnicoară, 407042, jud. Cluj (Cluj-Napoca)</p><p>Email: <span class="ph2">[de stabilit de operator]</span></p><br>
 <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn p" href="tel:+40748424424">Sună 0748 424 424</a><a class="btn g" href="https://www.google.com/maps/search/?api=1&query=46.787543,23.728505" target="_blank" rel="noopener">Deschide în Maps</a></div></div>
 <div class="map" id="map"></div>
 </div></section>
-<footer><div class="wrap"><p><b style="color:var(--tx)">AUTOMAX <span style="color:var(--ac)">QUALITY</span></b> · Str. Clujului nr. 83, Cluj-Napoca</p><br>
+<footer><div class="wrap"><div class="fbig">Automax Quality</div><p><b style="color:var(--tx)">AUTOMAX <span style="color:var(--ac)">QUALITY</span></b> · Str. Clujului nr. 83, Cluj-Napoca</p><br>
 <a href="politica-confidentialitate.html">Confidențialitate</a><a href="politica-cookies.html">Cookie-uri</a><a href="termeni-si-conditii.html">Termeni</a><a href="#" data-ck>Setări cookie</a><a href="https://anpc.ro" target="_blank" rel="noopener">ANPC</a><a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">SOL</a></div></footer>
 <div class="sticky"><a class="btn p" href="tel:+40748424424">📞 Sună 0748 424 424</a></div>
 <script src="assets/three.min.js"></script><script src="assets/app.js"></script><script src="consent.js"></script>
