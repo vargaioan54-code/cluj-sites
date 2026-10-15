@@ -281,107 +281,125 @@ function latheHard(pts,mat,seg,ang){const g=new T.Group();let cur=[pts[0]];const
  mk(cur);return g}
 function can(SEG,opts){
  opts=opts||{};const hero=!!opts.hero;
- const K=kit(SEG),M=stdMats(),{root,V,mesh,box,cylY,tor,add}=K,R=1.7,RS=SEG+16;
- const label=paintMat('label'),disc=paintMat('gloss'),dry=paintMat('dry'),paintMats=[label,disc,dry];
- // oțel periat: dungi fine orizontale în roughnessMap
- const streak=(()=>{const c=document.createElement('canvas');c.width=32;c.height=256;const x=c.getContext('2d');
-  for(let j=0;j<256;j++){const v=110+Math.floor(Math.random()*80);x.fillStyle='rgb('+v+','+v+','+v+')';x.fillRect(0,j,32,1)}
-  const t=new T.CanvasTexture(c);t.wrapS=t.wrapT=T.RepeatWrapping;t.repeat.set(1,2);return t})();
- const tin=new T.MeshStandardMaterial({color:0xdde1ea,metalness:1,roughness:.52,roughnessMap:streak,envMapIntensity:1.25,side:T.DoubleSide});
- const wire=new T.MeshStandardMaterial({color:0xe3e6ee,metalness:1,roughness:.28,envMapIntensity:1.3});
- const grip=new T.MeshStandardMaterial({color:0x17151f,metalness:.1,roughness:.7});
+ const K=kit(SEG),M=stdMats(),{root,V,mesh,add}=K;
+ const W=2.7,D=1.8,H=4.2,RC=.17,HB=H/2,CS=SEG>=28?8:5,HI=SEG>=28;
+ const front=paintMat('label'),lidM=paintMat('label'),disc=paintMat('gloss'),dry=paintMat('dry'),paintMats=[front,lidM,disc,dry];
+ const black=new T.MeshPhysicalMaterial({color:0x0a0a0c,metalness:0,roughness:.6,clearcoat:.12,clearcoatRoughness:.5,envMapIntensity:.2,specularIntensity:.5,side:T.DoubleSide});
+ const silver=new T.MeshStandardMaterial({color:0xe2e6ee,metalness:1,roughness:.26,envMapIntensity:1.4});
+ const noray=m=>{m.raycast=function(){};return m};
  const wood=new T.MeshStandardMaterial({color:0xb98a54,metalness:0,roughness:.6});
  const bristle=new T.MeshStandardMaterial({color:0xcdbf9f,metalness:0,roughness:.9});
  const shTex=(()=>{const c=document.createElement('canvas');c.width=c.height=128;const x=c.getContext('2d'),g=x.createRadialGradient(64,64,0,64,64,64);g.addColorStop(0,'rgba(255,255,255,1)');g.addColorStop(.45,'rgba(255,255,255,.55)');g.addColorStop(1,'rgba(255,255,255,0)');x.fillStyle=g;x.fillRect(0,0,128,128);return new T.CanvasTexture(c)})();
- const noray=m=>{m.raycast=function(){};return m};
- /* corp: profil strung cu nervuri rulate sus/jos, buza rulată și canalul de etanșare */
- const bump=(y,y0,w,b)=>{const d=Math.abs(y-y0);return d>=w?0:b*Math.pow(Math.cos(d/w*PI/2),2)};
- const pr=[new T.Vector2(0,-1.63),new T.Vector2(R-.14,-1.63),new T.Vector2(R-.06,-1.6)];
- for(let y=-1.58;y<=1.5;y+=.015){pr.push(new T.Vector2(R+bump(y,-1.56,.06,.075)+bump(y,-1.36,.075,.075)+bump(y,-1.17,.05,.045)+bump(y,1.17,.05,.045)+bump(y,1.36,.075,.075),y))}
- [[R+.01,1.52],[R+.05,1.58],[R+.1,1.65],[R+.115,1.71],[R+.09,1.76],[R+.02,1.78],[R-.07,1.74],[R-.12,1.66],[R-.16,1.55],[R-.2,1.38],[R-.27,1.36],[R-.3,1.46],[R-.31,1.56],[R-.34,1.5],[R-.345,.86]].forEach(p=>pr.push(new T.Vector2(p[0],p[1])));
+ /* ---- geometrie: dreptunghi rotunjit (contur), inel, prismă ---- */
+ const rr=(w,d,r)=>{const s=new T.Shape(),x=w/2,y=d/2;r=Math.max(.02,Math.min(r,x-.01,y-.01));
+  s.moveTo(-x+r,-y);s.lineTo(x-r,-y);s.absarc(x-r,-y+r,r,-PI/2,0,false);s.lineTo(x,y-r);s.absarc(x-r,y-r,r,0,PI/2,false);s.lineTo(-x+r,y);s.absarc(-x+r,y-r,r,PI/2,PI,false);s.lineTo(-x,-y+r);s.absarc(-x+r,-y+r,r,PI,PI*1.5,false);return s};
+ const ringG=(ow,od,orr,iw,id,ir,h,b)=>{const s=rr(ow-2*b,od-2*b,orr-b);if(iw>0)s.holes.push(rr(iw+2*b,id+2*b,ir+b));
+  const g=new T.ExtrudeGeometry(s,{depth:Math.max(.002,h-2*b),bevelEnabled:b>0,bevelThickness:b,bevelSize:b,bevelSegments:1,curveSegments:CS,steps:1});
+  g.rotateX(-PI/2);g.translate(0,-(h/2-b),0);return g};
+ const prism=(w,d,r,h,N)=>{const P=[],Nn=[],I=[],c=[[w/2-r,d/2-r,0],[-(w/2-r),d/2-r,PI/2],[-(w/2-r),-(d/2-r),PI],[w/2-r,-(d/2-r),PI*1.5]];const ring=[];
+  c.forEach(q=>{for(let k=0;k<=N;k++){const a=q[2]+PI/2*k/N;ring.push([q[0]+r*Math.cos(a),q[1]+r*Math.sin(a),Math.cos(a),Math.sin(a)])}});
+  ring.forEach(p=>{P.push(p[0],-h/2,p[1],p[0],h/2,p[1]);Nn.push(p[2],0,p[3],p[2],0,p[3])});
+  const n=ring.length;for(let i=0;i<n;i++){const j=(i+1)%n,a=i*2,b=i*2+1,c2=j*2,d2=j*2+1;I.push(a,c2,b,b,c2,d2)}
+  const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(P,3));g.setAttribute('normal',new T.Float32BufferAttribute(Nn,3));g.setIndex(I);return g};
+ /* ---- textura frontală: corp negru mat + panou diagonal + etichetă (alb = culoarea cutiei) ---- */
+ const PW=W-2*RC,PH=H;
+ const ftex=(()=>{const cw=HI?1024:768,ch=cw*2,c=document.createElement('canvas');c.width=cw;c.height=ch;const x=c.getContext('2d');
+  x.setTransform(cw/PW,0,0,ch/PH,0,0);x.fillStyle='#101013';x.fillRect(0,0,PW,PH);
+  const poly=a=>{x.beginPath();a.forEach((q,i)=>i?x.lineTo(q[0]*PW,q[1]*PH):x.moveTo(q[0]*PW,q[1]*PH));x.closePath()};
+  const A=[[0,0],[1,0],[1,.24],[.72,.39],[.16,.42],[0,.49]],B=[[.16,.57],[.88,.57],[.88,.77],[.32,.82],[0,1],[0,.82],[.16,.78]];
+  x.fillStyle='#fff';poly(A);x.fill();poly(B);x.fill();
+  x.strokeStyle='rgba(255,255,255,.16)';x.lineWidth=.008;poly(A);x.stroke();poly(B);x.stroke();
+  x.setTransform(1,0,0,1,0,0);const n=cw*ch/160;for(let i=0;i<n;i++){x.fillStyle=Math.random()<.5?'rgba(0,0,0,.05)':'rgba(255,255,255,.035)';x.fillRect(Math.random()*cw,Math.random()*ch,2,2)}
+  const t=new T.CanvasTexture(c);t.anisotropy=4;try{t.encoding=T.sRGBEncoding}catch(e){}return t})();
+ front.map=ftex;
+ /* ---- insigne: scut, pensulă, picătură (iconițe simple, fără logo) ---- */
+ const itex=(()=>{const cw=HI?1024:768,ch=cw/4,c=document.createElement('canvas');c.width=cw;c.height=ch;const x=c.getContext('2d');
+  x.setTransform(cw/PW,0,0,ch/.5,0,0);
+  const IC=['M12 3 L19 6 V12 C19 16.5 15.8 19.8 12 21 C8.2 19.8 5 16.5 5 12 V6 Z M12 6 V18 M8.4 8.4 L12 7 L15.6 8.4','M5 20 C5 16 7 14 9 13.5 L11.5 16 C10.5 18 8.5 20 5 20Z M10.5 14.5 L18.5 5.5 L20 7 L12 15.5Z','M12 4 C12 4 6.5 10.5 6.5 14.5 A5.5 5.5 0 0 0 17.5 14.5 C17.5 10.5 12 4 12 4Z M9.5 14 A2.5 2.5 0 0 0 12 16.6'];
+  [.28,.52,.75].forEach((fx,k)=>{const cx=fx*PW,cy=.25;x.fillStyle='#0a0a0c';x.beginPath();x.arc(cx,cy,.15,0,PI*2);x.fill();x.strokeStyle='rgba(255,255,255,.14)';x.lineWidth=.005;x.stroke();
+   x.save();x.translate(cx-.105,cy-.105);x.scale(.21/24,.21/24);x.strokeStyle='#ece8df';x.lineWidth=1.7;x.lineJoin='round';x.lineCap='round';x.stroke(new Path2D(IC[k]));x.restore()});
+  const t=new T.CanvasTexture(c);t.anisotropy=4;try{t.encoding=T.sRGBEncoding}catch(e){}return t})();
+ /* ---- wordmark INTERCHIM + numele culorii (doar text), redesenat când se schimbă ---- */
+ const nc=document.createElement('canvas');nc.width=1024;nc.height=512;const nx=nc.getContext('2d');
+ const ntex=new T.CanvasTexture(nc);ntex.anisotropy=4;try{ntex.encoding=T.sRGBEncoding}catch(e){}
+ let nkey='';
+ function drawName(name){const L=Paint.tgt,lum=.2126*L.r+.7152*L.g+.0722*L.b,dark=lum>.2,key=name+(dark?'d':'l');if(key===nkey)return;nkey=key;
+  nx.clearRect(0,0,1024,512);nx.textAlign='center';nx.textBaseline='middle';nx.fillStyle=dark?'#0b0b0d':'#f4f1ea';
+  try{nx.letterSpacing='22px'}catch(e){}nx.font='800 60px system-ui,Segoe UI,sans-serif';nx.fillText('INTERCHIM',518,129);
+  try{nx.letterSpacing='0px'}catch(e){}let fs=150;do{nx.font='800 '+fs+'px system-ui,Segoe UI,sans-serif';fs-=6}while(nx.measureText(name).width>940&&fs>50);nx.fillText(name,512,383);ntex.needsUpdate=true}
+ drawName('Roșu');
+ const decal=(map,w,h,z,flip)=>{const m=new T.Mesh(new T.PlaneGeometry(w,h),new T.MeshStandardMaterial({map:map,transparent:true,roughness:.55,metalness:0,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2}));m.position.z=z;if(flip)m.rotation.y=PI;return noray(m)};
+ /* ---- corp ---- */
  const bodyG=new T.Group();
- bodyG.add(latheHard(pr,tin,RS,.95));
- [-1,1].forEach(s=>{const eb=box(.1,.34,.3,tin,s*(R+.03),1.15,0);bodyG.add(eb);const lg=K.cylX(.075,.2,wire,s*(R+.12),1.15,0,10);bodyG.add(lg)});
- // vopsea uscată pe buză + picături la marginea cutiei
- const lipP=tor(R+.04,.075,dry,0,1.745,0,PI/2,0,2.1);lipP.rotation.z=1.2;bodyG.add(lipP);
- [[.15,.62,.1],[.62,.32,.085],[-.5,.2,.075],[2.0,.5,.09],[-1.2,.36,.08],[3.1,.26,.07]].forEach(d=>{const ln=d[1],th=d[0];
-  const g=new T.Group();const st=mesh(new T.CapsuleGeometry(d[2],ln,3,8),dry,0,0,0);st.scale.z=.38;g.add(st);g.position.set(Math.sin(th)*(R+.07),1.68-ln/2-.02,Math.cos(th)*(R+.07));g.rotation.y=th;bodyG.add(g)});
- add(bodyG,V(0,0,0),V(0,-2.3,0));
- /* etichetă: bandă în culoarea cutiei + panou cu numele culorii + wordmark Interchim (doar text) */
- const lc=document.createElement('canvas');lc.width=1536;lc.height=256;const lx=lc.getContext('2d');
- const ltex=new T.CanvasTexture(lc);ltex.anisotropy=4;try{ltex.encoding=T.sRGBEncoding}catch(e){}
- let lname='';
- function drawLabel(name){if(name===lname)return;lname=name;const W=1536,H=256;lx.clearRect(0,0,W,H);
-  lx.fillStyle='rgba(255,255,255,.94)';lx.fillRect(0,16,W,7);lx.fillRect(0,H-23,W,7);lx.fillStyle='rgba(0,0,0,.22)';lx.fillRect(0,28,W,3);lx.fillRect(0,H-34,W,3);
-  const pw=620,ph=176,px=W/2-pw/2,py=(H-ph)/2;lx.fillStyle='#f3f0e8';lx.strokeStyle='rgba(0,0,0,.28)';lx.lineWidth=3;
-  lx.beginPath();if(lx.roundRect)lx.roundRect(px,py,pw,ph,22);else lx.rect(px,py,pw,ph);lx.fill();lx.stroke();
-  lx.textAlign='center';lx.textBaseline='middle';lx.fillStyle='#23222b';
-  try{lx.letterSpacing='9px'}catch(e){}lx.font='800 34px system-ui,Segoe UI,sans-serif';lx.fillText('INTERCHIM',W/2+4,py+38);
-  try{lx.letterSpacing='0px'}catch(e){}lx.fillStyle='rgba(0,0,0,.25)';lx.fillRect(W/2-150,py+64,300,2);
-  let fs=70;lx.fillStyle='#16151c';do{lx.font='800 '+fs+'px system-ui,Segoe UI,sans-serif';fs-=4}while(lx.measureText(name).width>pw-120&&fs>30);lx.fillText(name,W/2,py+116);
-  lx.shadowColor='rgba(0,0,0,.4)';lx.shadowBlur=5;lx.fillStyle='rgba(255,255,255,.95)';try{lx.letterSpacing='8px'}catch(e){}lx.font='800 30px system-ui,Segoe UI,sans-serif';
-  [0,W*.1,W*.9,W].forEach(cx=>lx.fillText('INTERCHIM',cx,H/2));lx.shadowBlur=0;try{lx.letterSpacing='0px'}catch(e){}
-  ltex.needsUpdate=true}
- drawLabel('Roșu');
- const labG=new T.Group();
- const lbase=new T.Mesh(new T.CylinderGeometry(R+.025,R+.025,1.82,RS,1,true,PI),label);labG.add(lbase);
- const lov=new T.Mesh(new T.CylinderGeometry(R+.03,R+.03,1.82,RS,1,true,PI),new T.MeshStandardMaterial({map:ltex,transparent:true,roughness:.5,metalness:0,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2}));labG.add(lov);
- add(labG,V(0,0,0),V(0,-.9,0));
- /* vopseaua dinăuntru: suprafață lucioasă cu unde + menisc */
- const Rp=R-.35,dg=new T.Group();
- const pg=new T.RingGeometry(.02,Rp,RS,10);pg.rotateX(-PI/2);const pp=pg.attributes.position,rr=new Float32Array(pp.count);for(let i=0;i<pp.count;i++)rr[i]=Math.hypot(pp.getX(i),pp.getZ(i));
- dg.add(new T.Mesh(pg,disc));const men=tor(Rp,.055,disc,0,.0,0,PI/2);dg.add(men);
- const swirl=new T.Group();const sw=new T.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:.55,depthWrite:false});
- [[.55,1.4],[1.05,1.2],[1.45,1.0]].forEach((c,i)=>{const a=tor(c[0],.05,sw,0,.05,0,PI/2,0,PI*c[1]);a.rotation.z=i*2.1;swirl.add(a)});dg.add(swirl);
- add(dg,V(0,1.0,0),V(0,2.0,0));
- /* capac: rotund, cu inel nervurat, burta murdărită de vopsea pe dedesubt */
- const lid=new T.Group(),RL=R+.13;
- const lp=[[0,.1],[.5,.1],[.56,.14],[.95,.14],[1.01,.1],[RL-.5,.1],[RL-.44,.17],[RL-.3,.17],[RL-.24,.1],[RL-.1,.1],[RL-.04,.19],[RL+.04,.19],[RL+.07,.13],[RL+.05,-.1],[RL+.01,-.13],[RL-.2,-.13],[RL-.24,-.2],[RL-.5,-.22],[RL-.51,-.1],[RL-.51,0],[0,0]].map(p=>new T.Vector2(p[0],p[1]));
- lid.add(latheHard(lp,tin,RS,.6));
- const ug=new T.CircleGeometry(RL-.55,40);{const up=ug.attributes.position;for(let i=1;i<up.count;i++){const a=Math.atan2(up.getY(i),up.getX(i)),f=.8+.14*Math.sin(a*3+1)+.06*Math.sin(a*7);up.setXY(i,up.getX(i)*f,up.getY(i)*f)}}
- const und=new T.Mesh(ug,disc);und.rotation.x=PI/2;und.position.y=-.012;lid.add(und);
- const uw=new T.Mesh(new T.CylinderGeometry(RL-.525,RL-.525,.2,RS,1,true,0,PI*1.55),disc);uw.position.y=-.11;uw.rotation.y=.6;lid.add(uw);
- const ur=new T.Mesh(new T.RingGeometry(RL-.5,RL-.06,RS,1,0.4,PI*1.3),disc);ur.rotation.x=PI/2;ur.position.y=-.125;lid.add(ur);
- add(lid,V(0,1.88,0),V(0,3.9,0));
- /* mâner (toartă din sârmă + prindere) */
- const hd=new T.Group(),RH=R+.17;
- hd.add(new T.Mesh(new T.TorusGeometry(RH,.04,8,SEG*2,PI),wire));
- const gp=K.cylX(.1,.74,grip,0,RH,0,14);hd.add(gp);
- add(hd,V(0,1.15,0),V(0,3.7,0));hd.rotation.x=-1.0;
+ bodyG.add(mesh(prism(W,D,RC,H,HI?6:4),black));
+ [1,-1].forEach(sg=>{const f=mesh(new T.PlaneGeometry(PW,PH),front);f.position.z=sg*(D/2+.004);if(sg<0)f.rotation.y=PI;bodyG.add(f);
+  const ic=decal(itex,PW,.5,0,sg<0);ic.position.set(0,HB-.70*PH,sg*(D/2+.008));bodyG.add(ic);
+  const nm=decal(ntex,2.2,1.1,0,sg<0);nm.position.set(0,HB-.18*PH,sg*(D/2+.008));bodyG.add(nm)});
+ const bot=mesh(new T.ShapeGeometry(rr(W-.04,D-.04,RC-.02),CS),black);bot.rotation.x=-PI/2;bot.position.y=-HB+.1;bodyG.add(bot);
+ bodyG.add(mesh(ringG(W+.14,D+.14,RC+.07,W-.12,D-.12,RC-.05,.09,.02),silver,0,HB-.01,0));
+ bodyG.add(mesh(ringG(W+.12,D+.12,RC+.06,W-.2,D-.2,RC-.1,.1,.03),silver,0,-HB+.015,0));
+ add(bodyG,V(0,0,0),V(0,-2.1,0));
+ /* ---- vopseaua dinăuntru: lucioasă, cu undă + menisc ---- */
+ const yL=HB-.22,dg=new T.Group();
+ const pg=new T.PlaneGeometry(W-.4,D-.4,HI?30:20,HI?18:12);pg.rotateX(-PI/2);const pp=pg.attributes.position,rr2=new Float32Array(pp.count);for(let i=0;i<pp.count;i++)rr2[i]=Math.hypot(pp.getX(i),pp.getZ(i)*1.5);
+ dg.add(new T.Mesh(pg,disc));dg.add(mesh(ringG(W-.08,D-.08,RC-.04,W-.42,D-.42,RC-.2,.05,.012),disc,0,.01,0));
+ const swirl=new T.Group(),sw=new T.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:.28,depthWrite:false});
+ [[.5,1.4],[.85,1.2],[1.15,1.0]].forEach((c,i)=>{const a=K.tor(c[0],.035,sw,0,.045,0,PI/2,0,PI*c[1]);a.rotation.z=i*2.1;swirl.add(a)});swirl.scale.set(1,1,.6);dg.add(swirl);
+ add(dg,V(0,yL,0),V(0,2.2,0));
+ /* ---- capac slip-on: fustă + placă + margine ridicată (treaptă), amprentă în relief ---- */
+ const lidP=new T.Group(),lidO=new T.Group(),lidT=new T.Group(),lid=new T.Group();
+ const wl=W+.1,dl=D+.1,rl=RC+.05,LH=.42,LTOP=.465;
+ lid.add(mesh(ringG(wl,dl,rl,wl-.12,dl-.12,rl-.06,LH,.015),lidM,0,LH/2,0));
+ lid.add(mesh(ringG(wl,dl,rl,0,0,0,.07,.02),lidM,0,LH-.035,0));
+ lid.add(mesh(ringG(wl-.04,dl-.04,rl-.02,wl-.32,dl-.32,rl-.14,.05,.012),lidM,0,LH+.02,0));
+ const etex=(()=>{const c=document.createElement('canvas');c.width=1024;c.height=512;const x=c.getContext('2d');x.textAlign='center';x.textBaseline='middle';
+  const draw=(ox,oy,col)=>{x.strokeStyle=col;x.fillStyle=col;x.lineWidth=5;x.beginPath();if(x.roundRect)x.roundRect(80+ox,70+oy,864,372,52);else x.rect(80+ox,70+oy,864,372);x.stroke();
+   try{x.letterSpacing='26px'}catch(e){}x.font='800 92px system-ui,Segoe UI,sans-serif';x.fillText('INTERCHIM',524+ox,256+oy)};
+  draw(4,5,'rgba(0,0,0,.34)');draw(-2,-3,'rgba(255,255,255,.4)');
+  const t=new T.CanvasTexture(c);t.anisotropy=4;return t})();
+ const em=new T.Mesh(new T.PlaneGeometry(2.3,1.15),new T.MeshBasicMaterial({map:etex,transparent:true,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2}));em.rotation.x=-PI/2;em.position.y=LH+.003;noray(em);lid.add(em);
+ const ug=new T.CircleGeometry(1,40);{const up=ug.attributes.position;for(let i=1;i<up.count;i++){const a=Math.atan2(up.getY(i),up.getX(i)),f=.8+.14*Math.sin(a*3+1)+.06*Math.sin(a*7);up.setXY(i,up.getX(i)*f,up.getY(i)*f)}}
+ const und=new T.Mesh(ug,disc);und.rotation.x=PI/2;und.scale.set(1.08,.66,1);und.position.set(0,LH-.073,0);lid.add(und);
+ [[-.95,.2,.3],[.8,-.1,.22]].forEach(s=>{const u2=new T.Mesh(ug,dry);u2.rotation.x=PI/2;u2.scale.set(s[2],s[2]*.8,1);u2.position.set(s[0],LH-.074,s[1]);lid.add(u2)});
+ lidT.add(lid);lidO.add(lidT);lidP.add(lidO);
+ const LY0=HB+.04;add(lidP,V(0,LY0,0),V(0,4.2,0));
+ /* poziția capacului scos: culcat cu fața interioară în sus, rezemat de cutie */
+ const al=.42,phi=PI-al,cph=Math.cos(phi),sph=Math.sin(phi),hw=wl/2;
+ let mnx=1e9,mxx=-1e9,mny=1e9;[[-hw,0],[hw,0],[-hw,LTOP],[hw,LTOP]].forEach(q=>{const xx=q[0]*cph-q[1]*sph,yy=q[0]*sph+q[1]*cph;mnx=Math.min(mnx,xx);mxx=Math.max(mxx,xx);mny=Math.min(mny,yy)});
+ const FL=-HB-.03,rest={x:W/2+.1-mnx,y:FL-mny+.01,z:.25,ry:-.32,rz:-(PI+al)};
+ const LEFT=1.6,RIGHT=rest.x+mxx+.15,TOTAL=LEFT+RIGHT,SHIFT=(RIGHT-LEFT)/2;
  /* pensulă sprijinită pe marginea cutiei deschise */
  const br=new T.Group();
  const bh=new T.Mesh(new T.CylinderGeometry(.06,.09,2.5,10),wood);bh.rotation.z=-PI/2;bh.position.x=1.55+1.25-.2;br.add(bh);
- const fe=new T.Mesh(new T.CylinderGeometry(.13,.12,.55,12),wire);fe.rotation.z=-PI/2;fe.position.x=.78;br.add(fe);
+ const fe=new T.Mesh(new T.CylinderGeometry(.13,.12,.55,12),silver);fe.rotation.z=-PI/2;fe.position.x=.78;br.add(fe);
  const bs=new T.Mesh(new T.CylinderGeometry(.13,.15,.55,12),bristle);bs.rotation.z=-PI/2;bs.scale.set(1,1,.42);bs.position.x=.28;br.add(bs);
  const bt=new T.Mesh(new T.CylinderGeometry(.12,.13,.3,12),dry);bt.rotation.z=-PI/2;bt.scale.set(1,1,.42);bt.position.x=.06;br.add(bt);
- const spin=new T.Group();root.add(spin);[bodyG,labG,dg,hd].forEach(g=>spin.add(g));
- br.position.set(-.55,.98,-.3);br.rotation.z=.4;br.rotation.y=-.3;br.visible=false;root.add(br);
- /* umbre de contact + reflexie de lumină colorată pe podea */
- const FL=-1.63;
+ br.rotation.z=.34;br.rotation.y=PI;br.visible=false;root.add(br);
+ const spin=new T.Group();root.add(spin);[bodyG,dg].forEach(g=>spin.add(g));
+ /* umbre de contact + reflexie colorată pe podea */
  const shM=new T.MeshBasicMaterial({color:0x000000,map:shTex,transparent:true,opacity:.75,depthWrite:false});
- const sh=noray(mesh(new T.PlaneGeometry(1,1),shM));sh.rotation.x=-PI/2;sh.scale.set(6.2,6.2,1);sh.position.y=FL+.01;sh.renderOrder=2;root.add(sh);
- const shL=noray(mesh(new T.PlaneGeometry(1,1),shM.clone()));shL.rotation.x=-PI/2;shL.scale.set(4.6,4.6,1);shL.position.y=FL+.012;shL.renderOrder=2;shL.material.opacity=0;root.add(shL);
- const poolM=new T.MeshBasicMaterial({color:0xc1121f,map:shTex,transparent:true,opacity:.34,depthWrite:false,blending:T.AdditiveBlending});paintMats.push(poolM);
- const pool=noray(mesh(new T.PlaneGeometry(1,1),poolM));pool.rotation.x=-PI/2;pool.scale.set(5.4,5.4,1);pool.position.y=FL+.006;pool.renderOrder=1;root.add(pool);
- // picături de pigment (cyan / magenta / galben) care cad în vopsea (doar în secțiunea de scroll)
+ const sh=noray(mesh(new T.PlaneGeometry(1,1),shM));sh.rotation.x=-PI/2;sh.scale.set(5.2,3.8,1);sh.position.y=FL+.01;sh.renderOrder=2;root.add(sh);
+ const shL=noray(mesh(new T.PlaneGeometry(1,1),shM.clone()));shL.rotation.x=-PI/2;shL.scale.set(3.6,2.2,1);shL.position.y=FL+.012;shL.renderOrder=2;shL.material.opacity=0;root.add(shL);
+ const poolM=new T.MeshBasicMaterial({color:0xc1121f,map:shTex,transparent:true,opacity:.3,depthWrite:false,blending:T.AdditiveBlending});paintMats.push(poolM);
+ const pool=noray(mesh(new T.PlaneGeometry(1,1),poolM));pool.rotation.x=-PI/2;pool.scale.set(5.8,4.4,1);pool.position.y=FL+.006;pool.renderOrder=1;root.add(pool);
  const drops=[M.cyan,M.mag,M.yel].map(m=>{const d=mesh(new T.SphereGeometry(.2,12,10),m,0,5,0);d.scale.y=1.4;root.add(d);d.visible=false;return d});
- root.position.y=-.3;
- const st={open:false,k:0},size={h0:5.2,h1:11.4,w0:4.4,w1:hero?6.4:7.6};
- const dest=hero?{x:3.0,z:1.8}:{x:3.9,z:0};
- const lidA=V(0,1.88,0);let rippleAcc=0;
+ root.position.y=-.2;
+ const st={open:false,k:0},size={h0:5.9,h1:10,w0:3.4,w1:3.7};
+ const lidA=V(0,LY0,0),lidB=V(0,4.2,0);let rippleAcc=0;
+ const sm2=u=>{u=Math.max(0,Math.min(1,u));return u*u*(3-2*u)};
+ const angd=(a,b)=>{let d=(a-b)%(PI*2);if(d>PI)d-=PI*2;if(d<-PI)d+=PI*2;return d};
  return{root,parts:K.parts,paintMats,glowMats:[],size,spinner:spin,
-  toggle(){st.open=!st.open;return st.open},get open(){return st.open},setOpen(v){st.open=!!v},setName:drawLabel,
-  update(t,dt,e){e=e||0;swirl.rotation.y+=dt*(1+3*e);swirl.visible=e>.05;
-   st.k+=((st.open?1:0)-st.k)*Math.min(1,dt*3.2+(dt?0:1));const kk=st.k,ke=kk*kk*(3-2*kk);
-   const k2=ke*(1-e);lid.position.set(0,lidA.y+(3.9-lidA.y)*e,0);
-   lid.position.x+=dest.x*ke;lid.position.z+=dest.z*ke;lid.position.y+=(FL+.19-(lid.position.y))*k2+Math.sin(PI*ke)*1.7;
-   lid.rotation.z=-PI*ke;lid.rotation.x=-.5*Math.sin(PI*ke)*(dest.z?1:0)*.6;
-   hd.rotation.x=-1.0-.5*ke+Math.sin(t*1.3)*.012*(1-ke);
-   root.position.x=-dest.x*.5*ke;
-   size.w0=4.4+(hero?2.0:3.4)*kk;size.w1=size.w0+.3;
-   br.visible=ke>.04;br.scale.setScalar(Math.max(.001,ke));br.position.y=.98+.9*(1-ke);
-   shL.material.opacity=.7*ke*(1-e);shL.position.x=dest.x*ke;shL.position.z=dest.z*ke;sh.material.opacity=.75*(1-.8*e);pool.material.opacity=.34*(1-e);
-   if(kk>.04&&e<.5){rippleAcc+=dt;if(rippleAcc>.03||!dt){rippleAcc=0;for(let i=0;i<rr.length;i++){const r=rr[i];pp.setY(i,.03*Math.sin(r*7.5-t*3.4)*Math.exp(-r*.85)*(.7+.3*Math.sin(t*.6)))}pp.needsUpdate=true;pg.computeVertexNormals()}}
+  toggle(){st.open=!st.open;return st.open},get open(){return st.open},setOpen(v){st.open=!!v},setName:drawName,
+  update(t,dt,e){e=e||0;swirl.rotation.y+=dt*(1+3*e);swirl.visible=e>.05||st.k>.05;
+   st.k+=((st.open?1:0)-st.k)*Math.min(1,dt*3.2+(dt?0:1));const kk=st.k,ke=kk*kk*(3-2*kk),s=ke*(1-e);
+   const cy=lidA.y+(lidB.y-lidA.y)*e,sx=sm2((s-.12)/.88),sr=sm2((s-.06)/.8),spy=spin.rotation.y;
+   lidP.position.set(rest.x*sx,cy+(rest.y-cy)*sx+Math.sin(PI*Math.min(1,s*1.15))*1.5,rest.z*sx);
+   lidO.rotation.y=rest.ry+(1-sr)*angd(spy,rest.ry);lidT.rotation.z=rest.rz*sr;
+   root.position.x=-SHIFT*ke;
+   size.w0=3.4+(TOTAL-3.4)*kk;size.w1=size.w0+.3;
+   br.visible=ke>.04;br.scale.setScalar(Math.max(.001,ke*.56));br.position.set(.3,1.98+.9*(1-ke),.15);
+   shL.material.opacity=.7*s;shL.position.x=rest.x*sx;shL.position.z=rest.z*sx;sh.material.opacity=.75*(1-.8*e);pool.material.opacity=.3*(1-e);
+   if(kk>.04&&e<.5){rippleAcc+=dt;if(rippleAcc>.03||!dt){rippleAcc=0;for(let i=0;i<rr2.length;i++){const r=rr2[i];pp.setY(i,.025*Math.sin(r*7.5-t*3.4)*Math.exp(-r*.7)*(.7+.3*Math.sin(t*.6)))}pp.needsUpdate=true;pg.computeVertexNormals()}}
    drops.forEach((d,i)=>{const u=(t*.55+i/3)%1;d.visible=e>.35;d.position.set((i-1)*.7,dg.position.y+3.2-3.1*u*u,(i-1)*.15);d.scale.set(1,1.4*(1-.25*u),1)})}}}
 
 // 2. Spray auto: spray la cod — se ridică capacul, apare norul de vopsea

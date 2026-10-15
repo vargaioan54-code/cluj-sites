@@ -77,46 +77,65 @@ function onSlide(){const c=hsl2rgb(+sH.value,+sS.value,+sL.value);setColor(rgb2h
 [sH,sS,sL].forEach(x=>x&&x.addEventListener('input',onSlide));
 
 /* ---------- CUTII care se deschid + GĂLEȚI care se toarnă ---------- */
-function canSvg(i,name){const p='k'+i,tl=Math.min(name.length*5.1,50).toFixed(1);
- const body='<path d="M20 52 V112 A40 11 0 0 0 100 112 V52 Z" fill="url(#'+p+'s)"/>'+
-  [[56,.55],[61,.4],[104,.45],[108,.5]].map(r=>'<path d="M20 '+r[0]+' A40 11 0 0 0 100 '+r[0]+'" fill="none" stroke="#f4f6fb" stroke-opacity="'+r[1]+'" stroke-width="1.6"/><path d="M20 '+(r[0]+1.8)+' A40 11 0 0 0 100 '+(r[0]+1.8)+'" fill="none" stroke="#232834" stroke-opacity=".5" stroke-width="1.5"/>').join('')+
-  '<path d="M20 112 A40 11 0 0 0 100 112" fill="none" stroke="#2b303c" stroke-opacity=".55" stroke-width="2.4"/>'+
-  '<path d="M20 64 A40 11 0 0 0 100 64 V98 A40 11 0 0 1 20 98 Z" style="fill:var(--c)"/><path d="M20 64 A40 11 0 0 0 100 64 V98 A40 11 0 0 1 20 98 Z" fill="url(#'+p+'l)"/>'+
-  '<path d="M20 67.5 A40 11 0 0 0 100 67.5 M20 94.5 A40 11 0 0 0 100 94.5" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="1.2"/>'+
-  '<path d="M36 80.4 Q60 84.2 84 80.4 V97.2 Q60 101 36 97.2 Z" fill="#f2efe7"/><path d="M36 80.4 Q60 84.2 84 80.4 V97.2 Q60 101 36 97.2 Z" fill="url(#'+p+'l)" opacity=".55"/><path d="M36 80.4 Q60 84.2 84 80.4 V97.2 Q60 101 36 97.2 Z" fill="none" stroke="#000" stroke-opacity=".22" stroke-width=".6"/>'+
-  '<text x="60" y="87.2" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" font-size="4.6" letter-spacing="1.6" fill="#2a2933">INTERCHIM</text>'+
-  '<text x="60" y="95" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" font-size="8" fill="#15141b" textLength="'+tl+'" lengthAdjust="spacingAndGlyphs">'+name+'</text>'+
-  '<path d="M24 56 V108" stroke="#fff" stroke-opacity=".0" /><path d="M31 58 V108" stroke="#fff" stroke-opacity=".0"/>';
- const drips='<g class="dr" style="fill:var(--c)"><path d="M27 52.6 q-.5 8 1.8 11.4 q3 3.2 3.8 -1.6 q.2 -6 -.6 -9.8z"/><path d="M49 55 q-.5 5 1.4 7.2 q2.4 2 2.8 -1.4 q0 -3.6 -.4 -5.8z"/><path d="M78 55.2 q-.4 9.2 2 13.4 q3.4 3.6 4.2 -2 q0 -6.6 -1 -11.4z"/><path d="M92 52.4 q-.3 5.4 1.2 7.6 q2.4 1.8 2.8 -1.2 q0-3.8 -.5-6.4z"/>'+
-  '<path d="M27 52.6 q-.5 8 1.8 11.4 q3 3.2 3.8 -1.6 q.2 -6 -.6 -9.8z M78 55.2 q-.4 9.2 2 13.4 q3.4 3.6 4.2 -2 q0 -6.6 -1 -11.4z" fill="url(#'+p+'d)"/><ellipse cx="30" cy="62.8" rx="1" ry="1.5" fill="#fff" fill-opacity=".7"/><ellipse cx="82.2" cy="67.6" rx="1" ry="1.6" fill="#fff" fill-opacity=".7"/></g>';
- const rim='<ellipse cx="60" cy="40" rx="41" ry="11.6" fill="url(#'+p+'r)" stroke="#6a7283" stroke-width=".9"/><ellipse cx="60" cy="40.6" rx="36.6" ry="9.6" fill="url(#'+p+'g)"/><ellipse cx="60" cy="41" rx="33.2" ry="8.1" fill="#15131f"/>'+
-  '<path d="M21 42 A39 10.6 0 0 0 99 42" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="1"/><path d="M33 33.6 A41 11.6 0 0 1 60 28.4" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="1.3" stroke-linecap="round"/>';
- const paint='<g class="pnt"><ellipse class="pf" cx="60" cy="41.4" rx="33" ry="7.9"/><ellipse cx="60" cy="41.4" rx="33" ry="7.9" fill="url(#pntG)"/><ellipse cx="60" cy="41.4" rx="33" ry="7.9" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1"/>'+
-  '<ellipse class="hl" cx="46" cy="39.2" rx="12" ry="2.3"/><ellipse class="rp" cx="60" cy="41.4" rx="27" ry="6.3"/><ellipse class="rp rp2" cx="60" cy="41.4" rx="27" ry="6.3"/>'+
-  '<path class="pf" d="M26 43.6 Q28 50 33.5 51.4 Q36 47 31 44z"/><circle class="spl" cx="54" cy="38" r="3" style="--dx:-7px"/><circle class="spl" cx="68" cy="38" r="2.4" style="--dx:8px"/><circle class="spl" cx="60" cy="37" r="2" style="--dx:1px"/></g>';
- const brush='<g class="brush"><path d="M-6 25.5 L46 41" stroke="#b78750" stroke-width="3.4" stroke-linecap="round"/><path d="M-6 24.2 L46 39.6" stroke="#e5be8a" stroke-opacity=".7" stroke-width="1" stroke-linecap="round"/><path d="M40 39.2 L51.5 42.7" stroke="#cdd2dc" stroke-width="4.6" stroke-linecap="butt"/><path d="M40 37.6 L51.5 41.2" stroke="#fff" stroke-opacity=".8" stroke-width="1"/><path d="M51.5 42.7 L60 45.2" stroke="#d8cdb0" stroke-width="4.8" stroke-linecap="round"/><path d="M56.5 44.3 L61 45.7" style="stroke:var(--c)" stroke-width="5" stroke-linecap="round"/></g>';
- const lidT='<g class="lid"><path d="M17 38 v4.4 A43 12.6 0 0 0 103 42.4 v-4.4z" fill="#6c7487"/><path d="M17 38 v3.2 A43 12.6 0 0 0 103 41.2 v-3.2z" fill="url(#'+p+'s)"/><ellipse cx="60" cy="38" rx="43" ry="12.6" fill="url(#'+p+'q)" stroke="#6c7487" stroke-width=".9"/>'+
-  '<ellipse cx="60" cy="38" rx="38" ry="10.6" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5"/><ellipse cx="60" cy="38.4" rx="38" ry="10.6" fill="none" stroke="#4b5263" stroke-opacity=".45" stroke-width="1"/><ellipse cx="60" cy="38" rx="27" ry="7.4" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.1"/><ellipse cx="60" cy="38.3" rx="27" ry="7.4" fill="none" stroke="#4b5263" stroke-opacity=".35" stroke-width=".9"/>'+
-  '<ellipse cx="60" cy="38" rx="15" ry="4.1" fill="url(#'+p+'q)" stroke="#6c7487" stroke-width=".7"/><path d="M26 32.4 A41 11.6 0 0 1 56 26.8" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="1.4" stroke-linecap="round"/></g>';
- const lidU='<g class="lidu"><g transform="rotate(9 112 62)"><ellipse cx="114.4" cy="61" rx="15" ry="36.4" fill="#4d5465"/><ellipse cx="112" cy="62" rx="15" ry="36.4" fill="url(#'+p+'v)" stroke="#6c7487" stroke-width=".9"/><ellipse cx="112" cy="62" rx="11.4" ry="31.4" fill="url(#'+p+'u)" stroke="#fff" stroke-opacity=".5" stroke-width="1"/>'+
-  '<path d="M106 40 Q118 38 119 54 Q121 66 115 76 Q111 88 104 82 Q99 70 101 56 Q101 46 106 40z" style="fill:var(--c)"/><path d="M106 40 Q118 38 119 54 Q121 66 115 76 Q111 88 104 82 Q99 70 101 56 Q101 46 106 40z" fill="url(#pntG)"/><ellipse cx="108.4" cy="50" rx="1.6" ry="6" fill="#fff" fill-opacity=".5" transform="rotate(8 108 50)"/>'+
-  '<path d="M103 83 q.2 6.6 2.4 8 q2.2 .6 2.2 -2.8 q-.6-3-1.4-5z" style="fill:var(--c)"/></g></g>';
- const bail='<g class="bail"><path d="M21 47 C 17 -7, 103 -7, 99 47" fill="none" stroke="#7f8697" stroke-width="2.3" stroke-linecap="round"/><path d="M21 47 C 17 -7, 103 -7, 99 47" fill="none" stroke="#eef1f7" stroke-width="1.1" stroke-linecap="round" transform="translate(-.4 -.6)"/><rect x="48" y="6.2" width="24" height="7.2" rx="3.6" fill="#1e1c28"/><rect x="50" y="7.2" width="20" height="1.8" rx=".9" fill="#fff" fill-opacity=".35"/></g>';
- const ears='<rect x="18" y="43" width="6" height="9" rx="1.6" fill="#9aa2b3" stroke="#5e667a" stroke-width=".6"/><rect x="96" y="43" width="6" height="9" rx="1.6" fill="#9aa2b3" stroke="#5e667a" stroke-width=".6"/>';
- return '<svg viewBox="-10 -4 150 140" aria-hidden="true"><defs>'+
-  '<linearGradient id="'+p+'s" x1="0" x2="1"><stop offset="0" stop-color="#4a505e"/><stop offset=".07" stop-color="#8c94a5"/><stop offset=".19" stop-color="#f1f3f8"/><stop offset=".3" stop-color="#c3c9d5"/><stop offset=".48" stop-color="#9ea6b6"/><stop offset=".6" stop-color="#cfd4de"/><stop offset=".74" stop-color="#8a92a3"/><stop offset=".92" stop-color="#555c6c"/><stop offset="1" stop-color="#383d49"/></linearGradient>'+
-  '<linearGradient id="'+p+'l" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".5"/><stop offset=".13" stop-color="#000" stop-opacity=".12"/><stop offset=".22" stop-color="#fff" stop-opacity=".42"/><stop offset=".4" stop-color="#fff" stop-opacity=".02"/><stop offset=".8" stop-color="#000" stop-opacity=".2"/><stop offset="1" stop-color="#000" stop-opacity=".55"/></linearGradient>'+
-  '<radialGradient id="'+p+'r" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fafbfd"/><stop offset=".6" stop-color="#b8bfcd"/><stop offset="1" stop-color="#7a8294"/></radialGradient>'+
-  '<linearGradient id="'+p+'g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5f6779"/><stop offset=".5" stop-color="#a9b0bf"/><stop offset="1" stop-color="#e3e7ef"/></linearGradient>'+
-  '<radialGradient id="'+p+'q" cx=".36" cy=".3" r=".85"><stop offset="0" stop-color="#f7f8fc"/><stop offset=".5" stop-color="#c1c7d4"/><stop offset="1" stop-color="#858da0"/></radialGradient>'+
-  '<linearGradient id="'+p+'v" x1="0" x2="1"><stop offset="0" stop-color="#d9dde6"/><stop offset=".5" stop-color="#9aa2b3"/><stop offset="1" stop-color="#e8ebf2"/></linearGradient>'+
-  '<linearGradient id="'+p+'u" x1="0" x2="1"><stop offset="0" stop-color="#8e96a7"/><stop offset=".5" stop-color="#cdd2dc"/><stop offset="1" stop-color="#8189 9b"/></linearGradient>'.replace('8189 9b','81899b')+
-  '<linearGradient id="'+p+'d" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient>'+
-  '<linearGradient id="'+p+'f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="'+p+'m" maskUnits="userSpaceOnUse" x="-10" y="116" width="150" height="26"><rect x="-10" y="116" width="150" height="26" fill="url(#'+p+'f)"/></mask>'+
-  '<radialGradient id="'+p+'h" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".7"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>'+
-  '<g id="'+p+'b">'+body+'</g></defs>'+
-  '<ellipse cx="60" cy="116.5" rx="56" ry="11" fill="url(#'+p+'h)"/><g class="refl" mask="url(#'+p+'m)" opacity=".36"><g transform="translate(0 235) scale(1 -1)"><use href="#'+p+'b"/></g></g>'+
-  lidU+bail+'<use href="#'+p+'b"/>'+drips+ears+rim+paint+brush+lidT+'</svg>'}
+function canSvg(i,name,hex){const p='k'+i;
+ const X0=42,W=86,T=62,B=194,DX=-13,DY=-19,LT=49;
+ const f1=n=>(Math.round(n*10)/10);
+ const pts=a=>a.map(q=>f1(q[0])+','+f1(q[1])).join(' ');
+ const F=(fx,fy)=>[X0+fx*W,T+fy*(B-T)];
+ const P=(u,v,y)=>[X0+u*W+v*DX,y+v*DY];
+ const lum=(()=>{const h=(hex||'#888888').replace('#','');const r=parseInt(h.substr(0,2),16),g=parseInt(h.substr(2,2),16),b=parseInt(h.substr(4,2),16);return (.2126*r+.7152*g+.0722*b)/255})();
+ const tc=lum>.5?'#0b0b0d':'#f4f1ea';
+ const up=pts([F(0,0),F(1,0),F(1,.24),F(.72,.39),F(.16,.42),F(0,.49)]);
+ const lb=pts([F(.16,.57),F(.88,.57),F(.88,.77),F(.32,.82),F(0,1),F(0,.82),F(.16,.78)]);
+ const IC=['M12 3 L19 6 V12 C19 16.5 15.8 19.8 12 21 C8.2 19.8 5 16.5 5 12 V6 Z M12 6 V18 M8.4 8.4 L12 7 L15.6 8.4','M5 20 C5 16 7 14 9 13.5 L11.5 16 C10.5 18 8.5 20 5 20Z M10.5 14.5 L18.5 5.5 L20 7 L12 15.5Z','M12 4 C12 4 6.5 10.5 6.5 14.5 A5.5 5.5 0 0 0 17.5 14.5 C17.5 10.5 12 4 12 4Z M9.5 14 A2.5 2.5 0 0 0 12 16.6'];
+ const badges=[.28,.52,.75].map((fx,k)=>{const c=F(fx,.70);return '<circle cx="'+f1(c[0])+'" cy="'+f1(c[1])+'" r="5.7" fill="#0a0a0c" stroke="#fff" stroke-opacity=".12" stroke-width=".4"/><g transform="translate('+f1(c[0]-3.7)+' '+f1(c[1]-3.7)+') scale(.31)"><path d="'+IC[k]+'" fill="none" stroke="#ece8df" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></g>'}).join('');
+ const cw=F(.5,.115),cn=F(.5,.245),tl=Math.min(name.length*6.6,64).toFixed(1);
+ const txt='<text x="'+f1(cw[0])+'" y="'+f1(cw[1])+'" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" font-size="6.6" letter-spacing="1.6" fill="'+tc+'" fill-opacity=".92">INTERCHIM</text>'+
+  '<text x="'+f1(cn[0])+'" y="'+f1(cn[1])+'" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" font-size="11.5" fill="'+tc+'" textLength="'+tl+'" lengthAdjust="spacingAndGlyphs">'+name+'</text>';
+ const sideP=pts([P(0,0,T),P(0,0,B),P(0,1,B),P(0,1,T)]);
+ const ringOut=pts([[X0-1.5,T],[X0+W+1.5,T],[X0+W+1.5+DX,T+DY],[X0-1.5+DX,T+DY]]);
+ const opn=[P(.05,.075,T),P(.95,.075,T),P(.95,.93,T),P(.05,.93,T)],opnS=pts(opn);
+ const pnt=pts([P(0,0,T+5),P(1,0,T+5),P(1,1,T+5),P(0,1,T+5)]);
+ const pc=P(.5,.5,T+5);
+ const Lp=(u,v)=>[40+u*90+v*DX,LT+v*DY];
+ const lidTop=pts([Lp(0,0),Lp(1,0),Lp(1,1),Lp(0,1)]),step=pts([Lp(.06,.15),Lp(.94,.15),Lp(.94,.85),Lp(.06,.85)]);
+ const lidSide=pts([[40,LT],[40,60.5],[40+DX,60.5+DY],[40+DX,LT+DY]]);
+ const sv=['#6b7180','#f4f6fa','#b2b8c5','#7a8191'];
+ return '<svg viewBox="-2 16 172 194" aria-hidden="true"><defs>'+
+  '<linearGradient id="'+p+'sv" x1="0" x2="1"><stop offset="0" stop-color="'+sv[0]+'"/><stop offset=".2" stop-color="'+sv[1]+'"/><stop offset=".55" stop-color="'+sv[2]+'"/><stop offset="1" stop-color="'+sv[3]+'"/></linearGradient>'+
+  '<linearGradient id="'+p+'sh" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".35" stop-color="#fff" stop-opacity=".02"/><stop offset=".8" stop-color="#000" stop-opacity=".22"/><stop offset="1" stop-color="#000" stop-opacity=".4"/></linearGradient>'+
+  '<linearGradient id="'+p+'sd" x1="0" x2="1"><stop offset="0" stop-color="#2a2a30"/><stop offset="1" stop-color="#101014"/></linearGradient>'+
+  '<linearGradient id="'+p+'lt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".34"/><stop offset=".5" stop-color="#fff" stop-opacity=".04"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient>'+
+  '<linearGradient id="'+p+'wl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".85"/><stop offset="1" stop-color="#000" stop-opacity=".1"/></linearGradient>'+
+  '<radialGradient id="'+p+'hh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".75"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>'+
+  '<clipPath id="'+p+'cp"><polygon points="'+opnS+'"/></clipPath></defs>'+
+  '<ellipse cx="86" cy="'+(B+3)+'" rx="70" ry="10" fill="url(#'+p+'hh)"/>'+
+  '<g class="cg">'+
+  '<polygon points="'+sideP+'" fill="url(#'+p+'sd)"/>'+
+  '<polygon points="'+pts([[X0,T],[X0+W,T],[X0+W,B],[X0,B]])+'" fill="#0c0c0f"/>'+
+  '<polygon points="'+up+'" style="fill:var(--c)"/><polygon points="'+lb+'" style="fill:var(--c)"/>'+
+  '<polygon points="'+up+'" fill="none" stroke="#fff" stroke-opacity=".13" stroke-width=".5"/><polygon points="'+lb+'" fill="none" stroke="#fff" stroke-opacity=".13" stroke-width=".5"/>'+
+  txt+badges+
+  '<polygon points="'+pts([[X0,T],[X0+W,T],[X0+W,B],[X0,B]])+'" fill="url(#'+p+'sh)"/>'+
+  '<polygon points="'+pts([[41,B-2.5],[129,B-2.5],[129,B+2],[41,B+2]])+'" fill="url(#'+p+'sv)" stroke="#5d6372" stroke-width=".4"/><polygon points="'+pts([[41,B-2.5],[41+DX,B-2.5+DY],[41+DX,B+2+DY],[41,B+2]])+'" fill="#7f8798"/>'+
+  '<polygon points="'+pts([[41,60],[129,60],[129,64.5],[41,64.5]])+'" fill="url(#'+p+'sv)" stroke="#5d6372" stroke-width=".4"/><polygon points="'+pts([[41,T-2],[41+DX,T-2+DY],[41+DX,T+2.5+DY],[41,T+2.5]])+'" fill="#8b93a4"/>'+
+  '<polygon points="'+ringOut+'" fill="url(#'+p+'sv)" stroke="#5d6372" stroke-width=".4"/>'+
+  '<polygon points="'+opnS+'" fill="#08080a"/>'+
+  '<g class="pnt" clip-path="url(#'+p+'cp)"><polygon points="'+opnS+'" fill="url(#'+p+'wl)"/><polygon class="pf" points="'+pnt+'"/><polygon points="'+pnt+'" fill="url(#pntG)"/>'+
+  '<ellipse class="hl" cx="'+f1(pc[0]-14)+'" cy="'+f1(pc[1]-2)+'" rx="15" ry="1.9"/><ellipse class="rp" cx="'+f1(pc[0])+'" cy="'+f1(pc[1])+'" rx="30" ry="6"/><ellipse class="rp rp2" cx="'+f1(pc[0])+'" cy="'+f1(pc[1])+'" rx="30" ry="6"/>'+
+  '<path d="'+'M'+f1(P(0,1,T+5)[0])+' '+f1(P(0,1,T+5)[1])+' L'+f1(P(1,1,T+5)[0])+' '+f1(P(1,1,T+5)[1])+'" stroke="#fff" stroke-opacity=".45" stroke-width="1" fill="none"/></g>'+
+  '<polygon points="'+opnS+'" fill="none" stroke="#3b3f4a" stroke-width=".6"/>'+
+  '<circle class="spl" cx="'+f1(pc[0]-8)+'" cy="'+f1(pc[1]-2)+'" r="3" style="--dx:-7px"/><circle class="spl" cx="'+f1(pc[0]+10)+'" cy="'+f1(pc[1]-3)+'" r="2.4" style="--dx:8px"/><circle class="spl" cx="'+f1(pc[0])+'" cy="'+f1(pc[1]-4)+'" r="2" style="--dx:1px"/>'+
+  '<g class="brush"><path d="M50 28 L82 51" stroke="#b78750" stroke-width="3.4" stroke-linecap="round"/><path d="M50 26.8 L82 49.8" stroke="#e5be8a" stroke-opacity=".7" stroke-width="1" stroke-linecap="round"/><path d="M78 48.6 L87 55" stroke="#cdd2dc" stroke-width="4.8"/><path d="M78 47 L87 53.4" stroke="#fff" stroke-opacity=".8" stroke-width="1"/><path d="M87 55 L93 59" stroke="#d8cdb0" stroke-width="5" stroke-linecap="round"/><path d="M91 58 L94 60" style="stroke:var(--c)" stroke-width="5.2" stroke-linecap="round"/></g>'+
+  '<g class="lid"><polygon points="'+lidSide+'" style="fill:var(--c)"/><polygon points="'+lidSide+'" fill="#000" fill-opacity=".3"/>'+
+  '<polygon points="'+pts([[40,LT],[130,LT],[130,60.5],[40,60.5]])+'" style="fill:var(--c)"/><polygon points="'+pts([[40,LT],[130,LT],[130,60.5],[40,60.5]])+'" fill="url(#'+p+'sh)"/>'+
+  '<path d="M40 60 H130" stroke="#000" stroke-opacity=".28" stroke-width="1"/>'+
+  '<polygon points="'+lidTop+'" style="fill:var(--c)"/><polygon points="'+lidTop+'" fill="url(#'+p+'lt)"/>'+
+  '<polygon points="'+step+'" fill="none" stroke="#000" stroke-opacity=".28" stroke-width=".8" transform="translate(0 .8)"/><polygon points="'+step+'" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width=".8"/>'+
+  '<path d="M40 '+LT+' H130 L'+(130+DX)+' '+(LT+DY)+'" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width=".9"/></g></g>'+
+  '<g class="lidu"><g transform="translate(0 0)"><polygon points="134,194 166,186 166,122 134,133" fill="#b9bfcc"/><polygon points="134,194 166,186 166,122 134,133" style="fill:var(--c)" fill-opacity=".35"/>'+
+  '<polygon points="137,190.5 163,184 163,127 137,135.5" class="pf"/><polygon points="137,190.5 163,184 163,127 137,135.5" fill="url(#pntG)"/>'+
+  '<path d="M140 146 Q150 138 160 139 L161 152 Q151 148 142 156Z" fill="#fff" fill-opacity=".25"/><path d="M138 182 q4 -10 10 -8 q4 3 -1 9z" fill="#000" fill-opacity=".18"/><path d="M134 133 L166 122" stroke="#fff" stroke-opacity=".8" stroke-width="1"/></g></g></svg>'}
 const BKSVG='<svg viewBox="0 0 100 112" aria-hidden="true"><ellipse cx="50" cy="106" rx="34" ry="5" fill="#000" opacity=".35"/><ellipse class="pud" cx="96" cy="105" rx="20" ry="4.5"/><path class="strm" d="M91 35 Q99 58 97 104"/>'+
  '<g class="bkb"><path d="M12 36 Q50 -8 88 36" fill="none" stroke="#9aa2b4" stroke-width="2.8" stroke-linecap="round"/><path d="M10 32 L90 32 L80 100 A30 6 0 0 1 20 100 Z" fill="url(#tinG)"/>'+
  '<path d="M13.5 58 Q50 66 86.5 58 L83.5 86 Q50 94 16.5 86 Z" style="fill:var(--c)"/><path d="M13.5 58 Q50 66 86.5 58 L83.5 86 Q50 94 16.5 86 Z" fill="url(#lblG)"/>'+
@@ -137,7 +156,7 @@ if(heroBk)heroBk.addEventListener('click',pour);if(rowBk)rowBk.addEventListener(
 let cansI=0;
 if(cansEl){CAR.forEach(c=>{const b=document.createElement('button');b.type='button';b.className='cn';b.dataset.hex=c[1];b.dataset.name=c[0];b.style.setProperty('--c',c[1]);b.setAttribute('aria-expanded','false');
   b.setAttribute('aria-label','Cutie de vopsea '+c[0]+' '+c[1].toUpperCase()+': atinge ca să deschizi capacul');
-  b.innerHTML=canSvg(cansI++,c[0])+'<span class="cl">'+c[0]+'</span><code class="ch">'+c[1].toUpperCase()+'</code><span class="tapi">atinge</span>';cansEl.appendChild(b)});
+  b.innerHTML=canSvg(cansI++,c[0],c[1])+'<span class="cl">'+c[0]+'</span><code class="ch">'+c[1].toUpperCase()+'</code><span class="tapi">atinge</span>';cansEl.appendChild(b)});
  cansEl.addEventListener('click',e=>{const b=e.target.closest('.cn');if(!b)return;const was=b.classList.contains('open');
   $$('.cn.open').forEach(x=>{x.classList.remove('open');x.setAttribute('aria-expanded','false');const t=x.querySelector('.tapi');if(t)t.textContent='atinge'});
   if(!was){b.classList.add('open');b.setAttribute('aria-expanded','true');const t=b.querySelector('.tapi');if(t)t.textContent='deschisă';const r=b.getBoundingClientRect();
@@ -233,7 +252,7 @@ function hero(){
    IM.Paint.step(dt,now);IM.Paint.apply(CN.paintMats);ac.color.copy(IM.Paint.ui);
    P.rotation.y=mx*.35;CN.spinner.rotation.y=-.6+(RM?0:t*.32)+uy;
    CN.update(t,RM?0:dt,0);
-   const kO=CN.size.w0-4.4,Hh=5.6+kO*1.15,Ww=CN.size.w0*1.12+kO*.3,dz=Math.max(Hh/TK,Ww/(TK*asp))*1.06;cam.position.set(0,0,dz);cam.lookAt(0,0,0);G.rotation.x=.4;
+   const Hh=CN.size.h0+.2,Ww=CN.size.w0*1.1,dz=Math.max(Hh/TK,Ww/(TK*asp))*1.06;cam.position.set(0,0,dz);cam.lookAt(0,0,0);G.rotation.x=.4;
   }else{
    IM.Paint.step(dt,now);IM.Paint.apply(E.paintMats);IM.Paint.apply(E.glowMats);ac.color.copy(IM.Paint.ui);
    G.rotation.x=.2;P.rotation.y=-.6+(RM?0:t*.22)+mx*.5+uy;
