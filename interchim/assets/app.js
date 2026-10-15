@@ -77,14 +77,46 @@ function onSlide(){const c=hsl2rgb(+sH.value,+sS.value,+sL.value);setColor(rgb2h
 [sH,sS,sL].forEach(x=>x&&x.addEventListener('input',onSlide));
 
 /* ---------- CUTII care se deschid + GĂLEȚI care se toarnă ---------- */
-const CANSVG='<svg viewBox="0 -4 136 134" aria-hidden="true"><ellipse cx="68" cy="121" rx="47" ry="7" fill="#000" opacity=".4"/>'+
- '<path d="M24 40 V104 A44 12 0 0 0 112 104 V40 Z" fill="url(#tinG)"/>'+
- '<path d="M24 56 A44 12 0 0 0 112 56 V92 A44 12 0 0 1 24 92 Z" style="fill:var(--c)"/><path d="M24 56 A44 12 0 0 0 112 56 V92 A44 12 0 0 1 24 92 Z" fill="url(#lblG)"/>'+
- '<path d="M24 66 A44 12 0 0 0 112 66" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.6"/><path d="M24 82 A44 12 0 0 0 112 82" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.6"/>'+
- '<ellipse cx="68" cy="40" rx="44" ry="12" fill="#c9cfdc" stroke="#7d8597" stroke-width="1.5"/><ellipse cx="68" cy="40.5" rx="40" ry="9.6" fill="#15131f"/>'+
- '<g class="pnt"><ellipse class="pf" cx="68" cy="41.5" rx="38" ry="8.8"/><ellipse cx="68" cy="41.5" rx="38" ry="8.8" fill="url(#pntG)"/><ellipse class="hl" cx="52" cy="39" rx="12" ry="2.6"/><ellipse class="rp" cx="68" cy="41.5" rx="30" ry="6.4"/><ellipse class="rp rp2" cx="68" cy="41.5" rx="30" ry="6.4"/>'+
- '<circle class="spl" cx="60" cy="38" r="3" style="--dx:-7px"/><circle class="spl" cx="76" cy="38" r="2.4" style="--dx:8px"/><circle class="spl" cx="68" cy="37" r="2" style="--dx:1px"/></g>'+
- '<g class="lid"><ellipse cx="68" cy="39" rx="46" ry="13" fill="url(#lidG)" stroke="#6f778a" stroke-width="1.5"/><ellipse cx="68" cy="39" rx="36" ry="9.2" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.4"/><ellipse cx="68" cy="39" rx="26" ry="6.2" fill="none" stroke="#5e667a" stroke-opacity=".5" stroke-width="1"/><rect x="57" y="35.5" width="22" height="6.4" rx="3.2" style="fill:var(--c)" stroke="#5e667a" stroke-width="1"/></g></svg>';
+function canSvg(i,name){const p='k'+i,tl=Math.min(name.length*5.1,50).toFixed(1);
+ const body='<path d="M20 52 V112 A40 11 0 0 0 100 112 V52 Z" fill="url(#'+p+'s)"/>'+
+  [[56,.55],[61,.4],[104,.45],[108,.5]].map(r=>'<path d="M20 '+r[0]+' A40 11 0 0 0 100 '+r[0]+'" fill="none" stroke="#f4f6fb" stroke-opacity="'+r[1]+'" stroke-width="1.6"/><path d="M20 '+(r[0]+1.8)+' A40 11 0 0 0 100 '+(r[0]+1.8)+'" fill="none" stroke="#232834" stroke-opacity=".5" stroke-width="1.5"/>').join('')+
+  '<path d="M20 112 A40 11 0 0 0 100 112" fill="none" stroke="#2b303c" stroke-opacity=".55" stroke-width="2.4"/>'+
+  '<path d="M20 64 A40 11 0 0 0 100 64 V98 A40 11 0 0 1 20 98 Z" style="fill:var(--c)"/><path d="M20 64 A40 11 0 0 0 100 64 V98 A40 11 0 0 1 20 98 Z" fill="url(#'+p+'l)"/>'+
+  '<path d="M20 67.5 A40 11 0 0 0 100 67.5 M20 94.5 A40 11 0 0 0 100 94.5" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="1.2"/>'+
+  '<path d="M36 80.4 Q60 84.2 84 80.4 V97.2 Q60 101 36 97.2 Z" fill="#f2efe7"/><path d="M36 80.4 Q60 84.2 84 80.4 V97.2 Q60 101 36 97.2 Z" fill="url(#'+p+'l)" opacity=".55"/><path d="M36 80.4 Q60 84.2 84 80.4 V97.2 Q60 101 36 97.2 Z" fill="none" stroke="#000" stroke-opacity=".22" stroke-width=".6"/>'+
+  '<text x="60" y="87.2" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" font-size="4.6" letter-spacing="1.6" fill="#2a2933">INTERCHIM</text>'+
+  '<text x="60" y="95" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" font-size="8" fill="#15141b" textLength="'+tl+'" lengthAdjust="spacingAndGlyphs">'+name+'</text>'+
+  '<path d="M24 56 V108" stroke="#fff" stroke-opacity=".0" /><path d="M31 58 V108" stroke="#fff" stroke-opacity=".0"/>';
+ const drips='<g class="dr" style="fill:var(--c)"><path d="M27 52.6 q-.5 8 1.8 11.4 q3 3.2 3.8 -1.6 q.2 -6 -.6 -9.8z"/><path d="M49 55 q-.5 5 1.4 7.2 q2.4 2 2.8 -1.4 q0 -3.6 -.4 -5.8z"/><path d="M78 55.2 q-.4 9.2 2 13.4 q3.4 3.6 4.2 -2 q0 -6.6 -1 -11.4z"/><path d="M92 52.4 q-.3 5.4 1.2 7.6 q2.4 1.8 2.8 -1.2 q0-3.8 -.5-6.4z"/>'+
+  '<path d="M27 52.6 q-.5 8 1.8 11.4 q3 3.2 3.8 -1.6 q.2 -6 -.6 -9.8z M78 55.2 q-.4 9.2 2 13.4 q3.4 3.6 4.2 -2 q0 -6.6 -1 -11.4z" fill="url(#'+p+'d)"/><ellipse cx="30" cy="62.8" rx="1" ry="1.5" fill="#fff" fill-opacity=".7"/><ellipse cx="82.2" cy="67.6" rx="1" ry="1.6" fill="#fff" fill-opacity=".7"/></g>';
+ const rim='<ellipse cx="60" cy="40" rx="41" ry="11.6" fill="url(#'+p+'r)" stroke="#6a7283" stroke-width=".9"/><ellipse cx="60" cy="40.6" rx="36.6" ry="9.6" fill="url(#'+p+'g)"/><ellipse cx="60" cy="41" rx="33.2" ry="8.1" fill="#15131f"/>'+
+  '<path d="M21 42 A39 10.6 0 0 0 99 42" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="1"/><path d="M33 33.6 A41 11.6 0 0 1 60 28.4" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="1.3" stroke-linecap="round"/>';
+ const paint='<g class="pnt"><ellipse class="pf" cx="60" cy="41.4" rx="33" ry="7.9"/><ellipse cx="60" cy="41.4" rx="33" ry="7.9" fill="url(#pntG)"/><ellipse cx="60" cy="41.4" rx="33" ry="7.9" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1"/>'+
+  '<ellipse class="hl" cx="46" cy="39.2" rx="12" ry="2.3"/><ellipse class="rp" cx="60" cy="41.4" rx="27" ry="6.3"/><ellipse class="rp rp2" cx="60" cy="41.4" rx="27" ry="6.3"/>'+
+  '<path class="pf" d="M26 43.6 Q28 50 33.5 51.4 Q36 47 31 44z"/><circle class="spl" cx="54" cy="38" r="3" style="--dx:-7px"/><circle class="spl" cx="68" cy="38" r="2.4" style="--dx:8px"/><circle class="spl" cx="60" cy="37" r="2" style="--dx:1px"/></g>';
+ const brush='<g class="brush"><path d="M-6 25.5 L46 41" stroke="#b78750" stroke-width="3.4" stroke-linecap="round"/><path d="M-6 24.2 L46 39.6" stroke="#e5be8a" stroke-opacity=".7" stroke-width="1" stroke-linecap="round"/><path d="M40 39.2 L51.5 42.7" stroke="#cdd2dc" stroke-width="4.6" stroke-linecap="butt"/><path d="M40 37.6 L51.5 41.2" stroke="#fff" stroke-opacity=".8" stroke-width="1"/><path d="M51.5 42.7 L60 45.2" stroke="#d8cdb0" stroke-width="4.8" stroke-linecap="round"/><path d="M56.5 44.3 L61 45.7" style="stroke:var(--c)" stroke-width="5" stroke-linecap="round"/></g>';
+ const lidT='<g class="lid"><path d="M17 38 v4.4 A43 12.6 0 0 0 103 42.4 v-4.4z" fill="#6c7487"/><path d="M17 38 v3.2 A43 12.6 0 0 0 103 41.2 v-3.2z" fill="url(#'+p+'s)"/><ellipse cx="60" cy="38" rx="43" ry="12.6" fill="url(#'+p+'q)" stroke="#6c7487" stroke-width=".9"/>'+
+  '<ellipse cx="60" cy="38" rx="38" ry="10.6" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5"/><ellipse cx="60" cy="38.4" rx="38" ry="10.6" fill="none" stroke="#4b5263" stroke-opacity=".45" stroke-width="1"/><ellipse cx="60" cy="38" rx="27" ry="7.4" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.1"/><ellipse cx="60" cy="38.3" rx="27" ry="7.4" fill="none" stroke="#4b5263" stroke-opacity=".35" stroke-width=".9"/>'+
+  '<ellipse cx="60" cy="38" rx="15" ry="4.1" fill="url(#'+p+'q)" stroke="#6c7487" stroke-width=".7"/><path d="M26 32.4 A41 11.6 0 0 1 56 26.8" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="1.4" stroke-linecap="round"/></g>';
+ const lidU='<g class="lidu"><g transform="rotate(9 112 62)"><ellipse cx="114.4" cy="61" rx="15" ry="36.4" fill="#4d5465"/><ellipse cx="112" cy="62" rx="15" ry="36.4" fill="url(#'+p+'v)" stroke="#6c7487" stroke-width=".9"/><ellipse cx="112" cy="62" rx="11.4" ry="31.4" fill="url(#'+p+'u)" stroke="#fff" stroke-opacity=".5" stroke-width="1"/>'+
+  '<path d="M106 40 Q118 38 119 54 Q121 66 115 76 Q111 88 104 82 Q99 70 101 56 Q101 46 106 40z" style="fill:var(--c)"/><path d="M106 40 Q118 38 119 54 Q121 66 115 76 Q111 88 104 82 Q99 70 101 56 Q101 46 106 40z" fill="url(#pntG)"/><ellipse cx="108.4" cy="50" rx="1.6" ry="6" fill="#fff" fill-opacity=".5" transform="rotate(8 108 50)"/>'+
+  '<path d="M103 83 q.2 6.6 2.4 8 q2.2 .6 2.2 -2.8 q-.6-3-1.4-5z" style="fill:var(--c)"/></g></g>';
+ const bail='<g class="bail"><path d="M21 47 C 17 -7, 103 -7, 99 47" fill="none" stroke="#7f8697" stroke-width="2.3" stroke-linecap="round"/><path d="M21 47 C 17 -7, 103 -7, 99 47" fill="none" stroke="#eef1f7" stroke-width="1.1" stroke-linecap="round" transform="translate(-.4 -.6)"/><rect x="48" y="6.2" width="24" height="7.2" rx="3.6" fill="#1e1c28"/><rect x="50" y="7.2" width="20" height="1.8" rx=".9" fill="#fff" fill-opacity=".35"/></g>';
+ const ears='<rect x="18" y="43" width="6" height="9" rx="1.6" fill="#9aa2b3" stroke="#5e667a" stroke-width=".6"/><rect x="96" y="43" width="6" height="9" rx="1.6" fill="#9aa2b3" stroke="#5e667a" stroke-width=".6"/>';
+ return '<svg viewBox="-10 -4 150 140" aria-hidden="true"><defs>'+
+  '<linearGradient id="'+p+'s" x1="0" x2="1"><stop offset="0" stop-color="#4a505e"/><stop offset=".07" stop-color="#8c94a5"/><stop offset=".19" stop-color="#f1f3f8"/><stop offset=".3" stop-color="#c3c9d5"/><stop offset=".48" stop-color="#9ea6b6"/><stop offset=".6" stop-color="#cfd4de"/><stop offset=".74" stop-color="#8a92a3"/><stop offset=".92" stop-color="#555c6c"/><stop offset="1" stop-color="#383d49"/></linearGradient>'+
+  '<linearGradient id="'+p+'l" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".5"/><stop offset=".13" stop-color="#000" stop-opacity=".12"/><stop offset=".22" stop-color="#fff" stop-opacity=".42"/><stop offset=".4" stop-color="#fff" stop-opacity=".02"/><stop offset=".8" stop-color="#000" stop-opacity=".2"/><stop offset="1" stop-color="#000" stop-opacity=".55"/></linearGradient>'+
+  '<radialGradient id="'+p+'r" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fafbfd"/><stop offset=".6" stop-color="#b8bfcd"/><stop offset="1" stop-color="#7a8294"/></radialGradient>'+
+  '<linearGradient id="'+p+'g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5f6779"/><stop offset=".5" stop-color="#a9b0bf"/><stop offset="1" stop-color="#e3e7ef"/></linearGradient>'+
+  '<radialGradient id="'+p+'q" cx=".36" cy=".3" r=".85"><stop offset="0" stop-color="#f7f8fc"/><stop offset=".5" stop-color="#c1c7d4"/><stop offset="1" stop-color="#858da0"/></radialGradient>'+
+  '<linearGradient id="'+p+'v" x1="0" x2="1"><stop offset="0" stop-color="#d9dde6"/><stop offset=".5" stop-color="#9aa2b3"/><stop offset="1" stop-color="#e8ebf2"/></linearGradient>'+
+  '<linearGradient id="'+p+'u" x1="0" x2="1"><stop offset="0" stop-color="#8e96a7"/><stop offset=".5" stop-color="#cdd2dc"/><stop offset="1" stop-color="#8189 9b"/></linearGradient>'.replace('8189 9b','81899b')+
+  '<linearGradient id="'+p+'d" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient>'+
+  '<linearGradient id="'+p+'f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="'+p+'m" maskUnits="userSpaceOnUse" x="-10" y="116" width="150" height="26"><rect x="-10" y="116" width="150" height="26" fill="url(#'+p+'f)"/></mask>'+
+  '<radialGradient id="'+p+'h" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".7"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>'+
+  '<g id="'+p+'b">'+body+'</g></defs>'+
+  '<ellipse cx="60" cy="116.5" rx="56" ry="11" fill="url(#'+p+'h)"/><g class="refl" mask="url(#'+p+'m)" opacity=".36"><g transform="translate(0 235) scale(1 -1)"><use href="#'+p+'b"/></g></g>'+
+  lidU+bail+'<use href="#'+p+'b"/>'+drips+ears+rim+paint+brush+lidT+'</svg>'}
 const BKSVG='<svg viewBox="0 0 100 112" aria-hidden="true"><ellipse cx="50" cy="106" rx="34" ry="5" fill="#000" opacity=".35"/><ellipse class="pud" cx="96" cy="105" rx="20" ry="4.5"/><path class="strm" d="M91 35 Q99 58 97 104"/>'+
  '<g class="bkb"><path d="M12 36 Q50 -8 88 36" fill="none" stroke="#9aa2b4" stroke-width="2.8" stroke-linecap="round"/><path d="M10 32 L90 32 L80 100 A30 6 0 0 1 20 100 Z" fill="url(#tinG)"/>'+
  '<path d="M13.5 58 Q50 66 86.5 58 L83.5 86 Q50 94 16.5 86 Z" style="fill:var(--c)"/><path d="M13.5 58 Q50 66 86.5 58 L83.5 86 Q50 94 16.5 86 Z" fill="url(#lblG)"/>'+
@@ -102,9 +134,10 @@ function pour(e){const b=e.target.closest('.bk');if(!b||b.classList.contains('po
  b.classList.add('pour');const x=r.left+r.width*.82,y=r.top+r.height*.7;
  setTimeout(()=>setColor(b.dataset.hex,b.dataset.name,{x:x,y:y}),RM?0:430);setTimeout(()=>b.classList.remove('pour'),RM?0:1750)}
 if(heroBk)heroBk.addEventListener('click',pour);if(rowBk)rowBk.addEventListener('click',pour);
+let cansI=0;
 if(cansEl){CAR.forEach(c=>{const b=document.createElement('button');b.type='button';b.className='cn';b.dataset.hex=c[1];b.dataset.name=c[0];b.style.setProperty('--c',c[1]);b.setAttribute('aria-expanded','false');
   b.setAttribute('aria-label','Cutie de vopsea '+c[0]+' '+c[1].toUpperCase()+': atinge ca să deschizi capacul');
-  b.innerHTML=CANSVG+'<span class="cl">'+c[0]+'</span><code class="ch">'+c[1].toUpperCase()+'</code><span class="tapi">atinge</span>';cansEl.appendChild(b)});
+  b.innerHTML=canSvg(cansI++,c[0])+'<span class="cl">'+c[0]+'</span><code class="ch">'+c[1].toUpperCase()+'</code><span class="tapi">atinge</span>';cansEl.appendChild(b)});
  cansEl.addEventListener('click',e=>{const b=e.target.closest('.cn');if(!b)return;const was=b.classList.contains('open');
   $$('.cn.open').forEach(x=>{x.classList.remove('open');x.setAttribute('aria-expanded','false');const t=x.querySelector('.tapi');if(t)t.textContent='atinge'});
   if(!was){b.classList.add('open');b.setAttribute('aria-expanded','true');const t=b.querySelector('.tapi');if(t)t.textContent='deschisă';const r=b.getBoundingClientRect();
@@ -150,30 +183,62 @@ function mkRen(o){const r=new T.WebGLRenderer(o);try{r.outputEncoding=T.sRGBEnco
 const TK=2*Math.tan(16*PI/180);
 const vis=(box,cb)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isIntersecting;cb(v)},{rootMargin:'120px'}).observe(box);return()=>v};
 
-/* ---------- HERO: mașina vopsită live ---------- */
+/* ---------- HERO: cutia de vopsea care se rotește și își schimbă culorile (+ mașina, la cerere) ---------- */
 function hero(){
  const box=$('#gl');if(!box)return;
  let ren;try{ren=mkRen({antialias:!isMob(),alpha:true})}catch(e){box.classList.add('nogl');return}
  ren.setPixelRatio(Math.min(devicePixelRatio,2));box.appendChild(ren.domElement);
  const sc=new T.Scene(),cam=new T.PerspectiveCamera(32,1,.1,200);const env=makeEnv(ren);if(env)sc.environment=env;
  const ac=lights(sc,1);
- const E=IM.car(isMob()?24:36),P=new T.Group(),G=new T.Group();sc.add(G);G.add(P);P.add(E.root);E.root.position.y=-.85;G.rotation.x=.2;
- const sp={t:1};addEventListener('paintchange',()=>{sp.t=0});
- let asp=1;function vo(){const w=box.clientWidth,h=box.clientHeight;if(!w||!h)return;ren.setSize(w,h,false);cam.aspect=w/h;asp=cam.aspect;cam.updateProjectionMatrix()}
+ const P=new T.Group(),G=new T.Group();sc.add(G);G.add(P);G.rotation.x=.4;
+ const CN=IM.can(isMob()?24:36);P.add(CN.root);
+ const sp={t:1};let mode='can',E=null,uiCar=0;
+ function ensureCar(){if(E)return E;E=IM.car(isMob()?24:36);E.root.position.y=-.85;E.root.visible=false;P.add(E.root);return E}
+ const BAR=54;let asp=1;
+ function vo(){const w=box.clientWidth,h=box.clientHeight-BAR;if(!w||h<50)return;ren.setSize(w,h,false);cam.aspect=w/h;asp=cam.aspect;cam.updateProjectionMatrix()}
  vo();addEventListener('resize',vo);new ResizeObserver(vo).observe(box);setTimeout(vo,600);setTimeout(vo,1800);
- let uy=0,drag=null,mx=0,tx=0;const el=ren.domElement;el.style.touchAction='pan-y';
+ // comutator Cutie / Mașină (sub 3D, nu se suprapune cu modelul)
+ const sw=document.createElement('div');sw.className='gsw';sw.setAttribute('role','group');sw.setAttribute('aria-label','Model 3D');
+ sw.innerHTML='<button type="button" data-m="can" class="on">Cutia de vopsea</button><button type="button" data-m="car">Mașina</button>';box.appendChild(sw);
+ function setMode(m){if(m==='car')ensureCar();mode=m;CN.root.visible=m==='can';if(E)E.root.visible=m==='car';$$('.gsw button').forEach(b=>b.classList.toggle('on',b.dataset.m===m));
+  if(m==='car'){IM.Paint.set(S.hex);stopCycle()}}
+ sw.addEventListener('click',e=>{const b=e.target.closest('button');if(b)setMode(b.dataset.m)});
+ addEventListener('click',e=>{if(e.target.closest('.rdbar a[href="#hero"]'))setMode('car')});
+ // ciclul automat de culori
+ let userT=-1e9,cycOn=false,cycH=355,cycUp=0,openUntil=0,manualT=-1e9;
+ function readouts(hex,name){$$('.rd-name').forEach(x=>x.textContent=name);$$('.rd-hex').forEach(x=>x.textContent=hex.toUpperCase());$$('.rd-chip').forEach(x=>x.style.background=hex)}
+ function stopCycle(){if(!cycOn)return;cycOn=false;$$('.rd-chip').forEach(x=>x.style.background='');$$('.rd-name').forEach(x=>x.textContent=S.name);$$('.rd-hex').forEach(x=>x.textContent=S.hex.toUpperCase());IM.Paint.set(S.hex);CN.setName(S.name)}
+ addEventListener('paintchange',()=>{sp.t=0;userT=performance.now();if(cycOn){cycOn=false;$$('.rd-chip').forEach(x=>x.style.background='')}openUntil=performance.now()+5200;CN.setName(S.name)});
+ let uy=0,drag=null,mx=0,tx=0,tapS=null;const el=ren.domElement;el.style.touchAction='pan-y';
  addEventListener('pointermove',e=>{if(e.pointerType==='mouse')tx=e.clientX/innerWidth-.5},{passive:true});
- el.addEventListener('pointerdown',ev=>{drag=ev.clientX;try{el.setPointerCapture(ev.pointerId)}catch(_){}});
- el.addEventListener('pointermove',ev=>{if(!drag&&drag!==0)return;uy+=(ev.clientX-drag)*.012;drag=ev.clientX});
- const pu=()=>{drag=null};el.addEventListener('pointerup',pu);el.addEventListener('pointercancel',pu);
+ const ray=new T.Raycaster(),nd=new T.Vector2();
+ function doTap(ev){const r=el.getBoundingClientRect();if(!r.width||!r.height||mode!=='can')return;nd.set((ev.clientX-r.left)/r.width*2-1,-((ev.clientY-r.top)/r.height*2-1));CN.root.updateMatrixWorld(true);cam.updateMatrixWorld(true);ray.setFromCamera(nd,cam);
+  if(ray.intersectObject(CN.root,true).length){manualT=performance.now();CN.setOpen(!CN.open)}}
+ el.addEventListener('pointerdown',ev=>{drag=ev.clientX;tapS={x:ev.clientX,y:ev.clientY,t:performance.now()};try{el.setPointerCapture(ev.pointerId)}catch(_){}});
+ el.addEventListener('pointermove',ev=>{if(tapS&&Math.hypot(ev.clientX-tapS.x,ev.clientY-tapS.y)>9)tapS=null;if(!drag&&drag!==0)return;uy+=(ev.clientX-drag)*.012;drag=ev.clientX});
+ const pu=ev=>{drag=null;if(ev.type==='pointerup'&&tapS&&performance.now()-tapS.t<650)doTap(ev);tapS=null};el.addEventListener('pointerup',pu);el.addEventListener('pointercancel',pu);
  let on=false,t=0,last=performance.now();
- const isv=vis(box,v=>{on=v;if(v){last=performance.now();loop()}});
+ const isv=vis(box,v=>{on=v;if(v){last=performance.now();loop()}else stopCycle()});
+ const TK2=TK;
  function loop(){if(!on)return;requestAnimationFrame(loop);const now=performance.now(),dt=Math.min(.05,(now-last)/1000);last=now;t+=dt;
-  IM.Paint.step(dt,now);IM.Paint.apply(E.paintMats);IM.Paint.apply(E.glowMats);ac.color.copy(IM.Paint.ui);
   mx+=(tx-mx)*.05;if(drag===null)uy*=.985;
-  P.rotation.y=-.6+(RM?0:t*.22)+mx*.5+uy;
-  E.update(t,RM?0:dt,{splash:sp});
-  const W=11.1,H=7.0,dz=Math.max(H/TK,W/(TK*asp))*1.04;cam.position.set(0,0,dz);cam.lookAt(0,0,0);
+  if(mode==='can'){
+   const idle=now-userT>6000;
+   if(!RM&&idle){if(!cycOn){cycOn=true;cycH=rgb2hsl(...hex2rgb(S.hex))[0]}
+    cycH=(cycH+dt*34)%360;const c=hsl2rgb(cycH,84,50),hx=rgb2hex(c[0],c[1],c[2]);
+    const uu=uiAccent(cycH,84,50);IM.Paint.set(hx,uu.hex);
+    if(now-cycUp>260){cycUp=now;const nm=nameFor(cycH,84,50);readouts(hx,nm);CN.setName(nm)}}
+   // capacul se ridică periodic și lasă vopseaua la vedere
+   if(now-manualT>9000){const ph=t%13;CN.setOpen(RM?true:(now<openUntil||(ph>3.2&&ph<10.2)))}
+   IM.Paint.step(dt,now);IM.Paint.apply(CN.paintMats);ac.color.copy(IM.Paint.ui);
+   P.rotation.y=mx*.35;CN.spinner.rotation.y=-.6+(RM?0:t*.32)+uy;
+   CN.update(t,RM?0:dt,0);
+   const kO=CN.size.w0-4.4,Hh=5.6+kO*1.15,Ww=CN.size.w0*1.12+kO*.3,dz=Math.max(Hh/TK,Ww/(TK*asp))*1.06;cam.position.set(0,0,dz);cam.lookAt(0,0,0);G.rotation.x=.4;
+  }else{
+   IM.Paint.step(dt,now);IM.Paint.apply(E.paintMats);IM.Paint.apply(E.glowMats);ac.color.copy(IM.Paint.ui);
+   G.rotation.x=.2;P.rotation.y=-.6+(RM?0:t*.22)+mx*.5+uy;
+   E.update(t,RM?0:dt,{splash:sp});
+   const W=11.1,H=7.0,dz=Math.max(H/TK,W/(TK*asp))*1.04;cam.position.set(0,0,dz);cam.lookAt(0,0,0)}
   ren.render(sc,cam)}
 }
 try{hero()}catch(e){const g=$('#gl');if(g)g.classList.add('nogl')}

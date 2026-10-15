@@ -9,7 +9,9 @@ const FIN={
  gloss:{metalness:.12,roughness:.2,clearcoat:1,clearcoatRoughness:.03,iridescence:.001,envMapIntensity:.8},
  metal:{metalness:.6,roughness:.3,clearcoat:1,clearcoatRoughness:.06,iridescence:.001,envMapIntensity:1},
  pearl:{metalness:.38,roughness:.2,clearcoat:1,clearcoatRoughness:.03,iridescence:.85,envMapIntensity:1},
- matte:{metalness:.03,roughness:.85,clearcoat:0,clearcoatRoughness:.6,iridescence:.001,envMapIntensity:.55}};
+ matte:{metalness:.03,roughness:.85,clearcoat:0,clearcoatRoughness:.6,iridescence:.001,envMapIntensity:.55},
+ label:{metalness:.05,roughness:.5,clearcoat:.35,clearcoatRoughness:.35,iridescence:.001,envMapIntensity:.7},
+ dry:{metalness:.02,roughness:.42,clearcoat:.5,clearcoatRoughness:.25,iridescence:.001,envMapIntensity:.8}};
 const Paint={cur:new T.Color(0xc1121f),tgt:new T.Color(0xc1121f),ui:new T.Color(0xff5a64),fin:'metal',
  v:Object.assign({},FIN.metal),tv:Object.assign({},FIN.metal),list:[]};
 Paint.set=function(hex,uiHex){this.tgt.set(hex);if(uiHex)this.ui.set(uiHex)};
@@ -273,31 +275,114 @@ function carBuild(SEG){
 function car(SEG){return carBuild(SEG)}
 
 /* ================= OBIECTE PENTRU SECȚIUNEA FIXATĂ ================= */
-// 1. Cutie de vopsea: mixare la cod — picături de pigment cad în vopseaua care se amestecă
-function can(SEG){
- const K=kit(SEG),M=stdMats(),label=paintMat(),disc=paintMat('gloss'),paintMats=[label,disc];M.tin.side=T.DoubleSide;
- const{root,V,mesh,box,cylY,tor,edges,add}=K;
- const body=new T.Group();body.add(cylY(1.7,3.2,M.tin,0,0,0,SEG,true));body.add(cylY(1.68,.08,M.tin,0,-1.58,0));body.add(tor(1.7,.08,M.steel,0,1.6,0,PI/2));body.add(tor(1.7,.08,M.steel,0,-1.6,0,PI/2));
- add(body,V(0,-.5,0),V(0,-3.1,0));
- const lab=cylY(1.74,1.5,label,0,0,0,SEG,true);lab.material.side=T.DoubleSide;add(lab,V(0,-.5,0),V(0,-.7,0));
- const dg=new T.Group();dg.add(cylY(1.62,.16,disc,0,0,0));
+// 1. Cutie de vopsea realistă (tablă, nervuri rulate, etichetă, mâner, capac): mixare la cod
+function latheHard(pts,mat,seg,ang){const g=new T.Group();let cur=[pts[0]];const mk=a=>{if(a.length>1)g.add(new T.Mesh(new T.LatheGeometry(a,seg),mat))};
+ for(let i=1;i<pts.length;i++){cur.push(pts[i]);if(i<pts.length-1){const a=pts[i].clone().sub(pts[i-1]),b=pts[i+1].clone().sub(pts[i]);const c=a.dot(b)/((a.length()*b.length())||1);if(c<Math.cos(ang)){mk(cur);cur=[pts[i]]}}}
+ mk(cur);return g}
+function can(SEG,opts){
+ opts=opts||{};const hero=!!opts.hero;
+ const K=kit(SEG),M=stdMats(),{root,V,mesh,box,cylY,tor,add}=K,R=1.7,RS=SEG+16;
+ const label=paintMat('label'),disc=paintMat('gloss'),dry=paintMat('dry'),paintMats=[label,disc,dry];
+ // oțel periat: dungi fine orizontale în roughnessMap
+ const streak=(()=>{const c=document.createElement('canvas');c.width=32;c.height=256;const x=c.getContext('2d');
+  for(let j=0;j<256;j++){const v=110+Math.floor(Math.random()*80);x.fillStyle='rgb('+v+','+v+','+v+')';x.fillRect(0,j,32,1)}
+  const t=new T.CanvasTexture(c);t.wrapS=t.wrapT=T.RepeatWrapping;t.repeat.set(1,2);return t})();
+ const tin=new T.MeshStandardMaterial({color:0xdde1ea,metalness:1,roughness:.52,roughnessMap:streak,envMapIntensity:1.25,side:T.DoubleSide});
+ const wire=new T.MeshStandardMaterial({color:0xe3e6ee,metalness:1,roughness:.28,envMapIntensity:1.3});
+ const grip=new T.MeshStandardMaterial({color:0x17151f,metalness:.1,roughness:.7});
+ const wood=new T.MeshStandardMaterial({color:0xb98a54,metalness:0,roughness:.6});
+ const bristle=new T.MeshStandardMaterial({color:0xcdbf9f,metalness:0,roughness:.9});
+ const shTex=(()=>{const c=document.createElement('canvas');c.width=c.height=128;const x=c.getContext('2d'),g=x.createRadialGradient(64,64,0,64,64,64);g.addColorStop(0,'rgba(255,255,255,1)');g.addColorStop(.45,'rgba(255,255,255,.55)');g.addColorStop(1,'rgba(255,255,255,0)');x.fillStyle=g;x.fillRect(0,0,128,128);return new T.CanvasTexture(c)})();
+ const noray=m=>{m.raycast=function(){};return m};
+ /* corp: profil strung cu nervuri rulate sus/jos, buza rulată și canalul de etanșare */
+ const bump=(y,y0,w,b)=>{const d=Math.abs(y-y0);return d>=w?0:b*Math.pow(Math.cos(d/w*PI/2),2)};
+ const pr=[new T.Vector2(0,-1.63),new T.Vector2(R-.14,-1.63),new T.Vector2(R-.06,-1.6)];
+ for(let y=-1.58;y<=1.5;y+=.015){pr.push(new T.Vector2(R+bump(y,-1.56,.06,.075)+bump(y,-1.36,.075,.075)+bump(y,-1.17,.05,.045)+bump(y,1.17,.05,.045)+bump(y,1.36,.075,.075),y))}
+ [[R+.01,1.52],[R+.05,1.58],[R+.1,1.65],[R+.115,1.71],[R+.09,1.76],[R+.02,1.78],[R-.07,1.74],[R-.12,1.66],[R-.16,1.55],[R-.2,1.38],[R-.27,1.36],[R-.3,1.46],[R-.31,1.56],[R-.34,1.5],[R-.345,.86]].forEach(p=>pr.push(new T.Vector2(p[0],p[1])));
+ const bodyG=new T.Group();
+ bodyG.add(latheHard(pr,tin,RS,.95));
+ [-1,1].forEach(s=>{const eb=box(.1,.34,.3,tin,s*(R+.03),1.15,0);bodyG.add(eb);const lg=K.cylX(.075,.2,wire,s*(R+.12),1.15,0,10);bodyG.add(lg)});
+ // vopsea uscată pe buză + picături la marginea cutiei
+ const lipP=tor(R+.04,.075,dry,0,1.745,0,PI/2,0,2.1);lipP.rotation.z=1.2;bodyG.add(lipP);
+ [[.15,.62,.1],[.62,.32,.085],[-.5,.2,.075],[2.0,.5,.09],[-1.2,.36,.08],[3.1,.26,.07]].forEach(d=>{const ln=d[1],th=d[0];
+  const g=new T.Group();const st=mesh(new T.CapsuleGeometry(d[2],ln,3,8),dry,0,0,0);st.scale.z=.38;g.add(st);g.position.set(Math.sin(th)*(R+.07),1.68-ln/2-.02,Math.cos(th)*(R+.07));g.rotation.y=th;bodyG.add(g)});
+ add(bodyG,V(0,0,0),V(0,-2.3,0));
+ /* etichetă: bandă în culoarea cutiei + panou cu numele culorii + wordmark Interchim (doar text) */
+ const lc=document.createElement('canvas');lc.width=1536;lc.height=256;const lx=lc.getContext('2d');
+ const ltex=new T.CanvasTexture(lc);ltex.anisotropy=4;try{ltex.encoding=T.sRGBEncoding}catch(e){}
+ let lname='';
+ function drawLabel(name){if(name===lname)return;lname=name;const W=1536,H=256;lx.clearRect(0,0,W,H);
+  lx.fillStyle='rgba(255,255,255,.94)';lx.fillRect(0,16,W,7);lx.fillRect(0,H-23,W,7);lx.fillStyle='rgba(0,0,0,.22)';lx.fillRect(0,28,W,3);lx.fillRect(0,H-34,W,3);
+  const pw=620,ph=176,px=W/2-pw/2,py=(H-ph)/2;lx.fillStyle='#f3f0e8';lx.strokeStyle='rgba(0,0,0,.28)';lx.lineWidth=3;
+  lx.beginPath();if(lx.roundRect)lx.roundRect(px,py,pw,ph,22);else lx.rect(px,py,pw,ph);lx.fill();lx.stroke();
+  lx.textAlign='center';lx.textBaseline='middle';lx.fillStyle='#23222b';
+  try{lx.letterSpacing='9px'}catch(e){}lx.font='800 34px system-ui,Segoe UI,sans-serif';lx.fillText('INTERCHIM',W/2+4,py+38);
+  try{lx.letterSpacing='0px'}catch(e){}lx.fillStyle='rgba(0,0,0,.25)';lx.fillRect(W/2-150,py+64,300,2);
+  let fs=70;lx.fillStyle='#16151c';do{lx.font='800 '+fs+'px system-ui,Segoe UI,sans-serif';fs-=4}while(lx.measureText(name).width>pw-120&&fs>30);lx.fillText(name,W/2,py+116);
+  lx.shadowColor='rgba(0,0,0,.4)';lx.shadowBlur=5;lx.fillStyle='rgba(255,255,255,.95)';try{lx.letterSpacing='8px'}catch(e){}lx.font='800 30px system-ui,Segoe UI,sans-serif';
+  [0,W*.1,W*.9,W].forEach(cx=>lx.fillText('INTERCHIM',cx,H/2));lx.shadowBlur=0;try{lx.letterSpacing='0px'}catch(e){}
+  ltex.needsUpdate=true}
+ drawLabel('Roșu');
+ const labG=new T.Group();
+ const lbase=new T.Mesh(new T.CylinderGeometry(R+.025,R+.025,1.82,RS,1,true,PI),label);labG.add(lbase);
+ const lov=new T.Mesh(new T.CylinderGeometry(R+.03,R+.03,1.82,RS,1,true,PI),new T.MeshStandardMaterial({map:ltex,transparent:true,roughness:.5,metalness:0,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2}));labG.add(lov);
+ add(labG,V(0,0,0),V(0,-.9,0));
+ /* vopseaua dinăuntru: suprafață lucioasă cu unde + menisc */
+ const Rp=R-.35,dg=new T.Group();
+ const pg=new T.RingGeometry(.02,Rp,RS,10);pg.rotateX(-PI/2);const pp=pg.attributes.position,rr=new Float32Array(pp.count);for(let i=0;i<pp.count;i++)rr[i]=Math.hypot(pp.getX(i),pp.getZ(i));
+ dg.add(new T.Mesh(pg,disc));const men=tor(Rp,.055,disc,0,.0,0,PI/2);dg.add(men);
  const swirl=new T.Group();const sw=new T.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:.55,depthWrite:false});
- [[.55,1.4],[1.05,1.2],[1.45,1.0]].forEach((c,i)=>{const a=tor(c[0],.06,sw,0,.12,0,PI/2,0,PI*c[1]);a.rotation.z=i*2.1;swirl.add(a)});dg.add(swirl);
- add(dg,V(0,1.0,0),V(0,1.3,0));
- const lid=new T.Group();lid.add(cylY(1.78,.26,M.steel,0,0,0));lid.add(tor(1.78,.07,M.tin,0,.13,0,PI/2));lid.add(cylY(.5,.1,M.tin,0,.18,0,16));
- add(lid,V(0,1.25,0),V(0,2.7,0));
- const hd=new T.Group();hd.add(tor(1.78,.05,M.steel,0,0,0,0,0,PI));hd.add(cylY(.2,.4,M.dark,1.78,0,0,10));hd.add(cylY(.2,.4,M.dark,-1.78,0,0,10));
- add(hd,V(0,1.1,0),V(0,3.8,0));
- // picături de pigment (cyan / magenta / galben) care cad
- const drops=[M.cyan,M.mag,M.yel].map((m,i)=>{const d=mesh(new T.SphereGeometry(.2,12,10),m,0,5,0);d.scale.y=1.4;root.add(d);return d});
+ [[.55,1.4],[1.05,1.2],[1.45,1.0]].forEach((c,i)=>{const a=tor(c[0],.05,sw,0,.05,0,PI/2,0,PI*c[1]);a.rotation.z=i*2.1;swirl.add(a)});dg.add(swirl);
+ add(dg,V(0,1.0,0),V(0,2.0,0));
+ /* capac: rotund, cu inel nervurat, burta murdărită de vopsea pe dedesubt */
+ const lid=new T.Group(),RL=R+.13;
+ const lp=[[0,.1],[.5,.1],[.56,.14],[.95,.14],[1.01,.1],[RL-.5,.1],[RL-.44,.17],[RL-.3,.17],[RL-.24,.1],[RL-.1,.1],[RL-.04,.19],[RL+.04,.19],[RL+.07,.13],[RL+.05,-.1],[RL+.01,-.13],[RL-.2,-.13],[RL-.24,-.2],[RL-.5,-.22],[RL-.51,-.1],[RL-.51,0],[0,0]].map(p=>new T.Vector2(p[0],p[1]));
+ lid.add(latheHard(lp,tin,RS,.6));
+ const ug=new T.CircleGeometry(RL-.55,40);{const up=ug.attributes.position;for(let i=1;i<up.count;i++){const a=Math.atan2(up.getY(i),up.getX(i)),f=.8+.14*Math.sin(a*3+1)+.06*Math.sin(a*7);up.setXY(i,up.getX(i)*f,up.getY(i)*f)}}
+ const und=new T.Mesh(ug,disc);und.rotation.x=PI/2;und.position.y=-.012;lid.add(und);
+ const uw=new T.Mesh(new T.CylinderGeometry(RL-.525,RL-.525,.2,RS,1,true,0,PI*1.55),disc);uw.position.y=-.11;uw.rotation.y=.6;lid.add(uw);
+ const ur=new T.Mesh(new T.RingGeometry(RL-.5,RL-.06,RS,1,0.4,PI*1.3),disc);ur.rotation.x=PI/2;ur.position.y=-.125;lid.add(ur);
+ add(lid,V(0,1.88,0),V(0,3.9,0));
+ /* mâner (toartă din sârmă + prindere) */
+ const hd=new T.Group(),RH=R+.17;
+ hd.add(new T.Mesh(new T.TorusGeometry(RH,.04,8,SEG*2,PI),wire));
+ const gp=K.cylX(.1,.74,grip,0,RH,0,14);hd.add(gp);
+ add(hd,V(0,1.15,0),V(0,3.7,0));hd.rotation.x=-1.0;
+ /* pensulă sprijinită pe marginea cutiei deschise */
+ const br=new T.Group();
+ const bh=new T.Mesh(new T.CylinderGeometry(.06,.09,2.5,10),wood);bh.rotation.z=-PI/2;bh.position.x=1.55+1.25-.2;br.add(bh);
+ const fe=new T.Mesh(new T.CylinderGeometry(.13,.12,.55,12),wire);fe.rotation.z=-PI/2;fe.position.x=.78;br.add(fe);
+ const bs=new T.Mesh(new T.CylinderGeometry(.13,.15,.55,12),bristle);bs.rotation.z=-PI/2;bs.scale.set(1,1,.42);bs.position.x=.28;br.add(bs);
+ const bt=new T.Mesh(new T.CylinderGeometry(.12,.13,.3,12),dry);bt.rotation.z=-PI/2;bt.scale.set(1,1,.42);bt.position.x=.06;br.add(bt);
+ const spin=new T.Group();root.add(spin);[bodyG,labG,dg,hd].forEach(g=>spin.add(g));
+ br.position.set(-.55,.98,-.3);br.rotation.z=.4;br.rotation.y=-.3;br.visible=false;root.add(br);
+ /* umbre de contact + reflexie de lumină colorată pe podea */
+ const FL=-1.63;
+ const shM=new T.MeshBasicMaterial({color:0x000000,map:shTex,transparent:true,opacity:.75,depthWrite:false});
+ const sh=noray(mesh(new T.PlaneGeometry(1,1),shM));sh.rotation.x=-PI/2;sh.scale.set(6.2,6.2,1);sh.position.y=FL+.01;sh.renderOrder=2;root.add(sh);
+ const shL=noray(mesh(new T.PlaneGeometry(1,1),shM.clone()));shL.rotation.x=-PI/2;shL.scale.set(4.6,4.6,1);shL.position.y=FL+.012;shL.renderOrder=2;shL.material.opacity=0;root.add(shL);
+ const poolM=new T.MeshBasicMaterial({color:0xc1121f,map:shTex,transparent:true,opacity:.34,depthWrite:false,blending:T.AdditiveBlending});paintMats.push(poolM);
+ const pool=noray(mesh(new T.PlaneGeometry(1,1),poolM));pool.rotation.x=-PI/2;pool.scale.set(5.4,5.4,1);pool.position.y=FL+.006;pool.renderOrder=1;root.add(pool);
+ // picături de pigment (cyan / magenta / galben) care cad în vopsea (doar în secțiunea de scroll)
+ const drops=[M.cyan,M.mag,M.yel].map(m=>{const d=mesh(new T.SphereGeometry(.2,12,10),m,0,5,0);d.scale.y=1.4;root.add(d);d.visible=false;return d});
  root.position.y=-.3;
- const st={open:false,k:0},size={h0:6.2,h1:11,w0:4.6,w1:4.9};
- return{root,parts:K.parts,paintMats,glowMats:[],size,toggle(){st.open=!st.open;return st.open},get open(){return st.open},
-  update(t,dt,e){swirl.rotation.y+=dt*(1+3*e);
-   st.k+=((st.open?1:0)-st.k)*Math.min(1,dt*6.5+(dt?0:1));const kk=st.k,ke=kk*kk*(3-2*kk)*(1+.08*Math.sin(kk*PI));
-   lid.position.x+=2.35*ke;lid.position.y+=.55*ke;lid.rotation.z=-.95*ke;lid.rotation.x=.12*ke;root.position.x=-1.15*ke;size.w0=4.6+2.4*kk;size.w1=4.9+2.4*kk;
-   dg.scale.set(1,1+.0*kk,1);swirl.children.forEach((a,i)=>{a.scale.setScalar(1+.04*Math.sin(t*2.2+i*2)*kk)});
-   drops.forEach((d,i)=>{const u=(t*.55+i/3)%1;d.visible=e>.35;d.position.set((i-1)*.7,4.4-(4.4-1.55)*u*u,(i-1)*.15);d.scale.set(1,1.4*(1-.25*u),1)})}}}
+ const st={open:false,k:0},size={h0:5.2,h1:11.4,w0:4.4,w1:hero?6.4:7.6};
+ const dest=hero?{x:3.0,z:1.8}:{x:3.9,z:0};
+ const lidA=V(0,1.88,0);let rippleAcc=0;
+ return{root,parts:K.parts,paintMats,glowMats:[],size,spinner:spin,
+  toggle(){st.open=!st.open;return st.open},get open(){return st.open},setOpen(v){st.open=!!v},setName:drawLabel,
+  update(t,dt,e){e=e||0;swirl.rotation.y+=dt*(1+3*e);swirl.visible=e>.05;
+   st.k+=((st.open?1:0)-st.k)*Math.min(1,dt*3.2+(dt?0:1));const kk=st.k,ke=kk*kk*(3-2*kk);
+   const k2=ke*(1-e);lid.position.set(0,lidA.y+(3.9-lidA.y)*e,0);
+   lid.position.x+=dest.x*ke;lid.position.z+=dest.z*ke;lid.position.y+=(FL+.19-(lid.position.y))*k2+Math.sin(PI*ke)*1.7;
+   lid.rotation.z=-PI*ke;lid.rotation.x=-.5*Math.sin(PI*ke)*(dest.z?1:0)*.6;
+   hd.rotation.x=-1.0-.5*ke+Math.sin(t*1.3)*.012*(1-ke);
+   root.position.x=-dest.x*.5*ke;
+   size.w0=4.4+(hero?2.0:3.4)*kk;size.w1=size.w0+.3;
+   br.visible=ke>.04;br.scale.setScalar(Math.max(.001,ke));br.position.y=.98+.9*(1-ke);
+   shL.material.opacity=.7*ke*(1-e);shL.position.x=dest.x*ke;shL.position.z=dest.z*ke;sh.material.opacity=.75*(1-.8*e);pool.material.opacity=.34*(1-e);
+   if(kk>.04&&e<.5){rippleAcc+=dt;if(rippleAcc>.03||!dt){rippleAcc=0;for(let i=0;i<rr.length;i++){const r=rr[i];pp.setY(i,.03*Math.sin(r*7.5-t*3.4)*Math.exp(-r*.85)*(.7+.3*Math.sin(t*.6)))}pp.needsUpdate=true;pg.computeVertexNormals()}}
+   drops.forEach((d,i)=>{const u=(t*.55+i/3)%1;d.visible=e>.35;d.position.set((i-1)*.7,dg.position.y+3.2-3.1*u*u,(i-1)*.15);d.scale.set(1,1.4*(1-.25*u),1)})}}}
 
 // 2. Spray auto: spray la cod — se ridică capacul, apare norul de vopsea
 function spray(SEG){
@@ -371,6 +456,6 @@ function wall(SEG){
  return{root,parts:K.parts,paintMats,glowMats:[],size:{h0:6.2,h1:8.6,w0:7.6,w1:9.6},
   update(t,dt,e){rs.position.set(Math.sin(t*.5)*.5,.35+Math.sin(t*1.1)*.7,0);hd.rotation.x-=dt*(1.5+Math.cos(t*1.1)*1.2);tp.rotation.z+=dt*.6}}}
 
-return{Paint,FIN,paintMat,car,objects:[can,spray,layers,wall],sm}}
+return{Paint,FIN,paintMat,car,can:(S)=>can(S,{hero:true}),objects:[(S)=>can(S),spray,layers,wall],sm}}
 root.IMBuild=build;if(typeof module!=='undefined')module.exports=build;
 })(typeof window!=='undefined'?window:globalThis);

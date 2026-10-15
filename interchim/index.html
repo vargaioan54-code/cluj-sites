@@ -31,8 +31,9 @@ section{padding:84px 0}h2{font-size:clamp(30px,7vw,54px);line-height:1;text-tran
 #hero{position:relative;overflow:hidden;padding:0}
 #hero:before{content:"";position:absolute;inset:0;z-index:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;opacity:.28;-webkit-mask-image:radial-gradient(ellipse at 70% 50%,#000,transparent 72%);mask-image:radial-gradient(ellipse at 70% 50%,#000,transparent 72%)}
 #htx,.pui,#gl{position:relative;z-index:2}#htx{margin:0;max-width:none;width:100%}
-#gl{touch-action:pan-y}#gl canvas{position:absolute;inset:0;display:block;width:100%!important;height:100%!important;cursor:grab;touch-action:pan-y}#gl canvas:active{cursor:grabbing}
-#gl .nogl{display:none}#gl.nogl:after{content:"Modelul 3D nu poate fi afișat pe acest dispozitiv.";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--mu);text-align:center;padding:20px}
+#gl{touch-action:pan-y}#gl canvas{position:absolute;inset:0 0 54px 0;display:block;width:100%!important;height:calc(100% - 54px)!important;cursor:grab;touch-action:pan-y}#gl canvas:active{cursor:grabbing}
+#gl .nogl{display:none}
+.gsw{position:absolute;left:0;right:0;bottom:4px;height:46px;display:flex;justify-content:center;align-items:center;gap:8px;z-index:3}.gsw button{min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:rgba(16,14,29,.6);color:var(--mu);font:700 13px system-ui,sans-serif;cursor:pointer;transition:.25s}.gsw button.on{border-color:var(--ac);color:var(--acx);background:var(--ac)}#gl.nogl:after{content:"Modelul 3D nu poate fi afișat pe acest dispozitiv.";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--mu);text-align:center;padding:20px}
 h1{font-size:clamp(38px,14vw,84px);line-height:.92;font-weight:900;letter-spacing:-.02em;text-transform:uppercase}
 h1 span{display:block;opacity:0;transform:translateY(30px);animation:up .8s cubic-bezier(.2,.8,.2,1) forwards}
 h1 span:nth-child(1){background:var(--spec);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:up .8s forwards,hue 8s linear infinite}
@@ -45,7 +46,7 @@ h1 span:nth-child(2){animation-delay:.14s;font-size:.4em;letter-spacing:.02em;ma
 #htx{order:1;padding-top:0}#gl{order:2;width:100%;height:min(46svh,340px);margin-top:14px}.pui{order:3;margin-top:14px}
 @media(min-width:900px){
  #hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);grid-template-areas:"tx gl" "pui gl";align-content:center;column-gap:28px;padding:92px max(20px,calc((100vw - 1180px)/2)) 36px;min-height:100svh}
- #htx{grid-area:tx;align-self:end;padding-top:12px}.pui{grid-area:pui;align-self:start;margin-top:22px}#gl{grid-area:gl;height:auto;min-height:480px;margin:0}
+ #htx{grid-area:tx;align-self:end;padding-top:12px}.pui{grid-area:pui;align-self:start;margin-top:22px}#gl{grid-area:gl;align-self:start;height:min(calc(100svh - 150px),700px);min-height:480px;margin:0}
  h1{font-size:min(5.4vw,86px)}}
 /* panou vopsea */
 .pui{background:rgba(22,19,42,.78);border:1px solid var(--line);border-radius:20px;padding:16px;overflow:hidden;position:relative;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
@@ -78,7 +79,7 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
 .sw{display:inline-block;overflow:hidden;vertical-align:top;padding:.14em 0 .08em;margin:-.14em 0 -.08em}.sw>span{display:inline-block;transform:translateY(105%) rotate(4deg);transition:transform .9s cubic-bezier(.2,.8,.2,1)}.sin .sw>span{transform:none}
 /* ===== STUDIO ===== */
 #studio{background:linear-gradient(180deg,transparent,rgba(16,14,29,.65))}
-.stud{display:grid;gap:18px}
+.stud{display:grid;gap:18px;grid-template-columns:minmax(0,1fr)}
 .stpv{background:var(--pan);border:1px solid var(--line);border-radius:20px;padding:12px;z-index:6}
 @media(max-width:899px) and (min-height:640px){.stpv{position:sticky;top:64px}}
 .tabs{display:flex;gap:6px;margin-bottom:10px;overflow-x:auto}.tabs button{flex:1 0 auto;min-height:44px;padding:0 12px;border-radius:12px;border:1.5px solid var(--line);background:transparent;color:var(--mu);font:800 13px system-ui,sans-serif;cursor:pointer;transition:.25s;white-space:nowrap}
@@ -116,10 +117,15 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
 .cn{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;min-height:44px;padding:30px 4px 10px;background:var(--pan);border:1.5px solid var(--line);border-radius:18px;cursor:pointer;color:var(--tx);font:inherit;text-align:center;transition:border-color .3s,box-shadow .4s,background .4s}
 .cn:hover,.cn.sel{border-color:var(--c)}
 .cn.open{border-color:var(--c);box-shadow:0 0 0 2px rgba(255,255,255,.07),0 0 30px -6px var(--c);background:linear-gradient(180deg,var(--pan),#1b1733)}
-.cn svg{width:100%;max-width:132px;height:auto;overflow:visible;display:block}
+.cn svg{width:100%;max-width:150px;height:auto;overflow:visible;display:block}
 .cn .cl{font:800 12.5px/1.15 system-ui,sans-serif;padding:0 2px}.cn .ch{font:700 10.5px ui-monospace,monospace;color:var(--mu);letter-spacing:.06em}
-.cn .lid{transform-box:fill-box;transform-origin:50% 50%;transition:transform .6s cubic-bezier(.3,1.5,.45,1)}
-.cn.open .lid{transform:translate(18px,-30px) rotate(23deg)}
+.cn .lid{transform-box:fill-box;transform-origin:50% 50%;transition:transform .6s cubic-bezier(.3,1.4,.45,1),opacity .35s .12s}
+.cn.open .lid{transform:translate(40px,-30px) rotate(26deg);opacity:0}
+.cn .lidu{transform-box:fill-box;transform-origin:50% 100%;opacity:0;transform:translate(-34px,-20px) rotate(-26deg) scale(.7);transition:transform .6s cubic-bezier(.3,1.5,.45,1) .12s,opacity .3s .15s}
+.cn.open .lidu{opacity:1;transform:none}
+.cn .brush{opacity:0;transform:translateY(-12px);transition:opacity .4s .25s,transform .5s .2s cubic-bezier(.3,1.4,.5,1)}.cn.open .brush{opacity:1;transform:none}
+.cn .bail{transform-box:fill-box;transform-origin:50% 100%;transition:transform .55s cubic-bezier(.3,1.3,.5,1)}.cn.open .bail{transform:scaleY(.5)}
+.cn .refl{pointer-events:none}
 .cn .pnt{opacity:0;transition:opacity .35s .12s}.cn.open .pnt{opacity:1}
 .cn .pnt .pf{fill:var(--c)}
 .cn .rp{fill:none;stroke:#fff;stroke-opacity:.6;stroke-width:1.2;transform-box:fill-box;transform-origin:50% 50%;opacity:0}
@@ -272,10 +278,10 @@ requestAnimationFrame(fr)})();</script>
 <header id="hero"><div id="gl"></div>
 <div class="wrap htx" id="htx" style="padding:0"><div class="kick"><i></i>Lacuri și vopsele · Cluj-Napoca</div>
 <h1><span>Interchim</span><span>Culoarea ta, <em>la cod</em></span></h1>
-<p class="hsub">Din 1992 în Cluj-Napoca: lacuri și vopsele auto și de uz general, sistem de mixare pentru retuș auto din 1993 și spray-uri cu vopsea preparată la codul dorit. Alege o culoare și vezi-o pe mașină.</p>
+<p class="hsub">Din 1992 în Cluj-Napoca: lacuri și vopsele auto și de uz general, sistem de mixare pentru retuș auto din 1993 și spray-uri cu vopsea preparată la codul dorit. Alege o culoare și vezi-o pe cutie și pe mașină.</p>
 <div class="badge">Str. Mioriței 1 · Cluj-Napoca</div>
 <div class="hcta" id="hcta"><a class="btn p" href="tel:+40745366830">📞 0745 366 830</a><a class="btn g" href="#studio">Studio de culori</a></div></div>
-<div class="pui" id="pui"><div class="puh"><b>Vopsește mașina</b><div class="rd"><i class="chip rd-chip"></i><span class="rd-name">Roșu</span><code class="rd-hex">#C1121F</code><span class="rd-fin">Metalizat</span></div></div>
+<div class="pui" id="pui"><div class="puh"><b>Vopsește cutia și mașina</b><div class="rd"><i class="chip rd-chip"></i><span class="rd-name">Roșu</span><code class="rd-hex">#C1121F</code><span class="rd-fin">Metalizat</span></div></div>
 <div class="sws" id="heroSw" role="group" aria-label="Culori auto"></div>
 <div class="fin" role="group" aria-label="Finisaj"><button type="button" data-fin="gloss">Lucios</button><button type="button" data-fin="metal" class="on">Metalizat</button><button type="button" data-fin="pearl">Perlat</button><button type="button" data-fin="matte">Mat</button></div>
 <div class="sl"><label>Nuanță<input type="range" id="sH" min="0" max="359" value="355" aria-label="Nuanță"></label><label>Saturație<input type="range" id="sS" min="0" max="100" value="82" aria-label="Saturație"></label><label>Luminozitate<input type="range" id="sL" min="0" max="100" value="40" aria-label="Luminozitate"></label></div>
