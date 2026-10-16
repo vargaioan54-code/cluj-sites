@@ -1,0 +1,257 @@
+<!doctype html><html lang="ro"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Euroil — Benzinărie, Str. Observatorului 101, Cluj-Napoca</title>
+<meta name="description" content="Euroil, benzinărie pe Strada Observatorului nr. 101, Cluj-Napoca. Benzină, motorină și GPL conform listărilor publice, program non-stop. Sună la 0745 238 443.">
+<meta name="theme-color" content="#050f0b">
+<style>
+
+:root{--bg:#050f0b;--bg2:#08170f;--pan:#0d2118;--line:#1b3a2b;--tx:#eef8f2;--mu:#8fb3a2;--ac:#34e08f;--ac2:#b6f7d6;--em:#ffb23d;--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}body{background:var(--bg);color:var(--tx);font:16px/1.6 var(--sans);overflow-x:hidden}
+a{color:inherit}.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:10px 20px;background:rgba(5,15,11,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{text-decoration:none;font:500 20px var(--serif);letter-spacing:.34em;text-transform:uppercase;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}.logo b{font:700 10px var(--sans);letter-spacing:.22em;color:var(--bg);background:var(--ac);padding:3px 6px;margin-left:12px;border-radius:3px}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:13px 22px;border-radius:999px;font:700 15px var(--sans);letter-spacing:.02em;text-decoration:none;border:1px solid var(--ac);color:var(--tx);background:transparent;cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s,color .25s}
+.btn.p{background:linear-gradient(135deg,var(--ac2),var(--ac) 55%,#14a868);color:#04140c;border-color:transparent}.btn.p:hover{box-shadow:0 10px 34px rgba(52,224,143,.32);transform:translateY(-2px)}
+.btn.g{border-color:var(--line)}.btn.g:hover{border-color:var(--ac);color:var(--ac2)}.btn.sm{padding:9px 18px;font-size:14px}
+button.btn{font-family:var(--sans)}
+/* hero */
+#hero{position:relative;height:100svh;min-height:620px;overflow:hidden;background:radial-gradient(ellipse at 72% 46%,#0f2b1f,#050f0b 66%)}
+#hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.3;-webkit-mask-image:radial-gradient(ellipse at 62% 50%,#000,transparent 72%);mask-image:radial-gradient(ellipse at 62% 50%,#000,transparent 72%)}
+#gl{position:absolute;inset:0;z-index:1;touch-action:pan-y}#gl canvas{display:block;width:100%!important;height:100%!important}
+.htx{position:relative;z-index:2;padding-top:104px;pointer-events:none}.htx a,.htx .live{pointer-events:auto}
+.kick{font:600 11.5px var(--sans);letter-spacing:.3em;color:var(--ac);text-transform:uppercase;margin-bottom:16px;display:flex;gap:12px;align-items:center}.kick i{width:7px;height:7px;border-radius:50%;background:var(--em);box-shadow:0 0 14px var(--em);animation:bl 1.8s infinite}@keyframes bl{50%{opacity:.25}}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em}
+h1{font-size:clamp(46px,12vw,72px);line-height:.98}
+h1 span{display:block;opacity:0;transform:translateY(30px);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}h1 span:nth-child(1){letter-spacing:.06em;text-transform:uppercase}h1 span:nth-child(2){animation-delay:.14s;color:var(--ac);font-style:italic;font-size:.62em;margin-top:.12em;letter-spacing:0}
+@keyframes up{to{opacity:1;transform:none}}
+.hsub{color:var(--mu);margin-top:20px;max-width:470px;opacity:0;animation:up .9s .4s forwards}
+.badge{display:inline-block;margin-top:18px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;font:600 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ac2);opacity:0;animation:up .9s .5s forwards}
+.live{display:inline-flex;align-items:center;gap:9px;margin-top:14px;margin-left:8px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);font:600 12px var(--sans);letter-spacing:.06em;color:var(--mu);opacity:0;animation:up .9s .6s forwards;vertical-align:top}
+.live i{width:8px;height:8px;border-radius:50%;background:#666}.live.open{color:var(--tx);border-color:rgba(255,178,61,.4)}.live.open i{background:var(--em);box-shadow:0 0 12px var(--em);animation:bl 1.8s infinite}
+.hcta{position:absolute;left:0;right:0;bottom:24px;z-index:3;display:flex;gap:10px;flex-wrap:wrap;padding:0 20px}
+@media(min-width:900px){.htx{padding-top:0;height:100%;display:flex;flex-direction:column;justify-content:center;max-width:44vw;margin-left:max(20px,5vw);margin-right:0}h1{font-size:min(4.7vw,80px)}.hcta{position:static;padding:0;margin-top:30px;opacity:0;animation:up .9s .7s forwards}.badge,.live{align-self:flex-start}}
+/* tape */
+.tape{background:linear-gradient(90deg,#08170f,#10291d);color:var(--ac2);overflow:hidden;white-space:nowrap;font:500 22px/1 var(--serif);font-style:italic;letter-spacing:.08em;padding:18px 0;border-block:1px solid var(--line);position:relative;z-index:5}
+.tape div{display:inline-block;animation:mq 34s linear infinite}@keyframes mq{to{transform:translateX(-50%)}}
+.tape.gd{background:var(--ac);color:#04140c;font-style:normal;font-weight:700;font-size:15px;letter-spacing:.3em;text-transform:uppercase}.tape.gd div{animation-direction:reverse}
+section{padding:110px 0}h2{font-size:clamp(32px,6.4vw,58px);line-height:1.04;margin-bottom:30px}h2 em,h3 em{font-style:italic;color:var(--ac)}
+.tag{font:600 11.5px var(--sans);letter-spacing:.3em;color:var(--ac);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:14px}.tag:after{content:"";width:46px;height:1px;background:var(--ac);opacity:.5}
+.grid{display:grid;gap:16px;grid-template-columns:1fr}@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:linear-gradient(170deg,var(--pan),#0a1c13);border:1px solid var(--line);border-radius:20px;padding:28px;position:relative;overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s,border-color .3s}
+.card.on{opacity:1;transform:none}.card:hover{border-color:rgba(52,224,143,.45)}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),rgba(52,224,143,.12),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}.card:hover:before{opacity:1}
+.card:after{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:linear-gradient(90deg,var(--ac),var(--em));transition:width 1.1s .2s}.card.on:after{width:100%}
+.card .k{font:600 11px var(--sans);color:var(--mu);letter-spacing:.2em}.card .v{font:500 27px/1.15 var(--serif);margin:8px 0}.card p{color:var(--mu)}
+.note{color:var(--mu);font-size:13px;margin-top:18px;max-width:640px}
+.two{display:grid;gap:34px}@media(min-width:900px){.two{grid-template-columns:1fr 1fr;align-items:start}}
+.map{aspect-ratio:4/3;border-radius:20px;border:1px solid var(--line);background:var(--pan);overflow:hidden}
+.mapbtn{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:300px;padding:20px;text-align:center;flex-direction:column;gap:14px;color:var(--mu)}
+footer{border-top:1px solid var(--line);padding:34px 0 100px;color:var(--mu);font-size:14px}footer a{color:var(--mu);margin-right:16px;display:inline-flex;align-items:center;min-height:44px}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:none}.sticky .btn{width:100%}
+body.past .sticky{display:block}body.pinned .sticky{display:none!important}@media(min-width:900px){.sticky{display:none!important}footer{padding-bottom:34px}}
+#prog{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--ac),var(--em));z-index:60}
+.navl{display:none;gap:22px;font:600 12px var(--sans);text-transform:uppercase;letter-spacing:.16em}.navl a{text-decoration:none;display:inline-flex;align-items:center;min-height:44px;color:var(--mu);transition:color .2s}.navl a:hover,.navl a.cur{color:var(--ac2)}
+@media(min-width:1000px){.navl{display:flex}}
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s,transform 1s cubic-bezier(.2,.8,.2,1)}.rv.on{opacity:1;transform:none}
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding:.14em 0 .14em;margin:-.14em 0 -.14em}.sw>span{display:inline-block;transform:translateY(105%) rotate(3deg);transition:transform 1s cubic-bezier(.2,.8,.2,1)}.sin .sw>span{transform:none}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.3);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}@keyframes rip{to{transform:scale(1);opacity:0}}
+#cglow{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(52,224,143,.07),transparent 65%);opacity:0;transition:opacity .4s;will-change:transform}
+#info,#carburanti,#verifica,#pregatire,#contact{position:relative;z-index:2}
+.res{text-align:center;padding:10px}.ring{width:min(200px,60vw);height:min(200px,60vw);margin:0 auto 16px;display:block}.ring circle{fill:none;stroke-width:6}.ring .bg{stroke:var(--line)}.ring .fg{stroke:var(--ac);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset .8s cubic-bezier(.3,.7,.2,1),stroke .4s}
+.ring text{font:500 34px var(--serif);fill:var(--tx);text-anchor:middle}
+.res p{color:var(--mu);font-size:15px;max-width:340px;margin:0 auto 14px;min-height:72px}.res .t{font:500 22px var(--serif);color:var(--tx);margin-bottom:6px;min-height:30px}
+/* model */
+#model3d{height:420vh;padding:0;position:relative;z-index:2;background:radial-gradient(ellipse at 62% 46%,#0f2b1f,#050f0b 70%)}
+#model3d .pin,#cap .pin{position:sticky;top:0;height:100svh;overflow:hidden}
+#model3d .pin:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.26;-webkit-mask-image:radial-gradient(ellipse at 62% 50%,#000,transparent 75%);mask-image:radial-gradient(ellipse at 62% 50%,#000,transparent 75%)}
+#r3stage{position:absolute;inset:0;touch-action:pan-y}#r3stage canvas{display:block;width:100%!important;height:100%!important;cursor:grab;touch-action:pan-y}#r3stage canvas:active{cursor:grabbing}
+.r3ui{position:absolute;left:0;right:0;z-index:3;pointer-events:none}.r3top{top:78px}
+.r3ch{position:absolute;left:20px;right:20px;top:0;opacity:0;transform:translateY(16px);transition:.6s}.r3ch.on{opacity:1;transform:none}
+.r3ch h3{font-size:clamp(28px,8vw,60px);line-height:1}.r3ch p{color:var(--mu);max-width:450px;font-size:15px;margin-top:10px}
+.r3hint{position:absolute;left:0;right:0;bottom:72px;text-align:center;font:600 10.5px var(--sans);letter-spacing:.24em;color:var(--mu);z-index:3;pointer-events:none;text-transform:uppercase}
+#r3bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:linear-gradient(90deg,var(--ac),var(--em));transform-origin:0 50%;transform:scaleX(0);z-index:4}
+#model3d .fb{display:none;position:absolute;inset:0;align-items:center;justify-content:center;color:var(--mu);padding:30px;text-align:center;z-index:2}#model3d.fallback .fb{display:flex}
+@media(max-width:899px){.r3hint{letter-spacing:.1em;font-size:10px;padding:0 10px;bottom:86px}}
+@media(min-width:900px){.r3top{top:0;bottom:0;left:6vw;right:auto;width:44vw;display:flex;align-items:center}.r3top .r3ch{left:0;right:0;top:50%;margin-top:-120px}.r3ch h3{font-size:min(4.2vw,68px)}.r3hint{left:6vw;right:auto;text-align:left;bottom:28px}}
+/* chapters */
+#cap{height:400vh;padding:0;position:relative;z-index:2;background:var(--bg)}
+.chap{position:absolute;inset:0;display:flex;align-items:center;opacity:0;transform:scale(1.05);transition:opacity .8s,transform 1s;pointer-events:none}.chap.on{opacity:1;transform:none}
+.chap .wrap{display:grid;gap:14px;width:100%;position:relative}
+.chap .big{font:400 clamp(110px,26vw,320px)/.8 var(--serif);color:transparent;-webkit-text-stroke:1px var(--line);order:-1}
+.chap h3{font-size:clamp(34px,9vw,92px);line-height:.98}
+.chap p{max-width:520px;color:var(--mu);font-size:18px}
+.dots{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);display:flex;gap:12px;z-index:3}
+.dots i{width:7px;height:7px;border-radius:5px;background:#2a5a43;transition:.4s}.dots i.on{background:var(--ac);width:26px}
+.chline{position:absolute;bottom:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--ac),var(--em));z-index:3}
+@media(min-width:900px){.chap .wrap{display:block}.chap .big{position:absolute;right:48px;top:50%;transform:translateY(-50%);font-size:min(22vw,320px)}.chap h3{max-width:56%;font-size:min(5.6vw,84px);margin:6px 0 16px}.chap p{max-width:min(520px,48%)}.dots{left:auto;right:20px;bottom:auto;top:50%;transform:translateY(-50%);flex-direction:column}.dots i.on{width:7px;height:26px}}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}.chips button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--mu);font:600 14px var(--sans);cursor:pointer;transition:.25s}.chips button:hover{color:var(--tx);border-color:var(--ac)}.chips button.on{background:var(--ac);border-color:var(--ac);color:#04140c}
+/* checklist */
+.chk{display:grid;gap:30px;margin-top:6px}@media(min-width:900px){.chk{grid-template-columns:1fr 1fr;align-items:center}}
+.cl{list-style:none}.cl li{border-top:1px solid var(--line)}.cl li:last-child{border-bottom:1px solid var(--line)}
+.cl button{display:flex;width:100%;align-items:center;gap:16px;text-align:left;min-height:56px;padding:12px 4px;background:none;border:0;color:var(--tx);font:500 16px/1.4 var(--sans);cursor:pointer}
+.cl .bx{flex:0 0 28px;height:28px;border-radius:50%;border:1.5px solid var(--mu);display:grid;place-items:center;transition:.3s}.cl .bx svg{width:16px;height:16px;stroke:#050f0b;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .4s .05s}
+.cl button.on .bx{background:var(--em);border-color:var(--em)}.cl button.on .bx svg{stroke-dashoffset:0}.cl button.on span.t{color:var(--mu);text-decoration:line-through;text-decoration-color:rgba(143,179,162,.5)}
+.fbig{font:400 min(9vw,150px)/.9 var(--serif);color:transparent;-webkit-text-stroke:1px #245c42;text-transform:uppercase;letter-spacing:.14em;margin-bottom:28px;white-space:nowrap;overflow:hidden}
+.ic{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;margin-bottom:14px;color:var(--ac)}.ic svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:899px){h1{font-size:min(13vw,64px)}.logo{font-size:17px;letter-spacing:.24em}.logo b{margin-left:8px}.fbig{font-size:8.6vw}.r3ch h3{font-size:clamp(22px,7vw,50px)}.live{margin-left:0}section{padding:84px 0}#cglow{display:none}}
+@media(max-width:380px){.logo{font-size:15px;letter-spacing:.16em}.logo b{display:none}nav{padding:8px 12px}.btn.sm{padding:9px 14px}}
+@media (hover:none){#cglow{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}h1 span,.hsub,.hcta,.badge,.live,.card,.rv{opacity:1;transform:none}.sw>span{transform:none!important}#cap{height:auto}#cap .pin{position:relative;height:auto;padding:60px 0}.chap{position:relative;inset:auto;opacity:1;transform:none;padding:30px 0}.chap .big{font-size:80px}.dots,.chline{display:none}#model3d{height:auto}#model3d .pin{position:relative;height:100svh}.r3ch{position:relative;opacity:1;transform:none}.r3ch:not(:first-child){display:none}.card:after{width:100%}}
+@media (prefers-reduced-motion:reduce) and (max-width:899px){.r3ch{left:auto;right:auto;margin:0 20px;top:auto}}
+#contact p a{display:inline-block;padding:11px 0;line-height:22px}
+#model3d.fallback{height:auto}#model3d.fallback .pin{position:relative;height:auto;padding:90px 0 50px}#model3d.fallback .r3ui{position:relative;top:0;left:0;right:0;bottom:auto;width:auto;display:block}#model3d.fallback .r3ch{position:relative;opacity:1;transform:none;left:0;right:0;top:0;margin:0 20px 30px}#model3d.fallback .r3hint,#model3d.fallback #r3bar{display:none}#model3d.fallback .fb{position:relative;inset:auto;padding:0 20px 10px}.nogl #gl{display:none}@media(max-width:899px){.nogl #hero{padding-bottom:24px}}
+.res.ok .fg{stroke:var(--em)}.res.no .fg{stroke:#ff9a7a}
+:root{--serif:"Avenir Next","Segoe UI Variable Display","Trebuchet MS",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-weight:700;letter-spacing:-.02em}
+.logo{font-weight:700;letter-spacing:.3em}
+h1 span:nth-child(1){font-weight:800;letter-spacing:.08em}
+h1 span:nth-child(2){font-style:normal;font-weight:600;font-size:.5em;letter-spacing:-.01em;line-height:1.1}
+h2 em,h3 em{font-style:normal}
+#hero{background:radial-gradient(ellipse at 72% 46%,#0f2b1f,#050f0b 66%)}
+.tape{font-style:normal;font-weight:600;letter-spacing:.14em;font-size:19px}
+.tape.gd{background:linear-gradient(90deg,#14a868,#34e08f,#ffb23d)}
+#model3d{background:radial-gradient(ellipse at 62% 46%,#0f2b1f,#050f0b 70%)}
+.pill{display:inline-flex;align-items:center;gap:9px;margin-top:14px;margin-left:8px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);font:600 12px var(--sans);letter-spacing:.06em;color:var(--mu);opacity:0;animation:up .9s .6s forwards;vertical-align:top}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--ac);box-shadow:0 0 12px var(--ac)}
+.htx a{pointer-events:auto}
+@media(max-width:899px){.pill{margin-left:0}}
+@media(min-width:900px){.pill{align-self:flex-start}}
+#bub{position:absolute;inset:0;pointer-events:none}
+.bhint{position:absolute;right:16px;bottom:10px;z-index:3;pointer-events:none;font:600 10.5px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--mu)}.bhint b{color:var(--ac2)}
+@media(min-width:900px){.bhint{right:5vw;bottom:28px}}
+#info,#carburanti,#calculator,#pregatire,#contact{position:relative;z-index:2}
+
+#intro{position:fixed;inset:0;z-index:500;background:radial-gradient(ellipse at 50% 45%,#12301f,#050f0b 70%);display:flex;align-items:center;justify-content:center;flex-direction:column;overflow:hidden;transition:transform 1s cubic-bezier(.7,0,.2,1);cursor:pointer}
+#intro.done{transform:translateY(-100%)}
+#intro .ig{position:relative;width:min(62vw,250px);height:min(62vw,250px)}#intro .ig svg{width:100%;height:100%;overflow:visible}
+#intro .rbg{fill:none;stroke:#1b3a2b;stroke-width:6}
+#intro .rfg{fill:none;stroke:url(#ig1);stroke-width:6;stroke-linecap:round;stroke-dasharray:528;stroke-dashoffset:528;transform:rotate(-90deg);transform-origin:100px 100px;animation:ifill 2.3s .15s cubic-bezier(.4,0,.3,1) forwards}
+@keyframes ifill{to{stroke-dashoffset:0}}
+#intro .dsp{fill:#04100a;stroke:#245c42;stroke-width:2;opacity:0;animation:ifade .5s .1s forwards}
+#intro .dg{fill:#ffb23d;font:700 34px "Courier New",monospace;text-anchor:middle}
+#intro .dl{fill:#34e08f;font:600 9px system-ui,sans-serif;letter-spacing:.2em;text-anchor:middle}
+#intro .dr{fill:#ffb23d;opacity:0;transform:translateY(-34px);transform-box:fill-box;animation:idrp 1s .05s ease-in forwards}
+@keyframes idrp{0%{opacity:0;transform:translateY(-34px)}25%{opacity:1}100%{opacity:0;transform:translateY(26px)}}
+#intro .it{margin-top:30px;font:800 clamp(36px,11vw,68px)/1 "Avenir Next","Segoe UI Variable Display","Trebuchet MS",system-ui,sans-serif;text-transform:uppercase;color:#eef8f2;letter-spacing:.28em;text-indent:.28em;text-align:center;clip-path:inset(0 100% 0 0);animation:iclip .9s 1.6s cubic-bezier(.4,0,.2,1) forwards}
+#intro .is{margin-top:14px;font:600 11px system-ui,sans-serif;letter-spacing:.32em;color:#34e08f;opacity:0;animation:ifade .6s 2.3s forwards;text-align:center;padding:0 16px;text-transform:uppercase}
+#intro .ib{position:absolute;left:0;bottom:0;height:3px;width:100%;background:linear-gradient(90deg,#14a868,#34e08f,#ffb23d);transform:scaleX(0);transform-origin:0 50%;animation:ibar 3s linear forwards}
+@keyframes iclip{to{clip-path:inset(0 0 0 0)}}@keyframes ifade{to{opacity:1}}@keyframes ibar{to{transform:scaleX(1)}}
+body.introlock{overflow:hidden}
+/* fuel picker */
+.pk{display:grid;gap:26px;margin-top:6px}@media(min-width:900px){.pk{grid-template-columns:1.2fr 1fr;align-items:center}}
+.chips button{position:relative}.chips button .q2{font-size:11px;opacity:.75;margin-left:6px}
+.pkc{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:22px;background:radial-gradient(ellipse at 50% 60%,#0f2b1f,#07170f);--fc:#ffd166}
+.pkc.s-ben{--fc:#ffd166}.pkc.s-mot{--fc:#e8863a}.pkc.s-gpl{--fc:#6fd3ff}
+.pkc .bd{fill:#cfd8d4;stroke:#eef8f2;stroke-width:2;stroke-linejoin:round}.pkc .gl2{fill:#07130d;stroke:#8fb3a2;stroke-width:2}
+.pkc .tr{fill:#050a07;stroke:#8fb3a2;stroke-width:3}.pkc .rm{fill:#d5e3dc}
+.pkc .pb{fill:#e8efe9;stroke:#8fb3a2;stroke-width:2}.pkc .ph{fill:#16b374}.pkc .pd{fill:#04100a;stroke:#245c42;stroke-width:2}
+.pkc .pt{font:700 15px "Courier New",monospace;fill:#ffb23d;text-anchor:middle;opacity:0;transition:opacity .4s}
+.pkc.s-ben .t-ben,.pkc.s-mot .t-mot,.pkc.s-gpl .t-gpl{opacity:1}
+.pkc .hs{fill:none;stroke:#0c0f0d;stroke-width:6;stroke-linecap:round}
+.pkc .fl{fill:none;stroke:var(--fc);stroke-width:3.5;stroke-linecap:round;stroke-dasharray:6 14;animation:fld .9s linear infinite;transition:opacity .4s}@keyframes fld{to{stroke-dashoffset:-20}}
+.pkc.s-shop .fl,.pkc.s-shop .t-ben{opacity:0}
+.pkc .carg{transition:opacity .5s}.pkc.s-shop .carg{opacity:.12}
+.pkc .shop{opacity:0;transition:opacity .5s,transform .5s;transform:translateY(8px)}.pkc.s-shop .shop{opacity:1;transform:none}
+.pkc .sh1{fill:#13291d;stroke:#245c42;stroke-width:2}.pkc .sh2{fill:#ffb23d;opacity:.9}.pkc .sh3{fill:#16b374}.pkc .sh4{fill:#04140c}
+.pkc .stm{fill:none;stroke:#d9efe3;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:6 10;animation:fld 1.4s linear infinite;opacity:.6}
+.pkc .whl{transform-box:fill-box;transform-origin:center;animation:spn 6s linear infinite}@keyframes spn{to{transform:rotate(360deg)}}
+.pkinfo{min-height:200px}.pkinfo h3{font-size:clamp(26px,4.4vw,38px);margin-bottom:10px}.pkinfo p{color:var(--mu)}
+.pkinfo .z{font:600 11px var(--sans);letter-spacing:.24em;color:var(--em);text-transform:uppercase;margin-bottom:8px}
+.sum{margin-top:18px;border:1px solid var(--line);border-radius:18px;padding:16px 18px;background:rgba(13,33,24,.6)}.sum b{display:block;font:600 11px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:6px}.sum span{display:block;color:var(--tx);font-size:15px;min-height:24px}
+/* calculator */
+.calc{display:grid;gap:28px;margin-top:6px}@media(min-width:900px){.calc{grid-template-columns:1fr 1fr;align-items:center}}
+.gauge{width:100%;max-width:480px;margin:0 auto;display:block;border:1px solid var(--line);border-radius:22px;background:radial-gradient(ellipse at 50% 80%,#0f2b1f,#07170f)}
+.gauge .gt{fill:none;stroke:#1b3a2b;stroke-width:16;stroke-linecap:round}.gauge .gf{fill:none;stroke:url(#gg);stroke-width:16;stroke-linecap:round;stroke-dasharray:377;stroke-dashoffset:377}
+.gauge .gk{stroke:#8fb3a2;stroke-width:2}.gauge text{font:600 13px system-ui,sans-serif;fill:#8fb3a2;text-anchor:middle}.gauge .gn{stroke:#eef8f2;stroke-width:4;stroke-linecap:round}.gauge .gh{fill:#eef8f2}.gauge .gs{font:600 12px system-ui,sans-serif;fill:#b6f7d6;letter-spacing:.06em}
+.rg{margin-bottom:10px}.rg label{display:flex;justify-content:space-between;align-items:baseline;font:600 14px var(--sans);color:var(--mu);margin-bottom:2px}.rg label b{color:var(--ac2);font:700 20px var(--serif)}
+.rg input[type=range]{width:100%;height:44px;accent-color:var(--ac);background:transparent;touch-action:pan-y;margin:0;-webkit-appearance:auto;appearance:auto}
+.outs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.outs div{border:1px solid var(--line);border-radius:16px;padding:12px;background:rgba(13,33,24,.6)}.outs b{font:600 10px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ac);display:block;margin-bottom:4px}.outs span{font:700 clamp(17px,5vw,24px) var(--serif);color:var(--tx)}
+</style>
+<style id="mobfix">@media(max-width:899px){#hero{height:auto;min-height:0;display:flex;flex-direction:column;padding:96px 0 24px}#htx{order:1;position:relative;z-index:2;padding-top:0}.hcta{position:static;padding:0;margin-top:22px}#gl{order:2;position:relative;inset:auto;width:100%;height:min(46svh,340px);margin-top:12px}}</style>
+<style id="nosel">html,body,*{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}input,textarea{-webkit-user-select:text;user-select:text;-webkit-touch-callout:default}html{touch-action:pan-x pan-y}</style>
+<script>document.addEventListener("gesturestart",e=>e.preventDefault());document.addEventListener("dblclick",e=>e.preventDefault(),{passive:false});document.addEventListener("contextmenu",e=>{if(!e.target.closest("input,textarea"))e.preventDefault()});</script>
+</head><body>
+<div id="intro" aria-hidden="true"><div class="ig"><svg viewBox="0 0 200 200"><defs><linearGradient id="ig1" x1="0" x2="1"><stop offset="0" stop-color="#14a868"/><stop offset=".6" stop-color="#34e08f"/><stop offset="1" stop-color="#ffb23d"/></linearGradient></defs><circle class="rbg" cx="100" cy="100" r="84"/><circle class="rfg" cx="100" cy="100" r="84"/><rect class="dsp" x="44" y="72" width="112" height="56" rx="8"/><text class="dl" x="100" y="88">LITRI</text><text class="dg" id="idg" x="100" y="119">0.00</text><path class="dr" d="M100 28 C100 28 112 44 112 52 A12 12 0 0 1 88 52 C88 44 100 28 100 28Z"/></svg></div>
+<div class="it">Euroil</div><div class="is">Benzinărie · Cluj-Napoca</div><div class="ib"></div></div>
+<script>(function(){var i=document.getElementById("intro"),b=document.body,g=document.getElementById("idg"),done=false;b.classList.add("introlock");function e(){if(done)return;done=true;i.classList.add("done");b.classList.remove("introlock");setTimeout(function(){i.remove()},1100)}
+if(matchMedia("(prefers-reduced-motion:reduce)").matches){if(g)g.textContent="48.60";e()}else{var t0=performance.now();(function f(n){if(done)return;var k=Math.min(1,(n-t0-150)/2300);if(k<0)k=0;var v=48.6*(1-Math.pow(1-k,3));if(g)g.textContent=v.toFixed(2);if(k<1)requestAnimationFrame(f)})(t0);setTimeout(e,3100);i.addEventListener("click",e)}})();</script>
+<div id="prog"></div><div id="cglow"></div>
+<nav><a href="#hero" class="logo" aria-label="Euroil, benzinărie">Euroil<b>STAȚIE</b></a><div class="navl"><a href="#info">Pe scurt</a><a href="#carburanti">Carburanți</a><a href="#calculator">Calculator</a><a href="#model3d">Model 3D</a><a href="#cap">Cum decurge</a><a href="#contact">Contact</a></div><a class="btn p sm" href="tel:+40745238443">Sună</a></nav>
+<header id="hero"><div id="gl"></div><div class="bhint" id="bhint">Atinge ecranul · litri <b id="bcnt">0.00</b></div>
+<div class="wrap htx" id="htx"><div class="kick"><i></i>Benzinărie · Cluj-Napoca</div>
+<h1><span>Euroil</span><span>benzinărie în Cluj-Napoca</span></h1>
+<p class="hsub">Pe Strada Observatorului nr. 101, în Cluj-Napoca. Benzină, motorină și GPL, potrivit listărilor publice, și program non-stop. Sună la 0745 238 443.</p>
+<div><span class="badge">Str. Observatorului 101 · Cluj-Napoca</span><span class="pill"><i></i>Non-stop · confirmă la stație</span></div>
+<div class="hcta" id="hcta"><a class="btn p" href="tel:+40745238443">📞 0745 238 443</a><a class="btn g" href="#contact">Unde suntem</a></div></div>
+</header>
+<div class="tape" aria-hidden="true"><div>Euroil ✦ Benzinărie ✦ Str. Observatorului 101 ✦ Non-stop ✦ 0745 238 443 ✦ Benzină ✦ Motorină ✦ GPL ✦ Euroil ✦ Benzinărie ✦ Str. Observatorului 101 ✦ Non-stop ✦ 0745 238 443 ✦ Benzină ✦ Motorină ✦ GPL ✦ </div></div>
+<section id="info"><div class="wrap"><div class="tag rv">01 / Pe scurt</div><h2>Alimentezi <em>când ai nevoie</em></h2>
+<div class="grid">
+<div class="card"><div class="k">TELEFON</div><div class="v">0745 238 443</div><p>Sună dacă ai o întrebare înainte să vii.</p><br><a class="btn p sm" href="tel:+40745238443">Sună acum</a></div>
+<div class="card"><div class="k">PROGRAM</div><div class="v">Non-stop, 0–24</div><p>Așa apare în mai multe liste publice. Dacă ai nevoie sigur la o oră anume, confirmă la telefon.</p></div>
+<div class="card"><div class="k">ADRESĂ</div><div class="v">Str. Observatorului 101</div><p>Cluj-Napoca, județul Cluj.</p><br><a class="btn g sm" href="#contact">Vezi harta</a></div>
+</div>
+<p class="note">Stația Euroil de pe Str. Observatorului nr. 101, Cluj-Napoca. Sortimentele, facilitățile și programul se confirmă la stație sau la telefon. Nu publicăm prețuri.</p></div></section>
+<section id="carburanti" style="background:var(--bg2)"><div class="wrap"><div class="tag rv">02 / Carburanți</div><h2>Ce poți <em>găsi la stație</em></h2>
+<p class="note" style="margin:-8px 0 24px">Listările publice indică benzină, motorină, GPL și un magazin. Descrierile sunt generale: ce se oferă exact la stația din Cluj se confirmă la fața locului.</p>
+<div class="pk"><div>
+<div class="chips" id="pkchips"></div>
+<svg class="pkc s-ben" id="pkc" viewBox="0 0 600 260" role="img" aria-label="Schiță cu o pompă de carburant, o mașină alimentată și un magazin (ilustrativ)">
+<path d="M20 214 H580" stroke="#1b3a2b" stroke-width="3"/>
+<g><rect class="pb" x="44" y="76" width="92" height="138" rx="6"/><rect class="ph" x="38" y="62" width="104" height="22" rx="6"/><rect class="pd" x="54" y="94" width="72" height="34" rx="4"/>
+<text class="pt t-ben" x="90" y="117">BENZINĂ</text><text class="pt t-mot" x="90" y="117">MOTORINĂ</text><text class="pt t-gpl" x="90" y="117">GPL</text>
+<rect x="60" y="146" width="60" height="10" rx="3" fill="#16b374" opacity=".7"/><rect x="50" y="198" width="80" height="8" rx="2" fill="#16b374"/>
+<path class="hs" d="M138 120 C170 120 160 190 196 168 S236 150 238 150"/><path class="fl" d="M138 120 C170 120 160 190 196 168 S236 150 238 150"/><rect x="226" y="144" width="18" height="12" rx="3" fill="#16b374"/></g>
+<g class="carg" transform="translate(200 58) scale(.62)"><path class="bd" d="M30 190 L30 150 Q32 138 52 134 L120 124 Q150 80 215 72 L355 72 Q412 76 450 118 L545 130 Q572 136 572 160 L572 190 L514 190 A56 56 0 0 0 402 190 L206 190 A56 56 0 0 0 94 190 Z"/><path class="gl2" d="M150 122 Q172 88 218 84 L270 84 L270 122Z"/><path class="gl2" d="M282 84 L352 84 Q392 90 420 122 L282 122Z"/>
+<g class="whl"><circle class="tr" cx="150" cy="190" r="46"/><circle class="rm" cx="150" cy="190" r="28"/><path stroke="#8fb3a2" stroke-width="3" fill="none" d="M150 164 V216 M124 190 H176 M132 172 L168 208 M168 172 L132 208"/></g><g class="whl"><circle class="tr" cx="458" cy="190" r="46"/><circle class="rm" cx="458" cy="190" r="28"/><path stroke="#8fb3a2" stroke-width="3" fill="none" d="M458 164 V216 M432 190 H484 M440 172 L476 208 M476 172 L440 208"/></g></g>
+<g class="shop"><rect class="sh1" x="330" y="104" width="230" height="110"/><path class="sh2" d="M322 104 L568 104 L556 80 L334 80 Z"/><path class="sh3" d="M334 80 L368 80 L360 104 L322 104Z M410 80 L444 80 L440 104 L400 104Z M486 80 L520 80 L520 104 L482 104Z"/>
+<rect class="sh4" x="350" y="124" width="100" height="62" rx="4"/><rect class="sh2" x="356" y="130" width="88" height="50" rx="3" opacity=".25"/><rect class="sh4" x="480" y="130" width="52" height="84" rx="3"/><path class="stm" d="M400 118 Q394 108 402 98 Q410 88 402 78"/></g>
+</svg></div>
+<div><div class="pkinfo" id="pkinfo" aria-live="polite"><div class="z" id="pkz"></div><h3 id="pkt"></h3><p id="pkp"></p></div>
+<div class="sum"><b>De reținut</b><span id="pks"></span></div><br><a class="btn p" href="tel:+40745238443">Sună 0745 238 443</a></div></div>
+<p class="note">Schița este o ilustrație, nu o fotografie a stației. Nu publicăm prețuri: nu avem o sursă verificată. Rețeaua EUROIL (euroil.ro) vorbește despre card de membru și alimentare pentru flote; dacă se aplică și la stația din Cluj, întreabă la stație.</p></div></section>
+<section id="calculator"><div class="wrap"><div class="tag rv">03 / Calculator</div><h2>Cât mai <em>poți merge</em></h2>
+<div class="calc"><svg class="gauge" viewBox="0 0 300 190" role="img" aria-label="Indicator de nivel al rezervorului"><defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#ff6a4a"/><stop offset=".3" stop-color="#ffb23d"/><stop offset="1" stop-color="#34e08f"/></linearGradient></defs>
+<path class="gt" d="M30 150 A120 120 0 0 1 270 150"/><path class="gf" id="gfill" d="M30 150 A120 120 0 0 1 270 150" stroke-dashoffset="377"/>
+<g class="gk"><line x1="30" y1="150" x2="30" y2="130"/><line x1="150" y1="30" x2="150" y2="50"/><line x1="270" y1="150" x2="270" y2="130"/></g>
+<text x="30" y="172">E</text><text x="150" y="24">½</text><text x="270" y="172">F</text>
+<g id="needle" transform="rotate(-72 150 150)"><line class="gn" x1="150" y1="150" x2="150" y2="62"/></g><circle class="gh" cx="150" cy="150" r="9"/><text class="gs" id="gst" x="150" y="184">Nivel orientativ</text></svg>
+<div><div class="rg"><label for="qcap">Capacitate rezervor <span><b id="ocap">50</b> L</span></label><input type="range" id="qcap" min="30" max="90" value="50" step="1"></div>
+<div class="rg"><label for="qlvl">Nivel actual <span><b id="olvl">20</b> %</span></label><input type="range" id="qlvl" min="0" max="100" value="20" step="1"></div>
+<div class="rg"><label for="qcon">Consum mediu <span><b id="ocon">7,0</b> L/100 km</span></label><input type="range" id="qcon" min="3" max="15" value="7" step="0.5"></div>
+<div class="outs"><div><b>Încap</b><span id="r1">40 L</span></div><div><b>Acum ajungi</b><span id="r2">143 km</span></div><div><b>După plin</b><span id="r3">714 km</span></div></div></div></div>
+<p class="note">Calcul orientativ, făcut în browser, fără date de la stație și fără prețuri. Consumul real depinde de mașină și de stilul de condus.</p></div></section>
+<section id="model3d" aria-label="Model 3D interactiv: o pompă de carburant, de la stație la rezervorul de sub pământ și la alimentarea unei mașini (model ilustrativ)"><div class="pin"><div id="r3stage"></div><div class="fb">Modelul 3D nu poate fi afișat pe acest dispozitiv (WebGL indisponibil).</div>
+<div class="r3ui r3top">
+ <div class="r3ch on"><div class="kick"><i></i>Capitolul · 01</div><h3>Stația <em>și pompa</em></h3><p>O mașină intră la pompă, sub copertina stației. Model 3D ilustrativ, nu reprezintă echipamentele stației Euroil. Trage ca să-l rotești.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Capitolul · 02</div><h3>Pompa <em>desfăcută</em></h3><p>Panourile, afișajul și copertina se depărtează ca să vezi ce e înăuntru: contorul, motorul și filtrul. Ilustrație generală a unei pompe.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Capitolul · 03</div><h3>De sub pământ <em>la pompă</em></h3><p>Carburantul stă într-un rezervor îngropat și urcă printr-o conductă până la pompă. Solul devine transparent ca să-l poți vedea.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Capitolul · 04</div><h3>Alimentarea <em>mașinii</em></h3><p>Pistolul ajunge la mașină, iar afișajul numără litrii (cifrele sunt un exemplu). Pentru stația reală sună la 0745 238 443.</p></div>
+</div>
+<div class="r3hint">MODEL ILUSTRATIV · DERULEAZĂ ↓ · TRAGE ↔</div>
+<div id="r3bar"></div></div></section>
+<section id="cap"><div class="pin">
+ <div class="chap on"><div class="wrap"><div class="big">01</div><div class="kick"><i></i>Pasul 1</div><h3>Intri <em>în stație</em></h3><p>Vii pe Strada Observatorului nr. 101, Cluj-Napoca, și parchezi lângă pompa liberă. Oprești motorul.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">02</div><div class="kick"><i></i>Pasul 2</div><h3>Alegi <em>carburantul</em></h3><p>Verifici ce carburant folosește mașina ta (cartea tehnică sau capacul rezervorului) și alegi sortimentul potrivit.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">03</div><div class="kick"><i></i>Pasul 3</div><h3>Alimentezi <em>și plătești</em></h3><p>Alimentezi la pompă și plătești conform modalităților afișate la stație. Dacă ai nevoie de factură, spune la plată.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">04</div><div class="kick"><i></i>Pasul 4</div><h3>Pleci <em>mai departe</em></h3><p>Închizi capacul rezervorului, iei bonul și pleci. Pentru data viitoare, același număr: 0745 238 443.</p></div></div>
+ <div class="dots"><i class="on"></i><i></i><i></i><i></i></div><div class="chline" id="chline"></div>
+</div></section>
+<div class="tape gd" aria-hidden="true"><div>Euroil ✦ Benzinărie Cluj-Napoca ✦ Sună 0745 238 443 ✦ Euroil ✦ Benzinărie Cluj-Napoca ✦ Sună 0745 238 443 ✦ Euroil ✦ Benzinărie Cluj-Napoca ✦ Sună 0745 238 443 ✦ </div></div>
+<section id="pregatire" style="background:var(--bg2)"><div class="wrap"><div class="tag rv">04 / Pregătire</div><h2>Înainte <em>să alimentezi</em></h2>
+<div class="chk"><div><ul class="cl" id="cl"><li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Oprește motorul și trage frâna de mână</span></button></li><li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Verifică ce carburant folosește mașina (cartea tehnică sau capacul rezervorului)</span></button></li><li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Fără țigară și fără flacără deschisă lângă pompă</span></button></li><li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Dacă ai instalație GPL, întreabă personalul cum se face alimentarea</span></button></li><li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">După ce pistolul se oprește singur, nu forța alimentarea</span></button></li><li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Închide bine capacul rezervorului și cere bon sau factură dacă ai nevoie</span></button></li></ul>
+<p class="note">Sfaturi generale de bun-simț, nu regulamentul stației. Dacă ai dubii, întreabă personalul.</p></div>
+<div class="res" id="cres"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" id="cfg" cx="60" cy="60" r="52" stroke-dasharray="327" stroke-dashoffset="327"/><text id="ctx" x="60" y="70">0/6</text></svg><div class="t" id="ct">Bifează ce ai verificat</div><p id="cp">Atingi fiecare punct pe măsură ce îl verifici.</p><a class="btn p" href="tel:+40745238443">Sună: 0745 238 443</a></div></div></div></section>
+<section id="contact"><div class="wrap two">
+<div><div class="tag rv">05 / Contact</div><h2>Vino la <em>stație</em></h2>
+<p><b>Adresă:</b> Str. Observatorului nr. 101, Cluj-Napoca, jud. Cluj</p><p><b>Telefon:</b> <a href="tel:+40745238443">0745 238 443</a></p><p><b>Program:</b> non-stop (conform listărilor publice; confirmă la stație)</p>
+<p class="note">Sortimentele, facilitățile și programul se confirmă la stație sau la telefon. Nu avem formular online.</p><br>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn p" href="tel:+40745238443">Sună 0745 238 443</a><a class="btn g" href="https://www.google.com/maps/search/?api=1&amp;query=Strada+Observatorului+101+Cluj-Napoca" target="_blank" rel="noopener">Deschide în Maps</a></div></div>
+<div class="map" id="map"><div class="mapbtn"><span>Harta Google se încarcă doar după acordul tău pentru cookie-uri.</span><button class="btn g" id="loadmap" type="button">Încarcă harta</button></div></div>
+</div></section>
+<footer><div class="wrap"><div class="fbig">Euroil</div><p><b style="color:var(--tx);letter-spacing:.2em">EUROIL</b> · Benzinărie · Str. Observatorului nr. 101, Cluj-Napoca · 0745 238 443</p><br>
+<a href="politica-confidentialitate.html">Confidențialitate</a><a href="politica-cookies.html">Cookie-uri</a><a href="termeni-si-conditii.html">Termeni</a><a href="#" data-ck>Setări cookie</a><a href="https://anpc.ro" target="_blank" rel="noopener">ANPC</a><a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">SOL</a></div></footer>
+<div class="sticky"><a class="btn p" href="tel:+40745238443">📞 Sună 0745 238 443</a></div>
+<script src="assets/three.min.js"></script><script src="assets/app.js"></script><script src="consent.js"></script>
+</body></html>
