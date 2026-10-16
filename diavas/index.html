@@ -1,0 +1,229 @@
+<!doctype html><html lang="ro"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Diavas — Stație ITP, Str. Beiușului 50, Cluj-Napoca</title>
+<meta name="description" content="Diavas, stație ITP (inspecție tehnică periodică) autorizată RAR, Strada Beiușului nr. 50, Cluj-Napoca. Luni–vineri 08:00–20:00, sâmbătă 08:00–14:00. Telefon 0745 596 502.">
+<meta name="theme-color" content="#07090a">
+<style>
+:root{--bg:#07090a;--bg2:#0c1011;--pan:#11171a;--line:#222d2f;--tx:#f4efe4;--mu:#98a3a1;--ac:#d9bf86;--ac2:#f0dfb4;--em:#34d6a0;--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}body{background:var(--bg);color:var(--tx);font:16px/1.6 var(--sans);overflow-x:hidden}
+a{color:inherit}.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:10px 20px;background:rgba(7,9,10,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{text-decoration:none;font:500 20px var(--serif);letter-spacing:.34em;text-transform:uppercase;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}.logo b{font:700 10px var(--sans);letter-spacing:.22em;color:var(--bg);background:var(--ac);padding:3px 6px;margin-left:12px;border-radius:3px}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:13px 22px;border-radius:999px;font:700 15px var(--sans);letter-spacing:.02em;text-decoration:none;border:1px solid var(--ac);color:var(--tx);background:transparent;cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s,color .25s}
+.btn.p{background:linear-gradient(135deg,var(--ac2),var(--ac) 55%,#b9965a);color:#16120a;border-color:transparent}.btn.p:hover{box-shadow:0 10px 34px rgba(217,191,134,.32);transform:translateY(-2px)}
+.btn.g{border-color:var(--line)}.btn.g:hover{border-color:var(--ac);color:var(--ac2)}.btn.sm{padding:9px 18px;font-size:14px}
+button.btn{font-family:var(--sans)}
+/* hero */
+#hero{position:relative;height:100svh;min-height:620px;overflow:hidden;background:radial-gradient(ellipse at 72% 46%,#121a1b,#07090a 66%)}
+#hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.3;-webkit-mask-image:radial-gradient(ellipse at 62% 50%,#000,transparent 72%);mask-image:radial-gradient(ellipse at 62% 50%,#000,transparent 72%)}
+#gl{position:absolute;inset:0;z-index:1;touch-action:pan-y}#gl canvas{display:block;width:100%!important;height:100%!important}
+.htx{position:relative;z-index:2;padding-top:104px;pointer-events:none}.htx a,.htx .live{pointer-events:auto}
+.kick{font:600 11.5px var(--sans);letter-spacing:.3em;color:var(--ac);text-transform:uppercase;margin-bottom:16px;display:flex;gap:12px;align-items:center}.kick i{width:7px;height:7px;border-radius:50%;background:var(--em);box-shadow:0 0 14px var(--em);animation:bl 1.8s infinite}@keyframes bl{50%{opacity:.25}}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em}
+h1{font-size:clamp(46px,12vw,72px);line-height:.98}
+h1 span{display:block;opacity:0;transform:translateY(30px);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}h1 span:nth-child(1){letter-spacing:.06em;text-transform:uppercase}h1 span:nth-child(2){animation-delay:.14s;color:var(--ac);font-style:italic;font-size:.62em;margin-top:.12em;letter-spacing:0}
+@keyframes up{to{opacity:1;transform:none}}
+.hsub{color:var(--mu);margin-top:20px;max-width:470px;opacity:0;animation:up .9s .4s forwards}
+.badge{display:inline-block;margin-top:18px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;font:600 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ac2);opacity:0;animation:up .9s .5s forwards}
+.live{display:inline-flex;align-items:center;gap:9px;margin-top:14px;margin-left:8px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);font:600 12px var(--sans);letter-spacing:.06em;color:var(--mu);opacity:0;animation:up .9s .6s forwards;vertical-align:top}
+.live i{width:8px;height:8px;border-radius:50%;background:#666}.live.open{color:var(--tx);border-color:rgba(52,214,160,.4)}.live.open i{background:var(--em);box-shadow:0 0 12px var(--em);animation:bl 1.8s infinite}
+.hcta{position:absolute;left:0;right:0;bottom:24px;z-index:3;display:flex;gap:10px;flex-wrap:wrap;padding:0 20px}
+@media(min-width:900px){.htx{padding-top:0;height:100%;display:flex;flex-direction:column;justify-content:center;max-width:44vw;margin-left:max(20px,5vw);margin-right:0}h1{font-size:min(4.7vw,80px)}.hcta{position:static;padding:0;margin-top:30px;opacity:0;animation:up .9s .7s forwards}.badge,.live{align-self:flex-start}}
+/* tape */
+.tape{background:linear-gradient(90deg,#0c1011,#141b1c);color:var(--ac2);overflow:hidden;white-space:nowrap;font:500 22px/1 var(--serif);font-style:italic;letter-spacing:.08em;padding:18px 0;border-block:1px solid var(--line);position:relative;z-index:5}
+.tape div{display:inline-block;animation:mq 34s linear infinite}@keyframes mq{to{transform:translateX(-50%)}}
+.tape.gd{background:var(--ac);color:#16120a;font-style:normal;font-weight:700;font-size:15px;letter-spacing:.3em;text-transform:uppercase}.tape.gd div{animation-direction:reverse}
+section{padding:110px 0}h2{font-size:clamp(32px,6.4vw,58px);line-height:1.04;margin-bottom:30px}h2 em,h3 em{font-style:italic;color:var(--ac)}
+.tag{font:600 11.5px var(--sans);letter-spacing:.3em;color:var(--ac);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:14px}.tag:after{content:"";width:46px;height:1px;background:var(--ac);opacity:.5}
+.grid{display:grid;gap:16px;grid-template-columns:1fr}@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:linear-gradient(170deg,var(--pan),#0c1213);border:1px solid var(--line);border-radius:20px;padding:28px;position:relative;overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s,border-color .3s}
+.card.on{opacity:1;transform:none}.card:hover{border-color:rgba(217,191,134,.45)}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),rgba(217,191,134,.12),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}.card:hover:before{opacity:1}
+.card:after{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:linear-gradient(90deg,var(--ac),var(--em));transition:width 1.1s .2s}.card.on:after{width:100%}
+.card .k{font:600 11px var(--sans);color:var(--mu);letter-spacing:.2em}.card .v{font:500 27px/1.15 var(--serif);margin:8px 0}.card p{color:var(--mu)}
+.note{color:var(--mu);font-size:13px;margin-top:18px;max-width:640px}
+.two{display:grid;gap:34px}@media(min-width:900px){.two{grid-template-columns:1fr 1fr;align-items:start}}
+.map{aspect-ratio:4/3;border-radius:20px;border:1px solid var(--line);background:var(--pan);overflow:hidden}
+.mapbtn{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:300px;padding:20px;text-align:center;flex-direction:column;gap:14px;color:var(--mu)}
+footer{border-top:1px solid var(--line);padding:34px 0 100px;color:var(--mu);font-size:14px}footer a{color:var(--mu);margin-right:16px;display:inline-flex;align-items:center;min-height:44px}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:none}.sticky .btn{width:100%}
+body.past .sticky{display:block}body.pinned .sticky{display:none!important}@media(min-width:900px){.sticky{display:none!important}footer{padding-bottom:34px}}
+#prog{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--ac),var(--em));z-index:60}
+.navl{display:none;gap:22px;font:600 12px var(--sans);text-transform:uppercase;letter-spacing:.16em}.navl a{text-decoration:none;display:inline-flex;align-items:center;min-height:44px;color:var(--mu);transition:color .2s}.navl a:hover,.navl a.cur{color:var(--ac2)}
+@media(min-width:1000px){.navl{display:flex}}
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s,transform 1s cubic-bezier(.2,.8,.2,1)}.rv.on{opacity:1;transform:none}
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding:.14em 0 .14em;margin:-.14em 0 -.14em}.sw>span{display:inline-block;transform:translateY(105%) rotate(3deg);transition:transform 1s cubic-bezier(.2,.8,.2,1)}.sin .sw>span{transform:none}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.3);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}@keyframes rip{to{transform:scale(1);opacity:0}}
+#cglow{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(217,191,134,.07),transparent 65%);opacity:0;transition:opacity .4s;will-change:transform}
+#info,#servicii,#verifica,#pregatire,#contact{position:relative;z-index:2}
+/* stats */
+.stats{display:grid;gap:14px;grid-template-columns:repeat(2,1fr);margin-top:34px}@media(min-width:900px){.stats{grid-template-columns:repeat(4,1fr)}}
+.st{border-top:1px solid var(--line);padding-top:18px}.st b{display:block;font:500 clamp(40px,7vw,64px)/1 var(--serif);color:var(--ac2)}.st b small{font-size:.4em;margin-left:5px;color:var(--ac);letter-spacing:.06em}.st span{display:block;color:var(--mu);font-size:13px;margin-top:8px;max-width:210px}
+/* eligibility */
+.elig{display:grid;gap:26px;margin-top:40px;padding:30px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(170deg,#0f1618,#0a0f10)}@media(min-width:900px){.elig{grid-template-columns:1.25fr 1fr;align-items:center;padding:44px}}
+.elig h3{font-size:clamp(26px,4.6vw,38px);line-height:1.1;margin-bottom:8px}.elig .sub{color:var(--mu);margin-bottom:18px;font-size:15px}
+.q{padding:14px 0;border-top:1px solid var(--line);display:flex;gap:12px 16px;flex-wrap:wrap;align-items:center;justify-content:space-between}.q span{flex:1 1 230px;font-size:15px}
+.yn{display:flex;gap:8px}.yn button{min-width:64px;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--tx);font:600 14px var(--sans);cursor:pointer;transition:.2s}.yn button:hover{border-color:var(--ac)}.yn button.sel{background:var(--ac);color:#16120a;border-color:var(--ac)}
+.res{text-align:center;padding:10px}.ring{width:min(200px,60vw);height:min(200px,60vw);margin:0 auto 16px;display:block}.ring circle{fill:none;stroke-width:6}.ring .bg{stroke:var(--line)}.ring .fg{stroke:var(--ac);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset .8s cubic-bezier(.3,.7,.2,1),stroke .4s}
+.ring text{font:500 34px var(--serif);fill:var(--tx);text-anchor:middle}
+.res.ok .fg{stroke:var(--em)}.res.no .fg{stroke:#e0866b}
+.res p{color:var(--mu);font-size:15px;max-width:340px;margin:0 auto 14px;min-height:72px}.res .t{font:500 22px var(--serif);color:var(--tx);margin-bottom:6px;min-height:30px}
+/* model */
+#model3d{height:420vh;padding:0;position:relative;z-index:2;background:radial-gradient(ellipse at 62% 46%,#101819,#07090a 70%)}
+#model3d .pin,#cap .pin{position:sticky;top:0;height:100svh;overflow:hidden}
+#model3d .pin:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.26;-webkit-mask-image:radial-gradient(ellipse at 62% 50%,#000,transparent 75%);mask-image:radial-gradient(ellipse at 62% 50%,#000,transparent 75%)}
+#r3stage{position:absolute;inset:0;touch-action:pan-y}#r3stage canvas{display:block;width:100%!important;height:100%!important;cursor:grab;touch-action:pan-y}#r3stage canvas:active{cursor:grabbing}
+.r3ui{position:absolute;left:0;right:0;z-index:3;pointer-events:none}.r3top{top:78px}
+.r3ch{position:absolute;left:20px;right:20px;top:0;opacity:0;transform:translateY(16px);transition:.6s}.r3ch.on{opacity:1;transform:none}
+.r3ch h3{font-size:clamp(28px,8vw,60px);line-height:1}.r3ch p{color:var(--mu);max-width:450px;font-size:15px;margin-top:10px}
+.r3hint{position:absolute;left:0;right:0;bottom:72px;text-align:center;font:600 10.5px var(--sans);letter-spacing:.24em;color:var(--mu);z-index:3;pointer-events:none;text-transform:uppercase}
+#r3bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:linear-gradient(90deg,var(--ac),var(--em));transform-origin:0 50%;transform:scaleX(0);z-index:4}
+#model3d .fb{display:none;position:absolute;inset:0;align-items:center;justify-content:center;color:var(--mu);padding:30px;text-align:center;z-index:2}#model3d.fallback .fb{display:flex}
+@media(max-width:899px){.r3hint{letter-spacing:.1em;font-size:10px;padding:0 10px;bottom:86px}}
+@media(min-width:900px){.r3top{top:0;bottom:0;left:6vw;right:auto;width:44vw;display:flex;align-items:center}.r3top .r3ch{left:0;right:0;top:50%;margin-top:-120px}.r3ch h3{font-size:min(4.2vw,68px)}.r3hint{left:6vw;right:auto;text-align:left;bottom:28px}}
+/* chapters */
+#cap{height:400vh;padding:0;position:relative;z-index:2;background:var(--bg)}
+.chap{position:absolute;inset:0;display:flex;align-items:center;opacity:0;transform:scale(1.05);transition:opacity .8s,transform 1s;pointer-events:none}.chap.on{opacity:1;transform:none}
+.chap .wrap{display:grid;gap:14px;width:100%;position:relative}
+.chap .big{font:400 clamp(110px,26vw,320px)/.8 var(--serif);color:transparent;-webkit-text-stroke:1px var(--line);order:-1}
+.chap h3{font-size:clamp(34px,9vw,92px);line-height:.98}
+.chap p{max-width:520px;color:var(--mu);font-size:18px}
+.dots{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);display:flex;gap:12px;z-index:3}
+.dots i{width:7px;height:7px;border-radius:5px;background:#33403f;transition:.4s}.dots i.on{background:var(--ac);width:26px}
+.chline{position:absolute;bottom:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--ac),var(--em));z-index:3}
+@media(min-width:900px){.chap .wrap{display:block}.chap .big{position:absolute;right:48px;top:50%;transform:translateY(-50%);font-size:min(22vw,320px)}.chap h3{max-width:56%;font-size:min(5.6vw,84px);margin:6px 0 16px}.chap p{max-width:min(520px,48%)}.dots{left:auto;right:20px;bottom:auto;top:50%;transform:translateY(-50%);flex-direction:column}.dots i.on{width:7px;height:26px}}
+/* inspection map */
+.vmap{display:grid;gap:26px;margin-top:10px}@media(min-width:900px){.vmap{grid-template-columns:1.35fr 1fr;align-items:center}}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}.chips button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--mu);font:600 14px var(--sans);cursor:pointer;transition:.25s}.chips button:hover{color:var(--tx);border-color:var(--ac)}.chips button.on{background:var(--ac);border-color:var(--ac);color:#16120a}
+.car2d{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:22px;background:radial-gradient(ellipse at 50% 60%,#121a1b,#0a0e0f)}
+.car2d .ln{fill:none;stroke:#7f8a86;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.car2d .ln2{fill:none;stroke:var(--ac);stroke-width:2;opacity:.8}.car2d .gl2{fill:rgba(217,191,134,.05);stroke:#7f8a86;stroke-width:2}
+.car2d .zone{fill:rgba(52,214,160,.1);stroke:var(--em);stroke-width:2;transform-box:view-box;transition:transform .7s cubic-bezier(.3,.8,.2,1)}
+.car2d .zp{fill:none;stroke:var(--em);stroke-width:2;animation:zp 1.8s ease-out infinite;transform-box:fill-box;transform-origin:center}@keyframes zp{from{transform:scale(.4);opacity:.9}to{transform:scale(1.5);opacity:0}}
+.car2d .whl{transform-box:fill-box;transform-origin:center;animation:spn 6s linear infinite}@keyframes spn{to{transform:rotate(360deg)}}
+.vinfo{min-height:190px}.vinfo h3{font-size:clamp(26px,4.4vw,38px);margin-bottom:10px}.vinfo p{color:var(--mu)}.vinfo .z{font:600 11px var(--sans);letter-spacing:.24em;color:var(--em);text-transform:uppercase;margin-bottom:8px}
+/* checklist */
+.chk{display:grid;gap:30px;margin-top:6px}@media(min-width:900px){.chk{grid-template-columns:1fr 1fr;align-items:center}}
+.cl{list-style:none}.cl li{border-top:1px solid var(--line)}.cl li:last-child{border-bottom:1px solid var(--line)}
+.cl button{display:flex;width:100%;align-items:center;gap:16px;text-align:left;min-height:56px;padding:12px 4px;background:none;border:0;color:var(--tx);font:500 16px/1.4 var(--sans);cursor:pointer}
+.cl .bx{flex:0 0 28px;height:28px;border-radius:50%;border:1.5px solid var(--mu);display:grid;place-items:center;transition:.3s}.cl .bx svg{width:16px;height:16px;stroke:#07090a;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .4s .05s}
+.cl button.on .bx{background:var(--em);border-color:var(--em)}.cl button.on .bx svg{stroke-dashoffset:0}.cl button.on span.t{color:var(--mu);text-decoration:line-through;text-decoration-color:rgba(152,163,161,.5)}
+.hours{display:grid;grid-template-columns:1fr auto;max-width:520px;border-top:1px solid var(--line);margin-top:6px}.hours div{padding:13px 0;border-bottom:1px solid var(--line)}.hours .c{color:var(--mu)}.hours .now{color:var(--ac2);font-weight:700}.hours div.now:first-child{padding-left:12px;border-left:2px solid var(--ac)}
+.fbig{font:400 min(9vw,150px)/.9 var(--serif);color:transparent;-webkit-text-stroke:1px #2a3739;text-transform:uppercase;letter-spacing:.14em;margin-bottom:28px;white-space:nowrap;overflow:hidden}
+.ic{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;margin-bottom:14px;color:var(--ac)}.ic svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:899px){h1{font-size:min(13vw,64px)}.logo{font-size:17px;letter-spacing:.24em}.logo b{margin-left:8px}.fbig{font-size:8.6vw}.r3ch h3{font-size:clamp(22px,7vw,50px)}.live{margin-left:0}section{padding:84px 0}#cglow{display:none}}
+@media(max-width:380px){.logo{font-size:15px;letter-spacing:.16em}.logo b{display:none}nav{padding:8px 12px}.btn.sm{padding:9px 14px}}
+@media (hover:none){#cglow{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}h1 span,.hsub,.hcta,.badge,.live,.card,.rv{opacity:1;transform:none}.sw>span{transform:none!important}#cap{height:auto}#cap .pin{position:relative;height:auto;padding:60px 0}.chap{position:relative;inset:auto;opacity:1;transform:none;padding:30px 0}.chap .big{font-size:80px}.dots,.chline{display:none}#model3d{height:auto}#model3d .pin{position:relative;height:100svh}.r3ch{position:relative;opacity:1;transform:none}.r3ch:not(:first-child){display:none}.card:after{width:100%}}
+@media (prefers-reduced-motion:reduce) and (max-width:899px){.r3ch{left:auto;right:auto;margin:0 20px;top:auto}}
+#contact p a{display:inline-block;padding:11px 0;line-height:22px}
+#model3d.fallback{height:auto}#model3d.fallback .pin{position:relative;height:auto;padding:90px 0 50px}#model3d.fallback .r3ui{position:relative;top:0;left:0;right:0;bottom:auto;width:auto;display:block}#model3d.fallback .r3ch{position:relative;opacity:1;transform:none;left:0;right:0;top:0;margin:0 20px 30px}#model3d.fallback .r3hint,#model3d.fallback #r3bar{display:none}#model3d.fallback .fb{position:relative;inset:auto;padding:0 20px 10px}.nogl #gl{display:none}@media(max-width:899px){.nogl #hero{padding-bottom:24px}}
+</style>
+<style id="mobfix">@media(max-width:899px){#hero{height:auto;min-height:0;display:flex;flex-direction:column;padding:96px 0 24px}#htx{order:1;position:relative;z-index:2;padding-top:0}.hcta{position:static;padding:0;margin-top:22px}#gl{order:2;position:relative;inset:auto;width:100%;height:min(46svh,340px);margin-top:12px}}</style>
+<style id="introcss">#intro{position:fixed;inset:0;z-index:500;background:#07090a;display:flex;align-items:center;justify-content:center;flex-direction:column;overflow:hidden;transition:transform 1s cubic-bezier(.7,0,.2,1);cursor:pointer}
+#intro:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(217,191,134,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(217,191,134,.06) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 50% 50%,#000,transparent 68%);mask-image:radial-gradient(ellipse at 50% 50%,#000,transparent 68%)}
+#intro.done{transform:translateY(-100%)}
+#intro .ig{position:relative;width:min(58vw,230px);height:min(58vw,230px)}#intro .ig svg{width:100%;height:100%;overflow:visible}
+#intro .tk{stroke:#d9bf86;stroke-width:2;stroke-linecap:round;opacity:.5}
+#intro .rg{fill:none;stroke:#222d2f;stroke-width:6}
+#intro .ar{fill:none;stroke:#d9bf86;stroke-width:6;stroke-linecap:round;stroke-dasharray:440;stroke-dashoffset:440;transform:rotate(135deg);transform-origin:100px 100px;animation:iarc 1.5s .1s cubic-bezier(.3,.7,.2,1) forwards}
+@keyframes iarc{to{stroke-dashoffset:110}}
+#intro .nd{stroke:#f4efe4;stroke-width:4;stroke-linecap:round;transform-origin:100px 100px;transform:rotate(-135deg);animation:ind 1.4s .1s cubic-bezier(.3,.7,.2,1) forwards,ndo .25s 1.5s forwards}
+@keyframes ind{to{transform:rotate(95deg)}}@keyframes ndo{to{opacity:0}}
+#intro .hb{fill:#07090a;stroke:#d9bf86;stroke-width:3;animation:ndo .25s 1.5s forwards}
+#intro .gr{fill:none;stroke:#34d6a0;stroke-width:6;stroke-linecap:round;stroke-dasharray:90;stroke-dashoffset:90;transform:rotate(-45deg);transform-origin:100px 100px;opacity:.0;animation:ifade .2s 1.5s forwards,igr .5s 1.5s forwards}@keyframes igr{to{stroke-dashoffset:0}}
+#intro .ck{fill:none;stroke:#34d6a0;stroke-width:9;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:90;stroke-dashoffset:90;animation:ick .55s 1.6s cubic-bezier(.3,.8,.2,1) forwards}@keyframes ick{to{stroke-dashoffset:0}}
+#intro .pls{fill:none;stroke:#34d6a0;stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center;animation:ipl .9s 1.75s ease-out forwards}@keyframes ipl{0%{opacity:.8;transform:scale(.6)}100%{opacity:0;transform:scale(1.5)}}
+#intro .it{margin-top:30px;font:500 clamp(34px,10vw,64px)/1 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;text-transform:uppercase;color:#f4efe4;letter-spacing:.3em;text-indent:.3em;text-align:center;clip-path:inset(0 100% 0 0);animation:iclip .9s 1.9s cubic-bezier(.4,0,.2,1) forwards}
+#intro .is{margin-top:14px;font:600 11px system-ui,sans-serif;letter-spacing:.32em;color:#d9bf86;opacity:0;animation:ifade .6s 2.5s forwards;text-align:center;padding:0 16px;text-transform:uppercase}
+#intro .ib{position:absolute;left:0;bottom:0;height:3px;width:100%;background:linear-gradient(90deg,#d9bf86,#34d6a0);transform:scaleX(0);transform-origin:0 50%;animation:ibar 3s linear forwards}
+@keyframes iclip{to{clip-path:inset(0 0 0 0)}}@keyframes ifade{to{opacity:1}}@keyframes ibar{to{transform:scaleX(1)}}
+body.introlock{overflow:hidden}</style>
+<style id="nosel">html,body,*{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}input,textarea{-webkit-user-select:text;user-select:text;-webkit-touch-callout:default}html{touch-action:pan-x pan-y}</style>
+<script>document.addEventListener("gesturestart",e=>e.preventDefault());document.addEventListener("dblclick",e=>e.preventDefault(),{passive:false});document.addEventListener("contextmenu",e=>{if(!e.target.closest("input,textarea"))e.preventDefault()});</script>
+</head><body>
+<div id="intro" aria-hidden="true"><div class="ig"><svg viewBox="0 0 200 200"><path class="tk" d="M40.6 159.4 L32.1 167.9"/><path class="tk" d="M31.2 148.2 L24.6 152.8"/><path class="tk" d="M23.9 135.5 L16.6 138.9"/><path class="tk" d="M18.9 121.7 L7.3 124.8"/><path class="tk" d="M16.3 107.3 L8.4 108.0"/><path class="tk" d="M16.3 92.7 L8.4 92.0"/><path class="tk" d="M18.9 78.3 L7.3 75.2"/><path class="tk" d="M23.9 64.5 L16.6 61.1"/><path class="tk" d="M31.2 51.8 L24.6 47.2"/><path class="tk" d="M40.6 40.6 L32.1 32.1"/><path class="tk" d="M51.8 31.2 L47.2 24.6"/><path class="tk" d="M64.5 23.9 L61.1 16.6"/><path class="tk" d="M78.3 18.9 L75.2 7.3"/><path class="tk" d="M92.7 16.3 L92.0 8.4"/><path class="tk" d="M107.3 16.3 L108.0 8.4"/><path class="tk" d="M121.7 18.9 L124.8 7.3"/><path class="tk" d="M135.5 23.9 L138.9 16.6"/><path class="tk" d="M148.2 31.2 L152.8 24.6"/><path class="tk" d="M159.4 40.6 L167.9 32.1"/><path class="tk" d="M168.8 51.8 L175.4 47.2"/><path class="tk" d="M176.1 64.5 L183.4 61.1"/><path class="tk" d="M181.1 78.3 L192.7 75.2"/><path class="tk" d="M183.7 92.7 L191.6 92.0"/><path class="tk" d="M183.7 107.3 L191.6 108.0"/><path class="tk" d="M181.1 121.7 L192.7 124.8"/><path class="tk" d="M176.1 135.5 L183.4 138.9"/><path class="tk" d="M168.8 148.2 L175.4 152.8"/><path class="tk" d="M159.4 159.4 L167.9 167.9"/><circle class="rg" cx="100" cy="100" r="70"/><circle class="ar" cx="100" cy="100" r="70"/><g class="nd0"><path class="nd" d="M100 100 L100 40"/></g><circle class="hb" cx="100" cy="100" r="9"/><path class="ck" d="M68 102 L92 126 L136 76"/><circle class="pls" cx="100" cy="100" r="60"/></svg></div>
+<div class="it">Diavas</div><div class="is">Stație ITP · Cluj-Napoca</div><div class="ib"></div></div>
+<script>(function(){var i=document.getElementById("intro"),b=document.body;b.classList.add("introlock");function e(){if(i.classList.contains("done"))return;i.classList.add("done");b.classList.remove("introlock");setTimeout(function(){i.remove()},1100)}if(matchMedia("(prefers-reduced-motion:reduce)").matches){e()}else{setTimeout(e,3100);i.addEventListener("click",e)}})();</script>
+<div id="prog"></div><div id="cglow"></div>
+<nav><a href="#hero" class="logo" aria-label="Diavas, stație ITP">Diavas<b>ITP</b></a><div class="navl"><a href="#info">Pe scurt</a><a href="#servicii">Serviciu</a><a href="#model3d">Model 3D</a><a href="#cap">Cum decurge</a><a href="#verifica">Ce se verifică</a><a href="#contact">Contact</a></div><a class="btn p sm" href="tel:+40745596502">Sună</a></nav>
+<header id="hero"><div id="gl"></div>
+<div class="wrap htx" id="htx"><div class="kick"><i></i>Inspecție tehnică periodică · Cluj-Napoca</div>
+<h1><span>Diavas</span><span>stație ITP autorizată RAR</span></h1>
+<p class="hsub">Inspecție tehnică periodică auto, în Cluj-Napoca, pe Strada Beiușului nr. 50. Programezi telefonic, la 0745 596 502.</p>
+<div><span class="badge">Str. Beiușului 50 · Cluj-Napoca</span><span class="live" id="live"><i></i><span id="livet">Program: L–V 08–20 · S 08–14</span></span></div>
+<div class="hcta" id="hcta"><a class="btn p" href="tel:+40745596502">📞 0745 596 502</a><a class="btn g" href="#contact">Unde suntem</a></div></div>
+</header>
+<div class="tape" aria-hidden="true"><div>Diavas ✦ Inspecție tehnică periodică ✦ Str. Beiușului 50 ✦ 0745 596 502 ✦ Luni–vineri 08–20 ✦ Sâmbătă 08–14 ✦ Diavas ✦ Inspecție tehnică periodică ✦ Str. Beiușului 50 ✦ 0745 596 502 ✦ Luni–vineri 08–20 ✦ Sâmbătă 08–14 ✦ </div></div>
+<section id="info"><div class="wrap"><div class="tag rv">01 / Pe scurt</div><h2>ITP, <em>fără complicații</em></h2>
+<div class="grid">
+<div class="card"><div class="k">TELEFON</div><div class="v">0745 596 502</div><p>Sună pentru programare și întreabă ce oră e liberă.</p><br><a class="btn p sm" href="tel:+40745596502">Sună acum</a></div>
+<div class="card"><div class="k">PROGRAM</div><div class="v">L–V 08:00 – 20:00</div><p>Sâmbătă 08:00 – 14:00. Duminică închis.</p></div>
+<div class="card"><div class="k">ADRESĂ</div><div class="v">Str. Beiușului 50</div><p>Cluj-Napoca, județul Cluj.</p><br><a class="btn g sm" href="#contact">Vezi harta</a></div>
+</div>
+<div class="stats" id="stats">
+<div class="st"><b data-n="66">0</b><span>ore pe săptămână în care stația e deschisă, conform programului afișat</span></div>
+<div class="st"><b data-n="6">0</b><span>zile pe săptămână: de luni până sâmbătă</span></div>
+<div class="st"><b data-n="3.5" data-d="1">0<small>t</small></b><span>limita de masă a vehiculelor: sub 3,5 tone</span></div>
+<div class="st"><b data-n="3">0<small>m</small></b><span>înălțimea maximă a vehiculului, conform listei RAR</span></div>
+</div>
+<p class="note">Programul este cel afișat în trei surse publice. În zile de sărbătoare sau în vacanță programul se poate schimba, așa că sună înainte să vii.</p></div></section>
+<section id="servicii" style="background:var(--bg2)"><div class="wrap"><div class="tag rv">02 / Serviciu</div><h2>Inspecția tehnică <em>periodică</em></h2>
+<div class="grid">
+<div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16l1.5-5h11L19 16"/><path d="M3 16h18v3H3z"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="16.5" cy="19" r="1.5"/><path d="M12 3v4M9 5h6"/></svg></span><div class="k">SERVICIU</div><div class="v">ITP auto</div><p>Inspecția tehnică periodică a autovehiculelor, la stația din Cluj-Napoca.</p></div>
+<div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><div class="k">AUTORIZARE</div><div class="v">Stație RAR · CJ139</div><p>Figurează în lista publică RAR a unităților ITP autorizate, categoria II.</p></div>
+<div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M10 20v-6h4v6"/></svg></span><div class="k">VEHICULE</div><div class="v">Sub 3,5 tone</div><p>Categoria II: vehicule cu masa sub 3,5 t și înălțimea de cel mult 3 m.</p></div>
+</div>
+<div class="elig" id="elig"><div><div class="tag">Verifică în 5 întrebări</div><h3>Se potrivește <em>mașina ta?</em></h3><p class="sub">Întrebările urmăresc limitele afișate de RAR pentru stație. Nu înlocuiesc confirmarea telefonică.</p>
+<div class="q" data-q="0"><span>Masa maximă a vehiculului este sub 3,5 t?</span><div class="yn"><button type="button" data-v="1">Da</button><button type="button" data-v="0">Nu</button></div></div>
+<div class="q" data-q="1"><span>Înălțimea vehiculului este de cel mult 3 m?</span><div class="yn"><button type="button" data-v="1">Da</button><button type="button" data-v="0">Nu</button></div></div>
+<div class="q" data-q="2"><span>Este un tractor?</span><div class="yn"><button type="button" data-v="0">Da</button><button type="button" data-v="1">Nu</button></div></div>
+<div class="q" data-q="3"><span>Are dispozitiv de amplificare a efortului la pedala de frână (servofrână)?</span><div class="yn"><button type="button" data-v="1">Da</button><button type="button" data-v="0">Nu</button></div></div>
+<div class="q" data-q="4"><span>Este o remorcă cu sistem de frânare inerțial?</span><div class="yn"><button type="button" data-v="0">Da</button><button type="button" data-v="1">Nu</button></div></div></div>
+<div class="res" id="res"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" id="rfg" cx="60" cy="60" r="52" stroke-dasharray="327" stroke-dashoffset="327"/><text id="rtx" x="60" y="70">0/5</text></svg><div class="t" id="rt">Răspunde la întrebări</div><p id="rp">Vei vedea dacă vehiculul se încadrează în limitele stației.</p><a class="btn p" href="tel:+40745596502">Sună 0745 596 502</a></div></div>
+<p class="note">Sursa limitelor: lista publică RAR a unităților ITP autorizate (stația CJ139). Aceeași listă precizează că stația nu efectuează verificări ale eficacității frânării prin probe funcționale în parcurs. Nu publicăm tarife, pentru că nu am găsit o sursă verificată. Cere prețul la telefon.</p></div></section>
+<section id="model3d" aria-label="Model 3D interactiv: o mașină pe linia de inspecție, cu piesele care se despart (model ilustrativ)"><div class="pin"><div id="r3stage"></div><div class="fb">Modelul 3D nu poate fi afișat pe acest dispozitiv (WebGL indisponibil).</div>
+<div class="r3ui r3top">
+ <div class="r3ch on"><div class="kick"><i></i>Inspecția · 01</div><h3>Mașina intră <em>pe linie</em></h3><p>Un autoturism pe o linie de inspecție, scanat de la un capăt la altul. Model 3D ilustrativ, nu reprezintă echipamentele stației. Trage ca să-l rotești.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Inspecția · 02</div><h3>Frâne <em>și roți</em></h3><p>Caroseria se ridică și se văd roțile, discurile și etrierii. La o inspecție periodică se verifică, în general, starea frânelor și a anvelopelor.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Inspecția · 03</div><h3>Direcție <em>și suspensie</em></h3><p>Sub caroserie apar axele, arcurile și amortizoarele. În general se urmăresc jocurile din direcție și starea suspensiei.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Inspecția · 04</div><h3>Lumini, emisii <em>și rezultat</em></h3><p>Caroseria revine, farurile se aprind, iar eșapamentul degajă gaze. Se verifică luminile și emisiile, apoi afli rezultatul inspecției. Pentru programare sună la 0745 596 502.</p></div>
+</div>
+<div class="r3hint">MODEL ILUSTRATIV · DERULEAZĂ ↓ · TRAGE ↔</div>
+<div id="r3bar"></div></div></section>
+<section id="cap"><div class="pin">
+ <div class="chap on"><div class="wrap"><div class="big">01</div><div class="kick"><i></i>Pasul 1</div><h3>Suni și <em>te programezi</em></h3><p>Un telefon la 0745 596 502. Program: luni–vineri 08:00–20:00, sâmbătă 08:00–14:00.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">02</div><div class="kick"><i></i>Pasul 2</div><h3>Vii <em>la adresă</em></h3><p>Strada Beiușului nr. 50, Cluj-Napoca, la ora stabilită la telefon, cu mașina și actele ei.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">03</div><div class="kick"><i></i>Pasul 3</div><h3>Mașina este <em>inspectată</em></h3><p>Se face inspecția tehnică periodică. În general se verifică frânele, direcția, suspensia, luminile și emisiile.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">04</div><div class="kick"><i></i>Pasul 4</div><h3>Afli <em>rezultatul</em></h3><p>La final afli rezultatul inspecției. Pentru o nouă programare, suni din nou la 0745 596 502.</p></div></div>
+ <div class="dots"><i class="on"></i><i></i><i></i><i></i></div><div class="chline" id="chline"></div>
+</div></section>
+<div class="tape gd" aria-hidden="true"><div>Diavas ✦ Stație ITP Cluj-Napoca ✦ Sună 0745 596 502 ✦ Diavas ✦ Stație ITP Cluj-Napoca ✦ Sună 0745 596 502 ✦ Diavas ✦ Stație ITP Cluj-Napoca ✦ Sună 0745 596 502 ✦ </div></div>
+<section id="verifica"><div class="wrap"><div class="tag rv">03 / Ce se verifică</div><h2>Zonele unei <em>inspecții</em></h2>
+<p class="note" style="margin:-8px 0 24px">Descriere generală a ce se urmărește la o inspecție tehnică periodică. Nu este o listă oficială a stației.</p>
+<div class="chips" id="chips"></div>
+<div class="vmap"><svg class="car2d" id="car2d" viewBox="0 0 600 260" role="img" aria-label="Schiță de mașină, văzută din lateral, cu zonele verificate la ITP"><path class="ln" d="M30 190 L30 150 Q32 138 52 134 L120 124 Q150 80 215 72 L355 72 Q412 76 450 118 L545 130 Q572 136 572 160 L572 190"/><path class="gl2" d="M150 122 Q172 88 218 84 L270 84 L270 122Z"/><path class="gl2" d="M282 84 L352 84 Q392 90 420 122 L282 122Z"/><path class="ln" d="M30 190 L92 190 M208 190 L400 190 M516 190 L572 190"/><path class="ln2" d="M545 140 L572 140"/><g class="whl"><circle class="ln" cx="150" cy="190" r="48"/><circle class="ln" cx="150" cy="190" r="29"/><path class="ln" d="M150 161 V219 M121 190 H179 M130 170 L170 210 M170 170 L130 210"/></g><g class="whl"><circle class="ln" cx="458" cy="190" r="48"/><circle class="ln" cx="458" cy="190" r="29"/><path class="ln" d="M458 161 V219 M429 190 H487 M438 170 L478 210 M478 170 L438 210"/></g><path class="ln2" d="M20 200 H580" opacity=".35"/><g class="zone" id="zone" style="transform:translate(300px,130px)"><ellipse id="zel" cx="0" cy="0" rx="60" ry="40"/><ellipse class="zp" cx="0" cy="0" rx="60" ry="40"/></g></svg>
+<div class="vinfo" id="vinfo" aria-live="polite"><div class="z" id="vz"></div><h3 id="vt"></h3><p id="vp"></p></div></div></div></section>
+<section id="pregatire" style="background:var(--bg2)"><div class="wrap"><div class="tag rv">04 / Pregătire</div><h2>Înainte <em>să vii</em></h2>
+<div class="chk"><div><ul class="cl" id="cl">
+<li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Ai la tine actele mașinii (certificatul de înmatriculare)</span></button></li>
+<li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Luminile și semnalizarea funcționează</span></button></li>
+<li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Anvelopele nu sunt vizibil uzate sau degradate</span></button></li>
+<li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Parbrizul și ștergătoarele sunt în stare bună</span></button></li>
+<li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Plăcuțele de înmatriculare sunt lizibile</span></button></li>
+<li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Nu e aprins niciun martor de avarie pe bord</span></button></li></ul>
+<p class="note">Sfaturi generale de bun-simț, nu o listă oficială. Dacă ai dubii, întreabă la telefon.</p></div>
+<div class="res" id="cres"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" id="cfg" cx="60" cy="60" r="52" stroke-dasharray="327" stroke-dashoffset="327"/><text id="ctx" x="60" y="70">0/6</text></svg><div class="t" id="ct">Bifează ce ai verificat</div><p id="cp">Atingi fiecare punct pe măsură ce îl verifici.</p><a class="btn p" href="tel:+40745596502">Programează-te: 0745 596 502</a></div></div></div></section>
+<section id="contact"><div class="wrap two">
+<div><div class="tag rv">05 / Contact</div><h2>Vino la <em>stație</em></h2>
+<p><b>Adresă:</b> Str. Beiușului nr. 50, Cluj-Napoca, jud. Cluj</p><p><b>Telefon:</b> <a href="tel:+40745596502">0745 596 502</a></p><br>
+<div class="hours" id="hours"><div data-d="1">Luni</div><div class="c" data-d="1">08:00 – 20:00</div><div data-d="2">Marți</div><div class="c" data-d="2">08:00 – 20:00</div><div data-d="3">Miercuri</div><div class="c" data-d="3">08:00 – 20:00</div><div data-d="4">Joi</div><div class="c" data-d="4">08:00 – 20:00</div><div data-d="5">Vineri</div><div class="c" data-d="5">08:00 – 20:00</div><div data-d="6">Sâmbătă</div><div class="c" data-d="6">08:00 – 14:00</div><div data-d="0">Duminică</div><div class="c" data-d="0">Închis</div></div>
+<p class="note">Programările se fac telefonic, nu avem formular online. În registrele oficiale (RAR, ANAF) firma figurează cu sediul la nr. 54A pe aceeași stradă.</p><br>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn p" href="tel:+40745596502">Sună 0745 596 502</a><a class="btn g" href="https://www.google.com/maps/search/?api=1&amp;query=Strada+Beiu%C8%99ului+50+Cluj-Napoca" target="_blank" rel="noopener">Deschide în Maps</a></div></div>
+<div class="map" id="map"><div class="mapbtn"><span>Harta Google se încarcă doar după acordul tău pentru cookie-uri.</span><button class="btn g" id="loadmap" type="button">Încarcă harta</button></div></div>
+</div></section>
+<footer><div class="wrap"><div class="fbig">Diavas</div><p><b style="color:var(--tx);letter-spacing:.2em">DIAVAS</b> · Stație ITP · Str. Beiușului nr. 50, Cluj-Napoca · 0745 596 502<br>DIAVAS AYAN S.R.L. · CUI RO 37882800 · J12/4381/2017</p><br>
+<a href="politica-confidentialitate.html">Confidențialitate</a><a href="politica-cookies.html">Cookie-uri</a><a href="termeni-si-conditii.html">Termeni</a><a href="#" data-ck>Setări cookie</a><a href="https://anpc.ro" target="_blank" rel="noopener">ANPC</a><a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">SOL</a></div></footer>
+<div class="sticky"><a class="btn p" href="tel:+40745596502">📞 Sună 0745 596 502</a></div>
+<script src="assets/three.min.js"></script><script src="assets/app.js"></script><script src="consent.js"></script>
+</body></html>
