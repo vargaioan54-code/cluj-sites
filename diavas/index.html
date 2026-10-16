@@ -1,21 +1,22 @@
 <!doctype html><html lang="ro"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Diavas — Stație ITP, Str. Beiușului 50, Cluj-Napoca</title>
-<meta name="description" content="Diavas, stație ITP (inspecție tehnică periodică) autorizată RAR, Strada Beiușului nr. 50, Cluj-Napoca. Luni–vineri 08:00–20:00, sâmbătă 08:00–14:00. Telefon 0745 596 502.">
-<meta name="theme-color" content="#07090a">
+<title>Diavas — Spălătorie auto, Str. Beiușului 50, Cluj-Napoca</title>
+<meta name="description" content="Diavas, spălătorie auto pe Strada Beiușului nr. 50, Cluj-Napoca. Sună la 0745 596 502 pentru servicii și program.">
+<meta name="theme-color" content="#041322">
 <style>
-:root{--bg:#07090a;--bg2:#0c1011;--pan:#11171a;--line:#222d2f;--tx:#f4efe4;--mu:#98a3a1;--ac:#d9bf86;--ac2:#f0dfb4;--em:#34d6a0;--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+
+:root{--bg:#041322;--bg2:#071a2c;--pan:#0b2034;--line:#17354f;--tx:#eef7fc;--mu:#8aa6bb;--ac:#3fc8ff;--ac2:#aeeaff;--em:#7cf0b6;--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}body{background:var(--bg);color:var(--tx);font:16px/1.6 var(--sans);overflow-x:hidden}
 a{color:inherit}.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:10px 20px;background:rgba(7,9,10,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:10px 20px;background:rgba(4,19,34,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .logo{text-decoration:none;font:500 20px var(--serif);letter-spacing:.34em;text-transform:uppercase;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}.logo b{font:700 10px var(--sans);letter-spacing:.22em;color:var(--bg);background:var(--ac);padding:3px 6px;margin-left:12px;border-radius:3px}
 .btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:13px 22px;border-radius:999px;font:700 15px var(--sans);letter-spacing:.02em;text-decoration:none;border:1px solid var(--ac);color:var(--tx);background:transparent;cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s,color .25s}
-.btn.p{background:linear-gradient(135deg,var(--ac2),var(--ac) 55%,#b9965a);color:#16120a;border-color:transparent}.btn.p:hover{box-shadow:0 10px 34px rgba(217,191,134,.32);transform:translateY(-2px)}
+.btn.p{background:linear-gradient(135deg,var(--ac2),var(--ac) 55%,#1d8fd6);color:#031526;border-color:transparent}.btn.p:hover{box-shadow:0 10px 34px rgba(63,200,255,.32);transform:translateY(-2px)}
 .btn.g{border-color:var(--line)}.btn.g:hover{border-color:var(--ac);color:var(--ac2)}.btn.sm{padding:9px 18px;font-size:14px}
 button.btn{font-family:var(--sans)}
 /* hero */
-#hero{position:relative;height:100svh;min-height:620px;overflow:hidden;background:radial-gradient(ellipse at 72% 46%,#121a1b,#07090a 66%)}
+#hero{position:relative;height:100svh;min-height:620px;overflow:hidden;background:radial-gradient(ellipse at 72% 46%,#0d2a43,#041322 66%)}
 #hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.3;-webkit-mask-image:radial-gradient(ellipse at 62% 50%,#000,transparent 72%);mask-image:radial-gradient(ellipse at 62% 50%,#000,transparent 72%)}
 #gl{position:absolute;inset:0;z-index:1;touch-action:pan-y}#gl canvas{display:block;width:100%!important;height:100%!important}
 .htx{position:relative;z-index:2;padding-top:104px;pointer-events:none}.htx a,.htx .live{pointer-events:auto}
@@ -27,19 +28,19 @@ h1 span{display:block;opacity:0;transform:translateY(30px);animation:up .9s cubi
 .hsub{color:var(--mu);margin-top:20px;max-width:470px;opacity:0;animation:up .9s .4s forwards}
 .badge{display:inline-block;margin-top:18px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;font:600 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ac2);opacity:0;animation:up .9s .5s forwards}
 .live{display:inline-flex;align-items:center;gap:9px;margin-top:14px;margin-left:8px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);font:600 12px var(--sans);letter-spacing:.06em;color:var(--mu);opacity:0;animation:up .9s .6s forwards;vertical-align:top}
-.live i{width:8px;height:8px;border-radius:50%;background:#666}.live.open{color:var(--tx);border-color:rgba(52,214,160,.4)}.live.open i{background:var(--em);box-shadow:0 0 12px var(--em);animation:bl 1.8s infinite}
+.live i{width:8px;height:8px;border-radius:50%;background:#666}.live.open{color:var(--tx);border-color:rgba(124,240,182,.4)}.live.open i{background:var(--em);box-shadow:0 0 12px var(--em);animation:bl 1.8s infinite}
 .hcta{position:absolute;left:0;right:0;bottom:24px;z-index:3;display:flex;gap:10px;flex-wrap:wrap;padding:0 20px}
 @media(min-width:900px){.htx{padding-top:0;height:100%;display:flex;flex-direction:column;justify-content:center;max-width:44vw;margin-left:max(20px,5vw);margin-right:0}h1{font-size:min(4.7vw,80px)}.hcta{position:static;padding:0;margin-top:30px;opacity:0;animation:up .9s .7s forwards}.badge,.live{align-self:flex-start}}
 /* tape */
-.tape{background:linear-gradient(90deg,#0c1011,#141b1c);color:var(--ac2);overflow:hidden;white-space:nowrap;font:500 22px/1 var(--serif);font-style:italic;letter-spacing:.08em;padding:18px 0;border-block:1px solid var(--line);position:relative;z-index:5}
+.tape{background:linear-gradient(90deg,#071a2c,#0d2840);color:var(--ac2);overflow:hidden;white-space:nowrap;font:500 22px/1 var(--serif);font-style:italic;letter-spacing:.08em;padding:18px 0;border-block:1px solid var(--line);position:relative;z-index:5}
 .tape div{display:inline-block;animation:mq 34s linear infinite}@keyframes mq{to{transform:translateX(-50%)}}
-.tape.gd{background:var(--ac);color:#16120a;font-style:normal;font-weight:700;font-size:15px;letter-spacing:.3em;text-transform:uppercase}.tape.gd div{animation-direction:reverse}
+.tape.gd{background:var(--ac);color:#031526;font-style:normal;font-weight:700;font-size:15px;letter-spacing:.3em;text-transform:uppercase}.tape.gd div{animation-direction:reverse}
 section{padding:110px 0}h2{font-size:clamp(32px,6.4vw,58px);line-height:1.04;margin-bottom:30px}h2 em,h3 em{font-style:italic;color:var(--ac)}
 .tag{font:600 11.5px var(--sans);letter-spacing:.3em;color:var(--ac);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:14px}.tag:after{content:"";width:46px;height:1px;background:var(--ac);opacity:.5}
 .grid{display:grid;gap:16px;grid-template-columns:1fr}@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}}
-.card{background:linear-gradient(170deg,var(--pan),#0c1213);border:1px solid var(--line);border-radius:20px;padding:28px;position:relative;overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s,border-color .3s}
-.card.on{opacity:1;transform:none}.card:hover{border-color:rgba(217,191,134,.45)}
-.card:before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),rgba(217,191,134,.12),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}.card:hover:before{opacity:1}
+.card{background:linear-gradient(170deg,var(--pan),#08192a);border:1px solid var(--line);border-radius:20px;padding:28px;position:relative;overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s,border-color .3s}
+.card.on{opacity:1;transform:none}.card:hover{border-color:rgba(63,200,255,.45)}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),rgba(63,200,255,.12),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}.card:hover:before{opacity:1}
 .card:after{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:linear-gradient(90deg,var(--ac),var(--em));transition:width 1.1s .2s}.card.on:after{width:100%}
 .card .k{font:600 11px var(--sans);color:var(--mu);letter-spacing:.2em}.card .v{font:500 27px/1.15 var(--serif);margin:8px 0}.card p{color:var(--mu)}
 .note{color:var(--mu);font-size:13px;margin-top:18px;max-width:640px}
@@ -55,22 +56,13 @@ body.past .sticky{display:block}body.pinned .sticky{display:none!important}@medi
 .rv{opacity:0;transform:translateY(40px);transition:opacity 1s,transform 1s cubic-bezier(.2,.8,.2,1)}.rv.on{opacity:1;transform:none}
 .sw{display:inline-block;overflow:hidden;vertical-align:top;padding:.14em 0 .14em;margin:-.14em 0 -.14em}.sw>span{display:inline-block;transform:translateY(105%) rotate(3deg);transition:transform 1s cubic-bezier(.2,.8,.2,1)}.sin .sw>span{transform:none}
 .rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.3);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}@keyframes rip{to{transform:scale(1);opacity:0}}
-#cglow{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(217,191,134,.07),transparent 65%);opacity:0;transition:opacity .4s;will-change:transform}
+#cglow{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(63,200,255,.07),transparent 65%);opacity:0;transition:opacity .4s;will-change:transform}
 #info,#servicii,#verifica,#pregatire,#contact{position:relative;z-index:2}
-/* stats */
-.stats{display:grid;gap:14px;grid-template-columns:repeat(2,1fr);margin-top:34px}@media(min-width:900px){.stats{grid-template-columns:repeat(4,1fr)}}
-.st{border-top:1px solid var(--line);padding-top:18px}.st b{display:block;font:500 clamp(40px,7vw,64px)/1 var(--serif);color:var(--ac2)}.st b small{font-size:.4em;margin-left:5px;color:var(--ac);letter-spacing:.06em}.st span{display:block;color:var(--mu);font-size:13px;margin-top:8px;max-width:210px}
-/* eligibility */
-.elig{display:grid;gap:26px;margin-top:40px;padding:30px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(170deg,#0f1618,#0a0f10)}@media(min-width:900px){.elig{grid-template-columns:1.25fr 1fr;align-items:center;padding:44px}}
-.elig h3{font-size:clamp(26px,4.6vw,38px);line-height:1.1;margin-bottom:8px}.elig .sub{color:var(--mu);margin-bottom:18px;font-size:15px}
-.q{padding:14px 0;border-top:1px solid var(--line);display:flex;gap:12px 16px;flex-wrap:wrap;align-items:center;justify-content:space-between}.q span{flex:1 1 230px;font-size:15px}
-.yn{display:flex;gap:8px}.yn button{min-width:64px;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--tx);font:600 14px var(--sans);cursor:pointer;transition:.2s}.yn button:hover{border-color:var(--ac)}.yn button.sel{background:var(--ac);color:#16120a;border-color:var(--ac)}
 .res{text-align:center;padding:10px}.ring{width:min(200px,60vw);height:min(200px,60vw);margin:0 auto 16px;display:block}.ring circle{fill:none;stroke-width:6}.ring .bg{stroke:var(--line)}.ring .fg{stroke:var(--ac);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset .8s cubic-bezier(.3,.7,.2,1),stroke .4s}
 .ring text{font:500 34px var(--serif);fill:var(--tx);text-anchor:middle}
-.res.ok .fg{stroke:var(--em)}.res.no .fg{stroke:#e0866b}
 .res p{color:var(--mu);font-size:15px;max-width:340px;margin:0 auto 14px;min-height:72px}.res .t{font:500 22px var(--serif);color:var(--tx);margin-bottom:6px;min-height:30px}
 /* model */
-#model3d{height:420vh;padding:0;position:relative;z-index:2;background:radial-gradient(ellipse at 62% 46%,#101819,#07090a 70%)}
+#model3d{height:420vh;padding:0;position:relative;z-index:2;background:radial-gradient(ellipse at 62% 46%,#0b2a44,#041322 70%)}
 #model3d .pin,#cap .pin{position:sticky;top:0;height:100svh;overflow:hidden}
 #model3d .pin:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.26;-webkit-mask-image:radial-gradient(ellipse at 62% 50%,#000,transparent 75%);mask-image:radial-gradient(ellipse at 62% 50%,#000,transparent 75%)}
 #r3stage{position:absolute;inset:0;touch-action:pan-y}#r3stage canvas{display:block;width:100%!important;height:100%!important;cursor:grab;touch-action:pan-y}#r3stage canvas:active{cursor:grabbing}
@@ -90,26 +82,22 @@ body.past .sticky{display:block}body.pinned .sticky{display:none!important}@medi
 .chap h3{font-size:clamp(34px,9vw,92px);line-height:.98}
 .chap p{max-width:520px;color:var(--mu);font-size:18px}
 .dots{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);display:flex;gap:12px;z-index:3}
-.dots i{width:7px;height:7px;border-radius:5px;background:#33403f;transition:.4s}.dots i.on{background:var(--ac);width:26px}
+.dots i{width:7px;height:7px;border-radius:5px;background:#27506f;transition:.4s}.dots i.on{background:var(--ac);width:26px}
 .chline{position:absolute;bottom:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--ac),var(--em));z-index:3}
 @media(min-width:900px){.chap .wrap{display:block}.chap .big{position:absolute;right:48px;top:50%;transform:translateY(-50%);font-size:min(22vw,320px)}.chap h3{max-width:56%;font-size:min(5.6vw,84px);margin:6px 0 16px}.chap p{max-width:min(520px,48%)}.dots{left:auto;right:20px;bottom:auto;top:50%;transform:translateY(-50%);flex-direction:column}.dots i.on{width:7px;height:26px}}
-/* inspection map */
-.vmap{display:grid;gap:26px;margin-top:10px}@media(min-width:900px){.vmap{grid-template-columns:1.35fr 1fr;align-items:center}}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}.chips button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--mu);font:600 14px var(--sans);cursor:pointer;transition:.25s}.chips button:hover{color:var(--tx);border-color:var(--ac)}.chips button.on{background:var(--ac);border-color:var(--ac);color:#16120a}
-.car2d{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:22px;background:radial-gradient(ellipse at 50% 60%,#121a1b,#0a0e0f)}
-.car2d .ln{fill:none;stroke:#7f8a86;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.car2d .ln2{fill:none;stroke:var(--ac);stroke-width:2;opacity:.8}.car2d .gl2{fill:rgba(217,191,134,.05);stroke:#7f8a86;stroke-width:2}
-.car2d .zone{fill:rgba(52,214,160,.1);stroke:var(--em);stroke-width:2;transform-box:view-box;transition:transform .7s cubic-bezier(.3,.8,.2,1)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}.chips button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--mu);font:600 14px var(--sans);cursor:pointer;transition:.25s}.chips button:hover{color:var(--tx);border-color:var(--ac)}.chips button.on{background:var(--ac);border-color:var(--ac);color:#031526}
+.car2d{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:22px;background:radial-gradient(ellipse at 50% 60%,#0d2a43,#06182a)}
+.car2d .ln{fill:none;stroke:#6fa3c4;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.car2d .ln2{fill:none;stroke:var(--ac);stroke-width:2;opacity:.8}.car2d .gl2{fill:rgba(63,200,255,.05);stroke:#6fa3c4;stroke-width:2}
+.car2d .zone{fill:rgba(124,240,182,.1);stroke:var(--em);stroke-width:2;transform-box:view-box;transition:transform .7s cubic-bezier(.3,.8,.2,1)}
 .car2d .zp{fill:none;stroke:var(--em);stroke-width:2;animation:zp 1.8s ease-out infinite;transform-box:fill-box;transform-origin:center}@keyframes zp{from{transform:scale(.4);opacity:.9}to{transform:scale(1.5);opacity:0}}
 .car2d .whl{transform-box:fill-box;transform-origin:center;animation:spn 6s linear infinite}@keyframes spn{to{transform:rotate(360deg)}}
-.vinfo{min-height:190px}.vinfo h3{font-size:clamp(26px,4.4vw,38px);margin-bottom:10px}.vinfo p{color:var(--mu)}.vinfo .z{font:600 11px var(--sans);letter-spacing:.24em;color:var(--em);text-transform:uppercase;margin-bottom:8px}
 /* checklist */
 .chk{display:grid;gap:30px;margin-top:6px}@media(min-width:900px){.chk{grid-template-columns:1fr 1fr;align-items:center}}
 .cl{list-style:none}.cl li{border-top:1px solid var(--line)}.cl li:last-child{border-bottom:1px solid var(--line)}
 .cl button{display:flex;width:100%;align-items:center;gap:16px;text-align:left;min-height:56px;padding:12px 4px;background:none;border:0;color:var(--tx);font:500 16px/1.4 var(--sans);cursor:pointer}
-.cl .bx{flex:0 0 28px;height:28px;border-radius:50%;border:1.5px solid var(--mu);display:grid;place-items:center;transition:.3s}.cl .bx svg{width:16px;height:16px;stroke:#07090a;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .4s .05s}
+.cl .bx{flex:0 0 28px;height:28px;border-radius:50%;border:1.5px solid var(--mu);display:grid;place-items:center;transition:.3s}.cl .bx svg{width:16px;height:16px;stroke:#041322;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .4s .05s}
 .cl button.on .bx{background:var(--em);border-color:var(--em)}.cl button.on .bx svg{stroke-dashoffset:0}.cl button.on span.t{color:var(--mu);text-decoration:line-through;text-decoration-color:rgba(152,163,161,.5)}
-.hours{display:grid;grid-template-columns:1fr auto;max-width:520px;border-top:1px solid var(--line);margin-top:6px}.hours div{padding:13px 0;border-bottom:1px solid var(--line)}.hours .c{color:var(--mu)}.hours .now{color:var(--ac2);font-weight:700}.hours div.now:first-child{padding-left:12px;border-left:2px solid var(--ac)}
-.fbig{font:400 min(9vw,150px)/.9 var(--serif);color:transparent;-webkit-text-stroke:1px #2a3739;text-transform:uppercase;letter-spacing:.14em;margin-bottom:28px;white-space:nowrap;overflow:hidden}
+.fbig{font:400 min(9vw,150px)/.9 var(--serif);color:transparent;-webkit-text-stroke:1px #1e4a6a;text-transform:uppercase;letter-spacing:.14em;margin-bottom:28px;white-space:nowrap;overflow:hidden}
 .ic{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;margin-bottom:14px;color:var(--ac)}.ic svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:899px){h1{font-size:min(13vw,64px)}.logo{font-size:17px;letter-spacing:.24em}.logo b{margin-left:8px}.fbig{font-size:8.6vw}.r3ch h3{font-size:clamp(22px,7vw,50px)}.live{margin-left:0}section{padding:84px 0}#cglow{display:none}}
 @media(max-width:380px){.logo{font-size:15px;letter-spacing:.16em}.logo b{display:none}nav{padding:8px 12px}.btn.sm{padding:9px 14px}}
@@ -118,111 +106,158 @@ body.past .sticky{display:block}body.pinned .sticky{display:none!important}@medi
 @media (prefers-reduced-motion:reduce) and (max-width:899px){.r3ch{left:auto;right:auto;margin:0 20px;top:auto}}
 #contact p a{display:inline-block;padding:11px 0;line-height:22px}
 #model3d.fallback{height:auto}#model3d.fallback .pin{position:relative;height:auto;padding:90px 0 50px}#model3d.fallback .r3ui{position:relative;top:0;left:0;right:0;bottom:auto;width:auto;display:block}#model3d.fallback .r3ch{position:relative;opacity:1;transform:none;left:0;right:0;top:0;margin:0 20px 30px}#model3d.fallback .r3hint,#model3d.fallback #r3bar{display:none}#model3d.fallback .fb{position:relative;inset:auto;padding:0 20px 10px}.nogl #gl{display:none}@media(max-width:899px){.nogl #hero{padding-bottom:24px}}
+.res.ok .fg{stroke:var(--em)}.res.no .fg{stroke:#ff9a7a}
+:root{--serif:"Avenir Next","Segoe UI Variable Display","Trebuchet MS",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-weight:700;letter-spacing:-.02em}
+.logo{font-weight:700;letter-spacing:.3em}
+h1 span:nth-child(1){font-weight:800;letter-spacing:.08em}
+h1 span:nth-child(2){font-style:normal;font-weight:600;font-size:.5em;letter-spacing:-.01em;line-height:1.1}
+h2 em,h3 em{font-style:normal}
+#hero{background:radial-gradient(ellipse at 72% 46%,#0d2f4d,#041322 66%)}
+.tape{font-style:normal;font-weight:600;letter-spacing:.14em;font-size:19px}
+.tape.gd{background:linear-gradient(90deg,#1d8fd6,#3fc8ff,#7cf0b6)}
+#model3d{background:radial-gradient(ellipse at 62% 46%,#0b2d4a,#041322 70%)}
+.pill{display:inline-flex;align-items:center;gap:9px;margin-top:14px;margin-left:8px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);font:600 12px var(--sans);letter-spacing:.06em;color:var(--mu);opacity:0;animation:up .9s .6s forwards;vertical-align:top}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--ac);box-shadow:0 0 12px var(--ac)}
+.htx a{pointer-events:auto}
+@media(max-width:899px){.pill{margin-left:0}}
+@media(min-width:900px){.pill{align-self:flex-start}}
+#bub{position:absolute;inset:0;pointer-events:none}
+.bhint{position:absolute;right:16px;bottom:10px;z-index:3;pointer-events:none;font:600 10.5px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--mu)}.bhint b{color:var(--ac2)}
+@media(min-width:900px){.bhint{right:5vw;bottom:28px}}
+#info,#servicii,#ba,#pregatire,#contact{position:relative;z-index:2}
+/* picker */
+.pk{display:grid;gap:26px;margin-top:6px}@media(min-width:900px){.pk{grid-template-columns:1.2fr 1fr;align-items:center}}
+.chips button{position:relative}.chips button .q2{font-size:11px;opacity:.75;margin-left:6px}
+.chips button.on{background:var(--ac);color:#031526}
+.pkc{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:22px;background:radial-gradient(ellipse at 50% 60%,#0d2f4d,#06182a)}
+.pkc .bd{fill:#2f86d8;stroke:#8fd3ff;stroke-width:2;stroke-linejoin:round;transition:fill .6s}
+.pkc .gl2{fill:#0a2038;stroke:#8fd3ff;stroke-width:2}
+.pkc .tr{fill:#050d17;stroke:#6fa3c4;stroke-width:3}.pkc .rm{fill:#cfe6f5}
+.pkc .fx{opacity:0;transition:opacity .5s}
+.pkc.s-ext .fx-ext,.pkc.s-foam .fx-foam,.pkc.s-int .fx-int,.pkc.s-dry .fx-dry,.pkc.s-wax .fx-wax{opacity:1}
+.pkc .dr{stroke:#7fe0ff;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:10 26;animation:drp 1s linear infinite}@keyframes drp{to{stroke-dashoffset:-36}}
+.pkc .fm{fill:#fff;opacity:.92;transform-box:fill-box;transform-origin:center;animation:fmp 2.4s ease-in-out infinite}@keyframes fmp{50%{transform:scale(1.18)}}
+.pkc .wn{stroke:#dff6ff;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:40 90;animation:wnd 1.1s linear infinite}@keyframes wnd{to{stroke-dashoffset:-130}}
+.pkc .sw2{fill:url(#shg);animation:shw 2.6s ease-in-out infinite}@keyframes shw{0%{transform:translateX(-340px)}60%,100%{transform:translateX(360px)}}
+.pkc .st2{fill:#fff;transform-box:fill-box;transform-origin:center;animation:stp 1.6s ease-in-out infinite}@keyframes stp{0%,100%{transform:scale(.2);opacity:0}50%{transform:scale(1);opacity:1}}
+.pkc .sit{fill:#7cf0b6;opacity:.35;animation:fmp 2s ease-in-out infinite}
+.pkc .whl{transform-box:fill-box;transform-origin:center;animation:spn 6s linear infinite}@keyframes spn{to{transform:rotate(360deg)}}
+.pkinfo{min-height:190px}.pkinfo h3{font-size:clamp(26px,4.4vw,38px);margin-bottom:10px}.pkinfo p{color:var(--mu)}
+.pkinfo .z{font:600 11px var(--sans);letter-spacing:.24em;color:var(--em);text-transform:uppercase;margin-bottom:8px}
+.sum{margin-top:18px;border:1px solid var(--line);border-radius:18px;padding:16px 18px;background:rgba(11,32,52,.6)}.sum b{display:block;font:600 11px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:6px}.sum span{display:block;color:var(--tx);font-size:15px;min-height:24px}
+/* before / after */
+.ba{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);aspect-ratio:600/260;width:100%;background:#0a2a46}.ba .tr{fill:#050d17;stroke:#6fa3c4;stroke-width:3}.ba .rm{fill:#cfe6f5}
+.ba svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.ba .bf{clip-path:inset(0 calc(100% - var(--p,50%)) 0 0)}
+.ba .lab{position:absolute;top:14px;z-index:3;padding:5px 12px;border-radius:999px;background:rgba(4,19,34,.78);border:1px solid var(--line);font:700 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;pointer-events:none}.ba .l1{left:14px}.ba .l2{right:14px;color:var(--em)}
+.ba .hd{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;margin-left:-1px;background:#fff;z-index:4;pointer-events:none;box-shadow:0 0 20px rgba(63,200,255,.8)}
+.ba .hd i{position:absolute;top:50%;left:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:#fff;color:#031526;display:grid;place-items:center;font:700 18px var(--sans);font-style:normal;box-shadow:0 6px 24px rgba(0,0,0,.5)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;z-index:5;cursor:ew-resize;margin:0;touch-action:pan-y;-webkit-appearance:none;appearance:none}
+.ba input::-webkit-slider-thumb{-webkit-appearance:none;width:46px;height:100vh}.ba input::-moz-range-thumb{width:46px;height:100vh;border:0}
+.ba .dirt{opacity:.9}
+/* wizard */
+.fbig{font-weight:800}
+@media(prefers-reduced-motion:reduce){.pkc .dr,.pkc .fm,.pkc .wn,.pkc .sw2,.pkc .st2,.pkc .sit{animation:none!important}}
+@media (prefers-reduced-motion:reduce){.pill{opacity:1;transform:none}}
+
 </style>
 <style id="mobfix">@media(max-width:899px){#hero{height:auto;min-height:0;display:flex;flex-direction:column;padding:96px 0 24px}#htx{order:1;position:relative;z-index:2;padding-top:0}.hcta{position:static;padding:0;margin-top:22px}#gl{order:2;position:relative;inset:auto;width:100%;height:min(46svh,340px);margin-top:12px}}</style>
-<style id="introcss">#intro{position:fixed;inset:0;z-index:500;background:#07090a;display:flex;align-items:center;justify-content:center;flex-direction:column;overflow:hidden;transition:transform 1s cubic-bezier(.7,0,.2,1);cursor:pointer}
-#intro:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(217,191,134,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(217,191,134,.06) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 50% 50%,#000,transparent 68%);mask-image:radial-gradient(ellipse at 50% 50%,#000,transparent 68%)}
+<style id="introcss">#intro{position:fixed;inset:0;z-index:500;background:radial-gradient(ellipse at 50% 45%,#0b2d4a,#041322 70%);display:flex;align-items:center;justify-content:center;flex-direction:column;overflow:hidden;transition:transform 1s cubic-bezier(.7,0,.2,1);cursor:pointer}
 #intro.done{transform:translateY(-100%)}
-#intro .ig{position:relative;width:min(58vw,230px);height:min(58vw,230px)}#intro .ig svg{width:100%;height:100%;overflow:visible}
-#intro .tk{stroke:#d9bf86;stroke-width:2;stroke-linecap:round;opacity:.5}
-#intro .rg{fill:none;stroke:#222d2f;stroke-width:6}
-#intro .ar{fill:none;stroke:#d9bf86;stroke-width:6;stroke-linecap:round;stroke-dasharray:440;stroke-dashoffset:440;transform:rotate(135deg);transform-origin:100px 100px;animation:iarc 1.5s .1s cubic-bezier(.3,.7,.2,1) forwards}
-@keyframes iarc{to{stroke-dashoffset:110}}
-#intro .nd{stroke:#f4efe4;stroke-width:4;stroke-linecap:round;transform-origin:100px 100px;transform:rotate(-135deg);animation:ind 1.4s .1s cubic-bezier(.3,.7,.2,1) forwards,ndo .25s 1.5s forwards}
-@keyframes ind{to{transform:rotate(95deg)}}@keyframes ndo{to{opacity:0}}
-#intro .hb{fill:#07090a;stroke:#d9bf86;stroke-width:3;animation:ndo .25s 1.5s forwards}
-#intro .gr{fill:none;stroke:#34d6a0;stroke-width:6;stroke-linecap:round;stroke-dasharray:90;stroke-dashoffset:90;transform:rotate(-45deg);transform-origin:100px 100px;opacity:.0;animation:ifade .2s 1.5s forwards,igr .5s 1.5s forwards}@keyframes igr{to{stroke-dashoffset:0}}
-#intro .ck{fill:none;stroke:#34d6a0;stroke-width:9;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:90;stroke-dashoffset:90;animation:ick .55s 1.6s cubic-bezier(.3,.8,.2,1) forwards}@keyframes ick{to{stroke-dashoffset:0}}
-#intro .pls{fill:none;stroke:#34d6a0;stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center;animation:ipl .9s 1.75s ease-out forwards}@keyframes ipl{0%{opacity:.8;transform:scale(.6)}100%{opacity:0;transform:scale(1.5)}}
-#intro .it{margin-top:30px;font:500 clamp(34px,10vw,64px)/1 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;text-transform:uppercase;color:#f4efe4;letter-spacing:.3em;text-indent:.3em;text-align:center;clip-path:inset(0 100% 0 0);animation:iclip .9s 1.9s cubic-bezier(.4,0,.2,1) forwards}
-#intro .is{margin-top:14px;font:600 11px system-ui,sans-serif;letter-spacing:.32em;color:#d9bf86;opacity:0;animation:ifade .6s 2.5s forwards;text-align:center;padding:0 16px;text-transform:uppercase}
-#intro .ib{position:absolute;left:0;bottom:0;height:3px;width:100%;background:linear-gradient(90deg,#d9bf86,#34d6a0);transform:scaleX(0);transform-origin:0 50%;animation:ibar 3s linear forwards}
+#intro .ig{position:relative;width:min(60vw,240px);height:min(60vw,240px)}#intro .ig svg{width:100%;height:100%;overflow:visible}
+#intro .dp{fill:#3fc8ff;transform:translateY(-190px);opacity:0;animation:idrop .75s .05s cubic-bezier(.5,0,.9,.6) forwards}
+@keyframes idrop{0%{opacity:0;transform:translateY(-190px) scaleY(1.25)}12%{opacity:1}88%{opacity:1;transform:translateY(40px) scaleY(1)}100%{opacity:0;transform:translateY(46px) scale(.3)}}
+#intro .rp{fill:none;stroke:#7fe0ff;stroke-width:3;opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.2)}
+#intro .rp1{animation:irp 1.3s .8s ease-out forwards}#intro .rp2{animation:irp 1.3s 1.0s ease-out forwards}#intro .rp3{animation:irp 1.3s 1.2s ease-out forwards}
+@keyframes irp{0%{opacity:.9;transform:scale(.2)}100%{opacity:0;transform:scale(3.3)}}
+#intro .core{fill:#dff6ff;opacity:0;transform-box:fill-box;transform-origin:center;animation:icore .6s .8s cubic-bezier(.3,.8,.2,1) forwards}@keyframes icore{0%{opacity:0;transform:scale(0)}60%{opacity:1;transform:scale(1.2)}100%{opacity:1;transform:scale(1)}}
+#intro .bb{fill:rgba(190,240,255,.12);stroke:rgba(200,245,255,.7);stroke-width:1.6;opacity:0;animation:ibb 1.7s ease-in forwards}
+@keyframes ibb{0%{opacity:0;transform:translateY(0) scale(.5)}20%{opacity:1}100%{opacity:0;transform:translateY(-110px) scale(1.2)}}
+#intro .it{margin-top:30px;font:800 clamp(36px,11vw,68px)/1 "Avenir Next","Segoe UI Variable Display","Trebuchet MS",system-ui,sans-serif;text-transform:uppercase;color:#eef7fc;letter-spacing:.28em;text-indent:.28em;text-align:center;clip-path:inset(0 100% 0 0);animation:iclip .9s 1.6s cubic-bezier(.4,0,.2,1) forwards}
+#intro .is{margin-top:14px;font:600 11px system-ui,sans-serif;letter-spacing:.32em;color:#3fc8ff;opacity:0;animation:ifade .6s 2.3s forwards;text-align:center;padding:0 16px;text-transform:uppercase}
+#intro .ib{position:absolute;left:0;bottom:0;height:3px;width:100%;background:linear-gradient(90deg,#1d8fd6,#3fc8ff,#7cf0b6);transform:scaleX(0);transform-origin:0 50%;animation:ibar 3s linear forwards}
 @keyframes iclip{to{clip-path:inset(0 0 0 0)}}@keyframes ifade{to{opacity:1}}@keyframes ibar{to{transform:scaleX(1)}}
 body.introlock{overflow:hidden}</style>
 <style id="nosel">html,body,*{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}input,textarea{-webkit-user-select:text;user-select:text;-webkit-touch-callout:default}html{touch-action:pan-x pan-y}</style>
 <script>document.addEventListener("gesturestart",e=>e.preventDefault());document.addEventListener("dblclick",e=>e.preventDefault(),{passive:false});document.addEventListener("contextmenu",e=>{if(!e.target.closest("input,textarea"))e.preventDefault()});</script>
 </head><body>
-<div id="intro" aria-hidden="true"><div class="ig"><svg viewBox="0 0 200 200"><path class="tk" d="M40.6 159.4 L32.1 167.9"/><path class="tk" d="M31.2 148.2 L24.6 152.8"/><path class="tk" d="M23.9 135.5 L16.6 138.9"/><path class="tk" d="M18.9 121.7 L7.3 124.8"/><path class="tk" d="M16.3 107.3 L8.4 108.0"/><path class="tk" d="M16.3 92.7 L8.4 92.0"/><path class="tk" d="M18.9 78.3 L7.3 75.2"/><path class="tk" d="M23.9 64.5 L16.6 61.1"/><path class="tk" d="M31.2 51.8 L24.6 47.2"/><path class="tk" d="M40.6 40.6 L32.1 32.1"/><path class="tk" d="M51.8 31.2 L47.2 24.6"/><path class="tk" d="M64.5 23.9 L61.1 16.6"/><path class="tk" d="M78.3 18.9 L75.2 7.3"/><path class="tk" d="M92.7 16.3 L92.0 8.4"/><path class="tk" d="M107.3 16.3 L108.0 8.4"/><path class="tk" d="M121.7 18.9 L124.8 7.3"/><path class="tk" d="M135.5 23.9 L138.9 16.6"/><path class="tk" d="M148.2 31.2 L152.8 24.6"/><path class="tk" d="M159.4 40.6 L167.9 32.1"/><path class="tk" d="M168.8 51.8 L175.4 47.2"/><path class="tk" d="M176.1 64.5 L183.4 61.1"/><path class="tk" d="M181.1 78.3 L192.7 75.2"/><path class="tk" d="M183.7 92.7 L191.6 92.0"/><path class="tk" d="M183.7 107.3 L191.6 108.0"/><path class="tk" d="M181.1 121.7 L192.7 124.8"/><path class="tk" d="M176.1 135.5 L183.4 138.9"/><path class="tk" d="M168.8 148.2 L175.4 152.8"/><path class="tk" d="M159.4 159.4 L167.9 167.9"/><circle class="rg" cx="100" cy="100" r="70"/><circle class="ar" cx="100" cy="100" r="70"/><g class="nd0"><path class="nd" d="M100 100 L100 40"/></g><circle class="hb" cx="100" cy="100" r="9"/><path class="ck" d="M68 102 L92 126 L136 76"/><circle class="pls" cx="100" cy="100" r="60"/></svg></div>
-<div class="it">Diavas</div><div class="is">Stație ITP · Cluj-Napoca</div><div class="ib"></div></div>
+<div id="intro" aria-hidden="true"><div class="ig"><svg viewBox="0 0 200 200"><circle class="rp rp1" cx="100" cy="104" r="26"/><circle class="rp rp2" cx="100" cy="104" r="26"/><circle class="rp rp3" cx="100" cy="104" r="26"/><circle class="core" cx="100" cy="104" r="9"/><circle class="bb" style="animation-delay:0.95s" cx="66" cy="114" r="6"/><circle class="bb" style="animation-delay:1.08s" cx="122" cy="122" r="9"/><circle class="bb" style="animation-delay:1.21s" cx="92" cy="128" r="5"/><circle class="bb" style="animation-delay:1.34s" cx="140" cy="106" r="5"/><circle class="bb" style="animation-delay:1.47s" cx="54" cy="98" r="8"/><circle class="bb" style="animation-delay:1.60s" cx="110" cy="100" r="6"/><circle class="bb" style="animation-delay:1.73s" cx="132" cy="130" r="4"/><circle class="bb" style="animation-delay:1.86s" cx="76" cy="132" r="4"/><circle class="bb" style="animation-delay:1.99s" cx="100" cy="118" r="7"/><path class="dp" d="M100 56 C100 56 124 88 124 104 A24 24 0 0 1 76 104 C76 88 100 56 100 56Z"/></svg></div>
+<div class="it">Diavas</div><div class="is">Spălătorie auto · Cluj-Napoca</div><div class="ib"></div></div>
 <script>(function(){var i=document.getElementById("intro"),b=document.body;b.classList.add("introlock");function e(){if(i.classList.contains("done"))return;i.classList.add("done");b.classList.remove("introlock");setTimeout(function(){i.remove()},1100)}if(matchMedia("(prefers-reduced-motion:reduce)").matches){e()}else{setTimeout(e,3100);i.addEventListener("click",e)}})();</script>
 <div id="prog"></div><div id="cglow"></div>
-<nav><a href="#hero" class="logo" aria-label="Diavas, stație ITP">Diavas<b>ITP</b></a><div class="navl"><a href="#info">Pe scurt</a><a href="#servicii">Serviciu</a><a href="#model3d">Model 3D</a><a href="#cap">Cum decurge</a><a href="#verifica">Ce se verifică</a><a href="#contact">Contact</a></div><a class="btn p sm" href="tel:+40745596502">Sună</a></nav>
-<header id="hero"><div id="gl"></div>
-<div class="wrap htx" id="htx"><div class="kick"><i></i>Inspecție tehnică periodică · Cluj-Napoca</div>
-<h1><span>Diavas</span><span>stație ITP autorizată RAR</span></h1>
-<p class="hsub">Inspecție tehnică periodică auto, în Cluj-Napoca, pe Strada Beiușului nr. 50. Programezi telefonic, la 0745 596 502.</p>
-<div><span class="badge">Str. Beiușului 50 · Cluj-Napoca</span><span class="live" id="live"><i></i><span id="livet">Program: L–V 08–20 · S 08–14</span></span></div>
+<nav><a href="#hero" class="logo" aria-label="Diavas, spălătorie auto">Diavas<b>AUTO</b></a><div class="navl"><a href="#info">Pe scurt</a><a href="#servicii">Servicii</a><a href="#ba">Înainte / După</a><a href="#model3d">Model 3D</a><a href="#cap">Cum decurge</a><a href="#contact">Contact</a></div><a class="btn p sm" href="tel:+40745596502">Sună</a></nav>
+<header id="hero"><div id="gl"></div><div class="bhint" id="bhint">Atinge bulele · <b id="bcnt">0</b></div>
+<div class="wrap htx" id="htx"><div class="kick"><i></i>Spălătorie auto · Cluj-Napoca</div>
+<h1><span>Diavas</span><span>spălătorie auto în Cluj-Napoca</span></h1>
+<p class="hsub">Pe Strada Beiușului nr. 50, în Cluj-Napoca. Sună la 0745 596 502 și afli ce servicii sunt disponibile și când poți veni.</p>
+<div><span class="badge">Str. Beiușului 50 · Cluj-Napoca</span><span class="pill"><i></i>Program: confirmă la telefon</span></div>
 <div class="hcta" id="hcta"><a class="btn p" href="tel:+40745596502">📞 0745 596 502</a><a class="btn g" href="#contact">Unde suntem</a></div></div>
 </header>
-<div class="tape" aria-hidden="true"><div>Diavas ✦ Inspecție tehnică periodică ✦ Str. Beiușului 50 ✦ 0745 596 502 ✦ Luni–vineri 08–20 ✦ Sâmbătă 08–14 ✦ Diavas ✦ Inspecție tehnică periodică ✦ Str. Beiușului 50 ✦ 0745 596 502 ✦ Luni–vineri 08–20 ✦ Sâmbătă 08–14 ✦ </div></div>
-<section id="info"><div class="wrap"><div class="tag rv">01 / Pe scurt</div><h2>ITP, <em>fără complicații</em></h2>
+<div class="tape" aria-hidden="true"><div>Diavas ✦ Spălătorie auto ✦ Str. Beiușului 50 ✦ 0745 596 502 ✦ Spumă, clătire, luciu ✦ Diavas ✦ Spălătorie auto ✦ Str. Beiușului 50 ✦ 0745 596 502 ✦ Spumă, clătire, luciu ✦ </div></div>
+<section id="info"><div class="wrap"><div class="tag rv">01 / Pe scurt</div><h2>Mașina ta, <em>curată și lucioasă</em></h2>
 <div class="grid">
-<div class="card"><div class="k">TELEFON</div><div class="v">0745 596 502</div><p>Sună pentru programare și întreabă ce oră e liberă.</p><br><a class="btn p sm" href="tel:+40745596502">Sună acum</a></div>
-<div class="card"><div class="k">PROGRAM</div><div class="v">L–V 08:00 – 20:00</div><p>Sâmbătă 08:00 – 14:00. Duminică închis.</p></div>
+<div class="card"><div class="k">TELEFON</div><div class="v">0745 596 502</div><p>Sună și întreabă ce servicii sunt disponibile.</p><br><a class="btn p sm" href="tel:+40745596502">Sună acum</a></div>
+<div class="card"><div class="k">PROGRAM</div><div class="v">Confirmă la telefon</div><p>Nu afișăm un program ca să nu te trimitem degeaba. Un telefon îți spune când poți veni.</p></div>
 <div class="card"><div class="k">ADRESĂ</div><div class="v">Str. Beiușului 50</div><p>Cluj-Napoca, județul Cluj.</p><br><a class="btn g sm" href="#contact">Vezi harta</a></div>
 </div>
-<div class="stats" id="stats">
-<div class="st"><b data-n="66">0</b><span>ore pe săptămână în care stația e deschisă, conform programului afișat</span></div>
-<div class="st"><b data-n="6">0</b><span>zile pe săptămână: de luni până sâmbătă</span></div>
-<div class="st"><b data-n="3.5" data-d="1">0<small>t</small></b><span>limita de masă a vehiculelor: sub 3,5 tone</span></div>
-<div class="st"><b data-n="3">0<small>m</small></b><span>înălțimea maximă a vehiculului, conform listei RAR</span></div>
-</div>
-<p class="note">Programul este cel afișat în trei surse publice. În zile de sărbătoare sau în vacanță programul se poate schimba, așa că sună înainte să vii.</p></div></section>
-<section id="servicii" style="background:var(--bg2)"><div class="wrap"><div class="tag rv">02 / Serviciu</div><h2>Inspecția tehnică <em>periodică</em></h2>
-<div class="grid">
-<div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16l1.5-5h11L19 16"/><path d="M3 16h18v3H3z"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="16.5" cy="19" r="1.5"/><path d="M12 3v4M9 5h6"/></svg></span><div class="k">SERVICIU</div><div class="v">ITP auto</div><p>Inspecția tehnică periodică a autovehiculelor, la stația din Cluj-Napoca.</p></div>
-<div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><div class="k">AUTORIZARE</div><div class="v">Stație RAR · CJ139</div><p>Figurează în lista publică RAR a unităților ITP autorizate, categoria II.</p></div>
-<div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M10 20v-6h4v6"/></svg></span><div class="k">VEHICULE</div><div class="v">Sub 3,5 tone</div><p>Categoria II: vehicule cu masa sub 3,5 t și înălțimea de cel mult 3 m.</p></div>
-</div>
-<div class="elig" id="elig"><div><div class="tag">Verifică în 5 întrebări</div><h3>Se potrivește <em>mașina ta?</em></h3><p class="sub">Întrebările urmăresc limitele afișate de RAR pentru stație. Nu înlocuiesc confirmarea telefonică.</p>
-<div class="q" data-q="0"><span>Masa maximă a vehiculului este sub 3,5 t?</span><div class="yn"><button type="button" data-v="1">Da</button><button type="button" data-v="0">Nu</button></div></div>
-<div class="q" data-q="1"><span>Înălțimea vehiculului este de cel mult 3 m?</span><div class="yn"><button type="button" data-v="1">Da</button><button type="button" data-v="0">Nu</button></div></div>
-<div class="q" data-q="2"><span>Este un tractor?</span><div class="yn"><button type="button" data-v="0">Da</button><button type="button" data-v="1">Nu</button></div></div>
-<div class="q" data-q="3"><span>Are dispozitiv de amplificare a efortului la pedala de frână (servofrână)?</span><div class="yn"><button type="button" data-v="1">Da</button><button type="button" data-v="0">Nu</button></div></div>
-<div class="q" data-q="4"><span>Este o remorcă cu sistem de frânare inerțial?</span><div class="yn"><button type="button" data-v="0">Da</button><button type="button" data-v="1">Nu</button></div></div></div>
-<div class="res" id="res"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" id="rfg" cx="60" cy="60" r="52" stroke-dasharray="327" stroke-dashoffset="327"/><text id="rtx" x="60" y="70">0/5</text></svg><div class="t" id="rt">Răspunde la întrebări</div><p id="rp">Vei vedea dacă vehiculul se încadrează în limitele stației.</p><a class="btn p" href="tel:+40745596502">Sună 0745 596 502</a></div></div>
-<p class="note">Sursa limitelor: lista publică RAR a unităților ITP autorizate (stația CJ139). Aceeași listă precizează că stația nu efectuează verificări ale eficacității frânării prin probe funcționale în parcurs. Nu publicăm tarife, pentru că nu am găsit o sursă verificată. Cere prețul la telefon.</p></div></section>
-<section id="model3d" aria-label="Model 3D interactiv: o mașină pe linia de inspecție, cu piesele care se despart (model ilustrativ)"><div class="pin"><div id="r3stage"></div><div class="fb">Modelul 3D nu poate fi afișat pe acest dispozitiv (WebGL indisponibil).</div>
+<p class="note">Spălătorie auto Diavas, Str. Beiușului nr. 50, Cluj-Napoca. Serviciile exacte, tarifele și programul se confirmă la telefon.</p></div></section>
+<section id="servicii" style="background:var(--bg2)"><div class="wrap"><div class="tag rv">02 / Servicii</div><h2>Alege ce <em>vrei să ceri</em></h2>
+<p class="note" style="margin:-8px 0 24px">Descrieri generale ale serviciilor unei spălătorii auto. Exact ce se oferă la Diavas se confirmă la telefon.</p>
+<div class="pk"><div>
+<div class="chips" id="pkchips"></div>
+<svg class="pkc s-ext" id="pkc" viewBox="0 0 600 260" role="img" aria-label="Schiță de mașină văzută din lateral, cu efectele serviciilor alese (ilustrativ)">
+<defs><clipPath id="bdc"><path d="M30 190 L30 150 Q32 138 52 134 L120 124 Q150 80 215 72 L355 72 Q412 76 450 118 L545 130 Q572 136 572 160 L572 190 L514 190 A56 56 0 0 0 402 190 L206 190 A56 56 0 0 0 94 190 Z"/></clipPath><linearGradient id="shg" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<path d="M20 214 H580" stroke="#17354f" stroke-width="3"/>
+<path class="bd" d="M30 190 L30 150 Q32 138 52 134 L120 124 Q150 80 215 72 L355 72 Q412 76 450 118 L545 130 Q572 136 572 160 L572 190 L514 190 A56 56 0 0 0 402 190 L206 190 A56 56 0 0 0 94 190 Z"/><path class="gl2" d="M150 122 Q172 88 218 84 L270 84 L270 122Z"/><path class="gl2" d="M282 84 L352 84 Q392 90 420 122 L282 122Z"/>
+<g class="fx fx-int"><path d="M150 122 Q172 88 218 84 L270 84 L270 122Z" fill="rgba(124,240,182,.22)"/><path d="M282 84 L352 84 Q392 90 420 122 L282 122Z" fill="rgba(124,240,182,.22)"/><circle class="sit" cx="230" cy="108" r="9"/><circle class="sit" cx="332" cy="108" r="9"/></g>
+<g class="whl"><circle class="tr" cx="150" cy="190" r="46"/><circle class="rm" cx="150" cy="190" r="28"/><path stroke="#6fa3c4" stroke-width="3" fill="none" d="M150 164 V216 M124 190 H176 M132 172 L168 208 M168 172 L132 208"/></g><g class="whl"><circle class="tr" cx="458" cy="190" r="46"/><circle class="rm" cx="458" cy="190" r="28"/><path stroke="#6fa3c4" stroke-width="3" fill="none" d="M458 164 V216 M432 190 H484 M440 172 L476 208 M476 172 L440 208"/></g>
+<g class="fx fx-ext"><g stroke-linecap="round"><line class="dr" style="animation-delay:0.00s" x1="60" y1="14" x2="60" y2="70"/><line class="dr" style="animation-delay:0.13s" x1="98" y1="14" x2="98" y2="100"/><line class="dr" style="animation-delay:0.26s" x1="136" y1="14" x2="136" y2="130"/><line class="dr" style="animation-delay:0.39s" x1="174" y1="14" x2="174" y2="70"/><line class="dr" style="animation-delay:0.52s" x1="212" y1="14" x2="212" y2="100"/><line class="dr" style="animation-delay:0.65s" x1="250" y1="14" x2="250" y2="130"/><line class="dr" style="animation-delay:0.78s" x1="288" y1="14" x2="288" y2="70"/><line class="dr" style="animation-delay:0.91s" x1="326" y1="14" x2="326" y2="100"/><line class="dr" style="animation-delay:0.04s" x1="364" y1="14" x2="364" y2="130"/><line class="dr" style="animation-delay:0.17s" x1="402" y1="14" x2="402" y2="70"/><line class="dr" style="animation-delay:0.30s" x1="440" y1="14" x2="440" y2="100"/><line class="dr" style="animation-delay:0.43s" x1="478" y1="14" x2="478" y2="130"/><line class="dr" style="animation-delay:0.56s" x1="516" y1="14" x2="516" y2="70"/><line class="dr" style="animation-delay:0.69s" x1="554" y1="14" x2="554" y2="100"/></g></g>
+<g class="fx fx-foam"><circle class="fm" style="animation-delay:0.00s" cx="70" cy="142" r="13"/><circle class="fm" style="animation-delay:0.27s" cx="104" cy="134" r="17"/><circle class="fm" style="animation-delay:0.54s" cx="140" cy="126" r="12"/><circle class="fm" style="animation-delay:0.81s" cx="188" cy="92" r="14"/><circle class="fm" style="animation-delay:1.08s" cx="225" cy="78" r="18"/><circle class="fm" style="animation-delay:1.35s" cx="262" cy="72" r="13"/><circle class="fm" style="animation-delay:1.62s" cx="300" cy="70" r="19"/><circle class="fm" style="animation-delay:1.89s" cx="338" cy="72" r="14"/><circle class="fm" style="animation-delay:2.16s" cx="376" cy="82" r="17"/><circle class="fm" style="animation-delay:0.03s" cx="414" cy="100" r="13"/><circle class="fm" style="animation-delay:0.30s" cx="440" cy="120" r="16"/><circle class="fm" style="animation-delay:0.57s" cx="480" cy="128" r="14"/><circle class="fm" style="animation-delay:0.84s" cx="520" cy="134" r="17"/><circle class="fm" style="animation-delay:1.11s" cx="552" cy="142" r="12"/><circle class="fm" style="animation-delay:1.38s" cx="120" cy="150" r="10"/><circle class="fm" style="animation-delay:1.65s" cx="250" cy="150" r="12"/><circle class="fm" style="animation-delay:1.92s" cx="380" cy="146" r="11"/><circle class="fm" style="animation-delay:2.19s" cx="500" cy="152" r="10"/><circle class="fm" style="animation-delay:0.06s" cx="86" cy="164" r="10"/><circle class="fm" style="animation-delay:0.33s" cx="300" cy="152" r="10"/></g>
+<g class="fx fx-dry" fill="none"><path class="wn" style="animation-delay:0.0s" d="M30 50 H300"/><path class="wn" style="animation-delay:0.2s" d="M60 72 H420"/><path class="wn" style="animation-delay:0.4s" d="M90 94 H300"/><path class="wn" style="animation-delay:0.6s" d="M30 116 H420"/><path class="wn" style="animation-delay:0.8s" d="M60 138 H300"/><path class="wn" style="animation-delay:1.0s" d="M90 160 H420"/><path class="wn" style="animation-delay:1.2s" d="M30 182 H300"/><path class="wn" style="animation-delay:1.4s" d="M60 204 H420"/></g>
+<g class="fx fx-wax"><g clip-path="url(#bdc)"><rect class="sw2" x="120" y="60" width="120" height="140"/></g><path fill="#fff" class="st2" style="animation-delay:0.00s" d="M210 72 Q210 86 224 86 Q210 86 210 100 Q210 86 196 86 Q210 86 210 72Z"/><path fill="#fff" class="st2" style="animation-delay:0.35s" d="M330 64 Q330 78 344 78 Q330 78 330 92 Q330 78 316 78 Q330 78 330 64Z"/><path fill="#fff" class="st2" style="animation-delay:0.70s" d="M470 112 Q470 126 484 126 Q470 126 470 140 Q470 126 456 126 Q470 126 470 112Z"/><path fill="#fff" class="st2" style="animation-delay:1.05s" d="M90 128 Q90 142 104 142 Q90 142 90 156 Q90 142 76 142 Q90 142 90 128Z"/><path fill="#fff" class="st2" style="animation-delay:1.40s" d="M400 84 Q400 98 414 98 Q400 98 400 112 Q400 98 386 98 Q400 98 400 84Z"/></g>
+</svg></div>
+<div><div class="pkinfo" id="pkinfo" aria-live="polite"><div class="z" id="pkz"></div><h3 id="pkt"></h3><p id="pkp"></p></div>
+<div class="sum"><b>Spune la telefon</b><span id="pks">Alege cel puțin un serviciu.</span></div><br><a class="btn p" href="tel:+40745596502">Sună 0745 596 502</a></div></div>
+<p class="note">Nu publicăm tarife și durate: nu avem o sursă verificată pentru ele. Cere prețul la telefon.</p></div></section>
+<section id="ba"><div class="wrap"><div class="tag rv">03 / Înainte și după</div><h2>Diferența <em>se vede</em></h2>
+<div class="ba" id="baw" style="--p:50%"><svg class="af" viewBox="0 0 600 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="bgl" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="600" height="260" fill="#0a2a46"/><path d="M0 214 H600 V260 H0Z" fill="#0d3556"/><path d="M20 214 H580" stroke="#3fc8ff" stroke-width="3" opacity=".6"/>
+<path d="M30 190 L30 150 Q32 138 52 134 L120 124 Q150 80 215 72 L355 72 Q412 76 450 118 L545 130 Q572 136 572 160 L572 190 L514 190 A56 56 0 0 0 402 190 L206 190 A56 56 0 0 0 94 190 Z" fill="#2f86d8" stroke="#8fd3ff" stroke-width="2" stroke-linejoin="round"/><path d="M150 122 Q172 88 218 84 L270 84 L270 122Z" fill="#0a2038" stroke="#8fd3ff" stroke-width="2"/><path d="M282 84 L352 84 Q392 90 420 122 L282 122Z" fill="#0a2038" stroke="#8fd3ff" stroke-width="2"/>
+<g clip-path="url(#bdc)"><path d="M120 76 L200 76 L150 200 L70 200Z" fill="url(#bgl)" opacity=".5"/><path d="M300 76 L340 76 L290 200 L250 200Z" fill="url(#bgl)" opacity=".4"/><path d="M30 142 Q300 128 572 142" stroke="#fff" stroke-width="2" fill="none" opacity=".55"/></g>
+<g class=""><circle class="tr" cx="150" cy="190" r="46"/><circle class="rm" cx="150" cy="190" r="28"/><path stroke="#6fa3c4" stroke-width="3" fill="none" d="M150 164 V216 M124 190 H176 M132 172 L168 208 M168 172 L132 208"/></g><g class=""><circle class="tr" cx="458" cy="190" r="46"/><circle class="rm" cx="458" cy="190" r="28"/><path stroke="#6fa3c4" stroke-width="3" fill="none" d="M458 164 V216 M432 190 H484 M440 172 L476 208 M476 172 L440 208"/></g><path fill="#fff" class="" style="animation-delay:0.00s" d="M210 72 Q210 86 224 86 Q210 86 210 100 Q210 86 196 86 Q210 86 210 72Z"/><path fill="#fff" class="" style="animation-delay:0.35s" d="M470 112 Q470 126 484 126 Q470 126 470 140 Q470 126 456 126 Q470 126 470 112Z"/><path fill="#fff" class="" style="animation-delay:0.70s" d="M90 128 Q90 142 104 142 Q90 142 90 156 Q90 142 76 142 Q90 142 90 128Z"/></svg><svg class="bf" viewBox="0 0 600 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="600" height="260" fill="#0a1a2a"/><path d="M0 214 H600 V260 H0Z" fill="#1a2a38"/><path d="M20 214 H580" stroke="#2a3a4a" stroke-width="3"/>
+<path d="M30 190 L30 150 Q32 138 52 134 L120 124 Q150 80 215 72 L355 72 Q412 76 450 118 L545 130 Q572 136 572 160 L572 190 L514 190 A56 56 0 0 0 402 190 L206 190 A56 56 0 0 0 94 190 Z" fill="#6d6a5e" stroke="#9a9684" stroke-width="2" stroke-linejoin="round"/><path d="M150 122 Q172 88 218 84 L270 84 L270 122Z" fill="#3d453f" stroke="#9a9684" stroke-width="2"/><path d="M282 84 L352 84 Q392 90 420 122 L282 122Z" fill="#3d453f" stroke="#9a9684" stroke-width="2"/>
+<g clip-path="url(#bdc)"><ellipse cx="70" cy="176" rx="26" ry="8" fill="#4a3b2a" opacity="0.85"/><ellipse cx="120" cy="182" rx="34" ry="7" fill="#4a3b2a" opacity="0.8"/><ellipse cx="250" cy="184" rx="40" ry="7" fill="#4a3b2a" opacity="0.85"/><ellipse cx="340" cy="180" rx="34" ry="8" fill="#4a3b2a" opacity="0.8"/><ellipse cx="430" cy="184" rx="30" ry="7" fill="#4a3b2a" opacity="0.85"/><ellipse cx="520" cy="178" rx="28" ry="8" fill="#4a3b2a" opacity="0.8"/><ellipse cx="180" cy="150" rx="18" ry="7" fill="#4a3b2a" opacity="0.55"/><ellipse cx="300" cy="140" rx="22" ry="8" fill="#4a3b2a" opacity="0.5"/><ellipse cx="480" cy="150" rx="20" ry="7" fill="#4a3b2a" opacity="0.55"/><ellipse cx="220" cy="96" rx="16" ry="5" fill="#4a3b2a" opacity="0.45"/><ellipse cx="330" cy="92" rx="20" ry="6" fill="#4a3b2a" opacity="0.4"/><ellipse cx="400" cy="106" rx="14" ry="5" fill="#4a3b2a" opacity="0.4"/><ellipse cx="60" cy="150" rx="12" ry="5" fill="#4a3b2a" opacity="0.5"/><path d="M110 132 l4 30" stroke="#6a5a45" stroke-width="3" stroke-linecap="round" opacity=".6"/><path d="M160 128 l-3 40" stroke="#6a5a45" stroke-width="3" stroke-linecap="round" opacity=".6"/><path d="M240 130 l5 34" stroke="#6a5a45" stroke-width="3" stroke-linecap="round" opacity=".6"/><path d="M300 128 l0 44" stroke="#6a5a45" stroke-width="3" stroke-linecap="round" opacity=".6"/><path d="M380 132 l-4 36" stroke="#6a5a45" stroke-width="3" stroke-linecap="round" opacity=".6"/><path d="M470 134 l4 30" stroke="#6a5a45" stroke-width="3" stroke-linecap="round" opacity=".6"/><path d="M520 138 l-2 26" stroke="#6a5a45" stroke-width="3" stroke-linecap="round" opacity=".6"/><rect x="0" y="60" width="600" height="140" fill="#8a7a5a" opacity=".18"/></g>
+<g><circle cx="150" cy="190" r="46" fill="#17140f" stroke="#5a5446" stroke-width="3"/><circle cx="150" cy="190" r="28" fill="#6a6558"/><circle cx="458" cy="190" r="46" fill="#17140f" stroke="#5a5446" stroke-width="3"/><circle cx="458" cy="190" r="28" fill="#6a6558"/></g></svg><span class="lab l1">Înainte</span><span class="lab l2">După</span><div class="hd"><i>↔</i></div><input type="range" id="bar" min="0" max="100" value="50" step="1" aria-label="Glisează pentru a compara înainte și după"></div>
+<p class="note">Ilustrație orientativă, desenată pentru acest site. Nu sunt fotografii din spălătoria Diavas.</p></div></section>
+<section id="model3d" aria-label="Model 3D interactiv: o mașină în etapele unei spălări, de la pre-clătire la luciu (model ilustrativ)"><div class="pin"><div id="r3stage"></div><div class="fb">Modelul 3D nu poate fi afișat pe acest dispozitiv (WebGL indisponibil).</div>
 <div class="r3ui r3top">
- <div class="r3ch on"><div class="kick"><i></i>Inspecția · 01</div><h3>Mașina intră <em>pe linie</em></h3><p>Un autoturism pe o linie de inspecție, scanat de la un capăt la altul. Model 3D ilustrativ, nu reprezintă echipamentele stației. Trage ca să-l rotești.</p></div>
- <div class="r3ch"><div class="kick"><i></i>Inspecția · 02</div><h3>Frâne <em>și roți</em></h3><p>Caroseria se ridică și se văd roțile, discurile și etrierii. La o inspecție periodică se verifică, în general, starea frânelor și a anvelopelor.</p></div>
- <div class="r3ch"><div class="kick"><i></i>Inspecția · 03</div><h3>Direcție <em>și suspensie</em></h3><p>Sub caroserie apar axele, arcurile și amortizoarele. În general se urmăresc jocurile din direcție și starea suspensiei.</p></div>
- <div class="r3ch"><div class="kick"><i></i>Inspecția · 04</div><h3>Lumini, emisii <em>și rezultat</em></h3><p>Caroseria revine, farurile se aprind, iar eșapamentul degajă gaze. Se verifică luminile și emisiile, apoi afli rezultatul inspecției. Pentru programare sună la 0745 596 502.</p></div>
+ <div class="r3ch on"><div class="kick"><i></i>Etapa · 01</div><h3>Pre-clătire <em>cu apă</em></h3><p>Un jet de apă desprinde praful și noroiul gros, înainte de orice atingere. Model 3D ilustrativ, nu reprezintă echipamentele spălătoriei. Trage ca să-l rotești.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Etapa · 02</div><h3>Spumă <em>activă</em></h3><p>Spuma acoperă mașina de sus în jos și are timp să înmoaie murdăria, ca să se desprindă mai ușor.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Etapa · 03</div><h3>Spălarea <em>propriu-zisă</em></h3><p>Murdăria înmuiată este îndepărtată de pe toată caroseria. Cum se lucrează la Diavas afli la telefon; periile din model sunt doar o ilustrație.</p></div>
+ <div class="r3ch"><div class="kick"><i></i>Etapa · 04</div><h3>Clătire, uscare <em>și luciu</em></h3><p>Apa curată ia spuma, aerul usucă, iar caroseria rămâne lucioasă. Pentru servicii și program sună la 0745 596 502.</p></div>
 </div>
 <div class="r3hint">MODEL ILUSTRATIV · DERULEAZĂ ↓ · TRAGE ↔</div>
 <div id="r3bar"></div></div></section>
 <section id="cap"><div class="pin">
- <div class="chap on"><div class="wrap"><div class="big">01</div><div class="kick"><i></i>Pasul 1</div><h3>Suni și <em>te programezi</em></h3><p>Un telefon la 0745 596 502. Program: luni–vineri 08:00–20:00, sâmbătă 08:00–14:00.</p></div></div>
- <div class="chap"><div class="wrap"><div class="big">02</div><div class="kick"><i></i>Pasul 2</div><h3>Vii <em>la adresă</em></h3><p>Strada Beiușului nr. 50, Cluj-Napoca, la ora stabilită la telefon, cu mașina și actele ei.</p></div></div>
- <div class="chap"><div class="wrap"><div class="big">03</div><div class="kick"><i></i>Pasul 3</div><h3>Mașina este <em>inspectată</em></h3><p>Se face inspecția tehnică periodică. În general se verifică frânele, direcția, suspensia, luminile și emisiile.</p></div></div>
- <div class="chap"><div class="wrap"><div class="big">04</div><div class="kick"><i></i>Pasul 4</div><h3>Afli <em>rezultatul</em></h3><p>La final afli rezultatul inspecției. Pentru o nouă programare, suni din nou la 0745 596 502.</p></div></div>
+ <div class="chap on"><div class="wrap"><div class="big">01</div><div class="kick"><i></i>Pasul 1</div><h3>Suni <em>și întrebi</em></h3><p>Un telefon la 0745 596 502: afli ce servicii sunt disponibile, cât durează și când poți veni.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">02</div><div class="kick"><i></i>Pasul 2</div><h3>Vii <em>la adresă</em></h3><p>Strada Beiușului nr. 50, Cluj-Napoca, la ora stabilită la telefon.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">03</div><div class="kick"><i></i>Pasul 3</div><h3>Spui <em>ce vrei</em></h3><p>Alegi serviciile care te interesează, de exemplu exterior, interior sau luciu, și confirmi tariful înainte de începere.</p></div></div>
+ <div class="chap"><div class="wrap"><div class="big">04</div><div class="kick"><i></i>Pasul 4</div><h3>Pleci cu mașina <em>curată</em></h3><p>Iei mașina curată și lucioasă. Pentru data viitoare, același număr: 0745 596 502.</p></div></div>
  <div class="dots"><i class="on"></i><i></i><i></i><i></i></div><div class="chline" id="chline"></div>
 </div></section>
-<div class="tape gd" aria-hidden="true"><div>Diavas ✦ Stație ITP Cluj-Napoca ✦ Sună 0745 596 502 ✦ Diavas ✦ Stație ITP Cluj-Napoca ✦ Sună 0745 596 502 ✦ Diavas ✦ Stație ITP Cluj-Napoca ✦ Sună 0745 596 502 ✦ </div></div>
-<section id="verifica"><div class="wrap"><div class="tag rv">03 / Ce se verifică</div><h2>Zonele unei <em>inspecții</em></h2>
-<p class="note" style="margin:-8px 0 24px">Descriere generală a ce se urmărește la o inspecție tehnică periodică. Nu este o listă oficială a stației.</p>
-<div class="chips" id="chips"></div>
-<div class="vmap"><svg class="car2d" id="car2d" viewBox="0 0 600 260" role="img" aria-label="Schiță de mașină, văzută din lateral, cu zonele verificate la ITP"><path class="ln" d="M30 190 L30 150 Q32 138 52 134 L120 124 Q150 80 215 72 L355 72 Q412 76 450 118 L545 130 Q572 136 572 160 L572 190"/><path class="gl2" d="M150 122 Q172 88 218 84 L270 84 L270 122Z"/><path class="gl2" d="M282 84 L352 84 Q392 90 420 122 L282 122Z"/><path class="ln" d="M30 190 L92 190 M208 190 L400 190 M516 190 L572 190"/><path class="ln2" d="M545 140 L572 140"/><g class="whl"><circle class="ln" cx="150" cy="190" r="48"/><circle class="ln" cx="150" cy="190" r="29"/><path class="ln" d="M150 161 V219 M121 190 H179 M130 170 L170 210 M170 170 L130 210"/></g><g class="whl"><circle class="ln" cx="458" cy="190" r="48"/><circle class="ln" cx="458" cy="190" r="29"/><path class="ln" d="M458 161 V219 M429 190 H487 M438 170 L478 210 M478 170 L438 210"/></g><path class="ln2" d="M20 200 H580" opacity=".35"/><g class="zone" id="zone" style="transform:translate(300px,130px)"><ellipse id="zel" cx="0" cy="0" rx="60" ry="40"/><ellipse class="zp" cx="0" cy="0" rx="60" ry="40"/></g></svg>
-<div class="vinfo" id="vinfo" aria-live="polite"><div class="z" id="vz"></div><h3 id="vt"></h3><p id="vp"></p></div></div></div></section>
+<div class="tape gd" aria-hidden="true"><div>Diavas ✦ Spălătorie auto Cluj-Napoca ✦ Sună 0745 596 502 ✦ Diavas ✦ Spălătorie auto Cluj-Napoca ✦ Sună 0745 596 502 ✦ Diavas ✦ Spălătorie auto Cluj-Napoca ✦ Sună 0745 596 502 ✦ </div></div>
 <section id="pregatire" style="background:var(--bg2)"><div class="wrap"><div class="tag rv">04 / Pregătire</div><h2>Înainte <em>să vii</em></h2>
-<div class="chk"><div><ul class="cl" id="cl">
-<li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Ai la tine actele mașinii (certificatul de înmatriculare)</span></button></li>
-<li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Luminile și semnalizarea funcționează</span></button></li>
-<li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Anvelopele nu sunt vizibil uzate sau degradate</span></button></li>
-<li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Parbrizul și ștergătoarele sunt în stare bună</span></button></li>
-<li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Plăcuțele de înmatriculare sunt lizibile</span></button></li>
-<li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Nu e aprins niciun martor de avarie pe bord</span></button></li></ul>
-<p class="note">Sfaturi generale de bun-simț, nu o listă oficială. Dacă ai dubii, întreabă la telefon.</p></div>
-<div class="res" id="cres"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" id="cfg" cx="60" cy="60" r="52" stroke-dasharray="327" stroke-dashoffset="327"/><text id="ctx" x="60" y="70">0/6</text></svg><div class="t" id="ct">Bifează ce ai verificat</div><p id="cp">Atingi fiecare punct pe măsură ce îl verifici.</p><a class="btn p" href="tel:+40745596502">Programează-te: 0745 596 502</a></div></div></div></section>
+<div class="chk"><div><ul class="cl" id="cl"><li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Scoate din mașină obiectele personale și lucrurile de valoare</span></button></li><li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Închide bine geamurile, trapa și portbagajul</span></button></li><li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Strânge oglinzile laterale și, dacă se poate, demontează antena</span></button></li><li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Spune la telefon dacă ai pete dificile (rășină, insecte, noroi uscat)</span></button></li><li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Dacă vrei și interior, golește buzunarele ușilor și scoate scaunele de copil</span></button></li><li><button type="button"><span class="bx"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><span class="t">Întreabă ce servicii sunt disponibile și când poți veni</span></button></li></ul>
+<p class="note">Sfaturi generale de bun-simț, nu o listă oficială a spălătoriei. Dacă ai dubii, întreabă la telefon.</p></div>
+<div class="res" id="cres"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" id="cfg" cx="60" cy="60" r="52" stroke-dasharray="327" stroke-dashoffset="327"/><text id="ctx" x="60" y="70">0/6</text></svg><div class="t" id="ct">Bifează ce ai verificat</div><p id="cp">Atingi fiecare punct pe măsură ce îl verifici.</p><a class="btn p" href="tel:+40745596502">Sună: 0745 596 502</a></div></div></div></section>
 <section id="contact"><div class="wrap two">
-<div><div class="tag rv">05 / Contact</div><h2>Vino la <em>stație</em></h2>
-<p><b>Adresă:</b> Str. Beiușului nr. 50, Cluj-Napoca, jud. Cluj</p><p><b>Telefon:</b> <a href="tel:+40745596502">0745 596 502</a></p><br>
-<div class="hours" id="hours"><div data-d="1">Luni</div><div class="c" data-d="1">08:00 – 20:00</div><div data-d="2">Marți</div><div class="c" data-d="2">08:00 – 20:00</div><div data-d="3">Miercuri</div><div class="c" data-d="3">08:00 – 20:00</div><div data-d="4">Joi</div><div class="c" data-d="4">08:00 – 20:00</div><div data-d="5">Vineri</div><div class="c" data-d="5">08:00 – 20:00</div><div data-d="6">Sâmbătă</div><div class="c" data-d="6">08:00 – 14:00</div><div data-d="0">Duminică</div><div class="c" data-d="0">Închis</div></div>
-<p class="note">Programările se fac telefonic, nu avem formular online. În registrele oficiale (RAR, ANAF) firma figurează cu sediul la nr. 54A pe aceeași stradă.</p><br>
+<div><div class="tag rv">05 / Contact</div><h2>Vino la <em>spălătorie</em></h2>
+<p><b>Adresă:</b> Str. Beiușului nr. 50, Cluj-Napoca, jud. Cluj</p><p><b>Telefon:</b> <a href="tel:+40745596502">0745 596 502</a></p><p><b>Program:</b> confirmă la telefon</p>
+<p class="note">Serviciile exacte, tarifele și programul se confirmă la telefon. Nu avem formular online.</p><br>
 <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn p" href="tel:+40745596502">Sună 0745 596 502</a><a class="btn g" href="https://www.google.com/maps/search/?api=1&amp;query=Strada+Beiu%C8%99ului+50+Cluj-Napoca" target="_blank" rel="noopener">Deschide în Maps</a></div></div>
 <div class="map" id="map"><div class="mapbtn"><span>Harta Google se încarcă doar după acordul tău pentru cookie-uri.</span><button class="btn g" id="loadmap" type="button">Încarcă harta</button></div></div>
 </div></section>
-<footer><div class="wrap"><div class="fbig">Diavas</div><p><b style="color:var(--tx);letter-spacing:.2em">DIAVAS</b> · Stație ITP · Str. Beiușului nr. 50, Cluj-Napoca · 0745 596 502<br>DIAVAS AYAN S.R.L. · CUI RO 37882800 · J12/4381/2017</p><br>
+<footer><div class="wrap"><div class="fbig">Diavas</div><p><b style="color:var(--tx);letter-spacing:.2em">DIAVAS</b> · Spălătorie auto · Str. Beiușului nr. 50, Cluj-Napoca · 0745 596 502</p><br>
 <a href="politica-confidentialitate.html">Confidențialitate</a><a href="politica-cookies.html">Cookie-uri</a><a href="termeni-si-conditii.html">Termeni</a><a href="#" data-ck>Setări cookie</a><a href="https://anpc.ro" target="_blank" rel="noopener">ANPC</a><a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">SOL</a></div></footer>
 <div class="sticky"><a class="btn p" href="tel:+40745596502">📞 Sună 0745 596 502</a></div>
 <script src="assets/three.min.js"></script><script src="assets/app.js"></script><script src="consent.js"></script>
